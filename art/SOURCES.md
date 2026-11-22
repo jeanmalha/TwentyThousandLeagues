@@ -13,7 +13,6 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch03_night_sea.png | ch03nightsea-flux-1868-e13d.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch03_hull.png | ch03hull-flux-1868-3220.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch04_cell.png | ch04cell-flux-1868-9142.png | flux | 1868 | 2026-11-21 |
-| art/locations/ch05_library.png | ch05library-flux-1868-d5da.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch05_corridor.png | ch05corridor-flux-1868-5b88.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch05_armory.png | ch05armory-flux-1868-f5ff.png | flux | 1868 | 2026-11-21 |
 | art/portraits/aronnax.png | portraitaronnax-flux-1868-117b.png | flux | 1868 | 2026-11-21 |
@@ -38,14 +37,15 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch13_vigo.png | ch13vigo-flux-1868-8ad4.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch14_atlantis.png | ch14atlantis-flux-1868-4fb0.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch15_whales.png | ch15whales-flux-1868-9c98.png | flux | 1868 | 2026-11-22 |
-| art/locations/ch16_pole.png | ch16pole-flux-1868-3bcc.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch17_trapped.png | ch17trapped-flux-1868-db52.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch17_ice_tunnel.png | ch17icetunnel-flux-1868-3720.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch18_platform_squid.png | ch18platformsqui-flux-1868-dfb8.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch19_storm.png | ch19storm-flux-1868-a5b5.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch19_vengeur.png | ch19vengeur-flux-1868-4078.png | flux | 1868 | 2026-11-22 |
-| art/locations/ch20_salon_dark.png | ch20salondark-flux-1868-89d2.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch20_nemo_room.png | ch20nemoroom-flux-1868-c862.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch21_cabins_night.png | ch21cabinsnight-flux-1868-79b6.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch21_skiff.png | ch21skiff-flux-1868-6ec6.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch21_lofoten.png | ch21lofoten-flux-1868-55c2.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch05_library.png | ch05library-flux-7-e7a0.png | flux | 7 | 2026-11-22 |
+| art/locations/ch16_pole.png | ch16pole-flux-7-53c6.png | flux | 7 | 2026-11-22 |
+| art/locations/ch20_salon_dark.png | ch20salondark-flux-7-7d89.png | flux | 7 | 2026-11-22 |
