@@ -1,20 +1,126 @@
 extends Node2D
-## Placeholder start scene: a 320×180 test card.
-## It draws 1-pixel lines and a checkerboard so you can see at a glance that
-## scaling stays integer and unfiltered (no blur, no uneven pixels).
+## Start scene: owns the title screen, the play screen and the overlays
+## (story cards, dialogue, journal), and moves between chapters.
+##
+## Command-line options for testing and screenshots (after `--`):
+##   --chapter ch01      start straight into a chapter
+##   --skip-intro        don't play the chapter's opening story cards
 
-const BASE := Vector2i(320, 180)
-const INK := Color(0.85, 0.75, 0.45)
-const SEA := Color(0.05, 0.2, 0.3)
+var title: TitleScreen
+var screen: GameScreen
+var narration: Narration
+var dialogue: DialogueBox
+var journal: Journal
+var _after_scene: Callable = Callable()
 
 
-func _draw() -> void:
-	# Frame: 1-pixel border on the outermost pixels.
-	draw_rect(Rect2(Vector2(0.5, 0.5), Vector2(BASE) - Vector2.ONE), INK, false, 1.0)
-	# Checkerboard of single pixels in the top-left corner.
-	for y in range(4, 20):
-		for x in range(4, 20):
-			if (x + y) % 2 == 0:
-				draw_rect(Rect2(x, y, 1, 1), INK)
-	# Horizon band.
-	draw_rect(Rect2(1, 120, BASE.x - 2, 59), SEA)
+func _ready() -> void:
+	var root := Control.new()
+	root.size = Vector2(320, 180)
+	add_child(root)
+	screen = GameScreen.new()
+	root.add_child(screen)
+	dialogue = DialogueBox.new()
+	root.add_child(dialogue)
+	journal = Journal.new()
+	root.add_child(journal)
+	narration = Narration.new()
+	root.add_child(narration)
+	title = TitleScreen.new()
+	root.add_child(title)
+
+	title.new_game.connect(func() -> void: start_chapter(Content.order[0] if not Content.order.is_empty() else ""))
+	title.continue_game.connect(continue_game)
+	title.chapter_chosen.connect(start_chapter)
+	screen.open_dialogue.connect(dialogue.open)
+	screen.open_journal.connect(journal.open)
+	screen.play_scene.connect(play_scene)
+	narration.finished.connect(_on_scene_finished)
+	GameState.chapter_ended.connect(_on_chapter_ended)
+
+	var args := OS.get_cmdline_user_args()
+	var i := args.find("--chapter")
+	if i >= 0 and i + 1 < args.size():
+		start_chapter(args[i + 1], args.has("--skip-intro"))
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		match event.keycode:
+			KEY_F9:
+				continue_game()
+			KEY_F2:
+				GameState.language = "en" if GameState.language == "fr" else "fr"
+				GameState.changed.emit()
+				title.refresh()
+
+
+func start_chapter(id: String, skip_intro: bool = false) -> void:
+	var ch: Dictionary = Content.chapter(id)
+	if ch.is_empty():
+		push_error("Unknown chapter %s" % id)
+		return
+	GameState.reset(id)
+	var start: Dictionary = ch.get("start", {})
+	GameState.party = Array(start.get("party", ["aronnax"]))
+	GameState.current = start.get("current", GameState.party[0])
+	GameState.switching = start.get("switching", false)
+	for who in start.get("locations", {}):
+		GameState.location[who] = start["locations"][who]
+	for who in start.get("inventory", {}):
+		GameState.inventory[who] = Array(start["inventory"][who])
+	GameState.apply(start.get("do"))
+	title.hide()
+	screen.clear_speech()
+	screen.refresh()
+	if not skip_intro and ch.get("scenes", {}).has("intro"):
+		play_scene("intro")
+	else:
+		_on_scene_finished("")
+
+
+func continue_game() -> void:
+	var slot := "quick"
+	if GameState.has_save("auto"):
+		slot = "auto"
+		if GameState.has_save("quick") and FileAccess.get_modified_time("user://save_quick.json") > FileAccess.get_modified_time("user://save_auto.json"):
+			slot = "quick"
+	if GameState.load_game(slot):
+		title.hide()
+		screen.clear_speech()
+		screen.refresh()
+
+
+func play_scene(id: String, then: Callable = Callable()) -> void:
+	var scene: Dictionary = Content.chapter().get("scenes", {}).get(id, {})
+	_after_scene = then
+	narration.play(id, scene)
+
+
+func _on_scene_finished(id: String) -> void:
+	if _after_scene.is_valid():
+		var cb := _after_scene
+		_after_scene = Callable()
+		cb.call()
+		return
+	screen.refresh()
+	var ch: Dictionary = Content.chapter()
+	if id == "intro" and ch.has("on_start_say"):
+		screen.say(GameState.current, Content.t(ch["on_start_say"]))
+
+
+func _on_chapter_ended() -> void:
+	dialogue.hide()
+	journal.hide()
+	var id: String = GameState.chapter_id
+	var next := Content.next_chapter(id)
+	var go_next := func() -> void:
+		if next == "":
+			title.show()
+			title.refresh()
+		else:
+			start_chapter(next)
+	if Content.chapter().get("scenes", {}).has("outro"):
+		play_scene("outro", go_next)
+	else:
+		go_next.call()
