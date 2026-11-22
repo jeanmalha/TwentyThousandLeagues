@@ -1,0 +1,69 @@
+GIMP Palette
+Name: Twenty Thousand Leagues master (64)
+Columns: 8
+#
+# 8 ramps x 8, dark to light. At most 32 of these per scene (TTLUTS-21).
+  5   8  12	Abyss 1
+ 10  20  36	Abyss 2
+ 15  34  54	Abyss 3
+ 21  48  74	Abyss 4
+ 29  64  96	Abyss 5
+ 39  83 122	Abyss 6
+ 53 106 149	Abyss 7
+ 76 134 176	Abyss 8
+ 12  42  46	Sea 1
+ 18  57  63	Sea 2
+ 26  75  81	Sea 3
+ 35  95  99	Sea 4
+ 46 116 118	Sea 5
+ 63 139 137	Sea 6
+ 87 163 156	Sea 7
+140 198 182	Sea 8
+ 42  26   8	Brass 1
+ 69  41  12	Brass 2
+100  60  18	Brass 3
+134  83  26	Brass 4
+168 110  36	Brass 5
+201 141  51	Brass 6
+226 174  79	Brass 7
+246 216 133	Brass 8
+ 26  15  11	Wood 1
+ 43  25  18	Wood 2
+ 62  37  26	Wood 3
+ 83  50  36	Wood 4
+106  65  47	Wood 5
+130  83  60	Wood 6
+156 104  76	Wood 7
+184 128  95	Wood 8
+ 59  34  25	Skin 1
+ 90  53  38	Skin 2
+122  74  53	Skin 3
+154  98  70	Skin 4
+184 123  88	Skin 5
+207 150 112	Skin 6
+226 179 140	Skin 7
+240 207 172	Skin 8
+ 18  19  20	Neutral 1
+ 42  44  48	Neutral 2
+ 68  71  76	Neutral 3
+ 98 102 107	Neutral 4
+133 136 133	Neutral 5
+169 169 162	Neutral 6
+207 203 191	Neutral 7
+244 239 224	Neutral 8
+ 15  29  18	Weed 1
+ 26  47  27	Weed 2
+ 39  68  36	Weed 3
+ 54  90  46	Weed 4
+ 74 114  56	Weed 5
+ 98 139  71	Weed 6
+128 166  92	Weed 7
+165 194 124	Weed 8
+ 42  11  14	Coral 1
+ 74  18  22	Coral 2
+110  28  30	Coral 3
+147  48  42	Coral 4
+182  73  58	Coral 5
+211 106  78	Coral 6
+232 147 106	Coral 7
+245 189 148	Coral 8
