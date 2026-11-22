@@ -34,7 +34,9 @@ func _ready() -> void:
 	title = TitleScreen.new()
 	root.add_child(title)
 
-	title.new_game.connect(func() -> void: start_chapter(Content.order[0] if not Content.order.is_empty() else ""))
+	title.new_game.connect(func() -> void:
+		GameState.reset("")   # a new game starts with no story flags
+		start_chapter(Content.order[0] if not Content.order.is_empty() else ""))
 	title.continue_game.connect(continue_game)
 	title.chapter_chosen.connect(start_chapter)
 	screen.open_dialogue.connect(dialogue.open)
@@ -68,7 +70,17 @@ func start_chapter(id: String, skip_intro: bool = false) -> void:
 	if ch.is_empty():
 		push_error("Unknown chapter %s" % id)
 		return
+	# Story flags (TTLUTS-3) carry over from the previous chapter; the rest resets.
+	var carried_flags: Dictionary = {}
+	var carried_facts: Dictionary = {}
+	for f in Content.game.get("story_flags", []):
+		if GameState.flags.has(f):
+			carried_flags[f] = true
+		if GameState.facts.has(f):
+			carried_facts[f] = true
 	GameState.reset(id)
+	GameState.flags.merge(carried_flags)
+	GameState.facts.merge(carried_facts)
 	var start: Dictionary = ch.get("start", {})
 	GameState.party = Array(start.get("party", ["aronnax"]))
 	GameState.current = start.get("current", GameState.party[0])

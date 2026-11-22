@@ -1,0 +1,528 @@
+{
+	"id": "ch21",
+	"number": 21,
+	"act": 4,
+	"title": {
+		"fr": "Le Maelstrom",
+		"en": "The Maelstrom"
+	},
+	"novel": "II-22 – II-23",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch21_cabins_night",
+			"conseil": "ch21_cabins_night",
+			"ned": "ch21_cabins_night"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Depuis l'hécatombe, le Nautilus errait vers le nord, au hasard. Le capitaine ne paraissait plus. Ned Land vint à moi.",
+						"en": "Since the hecatomb, the Nautilus had wandered north, aimlessly. The captain no longer appeared. Ned Land came to me."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Nous partirons cette nuit. La côte est à vingt milles. Quoi qu'il arrive.",
+						"en": "We leave tonight. The coast is twenty miles off. Whatever happens."
+					}
+				}
+			]
+		},
+		"last_words": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "En passant devant la porte du salon, j'entendis l'orgue, puis la voix du capitaine Nemo. Je n'oublierai jamais ses dernières paroles :",
+						"en": "Passing the salon door, I heard the organ, then Captain Nemo's voice. I shall never forget his last words:"
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Dieu tout puissant ! assez ! assez !",
+						"en": "Almighty God! Enough! Enough!"
+					}
+				}
+			],
+			"do": [
+				"set:heard_last_words"
+			]
+		},
+		"maelstrom": {
+			"image": "res://art/engravings/hetzel-112.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le canot se détachait quand une voix cria dans le Nautilus : « Le Maelstrom ! le Maelstrom ! » Le terrible tourbillon des côtes de Norvège nous avait saisis.",
+						"en": "The boat was coming free when a voice cried inside the Nautilus: \"The Maelstrom! The Maelstrom!\" The terrible whirlpool off the Norwegian coast had caught us."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le canot fut arraché de son alvéole et lancé dans le gouffre. Ma tête heurta une membrure de fer. Je perdis connaissance.",
+						"en": "The boat was torn from its housing and flung into the abyss. My head struck an iron rib. I lost consciousness."
+					}
+				}
+			],
+			"do": [
+				"move:aronnax:ch21_lofoten",
+				"move:conseil:ch21_lofoten",
+				"move:ned:ch21_lofoten",
+				"set:escaped"
+			]
+		},
+		"the_end": {
+			"image": "res://art/engravings/hetzel-113.jpg",
+			"lines": [
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Qu'est devenu le Nautilus ? A-t-il résisté aux étreintes du Maelstrom ? Le capitaine Nemo vit-il encore ?",
+						"en": "What has become of the Nautilus? Did it withstand the grip of the Maelstrom? Is Captain Nemo still alive?"
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Si le capitaine Nemo habite toujours cet Océan, sa patrie d'adoption, puisse la haine s'apaiser dans ce cœur farouche ! Que le justicier s'efface, que le savant continue la paisible exploration des mers !",
+						"en": "If Captain Nemo still lives in that Ocean, his adopted country, may hatred grow calm in that fierce heart! May the avenger fade, and the scientist go on with the peaceful exploration of the seas!"
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "« Qui a jamais pu sonder les profondeurs de l'abîme ? » Deux hommes entre tous les hommes ont le droit de répondre maintenant. Le capitaine Nemo et moi.",
+						"en": "\"Who has ever fathomed the depths of the abyss?\" Two men among all men now have the right to answer. Captain Nemo and I."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "FIN",
+						"en": "THE END"
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch21_cabins_night": {
+			"name": {
+				"fr": "La coursive, la nuit",
+				"en": "The corridor, at night"
+			},
+			"background": "res://art/locations/ch21_cabins_night.png",
+			"color": "#05080c",
+			"hotspots": [
+				{
+					"id": "salon_door",
+					"name": {
+						"fr": "La porte du salon",
+						"en": "The salon door"
+					},
+					"rect": [
+						0,
+						40,
+						40,
+						90
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "De la lumière filtre sous la porte. L'orgue joue, très bas.",
+									"en": "Light shows under the door. The organ is playing, very softly."
+								}
+							}
+						],
+						"use": [
+							{
+								"who": "aronnax",
+								"scene": "last_words"
+							}
+						],
+						"talk": [
+							{
+								"who": "aronnax",
+								"scene": "last_words"
+							}
+						]
+					}
+				},
+				{
+					"id": "hatch21",
+					"name": {
+						"fr": "Le panneau du canot",
+						"en": "The skiff hatch"
+					},
+					"rect": [
+						140,
+						0,
+						40,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"if": [
+									"flag:skiff_located"
+								],
+								"say": {
+									"fr": "Le panneau que Ned a trouvé le premier jour. Le canot est juste au-dessus.",
+									"en": "The hatch Ned found on the first day. The boat is right above."
+								}
+							},
+							{
+								"say": {
+									"fr": "Un panneau rond, au bout de l'échelle.",
+									"en": "A round hatch at the top of the ladder."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je l'ouvre sans bruit. Le canot est là, dans son alvéole.",
+									"en": "I open it without a sound. The boat is there, in its housing."
+								},
+								"do": [
+									"set:hatch_open"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "pantry",
+					"name": {
+						"fr": "L'office",
+						"en": "The pantry"
+					},
+					"rect": [
+						250,
+						60,
+						60,
+						70
+					],
+					"actions": {
+						"look": [
+							{
+								"if": "flag:skiff_provisioned",
+								"say": {
+									"fr": "Inutile : depuis Vigo, le canot est déjà garni de vivres.",
+									"en": "No need: since Vigo, the boat has been stocked with food."
+								}
+							},
+							{
+								"say": {
+									"fr": "Des biscuits, de l'eau, des conserves.",
+									"en": "Biscuits, water, preserved food."
+								}
+							}
+						],
+						"use": [
+							{
+								"if": "flag:skiff_provisioned",
+								"say": {
+									"fr": "Le canot est déjà prêt. Ned y a veillé à Vigo.",
+									"en": "The boat is already ready. Ned saw to it at Vigo."
+								},
+								"do": [
+									"set:food_aboard"
+								]
+							},
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Trois jours de vivres pour trois. Je les ai classés par ordre d'appétit : Ned d'abord.",
+									"en": "Three days' food for three. I've classed it by order of appetite: Ned first."
+								},
+								"do": [
+									"set:food_aboard"
+								]
+							},
+							{
+								"say": {
+									"fr": "Conseil saura mieux que moi ce qu'il faut emporter.",
+									"en": "Conseil will know better than me what to take."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_skiff",
+					"name": {
+						"fr": "Monter dans le canot",
+						"en": "Climb into the boat"
+					},
+					"rect": [
+						140,
+						40,
+						40,
+						100
+					],
+					"to": "ch21_skiff",
+					"if": [
+						"flag:hatch_open",
+						"flag:food_aboard",
+						"flag:heard_last_words"
+					],
+					"do": [
+						"move:conseil:ch21_skiff",
+						"move:ned:ch21_skiff"
+					],
+					"locked": {
+						"fr": "Pas encore. Le panneau, les vivres… et quelque chose me retient près du salon.",
+						"en": "Not yet. The hatch, the food… and something keeps me near the salon."
+					}
+				}
+			]
+		},
+		"ch21_skiff": {
+			"name": {
+				"fr": "Dans le canot",
+				"en": "In the boat"
+			},
+			"background": "res://art/locations/ch21_skiff.png",
+			"color": "#05080c",
+			"hotspots": [
+				{
+					"id": "nuts",
+					"name": {
+						"fr": "Les écrous du canot",
+						"en": "The boat's nuts"
+					},
+					"rect": [
+						100,
+						100,
+						120,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Les écrous qui fixent le canot à la coque.",
+									"en": "The nuts holding the boat to the hull."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Le dernier écrou… ça y est !",
+									"en": "The last nut… there!"
+								},
+								"scene": "maelstrom"
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "C'est le travail de Ned, et il a la clef.",
+									"en": "That's Ned's job, and he has the wrench."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		},
+		"ch21_lofoten": {
+			"name": {
+				"fr": "Une cabane aux îles Lofoten",
+				"en": "A hut in the Lofoten Islands"
+			},
+			"background": "res://art/locations/ch21_lofoten.png",
+			"color": "#3e251a",
+			"hotspots": [
+				{
+					"id": "journal",
+					"name": {
+						"fr": "Mon journal",
+						"en": "My journal"
+					},
+					"rect": [
+						120,
+						100,
+						80,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"if": "flag:vigo_truth",
+								"say": {
+									"fr": "J'écris : je sais où allait son or. Aux opprimés, et à la Crète insurgée. Il était resté un homme.",
+									"en": "I write: I know where his gold went. To the oppressed, and to insurgent Crete. He had remained a man."
+								}
+							},
+							{
+								"if": "flag:skiff_provisioned",
+								"say": {
+									"fr": "J'écris : nous devons notre liberté à Ned, et à sa patience. À Vigo, il avait déjà tout préparé.",
+									"en": "I write: we owe our freedom to Ned and his patience. At Vigo, he had already prepared everything."
+								}
+							},
+							{
+								"say": {
+									"fr": "J'écris : dix mois sous les mers. Vingt mille lieues.",
+									"en": "I write: ten months under the seas. Twenty thousand leagues."
+								}
+							}
+						],
+						"use": [
+							{
+								"scene": "the_end"
+							}
+						]
+					}
+				},
+				{
+					"id": "companions",
+					"name": {
+						"fr": "Ned et Conseil",
+						"en": "Ned and Conseil"
+					},
+					"rect": [
+						230,
+						70,
+						80,
+						70
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Mes deux compagnons, sains et saufs, près de moi. Ils me tiennent les mains.",
+									"en": "My two companions, safe and sound beside me. They are holding my hands."
+								}
+							}
+						],
+						"talk": [
+							{
+								"say": {
+									"fr": "« Monsieur est réveillé ? » dit Conseil. Ned ne dit rien. Il pleure, je crois.",
+									"en": "\"Is Monsieur awake?\" said Conseil. Ned said nothing. He is crying, I think."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "window21",
+					"name": {
+						"fr": "La fenêtre, sur la mer",
+						"en": "The window, onto the sea"
+					},
+					"rect": [
+						180,
+						20,
+						50,
+						50
+					],
+					"actions": {
+						"look": [
+							{
+								"if": "fact:nemo_spares",
+								"say": {
+									"fr": "La mer grise. Quelque part, le Nautilus. Je me souviens de la rampe de Torrès, et du courant retenu. Il savait épargner.",
+									"en": "The grey sea. Somewhere, the Nautilus. I remember the rail at Torres, and the current held back. He knew how to spare."
+								}
+							},
+							{
+								"if": "fact:heard_french_cry",
+								"say": {
+									"fr": "La mer grise. Je repense au cri du matelot, en français. Qui étaient-ils, tous ces hommes ?",
+									"en": "The grey sea. I think again of the sailor's cry, in French. Who were they, all those men?"
+								}
+							},
+							{
+								"say": {
+									"fr": "La mer grise, immense. Aucune trace du Nautilus.",
+									"en": "The grey sea, immense. No trace of the Nautilus."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"objectives": [
+		{
+			"id": "escape",
+			"text": {
+				"fr": "Partir, cette nuit.",
+				"en": "Leave, tonight."
+			},
+			"done_if": "flag:escaped",
+			"hints": [
+				{
+					"fr": "Il faut ouvrir le panneau, emporter des vivres, et… dire adieu, d'une certaine façon.",
+					"en": "We need to open the hatch, take food, and… say goodbye, in a way."
+				},
+				{
+					"fr": "Ned ouvre le panneau, Conseil s'occupe des vivres. Le professeur passe devant la porte du salon.",
+					"en": "Ned opens the hatch, Conseil sees to the food. The professor passes the salon door."
+				},
+				{
+					"fr": "Ned : Forcer le panneau. Conseil : Utiliser l'office. Aronnax : Utiliser la porte du salon. Puis monter dans le canot, et Ned : Forcer les écrous.",
+					"en": "Ned: Force the hatch. Conseil: Use the pantry. Aronnax: Use the salon door. Then climb into the boat, and Ned: Force the nuts."
+				}
+			]
+		},
+		{
+			"id": "write",
+			"text": {
+				"fr": "Écrire la fin.",
+				"en": "Write the ending."
+			},
+			"show_if": "flag:escaped",
+			"hints": [
+				{
+					"fr": "Le journal attend la dernière page.",
+					"en": "The journal is waiting for its last page."
+				},
+				{
+					"fr": "Regarder la fenêtre et le journal, puis écrire.",
+					"en": "Look at the window and the journal, then write."
+				},
+				{
+					"fr": "Utiliser mon journal.",
+					"en": "Use my journal."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Cette nuit. Quoi qu'il arrive.",
+		"en": "Tonight. Whatever happens."
+	}
+}
