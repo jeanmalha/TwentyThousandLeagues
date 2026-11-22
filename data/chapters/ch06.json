@@ -559,10 +559,10 @@
 						"en": "A sea otter"
 					},
 					"rect": [
-						20,
-						50,
-						70,
-						50
+						25,
+						68,
+						74,
+						56
 					],
 					"if": "!flag:otter_hunted",
 					"actions": {
@@ -613,10 +613,10 @@
 						"en": "The trunks"
 					},
 					"rect": [
-						100,
+						256,
 						0,
-						120,
-						120
+						64,
+						144
 					],
 					"actions": {
 						"look": [
@@ -648,10 +648,10 @@
 						"en": "The Nautilus's hull, in the distance"
 					},
 					"rect": [
-						230,
-						40,
-						90,
-						40
+						156,
+						14,
+						92,
+						68
 					],
 					"actions": {
 						"look": [
@@ -695,9 +695,9 @@
 					},
 					"rect": [
 						0,
-						110,
-						60,
-						34
+						126,
+						70,
+						18
 					],
 					"to": "ch06_seafloor_plain"
 				}

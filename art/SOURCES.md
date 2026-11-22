@@ -22,3 +22,5 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/portraits/farragut.png | portraitfarragut-flux-1868-7bf1.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch01_ny_room.png | ch01nyroom-flux-7-ba4e.png | flux | 7 | 2026-11-21 |
 | art/locations/ch06_seafloor_plain.png | ch06seafloorplai-flux-1868-dfe4.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch06_forest.png | ch06forest-flux-1868-f369.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch07_vanikoro.png | ch07vanikoro-flux-1868-4db2.png | flux | 1868 | 2026-11-21 |
