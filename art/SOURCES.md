@@ -32,3 +32,5 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch09_coral_cemetery.png | ch09coralcemeter-flux-1868-2370.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch10_pearl_bank.png | ch10pearlbank-flux-1868-46fd.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch10_grotto.png | ch10grotto-flux-1868-a066.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch11_pilot_house.png | ch11pilothouse-flux-1868-f7bf.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch12_salon_window.png | ch12salonwindow-flux-1868-5234.png | flux | 1868 | 2026-11-21 |
