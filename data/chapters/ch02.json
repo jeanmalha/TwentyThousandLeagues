@@ -1,0 +1,217 @@
+{
+	"id": "ch02",
+	"number": 2,
+	"act": 1,
+	"title": {"fr": "L'Abraham-Lincoln", "en": "The Abraham-Lincoln"},
+	"novel": "I-4 – I-6",
+	"start": {
+		"party": ["aronnax"],
+		"current": "aronnax",
+		"switching": false,
+		"locations": {"aronnax": "ch02_deck"},
+		"inventory": {"aronnax": []}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/scenes/ch02_intro.png",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "L'Abraham-Lincoln doubla le cap Horn et remonta le Pacifique. Trois mois passèrent. Pas une baleine suspecte, pas un narwal, pas même un écueil.", "en": "The Abraham-Lincoln rounded Cape Horn and sailed up the Pacific. Three months went by. Not a suspicious whale, not a narwhal, not even a reef."}},
+				{"who": "narrator", "text": {"fr": "L'équipage murmurait. Le commandant Farragut, comme autrefois Colomb, demanda trois jours de patience. Après quoi, la frégate ferait route vers l'Europe.", "en": "The crew grumbled. Commander Farragut, as Columbus once did, asked for three days' patience. After that, the frigate would head for Europe."}},
+				{"who": "aronnax", "text": {"fr": "Trois jours. S'il faut trouver le monstre, c'est maintenant.", "en": "Three days. If the monster is to be found, it's now."}}
+			]
+		},
+		"plot": {
+			"lines": [
+				{"who": "aronnax", "text": {"fr": "Je reporte les rencontres sur la carte. Elles ne sont pas semées au hasard : elles suivent une ligne, vers le nord-ouest, dans les eaux chaudes.", "en": "I plot the sightings on the chart. They aren't scattered at random: they follow a line, north-west, through the warm water."}},
+				{"who": "aronnax", "text": {"fr": "Si Ned a raison, la bête suit le courant. Le prochain point est là, à deux jours de route.", "en": "If Ned is right, the creature follows the current. The next point is there, two days' sailing away."}}
+			],
+			"do": ["set:course_plotted"]
+		},
+		"sighting": {
+			"image": "res://art/scenes/ch02_sighting.png",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Le troisième soir. Le soleil disparut ; la nuit vint sans lune. Toute la frégate veillait.", "en": "The third evening. The sun went down; the night came without a moon. The whole frigate was keeping watch."}},
+				{"who": "ned", "text": {"fr": "Ohé ! la chose en question, sous le vent, par le travers à nous !", "en": "Ahoy! There's the thing, to leeward, abeam of us!"}},
+				{"who": "narrator", "text": {"fr": "À deux encablures, la mer s'illuminait par-dessous. Une lueur ovale, intense, électrique. Et elle bougeait.", "en": "Two cable-lengths off, the sea was lit from below. An oval glow, intense, electric. And it was moving."}}
+			],
+			"do": ["end_chapter"]
+		},
+		"outro": {
+			"lines": [
+				{"who": "farragut", "text": {"fr": "À toute vapeur ! Ned Land, à votre harpon !", "en": "Full steam! Ned Land, to your harpoon!"}},
+				{"who": "narrator", "text": {"fr": "La chasse dura une nuit et un jour. La chose fuyait, revenait, jouait avec la frégate comme avec un jouet.", "en": "The chase lasted a night and a day. The thing fled, came back, played with the frigate like a toy."}}
+			]
+		}
+	},
+	"locations": {
+		"ch02_deck": {
+			"name": {"fr": "Le pont de l'Abraham-Lincoln", "en": "The deck of the Abraham-Lincoln"},
+			"background": "res://art/locations/ch02_deck.png",
+			"color": "#1d4060",
+			"hotspots": [
+				{
+					"id": "farragut", "name": {"fr": "Le commandant Farragut", "en": "Commander Farragut"}, "rect": [228, 26, 34, 92], "dialogue": "farragut",
+					"actions": {
+						"look": [{"say": {"fr": "Le commandant Farragut. Il croit au narwal comme d'autres croient en Dieu. Ou le narwal mourra, ou lui.", "en": "Commander Farragut. He believes in the narwhal as others believe in God. Either the narwhal dies, or he does."}}]
+					}
+				},
+				{
+					"id": "ned", "name": {"fr": "Ned Land", "en": "Ned Land"}, "rect": [40, 40, 30, 84], "dialogue": "ned",
+					"actions": {
+						"look": [{"say": {"fr": "Ned Land, le harponneur canadien. Plus de six pieds, l'air grave, et un regard qui porterait jusqu'à l'horizon.", "en": "Ned Land, the Canadian harpooner. Over six feet, grave-faced, with a gaze that could reach the horizon."}}],
+						"use": [{"say": {"fr": "On n'« utilise » pas Ned Land. On lui parle, et encore, quand il veut bien.", "en": "One doesn't \"use\" Ned Land. One talks to him, and only when he's willing."}}]
+					}
+				},
+				{
+					"id": "sea", "name": {"fr": "La mer", "en": "The sea"}, "rect": [80, 30, 140, 50],
+					"actions": {
+						"look": [{"say": {"fr": "Le Pacifique, immense et vide. Trois mois que nous le fouillons.", "en": "The Pacific, huge and empty. Three months we've been searching it."}}],
+						"recall": [{"say": {"fr": "Les eaux chaudes attirent les cétacés. C'est l'une des rares choses sur lesquelles Ned et moi tomberions d'accord.", "en": "Warm water draws the whales. One of the few things Ned and I would agree on."}}]
+					}
+				},
+				{
+					"id": "harpoon", "name": {"fr": "Harpon", "en": "Harpoon"}, "rect": [74, 92, 40, 12],
+					"actions": {
+						"look": [{"say": {"fr": "Le harpon de Ned. On dit qu'il n'a jamais manqué une baleine.", "en": "Ned's harpoon. They say he's never missed a whale."}}],
+						"use": [{"say": {"fr": "Je ne saurais même pas par quel bout le tenir.", "en": "I wouldn't even know which end to hold."}}]
+					}
+				}
+			],
+			"exits": [
+				{"id": "to_wardroom", "name": {"fr": "Vers le carré", "en": "To the wardroom"}, "rect": [290, 70, 30, 60], "to": "ch02_wardroom"},
+				{"id": "to_crow", "name": {"fr": "Monter à la hune", "en": "Climb to the crow's nest"}, "rect": [140, 0, 40, 26], "to": "ch02_crow",
+				 "if": "flag:course_changed",
+				 "locked": {"fr": "Monter là-haut pour voir quoi ? La même mer vide. Il faut d'abord savoir où regarder.", "en": "Climb up to see what? The same empty sea. First we need to know where to look."}}
+			]
+		},
+		"ch02_wardroom": {
+			"name": {"fr": "Le carré", "en": "The wardroom"},
+			"background": "res://art/locations/ch02_wardroom.png",
+			"color": "#3e251a",
+			"hotspots": [
+				{
+					"id": "chart", "name": {"fr": "Carte du Pacifique", "en": "Chart of the Pacific"}, "rect": [70, 70, 130, 50],
+					"actions": {
+						"look": [{"say": {"fr": "La route de la frégate, tracée au crayon. Des zigzags dans le vide.", "en": "The frigate's course, pencilled in. Zigzags across nothing."}}],
+						"use": [{"say": {"fr": "Je pourrais tracer une route. Mais à partir de quoi ?", "en": "I could plot a course. But from what?"}}],
+						"item:sightings": [
+							{"if": ["fact:sightings_line", "fact:ned_whale_lore"], "scene": "plot"},
+							{"if": "fact:sightings_line", "say": {"fr": "Les points suivent une ligne. Mais la prolonger vers où ? Un homme qui connaît les baleines saurait.", "en": "The points follow a line. But extend it where? A man who knows whales would know."}},
+							{"say": {"fr": "Des dates, des positions… Il faudrait d'abord en tirer quelque chose.", "en": "Dates, positions… I'd need to make something of them first."}}
+						]
+					}
+				},
+				{
+					"id": "logbook", "name": {"fr": "Livre de bord", "en": "Logbook"}, "rect": [212, 76, 40, 26],
+					"actions": {
+						"look": [{"say": {"fr": "Le journal de bord, et glissée dedans, la liste de toutes les rencontres du monstre depuis 1866.", "en": "The logbook, and tucked inside it, the list of every sighting of the monster since 1866."}}],
+						"use": [
+							{"if": "!item:sightings", "say": {"fr": "Je recopie la liste des rencontres.", "en": "I copy out the list of sightings."}, "do": ["give:sightings"]},
+							{"say": {"fr": "J'ai déjà ma copie.", "en": "I already have my copy."}}
+						],
+						"recall": [
+							{"if": "item:sightings", "say": {"fr": "Le *Scotia*, le *Moravian*, le *Governor-Higginson*… Rangées par date, les positions ne sont pas semées au hasard. Elles dessinent une ligne.", "en": "The *Scotia*, the *Moravian*, the *Governor-Higginson*… Sorted by date, the positions aren't random. They draw a line."}, "do": ["fact:sightings_line"]},
+							{"say": {"fr": "Je connais ces rencontres par les journaux, pas leurs positions exactes.", "en": "I know these sightings from the papers, not their exact positions."}}
+						]
+					}
+				},
+				{
+					"id": "lamp", "name": {"fr": "Lampe", "en": "Lamp"}, "rect": [140, 8, 20, 30],
+					"actions": {"look": [{"say": {"fr": "Une lampe à pétrole qui se balance avec la houle.", "en": "An oil lamp swinging with the swell."}}]}
+				}
+			],
+			"exits": [
+				{"id": "to_deck", "name": {"fr": "Vers le pont", "en": "To the deck"}, "rect": [0, 30, 30, 100], "to": "ch02_deck"}
+			]
+		},
+		"ch02_crow": {
+			"name": {"fr": "La hune", "en": "The crow's nest"},
+			"background": "res://art/locations/ch02_crow.png",
+			"color": "#15304a",
+			"hotspots": [
+				{
+					"id": "horizon", "name": {"fr": "L'horizon", "en": "The horizon"}, "rect": [0, 30, 320, 70],
+					"actions": {
+						"look": [{"scene": "sighting"}],
+						"recall": [{"say": {"fr": "Les eaux chaudes, au nord-ouest. C'est là. Il faut regarder.", "en": "The warm water, to the north-west. That's where. I must look."}}]
+					}
+				}
+			],
+			"exits": [
+				{"id": "down", "name": {"fr": "Redescendre", "en": "Climb down"}, "rect": [130, 120, 60, 24], "to": "ch02_deck"}
+			]
+		}
+	},
+	"items": {
+		"sightings": {
+			"name": {"fr": "Liste des rencontres", "en": "List of sightings"},
+			"desc": {"fr": "Toutes les rencontres du monstre depuis 1866, avec dates et positions.", "en": "Every sighting of the monster since 1866, with dates and positions."}
+		}
+	},
+	"facts": {
+		"sightings_line": {"name": {"fr": "Une ligne", "en": "A line"}, "text": {"fr": "Rangées par date, les rencontres dessinent une route.", "en": "Sorted by date, the sightings trace a route."}},
+		"ned_whale_lore": {"name": {"fr": "Ce que sait Ned", "en": "What Ned knows"}, "text": {"fr": "D'après Ned, une bête qui chasse suit les eaux chaudes, sous le vent.", "en": "According to Ned, a hunting animal follows the warm water, downwind."}}
+	},
+	"dialogues": {
+		"farragut": {
+			"npc": "farragut",
+			"greeting": [{"who": "farragut", "text": {"fr": "Monsieur le professeur. Votre narwal se fait désirer.", "en": "Professor. Your narwhal is keeping us waiting."}}],
+			"topics": [
+				{"id": "days", "label": {"fr": "Combien de temps encore ?", "en": "How much longer?"}, "once": true, "lines": [
+					{"who": "farragut", "text": {"fr": "Trois jours. Je l'ai promis à l'équipage. Ensuite, trois tours de roue, et cap sur l'Europe.", "en": "Three days. I promised the crew. Then three turns of the wheel, and course for Europe."}},
+					{"who": "aronnax", "text": {"fr": "Et si nous cherchions au mauvais endroit ?", "en": "And if we're looking in the wrong place?"}},
+					{"who": "farragut", "text": {"fr": "Alors montrez-moi le bon. Des faits, professeur, pas des théories.", "en": "Then show me the right one. Facts, Professor, not theories."}}
+				], "do": ["set:deadline_known"]},
+				{"id": "course_ned", "label": {"fr": "Changer de cap : l'idée vient de Ned.", "en": "Change course: the idea is Ned's."}, "if": ["flag:course_plotted", "!flag:course_changed"], "lines": [
+					{"who": "aronnax", "text": {"fr": "Les rencontres suivent une ligne, et Ned dit que la bête suit les eaux chaudes. Le prochain point est au nord-ouest.", "en": "The sightings follow a line, and Ned says the creature follows the warm water. The next point is north-west."}},
+					{"who": "farragut", "text": {"fr": "Land a l'œil le plus perçant de la flotte. Barre au nord-ouest ! Et que quelqu'un monte à la hune.", "en": "Land has the sharpest eye in the fleet. Helm to the north-west! And someone get up to the crow's nest."}}
+				], "do": ["set:course_changed", "set:ned_trusts_aronnax"]},
+				{"id": "course_mine", "label": {"fr": "Changer de cap : c'est mon calcul.", "en": "Change course: it's my calculation."}, "if": ["flag:course_plotted", "!flag:course_changed"], "lines": [
+					{"who": "aronnax", "text": {"fr": "Mes calculs placent le monstre au nord-ouest, dans les eaux chaudes.", "en": "My calculations put the monster to the north-west, in the warm water."}},
+					{"who": "farragut", "text": {"fr": "Des calculs… Soit. Il nous reste deux jours. Barre au nord-ouest !", "en": "Calculations… Very well. We have two days left. Helm to the north-west!"}}
+				], "do": ["set:course_changed"]}
+			]
+		},
+		"ned": {
+			"npc": "ned",
+			"greeting": [{"who": "ned", "text": {"fr": "Monsieur le professeur.", "en": "Professor."}}],
+			"topics": [
+				{"id": "believe", "label": {"fr": "Vous ne croyez pas au narwal ?", "en": "You don't believe in the narwhal?"}, "once": true, "lines": [
+					{"who": "ned", "text": {"fr": "J'ai harponné des baleines par centaines, monsieur. Aucune n'a jamais crevé une coque de tôle.", "en": "I've harpooned whales by the hundred, sir. Not one ever holed an iron hull."}},
+					{"who": "aronnax", "text": {"fr": "Il y a peut-être, dans les grands fonds, des animaux que vous n'avez jamais vus.", "en": "There may be animals in the great depths that you've never seen."}},
+					{"who": "ned", "text": {"fr": "Peut-être. Je les croirai quand je les aurai vus.", "en": "Maybe. I'll believe in them when I see them."}}
+				]},
+				{"id": "where", "label": {"fr": "Si vous chassiez cette bête, où chercheriez-vous ?", "en": "If you were hunting this creature, where would you look?"}, "if": "fact:sightings_line", "once": true, "lines": [
+					{"who": "aronnax", "text": {"fr": "Les rencontres suivent une ligne. Où la prolongeriez-vous ?", "en": "The sightings follow a line. Where would you extend it?"}},
+					{"who": "ned", "text": {"fr": "Une bête qui chasse suit sa nourriture. Les eaux chaudes, sous le vent. Au nord-ouest d'ici, à deux jours.", "en": "A hunting animal follows its food. Warm water, downwind. North-west of here, two days off."}},
+					{"who": "ned", "text": {"fr": "Si bête il y a.", "en": "If there is an animal."}}
+				], "do": ["fact:ned_whale_lore"]},
+				{"id": "quebec", "label": {"fr": "Parlez-moi de Québec.", "en": "Tell me about Québec."}, "once": true, "lines": [
+					{"who": "ned", "text": {"fr": "Ma famille y pêchait déjà quand la ville était française. Vous parlez comme chez nous, monsieur, en plus savant.", "en": "My family fished there when the town was still French. You talk like home, sir, only more learned."}}
+				]}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "keep_searching", "text": {"fr": "Convaincre Farragut de chercher au bon endroit avant la fin des trois jours.", "en": "Convince Farragut to search in the right place before the three days run out."},
+			"done_if": "flag:course_changed",
+			"hints": [
+				{"fr": "Farragut veut des faits. Le livre de bord du carré en contient.", "en": "Farragut wants facts. The logbook in the wardroom has some."},
+				{"fr": "Les rencontres, une fois rangées, dessinent une ligne. Un harponneur saurait où la prolonger.", "en": "Sorted, the sightings draw a line. A harpooner would know where to extend it."},
+				{"fr": "Utiliser le livre de bord, Se souvenir du livre de bord, demander à Ned où il chercherait, Utiliser la liste sur la carte, puis parler à Farragut.", "en": "Use the logbook, Recall the logbook, ask Ned where he'd look, Use the list on the chart, then talk to Farragut."}
+			]
+		},
+		{
+			"id": "watch", "text": {"fr": "Monter à la hune et guetter.", "en": "Climb to the crow's nest and keep watch."},
+			"show_if": "flag:course_changed",
+			"hints": [
+				{"fr": "La frégate a changé de cap. Il faut des yeux en haut.", "en": "The frigate has changed course. Eyes are needed up high."},
+				{"fr": "On monte à la hune depuis le pont, par le mât.", "en": "The crow's nest is reached from the deck, up the mast."},
+				{"fr": "Sortie « Monter à la hune » sur le pont, puis Regarder l'horizon.", "en": "The \"Climb to the crow's nest\" exit on deck, then Look at the horizon."}
+			]
+		}
+	],
+	"on_start_say": {"fr": "Trois jours. Farragut veut des faits, pas des théories.", "en": "Three days. Farragut wants facts, not theories."},
+	"next": "ch03"
+}
