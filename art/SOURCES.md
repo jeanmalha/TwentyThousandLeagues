@@ -24,3 +24,9 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch06_seafloor_plain.png | ch06seafloorplai-flux-1868-dfe4.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch06_forest.png | ch06forest-flux-1868-f369.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch07_vanikoro.png | ch07vanikoro-flux-1868-4db2.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch08_reef.png | ch08reef-flux-1868-21ff.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch08_island_forest.png | ch08islandforest-flux-1868-c1f5.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch08_platform.png | ch08platform-flux-1868-5e61.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch09_cabin.png | ch09cabin-flux-1868-4977.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch09_sickbay.png | ch09sickbay-flux-1868-8cff.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch09_coral_cemetery.png | ch09coralcemeter-flux-1868-2370.png | flux | 1868 | 2026-11-21 |
