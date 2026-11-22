@@ -123,6 +123,30 @@
 		"ch07_vanikoro": {
 			"kind": "location",
 			"prompt": "view from inside a dark submarine salon through a huge oval window with brass frame, outside clear tropical water lit by a searchlight, an old shipwreck on a coral reef: coral-encrusted bronze cannons, rusted anchors, a broken wooden ship's bow, all covered with living corals and sea anemones, many small bright fish, 18th-century wreck"
+		},
+		"ch08_reef": {
+			"kind": "location",
+			"prompt": "view from the deck platform of a long cigar-shaped 19th-century submarine stranded on a coral reef at low tide, the iron hull plates wet in the sun, a rowing dinghy beside it, green tropical islands with palm trees on the horizon, turquoise lagoon, no people"
+		},
+		"ch08_island_forest": {
+			"kind": "location",
+			"prompt": "first-person view inside a dense tropical island forest in 1868, breadfruit trees and banana plants, tall ferns, sunlight through leaves, a small beach visible through the trees on the right with a rowing dinghy pulled up on the sand, a wild pig in the undergrowth, no people"
+		},
+		"ch08_platform": {
+			"kind": "location",
+			"prompt": "first-person view on the narrow iron platform on top of a 19th-century submarine at dusk, a brass handrail along the edge, an open round hatch in the middle, a calm lagoon and dark island shore in the distance with a few canoes, no people close"
+		},
+		"ch09_cabin": {
+			"kind": "location",
+			"prompt": "first-person view of a small cabin inside a 19th-century submarine at night, a narrow bunk, a small table with a glass of water and an oil lamp turned low, riveted walls, a locked oval door, drowsy dim light, no people"
+		},
+		"ch09_sickbay": {
+			"kind": "location",
+			"prompt": "first-person view of a narrow sickbay in a 19th-century submarine, a wounded sailor lying on a cot with a bloodstained bandage around his head, a lamp, medicine bottles on a shelf, riveted walls, sombre light"
+		},
+		"ch09_coral_cemetery": {
+			"kind": "location",
+			"prompt": "underwater, a clearing in a forest of red and white coral, a tall cross of red coral planted in the sand, a group of divers in copper helmets standing in a semicircle holding lamps, deep blue water, solemn atmosphere"
 		}
 	}
 }
