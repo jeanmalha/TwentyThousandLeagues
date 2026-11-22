@@ -76,6 +76,7 @@
   .verb span { color: var(--muted); font-size: 14px; }
 
   blockquote { margin: 0 0 10px; padding: 10px 14px; background: var(--quote-bg); border-left: 2px solid var(--teal); font: italic 15.5px/1.5 var(--serif); }
+  blockquote .en { display: block; margin-top: 6px; font: normal 14px/1.45 var(--sans); color: var(--muted); }
   blockquote cite { display: block; font: normal 11px var(--mono); color: var(--muted); margin-top: 6px; }
   blockquote:last-child { margin-bottom: 0; }
 
@@ -162,7 +163,7 @@
   }
 
   const quotes = (arr) => arr && arr.length
-    ? arr.map(x => `<blockquote lang="fr">« ${esc(x.q.replace(/^«\s*|\s*»$/g, ""))} »<cite>${esc(x.ref)}</cite></blockquote>`).join("")
+    ? arr.map(x => `<blockquote><span lang="fr">« ${esc(x.q.replace(/^«\s*|\s*»$/g, ""))} »</span>${x.en ? `<span class="en" lang="en">${esc(x.en)}</span>` : ""}<cite>${esc(x.ref)} · English: our translation</cite></blockquote>`).join("")
     : `<p class="empty">No direct description in the text.</p>`;
   const tags = arr => arr && arr.length ? `<ul class="tags">${arr.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : `<p class="empty">—</p>`;
   const plain = arr => arr && arr.length ? `<ul class="plain">${arr.map(t => `<li>${esc(t)}</li>`).join("")}</ul>` : `<p class="empty">—</p>`;
@@ -264,7 +265,7 @@
           <div class="toolbar"><button onclick="window.print()">Print this sheet</button></div>
         </section>
       </div>
-      <p class="source">Quotes from Jules Verne, <i>Vingt mille lieues sous les mers</i>, Hetzel, French original (public domain), docs/source/verne/fr-verne-5097.txt. "I-8" = Part 1, chapter VIII.</p>`;
+      <p class="source">Quotes from Jules Verne, <i>Vingt mille lieues sous les mers</i>, Hetzel, French original (public domain), docs/source/verne/fr-verne-5097.txt. English translations are our own, written for this project. "I-8" = Part 1, chapter VIII.</p>`;
   }
 
   function route() {

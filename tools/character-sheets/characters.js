@@ -14,9 +14,9 @@ window.CAST = [
     stats: { age: "40", height: "Medium (not stated)", origin: "Paris, France", firstSeen: "I-2 « Le pour et le contre »" },
     verb: { name: "Recall", note: "Pulls a fact from his journal; opens new topics with Nemo." },
     verne: [
-      { q: "En ma qualité de professeur-suppléant au Muséum d'histoire naturelle de Paris, le gouvernement français m'avait joint à cette expédition.", ref: "I-2" },
-      { q: "Qu'on m'excuse de dire ainsi que j'avais quarante ans.", ref: "I-3" },
-      { q: "J'avais publié en France un ouvrage in-quarto en deux volumes intitulé : Les Mystères des grands fonds sous-marins.", ref: "I-2" }
+      { q: "En ma qualité de professeur-suppléant au Muséum d'histoire naturelle de Paris, le gouvernement français m'avait joint à cette expédition.", ref: "I-2", en: "As assistant professor at the Natural History Museum in Paris, I had been attached to the expedition by the French government." },
+      { q: "Qu'on m'excuse de dire ainsi que j'avais quarante ans.", ref: "I-3", en: "Forgive me for putting it that way: I was forty." },
+      { q: "J'avais publié en France un ouvrage in-quarto en deux volumes intitulé : Les Mystères des grands fonds sous-marins.", ref: "I-2", en: "In France I had published a two-volume quarto entitled The Mysteries of the Great Ocean Depths." }
     ],
     personality: ["Curious to the point of forgetting he is a prisoner", "Courteous, a little vain about his book", "Torn between admiring Nemo and condemning him", "Protective of his two companions"],
     wants: "To see and understand the sea floor; later, to bring his notes home.",
@@ -53,11 +53,11 @@ window.CAST = [
     stats: { age: "30", height: "Medium; solid", origin: "Flanders (Belgium)", firstSeen: "I-3 « Comme il plaira à monsieur »" },
     verb: { name: "Catalogue", note: "Identifies a creature or object and writes it to the journal." },
     verne: [
-      { q: "Un garçon dévoué qui m'accompagnait dans tous mes voyages ; un brave Flamand que j'aimais et qui me le rendait bien, un être phlegmatique par nature, régulier par principe, zélé par habitude.", ref: "I-3" },
-      { q: "Classer, c'était sa vie, et il n'en savait pas davantage.", ref: "I-3" },
-      { q: "Il n'eût pas distingué, je crois, un cachalot d'une baleine !", ref: "I-3" },
-      { q: "Des muscles solides, mais pas de nerfs, pas l'apparence de nerfs.", ref: "I-3" },
-      { q: "Formaliste enragé il ne me parlait jamais qu'à la troisième personne -- au point d'en être agaçant.", ref: "I-3" }
+      { q: "Un garçon dévoué qui m'accompagnait dans tous mes voyages ; un brave Flamand que j'aimais et qui me le rendait bien, un être phlegmatique par nature, régulier par principe, zélé par habitude.", ref: "I-3", en: "A devoted lad who came with me on all my travels; a good Fleming whom I was fond of and who returned the feeling, phlegmatic by nature, orderly on principle, zealous by habit." },
+      { q: "Classer, c'était sa vie, et il n'en savait pas davantage.", ref: "I-3", en: "Classifying was his life, and he knew nothing beyond it." },
+      { q: "Il n'eût pas distingué, je crois, un cachalot d'une baleine !", ref: "I-3", en: "I doubt he could have told a sperm whale from a baleen whale!" },
+      { q: "Des muscles solides, mais pas de nerfs, pas l'apparence de nerfs.", ref: "I-3", en: "Solid muscles, but no nerves: not a sign of nerves." },
+      { q: "Formaliste enragé il ne me parlait jamais qu'à la troisième personne -- au point d'en être agaçant.", ref: "I-3", en: "A rabid stickler for form, he never addressed me except in the third person, to the point of being exasperating." }
     ],
     personality: ["Unflappable", "Devoted without being servile", "Pedantic about classification and weak on practice", "Deadpan: his comedy comes from calm in the middle of chaos"],
     wants: "To follow Monsieur wherever he goes, and to complete the classification.",
@@ -66,7 +66,7 @@ window.CAST = [
     voice: {
       register: "Polite, formal and always in the third person (« Monsieur veut-il… »), with precise taxonomic jargon.",
       tics: ["Third person for his master", "Lists of class, order, family and genus", "Never offers advice unless asked"],
-      lines: [{ q: "Comme il plaira à monsieur.", ref: "I-3" }]
+      lines: [{ q: "Comme il plaira à monsieur.", ref: "I-3", en: "As Monsieur pleases." }]
     },
     visual: {
       build: "Solid and healthy-looking, with steady, economical poses. He's never off balance.",
@@ -94,10 +94,10 @@ window.CAST = [
     stats: { age: "About 40", height: "Over 6 English feet", origin: "Québec, Canada (French-speaking family)", firstSeen: "I-4 « Ned Land »" },
     verb: { name: "Force", note: "Pries, lifts, throws or breaks what the others can't." },
     verne: [
-      { q: "Ned Land était un Canadien, d'une habileté de main peu commune, et qui ne connaissait pas d'égal dans son périlleux métier.", ref: "I-4" },
-      { q: "C'était un homme de grande taille -- plus de six pieds anglais -- vigoureusement bâti, l'air grave, peu communicatif, violent parfois, et très rageur quand on le contrariait.", ref: "I-4" },
-      { q: "Sa personne provoquait l'attention, et surtout la puissance de son regard qui accentuait singulièrement sa physionomie.", ref: "I-4" },
-      { q: "Je ne saurais le mieux comparer qu'à un télescope puissant qui serait en même temps un canon toujours prêt à partir.", ref: "I-4" }
+      { q: "Ned Land était un Canadien, d'une habileté de main peu commune, et qui ne connaissait pas d'égal dans son périlleux métier.", ref: "I-4", en: "Ned Land was a Canadian of uncommon skill with his hands, and he had no equal in his dangerous trade." },
+      { q: "C'était un homme de grande taille -- plus de six pieds anglais -- vigoureusement bâti, l'air grave, peu communicatif, violent parfois, et très rageur quand on le contrariait.", ref: "I-4", en: "He was a tall man, over six English feet, powerfully built, grave-looking, not very talkative, sometimes violent, and quick to anger when crossed." },
+      { q: "Sa personne provoquait l'attention, et surtout la puissance de son regard qui accentuait singulièrement sa physionomie.", ref: "I-4", en: "He drew attention, above all through the power of his gaze, which gave his face a singular force." },
+      { q: "Je ne saurais le mieux comparer qu'à un télescope puissant qui serait en même temps un canon toujours prêt à partir.", ref: "I-4", en: "The best I can compare him to is a powerful telescope that was also a cannon, always ready to fire." }
     ],
     personality: ["Impatient and quick to anger", "Practical, a sharp observer (exceptional eyesight)", "Warm once he trusts you; tells his stories like an epic", "Hates being confined"],
     wants: "Freedom, land under his feet, and a proper meal of meat.",
@@ -106,7 +106,7 @@ window.CAST = [
     voice: {
       register: "Plain-spoken Québécois French: earthy, short sentences, oaths. Verne calls it « cette vieille langue de Rabelais ».",
       tics: ["« Mille diables ! »", "Food and hunting metaphors", "Calls Aronnax « monsieur le professeur »"],
-      lines: [{ q: "Eh ! mille diables ! … ouvrez donc, navigateurs peu hospitaliers !", ref: "I-7" }]
+      lines: [{ q: "Eh ! mille diables ! … ouvrez donc, navigateurs peu hospitaliers !", ref: "I-7", en: "Hell and damnation! … Open up, you inhospitable sailors!" }]
     },
     visual: {
       build: "The biggest of the three by far: broad, heavy shoulders, big hands.",
@@ -134,14 +134,14 @@ window.CAST = [
     stats: { age: "Unclear: « trente-cinq ou cinquante ans »", height: "Tall", origin: "Deliberately unplaceable (Aronnax can't tell)", firstSeen: "I-8 « Mobilis in mobile »" },
     verb: { name: "None (not playable)", note: "Dialogue hub; his replies change with what has been Recalled." },
     verne: [
-      { q: "Ce personnage avait-il trente-cinq ou cinquante ans, je n'aurais pu le préciser. Sa taille était haute, son front large, son nez droit, sa bouche nettement dessinée, ses dents magnifiques, ses mains fines, allongées.", ref: "I-8" },
-      { q: "Ses yeux noirs regardaient avec une froide assurance … sa peau, pâle plutôt que colorée, annonçait la tranquillité du sang.", ref: "I-8" },
-      { q: "Ses yeux, un peu écartés l'un de l'autre, pouvaient embrasser simultanément près d'un quart de l'horizon.", ref: "I-8" },
-      { q: "Les deux inconnus, coiffés de bérets faits d'une fourrure de loutre marine, et chaussés de bottes de mer en peau de phoque.", ref: "I-8" },
-      { q: "Je ne suis pas ce que vous appelez un homme civilisé ! J'ai rompu avec la société tout entière pour des raisons que moi seul j'ai le droit d'apprécier.", ref: "I-10" },
-      { q: "Cet Indien, monsieur le professeur, c'est un habitant du pays des opprimés, et je suis encore, et, jusqu'à mon dernier souffle, je serai de ce pays-là !", ref: "II-3" },
-      { q: "Je suis le droit, je suis la justice ! … Je suis l'opprimé, et voilà l'oppresseur !", ref: "II-21" },
-      { q: "Ce terrible justicier, véritable archange de la haine, regardait toujours.", ref: "II-21" }
+      { q: "Ce personnage avait-il trente-cinq ou cinquante ans, je n'aurais pu le préciser. Sa taille était haute, son front large, son nez droit, sa bouche nettement dessinée, ses dents magnifiques, ses mains fines, allongées.", ref: "I-8", en: "Was the man thirty-five or fifty? I could not have said. He was tall, with a broad forehead, a straight nose, a clearly drawn mouth, magnificent teeth, and fine, long hands." },
+      { q: "Ses yeux noirs regardaient avec une froide assurance … sa peau, pâle plutôt que colorée, annonçait la tranquillité du sang.", ref: "I-8", en: "His black eyes looked out with cold assurance … his skin, pale rather than ruddy, spoke of calm blood." },
+      { q: "Ses yeux, un peu écartés l'un de l'autre, pouvaient embrasser simultanément près d'un quart de l'horizon.", ref: "I-8", en: "His eyes, set a little wide apart, could take in nearly a quarter of the horizon at once." },
+      { q: "Les deux inconnus, coiffés de bérets faits d'une fourrure de loutre marine, et chaussés de bottes de mer en peau de phoque.", ref: "I-8", en: "The two strangers wore berets of sea-otter fur and sea boots of sealskin." },
+      { q: "Je ne suis pas ce que vous appelez un homme civilisé ! J'ai rompu avec la société tout entière pour des raisons que moi seul j'ai le droit d'apprécier.", ref: "I-10", en: "I am not what you call a civilised man! I have broken with the whole of society, for reasons that I alone have the right to judge." },
+      { q: "Cet Indien, monsieur le professeur, c'est un habitant du pays des opprimés, et je suis encore, et, jusqu'à mon dernier souffle, je serai de ce pays-là !", ref: "II-3", en: "That Indian, Professor, is a native of the land of the oppressed, and I am still, and until my last breath I shall remain, of that land!" },
+      { q: "Je suis le droit, je suis la justice ! … Je suis l'opprimé, et voilà l'oppresseur !", ref: "II-21", en: "I am the law, I am justice! … I am the oppressed, and there is the oppressor!" },
+      { q: "Ce terrible justicier, véritable archange de la haine, regardait toujours.", ref: "II-21", en: "That terrible avenger, a very archangel of hatred, was still watching." }
     ],
     personality: ["Courteous and cultivated (art, science, music)", "Proud and self-contained", "Generous to the oppressed, merciless to his enemies", "Grieving: the portrait of a wife and two children (II-21)"],
     wants: "Freedom from all nations; justice, or vengeance, against the power that destroyed his family.",
@@ -151,7 +151,7 @@ window.CAST = [
       register: "Measured, elegant and economical, with long silences. He never explains himself.",
       tics: ["Answers questions with questions", "« Monsieur le professeur »", "Speaks to his crew in an unknown language"],
       lines: [
-        { q: "Dieu tout puissant ! assez ! assez !", ref: "II-22" }
+        { q: "Dieu tout puissant ! assez ! assez !", ref: "II-22", en: "Almighty God! Enough! Enough!" }
       ]
     },
     visual: {
@@ -180,8 +180,8 @@ window.CAST = [
     stats: { age: "Not stated", height: "Short", origin: "Unknown (Aronnax thinks « méridional »)", firstSeen: "I-8" },
     verb: { name: "None", note: "Can't be talked to in any language the trio understands; communicates by gesture." },
     verne: [
-      { q: "L'un était de petite taille, vigoureusement musclé, large d'épaules, robuste de membres, la tête forte, la chevelure abondante et noire, la moustache épaisse, le regard vif et pénétrant.", ref: "I-8" },
-      { q: "Il employa toujours devant moi un idiome singulier et absolument incompréhensible.", ref: "I-8" }
+      { q: "L'un était de petite taille, vigoureusement musclé, large d'épaules, robuste de membres, la tête forte, la chevelure abondante et noire, la moustache épaisse, le regard vif et pénétrant.", ref: "I-8", en: "One was short, powerfully muscled, broad in the shoulder and sturdy of limb, with a strong head, thick black hair, a heavy moustache, and a quick, piercing gaze." },
+      { q: "Il employa toujours devant moi un idiome singulier et absolument incompréhensible.", ref: "I-8", en: "In front of me he always used a strange and utterly incomprehensible language." }
     ],
     personality: ["Lively and expressive", "Loyal to Nemo", "Opaque to the trio"],
     wants: "Unknown.",
@@ -190,7 +190,7 @@ window.CAST = [
     voice: {
       register: "The unknown language only, with lots of gesture. Don't translate it.",
       tics: ["The same daily report on the platform"],
-      lines: [{ q: "Nautron respoc lorni virch.", ref: "I-15" }]
+      lines: [{ q: "Nautron respoc lorni virch.", ref: "I-15", en: "(Untranslated: the crew's unknown language. Never translate it.)" }]
     },
     visual: {
       build: "Short, broad-shouldered and very muscular.",
@@ -218,8 +218,8 @@ window.CAST = [
     stats: { age: "Not stated", height: "Not stated", origin: "Crew", firstSeen: "I-8" },
     verb: { name: "None", note: "Doesn't speak." },
     verne: [
-      { q: "Le stewart muet, sourd peut-être avait disposé la table.", ref: "I-8" },
-      { q: "Le stewart étouffait sous sa main puissante.", ref: "I-9" }
+      { q: "Le stewart muet, sourd peut-être avait disposé la table.", ref: "I-8", en: "The steward, mute and perhaps deaf, had laid the table." },
+      { q: "Le stewart étouffait sous sa main puissante.", ref: "I-9", en: "The steward was choking under his powerful hand." }
     ],
     personality: ["Silent and impassive"],
     wants: "—", fears: "—",
@@ -247,8 +247,8 @@ window.CAST = [
     stats: { age: "Various", height: "Various", origin: "Many nations (unknown)", firstSeen: "I-8; the wounded sailor in I-24" },
     verb: { name: "None", note: "—" },
     verne: [
-      { q: "« Cet homme sera mort dans deux heures. -- Rien ne peut le sauver ? -- Rien. »", ref: "I-24" },
-      { q: "Je compris tout ! Cette clairière c'était un cimetière.", ref: "I-24" }
+      { q: "« Cet homme sera mort dans deux heures. -- Rien ne peut le sauver ? -- Rien. »", ref: "I-24", en: "This man will be dead within two hours. — Can nothing save him? — Nothing." },
+      { q: "Je compris tout ! Cette clairière c'était un cimetière.", ref: "I-24", en: "I understood everything! The clearing was a cemetery." }
     ],
     personality: ["Silent, disciplined and loyal"],
     wants: "—", fears: "—",
@@ -276,14 +276,14 @@ window.CAST = [
     stats: { age: "Not stated", height: "Not stated", origin: "United States", firstSeen: "I-3" },
     verb: { name: "None", note: "Talk target for the Act 1 puzzle (change the course)." },
     verne: [
-      { q: "Le commandant Farragut était un bon marin, digne de la frégate qu'il commandait.", ref: "I-4" },
-      { q: "Ou le commandant Farragut tuerait le narwal, ou le narwal tuerait le commandant Farragut. Pas de milieu.", ref: "I-4" }
+      { q: "Le commandant Farragut était un bon marin, digne de la frégate qu'il commandait.", ref: "I-4", en: "Commander Farragut was a good seaman, worthy of the frigate he commanded." },
+      { q: "Ou le commandant Farragut tuerait le narwal, ou le narwal tuerait le commandant Farragut. Pas de milieu.", ref: "I-4", en: "Either Commander Farragut would kill the narwhal, or the narwhal would kill Commander Farragut. There was no middle way." }
     ],
     personality: ["Determined", "A believer: he has no doubt about the monster", "Stubborn"],
     wants: "To kill the 'narwhal'.",
     fears: "Returning empty-handed.",
     arc: "Only in Act 1; he's the obstacle the signature puzzle has to get past.",
-    voice: { register: "A naval commander: brisk orders, in English on his ship.", tics: [], lines: [{ q: "Go ahead", ref: "I-3 (in English in Verne's text)" }] },
+    voice: { register: "A naval commander: brisk orders, in English on his ship.", tics: [], lines: [{ q: "Go ahead", ref: "I-3 (in English in Verne's text)", en: "(In English in Verne's text.)" }] },
     visual: {
       build: "An upright military bearing.",
       face: "Weathered and resolute.",
@@ -306,7 +306,7 @@ window.CAST = [
     stats: { age: "Not stated", height: "Not stated", origin: "Ceylon (Sri Lanka)", firstSeen: "II-3 « Une perle de dix millions »" },
     verb: { name: "None", note: "Central to the Act 3 signature puzzle (the rescue)." },
     verne: [
-      { q: "C'était un homme, un homme vivant … un pêcheur, un pauvre diable, sans doute, qui venait glaner avant la récolte.", ref: "II-3" }
+      { q: "C'était un homme, un homme vivant … un pêcheur, un pauvre diable, sans doute, qui venait glaner avant la récolte.", ref: "II-3", en: "It was a man, a living man … a fisherman, some poor soul no doubt, come to glean before the harvest." }
     ],
     personality: ["Courageous: he dives alone with a stone and a rope"],
     wants: "To feed his family before the official harvest.",
@@ -359,7 +359,7 @@ window.CAST = [
     stats: { age: "—", height: "—", origin: "Lofoten, Norway", firstSeen: "II-23 « Conclusion »" },
     verb: { name: "None", note: "Epilogue only." },
     verne: [
-      { q: "… cabane d'un pêcheur des îles Loffoden.", ref: "II-23" }
+      { q: "… cabane d'un pêcheur des îles Loffoden.", ref: "II-23", en: "… a fisherman's hut in the Lofoten Islands." }
     ],
     personality: ["Hospitable"],
     wants: "—", fears: "—",
@@ -381,7 +381,7 @@ window.CAST = [
     stats: { age: "—", height: "—", origin: "Cape Matapan, Greece", firstSeen: "II-6 « L'archipel grec »" },
     verb: { name: "None", note: "—" },
     verne: [
-      { q: "Ne vous inquiétez pas, me dit le capitaine. C'est Nicolas, du cap Matapan, surnommé le Pesce. Il est bien connu dans toutes les Cyclades.", ref: "II-6" }
+      { q: "Ne vous inquiétez pas, me dit le capitaine. C'est Nicolas, du cap Matapan, surnommé le Pesce. Il est bien connu dans toutes les Cyclades.", ref: "II-6", en: "Don't worry, said the captain. It's Nicolas, from Cape Matapan, known as the Fish. He's well known all over the Cyclades." }
     ],
     personality: ["Fearless swimmer"],
     wants: "—", fears: "—",

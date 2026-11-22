@@ -9,6 +9,6 @@ python3 -m http.server 8000 -d tools/character-sheets
 
 Opening `index.html` directly in a browser also works.
 
-- **Data:** `characters.js`, one entry per character. Every quote is verbatim from the French original (`docs/source/verne/fr-verne-5097.txt`); `node tools/character-sheets/check-quotes.mjs` checks them against the text.
+- **Data:** `characters.js`, one entry per character. Every quote is verbatim from the French original, with our own English translation alongside (never a published translation) (`docs/source/verne/fr-verne-5097.txt`); `node tools/character-sheets/check-quotes.mjs` checks them against the text.
 - **Art:** drop a portrait at `art/<id>.png` (for example `art/nemo.png`) and it replaces the placeholder silhouette.
 - **References:** `I-8` means Part 1, chapter VIII.
