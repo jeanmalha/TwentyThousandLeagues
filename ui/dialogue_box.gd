@@ -11,6 +11,9 @@ var _id := ""
 var _dlg: Dictionary = {}
 var _queue: Array = []
 var _pending_effects: Variant = null
+# True while a line is on screen and a click should show the next one. The
+# speaker label is no guide: narrator lines have no name.
+var _reading := false
 var _portrait: TextureRect
 var _name: Label
 var _speaker: Label
@@ -76,6 +79,7 @@ func _play(lines: Array, effects: Variant) -> void:
 
 func _next_line() -> void:
 	if _queue.is_empty():
+		_reading = false
 		_speaker.text = ""
 		if _pending_effects != null:
 			GameState.apply(_pending_effects)
@@ -87,6 +91,7 @@ func _next_line() -> void:
 		_show_topics()
 		return
 	var line: Dictionary = _queue.pop_front()
+	_reading = true
 	var who: String = line.get("who", _dlg.get("npc", _id))
 	if who == "me":
 		who = GameState.current
@@ -125,6 +130,7 @@ func _clear_topics() -> void:
 
 
 func close() -> void:
+	_reading = false
 	_clear_topics()
 	hide()
 	GameState.changed.emit()
@@ -133,11 +139,25 @@ func close() -> void:
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if _speaker.text != "":
+		if _reading:
 			_next_line()
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if visible and event.is_action_pressed("ui_accept") and _speaker.text != "":
+	if visible and event.is_action_pressed("ui_accept") and _reading:
 		_next_line()
 		get_viewport().set_input_as_handled()
+
+
+## For tests: advance as a click would, and count the topics shown.
+func advance() -> void:
+	if _reading:
+		_next_line()
+
+
+func topic_count() -> int:
+	var n := 0
+	for c in _topics.get_children():
+		if not c.is_queued_for_deletion():
+			n += 1
+	return n
