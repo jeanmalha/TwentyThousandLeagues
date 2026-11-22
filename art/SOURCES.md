@@ -49,3 +49,4 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch16_pole.png | ch16pole-flux-7-53c6.png | flux | 7 | 2026-11-22 |
 | art/locations/ch20_salon_dark.png | ch20salondark-flux-7-7d89.png | flux | 7 | 2026-11-22 |
 | art/locations/ch15_whales.png | ch15whales-zimage-3-87e5.png | zimage | 3 | 2026-11-22 |
+| art/source/figures/nemo.png (green screen, keyout.py) | figurenemo-flux-1-f8b0.png | flux | 1 | 2026-11-22 |

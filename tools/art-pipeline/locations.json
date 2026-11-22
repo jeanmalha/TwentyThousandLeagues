@@ -13,6 +13,10 @@
 		"portrait": [
 			576,
 			720
+		],
+		"figure": [
+			512,
+			1024
 		]
 	},
 	"items": {
@@ -231,6 +235,10 @@
 		"ch21_lofoten": {
 			"kind": "location",
 			"prompt": "first-person view of a poor fisherman's wooden hut on a northern island in the 1860s, a fire in a stone hearth, fishing nets hung on the walls, a small window onto a grey northern sea, warm firelight"
+		},
+		"figure_nemo": {
+			"kind": "figure",
+			"prompt": "full-length figure of one man standing, the whole body visible from the top of the head to the shoes, three-quarter view, a tall pale man of uncertain age between thirty-five and fifty, thick dark brown almost black hair, a short dark well-kept beard and moustache, dark eyes with a cold calm gaze, noble upright posture, hands clasped behind his back, a dark brown beret, a plain collarless close-fitting tunic of dark grey-green cloth to the knees, dark trousers, black boots, no insignia, 1860s, lit by warm amber light from the left, isolated on a perfectly flat uniform pure bright chroma-key green background, solid #00FF00 green screen, no floor, no shadow, no scenery, no other people"
 		}
 	}
 }

@@ -367,10 +367,10 @@
 						"en": "Captain Nemo"
 					},
 					"rect": [
-						232,
-						40,
-						40,
-						80
+						178,
+						62,
+						18,
+						46
 					],
 					"dialogue": "nemo_library",
 					"actions": {
@@ -383,7 +383,14 @@
 							}
 						]
 					},
-					"npc": "nemo"
+					"npc": "nemo",
+					"figure": {
+						"feet": [
+							186,
+							107
+						],
+						"height": 42
+					}
 				},
 				{
 					"id": "table",
@@ -424,7 +431,8 @@
 					],
 					"to": "ch05_salon"
 				}
-			]
+			],
+			"light": "#ebdbc7"
 		},
 		"ch05_corridor": {
 			"name": {
