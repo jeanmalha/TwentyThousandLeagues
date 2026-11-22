@@ -147,6 +147,42 @@
 		"ch09_coral_cemetery": {
 			"kind": "location",
 			"prompt": "underwater, a clearing in a forest of red and white coral, a tall cross of red coral planted in the sand, a group of divers in copper helmets standing in a semicircle holding lamps, deep blue water, solemn atmosphere"
+		},
+		"ch10_pearl_bank": {
+			"kind": "location",
+			"prompt": "first-person view through a brass diving helmet porthole on the Manaar pearl bank off Ceylon in 1868, a shallow sunlit sea floor covered with clusters of pearl oysters, above near the surface the dark hull of a small fishing boat and a lone pearl diver descending on a rope with a stone, blue-green water"
+		},
+		"ch10_grotto": {
+			"kind": "location",
+			"prompt": "underwater grotto lit by diving lamps, an enormous giant clam oyster more than two metres wide slightly open with a huge glowing pearl inside, rock walls covered with sponges, divers in copper helmets watching"
+		},
+		"ch11_pilot_house": {
+			"kind": "location",
+			"prompt": "first-person view inside the small wheelhouse of a 19th-century submarine, a large lens-shaped glass window in front, outside a narrow rocky underwater tunnel lit by a powerful searchlight beam, a brass steering wheel, dim instruments"
+		},
+		"ch12_salon_window": {
+			"kind": "location",
+			"prompt": "view from inside a dark 19th-century submarine salon through a large oval window at night, outside in the dark water a swimming man's face close to the glass, below an open iron chest full of gold ingots on the sea floor, searchlight glow"
+		},
+		"ch13_cabins": {
+			"kind": "location",
+			"prompt": "first-person view of a narrow cabin inside a 19th-century submarine at night, a lamp turned low, a packed canvas bag and a coil of rope on the bunk, a closed oval door, tense quiet atmosphere, no people"
+		},
+		"ch13_vigo": {
+			"kind": "location",
+			"prompt": "underwater night scene in a bay, the wrecks of old Spanish galleons half buried in sand, open chests spilling gold coins and silver bars, divers in copper helmets carrying lamps and gathering the gold, searchlight beams"
+		},
+		"ch14_atlantis": {
+			"kind": "location",
+			"prompt": "underwater at night, the ruins of a drowned ancient city on a mountainside, fallen columns, temple walls and staircases, lit by the red glow of an underwater volcano in the distance, a diver in a copper helmet standing on a rock"
+		},
+		"ch14_volcano_harbour": {
+			"kind": "location",
+			"prompt": "a hidden lagoon inside an extinct volcano crater, black basalt walls rising to a small circle of sky, a long cigar-shaped 19th-century submarine moored at a rocky shore, coal seams in the rock, lamps"
+		},
+		"ch15_whales": {
+			"kind": "location",
+			"prompt": "first-person view from the platform of a 19th-century submarine on the open sea, a pod of baleen whales surfacing nearby, in the distance dark sperm whales approaching, spouts of water, grey sky"
 		}
 	}
 }

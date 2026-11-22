@@ -125,7 +125,7 @@
 					"rect": [
 						0,
 						100,
-						320,
+						200,
 						44
 					],
 					"actions": {
@@ -155,10 +155,10 @@
 						"en": "Gueboroar Island"
 					},
 					"rect": [
-						180,
-						30,
-						140,
-						40
+						118,
+						22,
+						124,
+						34
 					],
 					"actions": {
 						"look": [
@@ -187,10 +187,10 @@
 						"en": "Captain Nemo"
 					},
 					"rect": [
-						100,
-						20,
-						40,
-						80
+						86,
+						22,
+						44,
+						70
 					],
 					"npc": "nemo",
 					"dialogue": "nemo_reef",
@@ -214,9 +214,9 @@
 						"en": "The boat, to the island"
 					},
 					"rect": [
-						0,
-						60,
-						60,
+						212,
+						84,
+						40,
 						40
 					],
 					"to": "ch08_island_forest",
@@ -243,10 +243,10 @@
 						"en": "A tree with round fruit"
 					},
 					"rect": [
-						10,
-						10,
+						4,
+						6,
 						100,
-						90
+						94
 					],
 					"if": "!item:breadfruit",
 					"actions": {
@@ -288,10 +288,10 @@
 						"en": "A wild pig in the undergrowth"
 					},
 					"rect": [
-						120,
-						96,
-						80,
-						40
+						140,
+						116,
+						46,
+						26
 					],
 					"if": "!flag:pig_shot",
 					"actions": {
@@ -332,10 +332,10 @@
 						"en": "Tracks"
 					},
 					"rect": [
-						210,
-						110,
-						100,
-						30
+						168,
+						130,
+						60,
+						14
 					],
 					"actions": {
 						"look": [
@@ -365,10 +365,10 @@
 						"en": "Ned Land"
 					},
 					"rect": [
-						250,
-						20,
-						50,
-						80
+						252,
+						10,
+						40,
+						60
 					],
 					"npc": "ned",
 					"dialogue": "ned_island",
@@ -393,10 +393,10 @@
 						"en": "Back to the boat"
 					},
 					"rect": [
-						290,
-						0,
-						30,
-						100
+						228,
+						94,
+						92,
+						36
 					],
 					"to": "ch08_reef"
 				}
@@ -417,10 +417,10 @@
 						"en": "The canoes"
 					},
 					"rect": [
-						180,
-						40,
-						140,
-						40
+						90,
+						38,
+						160,
+						30
 					],
 					"actions": {
 						"look": [
@@ -449,10 +449,10 @@
 						"en": "The stair rail"
 					},
 					"rect": [
-						20,
-						80,
-						120,
-						40
+						70,
+						86,
+						56,
+						58
 					],
 					"actions": {
 						"look": [
@@ -512,10 +512,10 @@
 						"en": "Captain Nemo"
 					},
 					"rect": [
-						150,
-						10,
+						256,
+						22,
 						40,
-						80
+						60
 					],
 					"npc": "nemo",
 					"dialogue": "nemo_platform",
