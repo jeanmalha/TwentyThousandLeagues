@@ -9,11 +9,12 @@ extends Node
 ##   effects:    "set:x", "clear:x", "give:x" (current character), "give:who:x",
 ##               "take:x", "fact:x", "cat:x", "move:who:place", "goto:place",
 ##               "switching:on", "switching:off", "join:who", "leave:who",
-##               "end_chapter"
+##               "scene:id" (play a story page), "end_chapter"
 
 signal changed
 signal message(text: String)
 signal chapter_ended
+signal scene_requested(id: String)
 
 const SAVE_VERSION := 1
 const CHARACTERS := ["aronnax", "conseil", "ned"]
@@ -148,6 +149,9 @@ func _apply_one(e: String) -> bool:
 				current = party[0]
 		"end_chapter":
 			return true
+		"scene":
+			# Play a story page (e.g. from a dialogue choice); its own effects apply when it ends.
+			scene_requested.emit.call_deferred(rest)
 		_:
 			push_warning("Unknown effect: %s" % e)
 	return false

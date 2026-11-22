@@ -2,161 +2,606 @@
 	"id": "ch01",
 	"number": 1,
 	"act": 1,
-	"title": {"fr": "Le monstre", "en": "The Monster"},
+	"title": {
+		"fr": "Le monstre",
+		"en": "The Monster"
+	},
 	"novel": "I-1 – I-3",
 	"start": {
-		"party": ["aronnax"],
+		"party": [
+			"aronnax"
+		],
 		"current": "aronnax",
 		"switching": false,
-		"locations": {"aronnax": "ny_room"},
-		"inventory": {"aronnax": []}
+		"locations": {
+			"aronnax": "ny_room"
+		},
+		"inventory": {
+			"aronnax": []
+		}
 	},
 	"scenes": {
 		"intro": {
-			"image": "res://art/scenes/ch01_intro.png",
+			"image": "res://art/engravings/hetzel-003.jpg",
 			"lines": [
-				{"who": "narrator", "text": {"fr": "1866. Depuis des mois, les navires signalent une « chose énorme », longue, fusiforme, parfois phosphorescente, et plus rapide qu'aucune baleine.", "en": "1866. For months ships have reported \"an enormous thing\", long, spindle-shaped, sometimes phosphorescent, and faster than any whale."}},
-				{"who": "narrator", "text": {"fr": "Le 13 avril 1867, le paquebot *Scotia* est heurté en pleine mer. Sa coque porte une déchirure en forme de triangle. Cette fois, plus personne ne rit.", "en": "On 13 April 1867 the liner *Scotia* is struck at sea. Her hull bears a triangular gash. This time, nobody is laughing."}},
-				{"who": "aronnax", "text": {"fr": "Je rentrais d'une exploration dans les mauvaises terres du Nebraska. À New York, la question brûlait, et l'on attendait l'avis du professeur Aronnax.", "en": "I was back from an expedition to the badlands of Nebraska. In New York the question was on fire, and everyone was waiting for Professor Aronnax's opinion."}},
-				{"who": "aronnax", "text": {"fr": "Le mien, je ne l'avais pas encore.", "en": "Mine, I didn't have yet."}}
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "1866. Depuis des mois, les navires signalent une « chose énorme », longue, fusiforme, parfois phosphorescente, et plus rapide qu'aucune baleine.",
+						"en": "1866. For months ships have reported \"an enormous thing\", long, spindle-shaped, sometimes phosphorescent, and faster than any whale."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le 13 avril 1867, le paquebot *Scotia* est heurté en pleine mer. Sa coque porte une déchirure en forme de triangle. Cette fois, plus personne ne rit.",
+						"en": "On 13 April 1867 the liner *Scotia* is struck at sea. Her hull bears a triangular gash. This time, nobody is laughing."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Je rentrais d'une exploration dans les mauvaises terres du Nebraska. À New York, la question brûlait, et l'on attendait l'avis du professeur Aronnax.",
+						"en": "I was back from an expedition to the badlands of Nebraska. In New York the question was on fire, and everyone was waiting for Professor Aronnax's opinion."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Le mien, je ne l'avais pas encore.",
+						"en": "Mine, I didn't have yet."
+					}
+				}
 			]
 		},
 		"article": {
 			"lines": [
-				{"who": "aronnax", "text": {"fr": "« Ou nous connaissons toutes les variétés d'êtres qui peuplent notre planète, ou nous ne les connaissons pas. »", "en": "\"Either we know every kind of creature on our planet, or we do not.\""}},
-				{"who": "aronnax", "text": {"fr": "J'écrivis que la chose devait être un narwal gigantesque, armé d'une défense d'acier. Le *New York Herald* publia l'article le 30 avril.", "en": "I wrote that the thing must be a gigantic narwhal, armed with a tusk like steel. The *New York Herald* printed the article on 30 April."}},
-				{"who": "narrator", "text": {"fr": "Quelques jours plus tard, l'Amérique armait une frégate. Et l'on frappa à la porte de la chambre.", "en": "A few days later America was fitting out a frigate. And someone knocked at the door."}}
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "« Ou nous connaissons toutes les variétés d'êtres qui peuplent notre planète, ou nous ne les connaissons pas. »",
+						"en": "\"Either we know every kind of creature on our planet, or we do not.\""
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "J'écrivis que la chose devait être un narwal gigantesque, armé d'une défense d'acier. Le *New York Herald* publia l'article le 30 avril.",
+						"en": "I wrote that the thing must be a gigantic narwhal, armed with a tusk like steel. The *New York Herald* printed the article on 30 April."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Quelques jours plus tard, l'Amérique armait une frégate. Et l'on frappa à la porte de la chambre.",
+						"en": "A few days later America was fitting out a frigate. And someone knocked at the door."
+					}
+				}
 			],
-			"do": ["set:letter_arrived"]
+			"do": [
+				"set:letter_arrived"
+			],
+			"image": "res://art/engravings/hetzel-006.jpg"
 		},
 		"outro": {
-			"image": "res://art/scenes/ch01_outro.png",
+			"image": "res://art/engravings/hetzel-004.jpg",
 			"lines": [
-				{"who": "farragut", "text": {"fr": "Monsieur Pierre Aronnax ? Soyez le bienvenu, monsieur le professeur. Votre cabine vous attend.", "en": "Monsieur Pierre Aronnax? Welcome aboard, Professor. Your cabin is waiting."}},
-				{"who": "narrator", "text": {"fr": "Les amarres tombèrent. « Go ahead », cria le commandant, et l'*Abraham-Lincoln* quitta la pier de Brooklyn, saluée par toute la ville.", "en": "The moorings fell away. \"Go ahead,\" cried the commander, and the *Abraham-Lincoln* left the Brooklyn pier, cheered by the whole city."}},
-				{"who": "aronnax", "text": {"fr": "J'allais en purger les mers. Je ne savais pas encore ce que j'allais y trouver.", "en": "I was going to rid the seas of it. I didn't yet know what I would find there."}}
+				{
+					"who": "farragut",
+					"text": {
+						"fr": "Monsieur Pierre Aronnax ? Soyez le bienvenu, monsieur le professeur. Votre cabine vous attend.",
+						"en": "Monsieur Pierre Aronnax? Welcome aboard, Professor. Your cabin is waiting."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Les amarres tombèrent. « Go ahead », cria le commandant, et l'*Abraham-Lincoln* quitta la pier de Brooklyn, saluée par toute la ville.",
+						"en": "The moorings fell away. \"Go ahead,\" cried the commander, and the *Abraham-Lincoln* left the Brooklyn pier, cheered by the whole city."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "J'allais en purger les mers. Je ne savais pas encore ce que j'allais y trouver.",
+						"en": "I was going to rid the seas of it. I didn't yet know what I would find there."
+					}
+				}
 			]
 		}
 	},
 	"locations": {
 		"ny_room": {
-			"name": {"fr": "Fifth Avenue Hotel, ma chambre", "en": "Fifth Avenue Hotel, my room"},
+			"name": {
+				"fr": "Fifth Avenue Hotel, ma chambre",
+				"en": "Fifth Avenue Hotel, my room"
+			},
 			"background": "res://art/locations/ch01_ny_room.png",
 			"color": "#2b1912",
 			"hotspots": [
 				{
-					"id": "newspapers", "name": {"fr": "Journaux", "en": "Newspapers"}, "rect": [14, 74, 50, 22],
+					"id": "newspapers",
+					"name": {
+						"fr": "Journaux",
+						"en": "Newspapers"
+					},
+					"rect": [
+						14,
+						74,
+						50,
+						22
+					],
 					"actions": {
 						"look": [
-							{"say": {"fr": "Le *Herald*, le *Times*, la *Revue des Deux Mondes*… Tous parlent du monstre. Deux camps : un animal colossal, ou un bateau sous-marin d'une puissance inouïe.", "en": "The *Herald*, the *Times*, the *Revue des Deux Mondes*… All about the monster. Two camps: a colossal animal, or a submarine boat of unheard-of power."}, "do": ["fact:two_theories"]}
+							{
+								"say": {
+									"fr": "Le Herald, le Times, la Revue des Deux Mondes… On propose tout : un îlot flottant, une épave géante, un bateau sous-marin, un monstre colossal. Et chacun attend mon avis.",
+									"en": "The Herald, the Times, the Revue des Deux Mondes… Every theory is on offer: a floating islet, a giant wreck, a submarine boat, a colossal monster. And everyone is waiting for my opinion."
+								},
+								"do": [
+									"fact:theories"
+								]
+							}
 						],
 						"recall": [
-							{"if": "fact:two_theories", "say": {"fr": "Un sous-marin ? Aucun gouvernement n'a pu bâtir un tel engin en secret. Reste l'animal. Et sur les animaux des grands fonds, j'ai écrit un livre.", "en": "A submarine? No government could have built such a machine in secret. That leaves an animal. And on the animals of the great depths, I wrote a book."}, "do": ["fact:not_a_submarine"]},
-							{"say": {"fr": "Je devrais d'abord lire ce que disent ces journaux.", "en": "I should first read what these papers say."}}
+							{
+								"say": {
+									"fr": "La vitesse rapportée par les navires : plus de vingt nœuds. C'est le fait qui compte. Tout le reste est bavardage.",
+									"en": "The speed the ships report: over twenty knots. That's the fact that matters. The rest is chatter."
+								},
+								"do": [
+									"fact:theories"
+								]
+							}
 						],
-						"use": [{"say": {"fr": "Je les ai assez froissés. Il faut maintenant leur répondre.", "en": "I've crumpled them enough. Now I must answer them."}}]
-					}
-				},
-				{
-					"id": "book", "name": {"fr": "Mon livre", "en": "My book"}, "rect": [66, 76, 22, 16],
-					"actions": {
-						"look": [{"say": {"fr": "*Les Mystères des grands fonds sous-marins*, in-quarto, deux volumes. Par moi. Le monde savant l'a, dit-on, goûté.", "en": "*The Mysteries of the Great Ocean Depths*, quarto, two volumes. By me. The learned world, I'm told, enjoyed it."}}],
-						"recall": [
-							{"if": "fact:not_a_submarine", "say": {"fr": "Chapitre sur le narwal, le licorne de mer : une défense d'ivoire dure comme l'acier, capable de percer une coque. Un narwal gigantesque… Voilà mon hypothèse.", "en": "The chapter on the narwhal, the sea unicorn: an ivory tusk as hard as steel, able to pierce a hull. A gigantic narwhal… There is my theory."}, "do": ["fact:narwhal_theory"]},
-							{"say": {"fr": "Mon livre a réponse à beaucoup de choses. Encore faut-il savoir la question.", "en": "My book has an answer to many things. One still needs the question."}}
-						],
-						"use": [{"say": {"fr": "Je le connais par cœur. C'est ma mémoire qu'il faut interroger.", "en": "I know it by heart. It's my memory I should consult."}}]
-					}
-				},
-				{
-					"id": "desk", "name": {"fr": "Écritoire", "en": "Writing desk"}, "rect": [8, 54, 92, 18],
-					"actions": {
-						"look": [{"say": {"fr": "Plumes, encre, papier à en-tête de l'hôtel. De quoi répondre au monde entier.", "en": "Pens, ink, hotel notepaper. Enough to answer the whole world."}}],
 						"use": [
-							{"if": "flag:letter_arrived", "say": {"fr": "L'article est parti. Il est trop tard pour me dédire.", "en": "The article has gone. Too late to take it back."}},
-							{"if": "fact:narwhal_theory", "scene": "article", "do": ["set:article_written"]},
-							{"say": {"fr": "Écrire quoi ? Je n'ai pas encore d'avis. Il faudrait lire la presse, puis consulter… ma mémoire.", "en": "Write what? I don't have an opinion yet. I should read the press, then consult… my memory."}}
+							{
+								"say": {
+									"fr": "Les lire, oui. Y répondre se fera à l'écritoire.",
+									"en": "Read them, yes. Answering them will be done at the desk."
+								}
+							}
 						]
 					}
 				},
 				{
-					"id": "crates", "name": {"fr": "Caisses du Nebraska", "en": "Crates from Nebraska"}, "rect": [222, 92, 74, 46],
+					"id": "book",
+					"name": {
+						"fr": "Mon livre",
+						"en": "My book"
+					},
+					"rect": [
+						66,
+						76,
+						22,
+						16
+					],
 					"actions": {
 						"look": [
-							{"if": "flag:crates_labelled", "say": {"fr": "Étiquetées pour le Jardin des Plantes. Elles partiront pour Paris sans moi.", "en": "Labelled for the Jardin des Plantes. They'll go to Paris without me."}},
-							{"say": {"fr": "Six mois de collections : fossiles, plantes, animaux du Nebraska. Elles devaient rentrer à Paris avec moi.", "en": "Six months of collections: fossils, plants and animals from Nebraska. They were to sail home to Paris with me."}}
+							{
+								"say": {
+									"fr": "Les Mystères des grands fonds sous-marins, deux volumes, par moi. Le chapitre sur le narwal, la licorne de mer : une défense d'ivoire dure comme l'acier, capable de percer une coque.",
+									"en": "The Mysteries of the Great Ocean Depths, two volumes, by me. The chapter on the narwhal, the sea unicorn: an ivory tusk as hard as steel, able to pierce a hull."
+								},
+								"do": [
+									"fact:narwhal"
+								]
+							}
+						],
+						"recall": [
+							{
+								"say": {
+									"fr": "J'y ai écrit que les grands fonds abritent sans doute des espèces inconnues, de taille inouïe. Si l'on m'avait lu…",
+									"en": "I wrote there that the great depths probably hold unknown species of unheard-of size. If anyone had read me…"
+								},
+								"do": [
+									"fact:narwhal"
+								]
+							}
 						],
 						"use": [
-							{"if": "flag:crates_labelled", "say": {"fr": "C'est fait.", "en": "Done already."}},
-							{"if": "flag:letter_read", "say": {"fr": "J'adresse les caisses au Muséum d'histoire naturelle, Jardin des Plantes, Paris. Elles m'attendront.", "en": "I address the crates to the Natural History Museum, Jardin des Plantes, Paris. They'll wait for me."}, "do": ["set:crates_labelled"]},
-							{"say": {"fr": "Mon départ pour la France est prévu début mai. Rien ne presse encore.", "en": "I sail for France in early May. No hurry yet."}}
+							{
+								"say": {
+									"fr": "Je le connais par cœur. Mais le relire ne me dira pas ce qu'est la chose : il faut raisonner.",
+									"en": "I know it by heart. But rereading it won't tell me what the thing is: I must reason."
+								}
+							}
 						]
 					}
 				},
 				{
-					"id": "letter_tray", "name": {"fr": "Lettre", "en": "Letter"}, "rect": [256, 66, 20, 10], "if": ["flag:letter_arrived", "!flag:letter_read"],
+					"id": "desk",
+					"name": {
+						"fr": "Écritoire",
+						"en": "Writing desk"
+					},
+					"rect": [
+						8,
+						54,
+						92,
+						18
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Une lettre, apportée par le garçon d'étage. Cachet du ministère de la Marine.", "en": "A letter, brought up by the bellboy. Navy Department seal."}}],
-						"use": [{"say": {"fr": "« Si vous voulez vous joindre à l'expédition de l'*Abraham-Lincoln*, le gouvernement de l'Union verra avec plaisir que la France soit représentée par vous. » Signé J.-B. Hobson, secrétaire de la Marine.", "en": "\"Should you wish to join the *Abraham-Lincoln*'s expedition, the Union government would be glad to see France represented by you.\" Signed J.-B. Hobson, Secretary of the Navy."}, "do": ["give:letter", "set:letter_read"]}]
+						"look": [
+							{
+								"say": {
+									"fr": "Plumes, encre, papier à en-tête de l'hôtel. De quoi répondre au monde entier.",
+									"en": "Pens, ink, hotel notepaper. Enough to answer the whole world."
+								}
+							}
+						],
+						"use": [
+							{
+								"if": "flag:article_written",
+								"say": {
+									"fr": "L'article est parti. Il est trop tard pour me dédire.",
+									"en": "The article has gone. Too late to take it back."
+								}
+							},
+							{
+								"if": "fact:theories",
+								"dialogue": "reasoning"
+							},
+							{
+								"say": {
+									"fr": "Écrire quoi ? Je ne sais même pas ce que disent les journaux.",
+									"en": "Write what? I don't even know what the papers are saying."
+								}
+							}
+						]
 					}
 				},
 				{
-					"id": "conseil", "name": {"fr": "Conseil", "en": "Conseil"}, "rect": [150, 30, 36, 96], "dialogue": "conseil",
+					"id": "crates",
+					"name": {
+						"fr": "Caisses du Nebraska",
+						"en": "Crates from Nebraska"
+					},
+					"rect": [
+						222,
+						92,
+						74,
+						46
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Conseil, mon domestique. Flamand, flegmatique, dévoué. Il classe tout ce qui vit, et ne s'étonne de rien.", "en": "Conseil, my servant. Flemish, phlegmatic, devoted. He classifies everything that lives and is surprised by nothing."}}],
-						"use": [{"say": {"fr": "Conseil n'est pas un outil. Mieux vaut lui parler.", "en": "Conseil isn't a tool. Better to talk to him."}}]
+						"look": [
+							{
+								"if": "flag:crates_labelled",
+								"say": {
+									"fr": "Étiquetées pour le Jardin des Plantes. Elles partiront pour Paris sans moi.",
+									"en": "Labelled for the Jardin des Plantes. They'll go to Paris without me."
+								}
+							},
+							{
+								"say": {
+									"fr": "Six mois de collections : fossiles, plantes, animaux du Nebraska. Elles devaient rentrer à Paris avec moi.",
+									"en": "Six months of collections: fossils, plants and animals from Nebraska. They were to sail home to Paris with me."
+								}
+							}
+						],
+						"use": [
+							{
+								"if": "flag:crates_labelled",
+								"say": {
+									"fr": "C'est fait.",
+									"en": "Done already."
+								}
+							},
+							{
+								"if": "flag:letter_read",
+								"say": {
+									"fr": "J'adresse les caisses au Muséum d'histoire naturelle, Jardin des Plantes, Paris. Elles m'attendront.",
+									"en": "I address the crates to the Natural History Museum, Jardin des Plantes, Paris. They'll wait for me."
+								},
+								"do": [
+									"set:crates_labelled"
+								]
+							},
+							{
+								"say": {
+									"fr": "Mon départ pour la France est prévu début mai. Rien ne presse encore.",
+									"en": "I sail for France in early May. No hurry yet."
+								}
+							}
+						]
 					}
 				},
 				{
-					"id": "window", "name": {"fr": "Fenêtre", "en": "Window"}, "rect": [100, 10, 44, 56],
+					"id": "letter_tray",
+					"name": {
+						"fr": "Lettre",
+						"en": "Letter"
+					},
+					"rect": [
+						256,
+						66,
+						20,
+						10
+					],
+					"if": [
+						"flag:letter_arrived",
+						"!flag:letter_read"
+					],
 					"actions": {
-						"look": [{"say": {"fr": "La Cinquième Avenue. Les crieurs de journaux hurlent « le monstre ! » à chaque coin de rue.", "en": "Fifth Avenue. The newsboys shout \"the monster!\" on every corner."}}],
-						"recall": [{"say": {"fr": "L'île flottante, l'épave géante : des hypothèses abandonnées. Rien ne se déplace aussi vite sans une machine… ou des muscles.", "en": "The floating island, the giant wreck: theories now abandoned. Nothing moves that fast without an engine… or muscles."}}]
+						"look": [
+							{
+								"say": {
+									"fr": "Une lettre, apportée par le garçon d'étage. Cachet du ministère de la Marine.",
+									"en": "A letter, brought up by the bellboy. Navy Department seal."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "« Si vous voulez vous joindre à l'expédition de l'*Abraham-Lincoln*, le gouvernement de l'Union verra avec plaisir que la France soit représentée par vous. » Signé J.-B. Hobson, secrétaire de la Marine.",
+									"en": "\"Should you wish to join the *Abraham-Lincoln*'s expedition, the Union government would be glad to see France represented by you.\" Signed J.-B. Hobson, Secretary of the Navy."
+								},
+								"do": [
+									"give:letter",
+									"set:letter_read"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "conseil",
+					"name": {
+						"fr": "Conseil",
+						"en": "Conseil"
+					},
+					"rect": [
+						150,
+						30,
+						36,
+						96
+					],
+					"dialogue": "conseil",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Conseil, mon domestique. Flamand, flegmatique, dévoué. Il classe tout ce qui vit, et ne s'étonne de rien.",
+									"en": "Conseil, my servant. Flemish, phlegmatic, devoted. He classifies everything that lives and is surprised by nothing."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Conseil n'est pas un outil. Mieux vaut lui parler.",
+									"en": "Conseil isn't a tool. Better to talk to him."
+								}
+							}
+						]
+					},
+					"npc": "conseil"
+				},
+				{
+					"id": "window",
+					"name": {
+						"fr": "Fenêtre",
+						"en": "Window"
+					},
+					"rect": [
+						100,
+						10,
+						44,
+						56
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "La Cinquième Avenue. Les crieurs de journaux hurlent « le monstre ! » à chaque coin de rue.",
+									"en": "Fifth Avenue. The newsboys shout \"the monster!\" on every corner."
+								}
+							}
+						],
+						"recall": [
+							{
+								"say": {
+									"fr": "L'île flottante, l'épave géante : des hypothèses abandonnées. Rien ne se déplace aussi vite sans une machine… ou des muscles.",
+									"en": "The floating island, the giant wreck: theories now abandoned. Nothing moves that fast without an engine… or muscles."
+								}
+							}
+						]
 					}
 				}
 			],
 			"exits": [
-				{"id": "door", "name": {"fr": "Vers la pier de Brooklyn", "en": "To the Brooklyn pier"}, "rect": [290, 18, 30, 112], "to": "ny_quay",
-				 "if": ["flag:crates_labelled", "flag:trunks_packed"],
-				 "locked": {"fr": "Pas avant que nos bagages soient prêts. Et pour aller où ?", "en": "Not before our luggage is ready. And to go where?"}}
+				{
+					"id": "door",
+					"name": {
+						"fr": "Vers la pier de Brooklyn",
+						"en": "To the Brooklyn pier"
+					},
+					"rect": [
+						290,
+						18,
+						30,
+						112
+					],
+					"to": "ny_quay",
+					"if": [
+						"flag:crates_labelled",
+						"flag:trunks_packed"
+					],
+					"locked": {
+						"fr": "Pas avant que nos bagages soient prêts. Et pour aller où ?",
+						"en": "Not before our luggage is ready. And to go where?"
+					}
+				}
 			]
 		},
 		"ny_quay": {
-			"name": {"fr": "La pier de Brooklyn", "en": "The Brooklyn pier"},
+			"name": {
+				"fr": "La pier de Brooklyn",
+				"en": "The Brooklyn pier"
+			},
 			"background": "res://art/locations/ch01_ny_quay.png",
 			"color": "#15304a",
 			"hotspots": [
 				{
-					"id": "frigate", "name": {"fr": "L'Abraham-Lincoln", "en": "The Abraham-Lincoln"}, "rect": [0, 12, 190, 84],
+					"id": "frigate",
+					"name": {
+						"fr": "L'Abraham-Lincoln",
+						"en": "The Abraham-Lincoln"
+					},
+					"rect": [
+						55,
+						0,
+						85,
+						116
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Une frégate de grande marche. Ses deux cheminées vomissent une fumée noire : on n'attend plus que nous.", "en": "A fast frigate. Her two funnels pour out black smoke: they're only waiting for us."}}],
-						"recall": [{"say": {"fr": "Une frégate cuirassée contre un narwal. Je plains presque l'animal.", "en": "An armoured frigate against a narwhal. I almost pity the animal."}}]
+						"look": [
+							{
+								"say": {
+									"fr": "Une frégate de grande marche. Ses deux cheminées vomissent une fumée noire : on n'attend plus que nous.",
+									"en": "A fast frigate. Her two funnels pour out black smoke: they're only waiting for us."
+								}
+							}
+						],
+						"recall": [
+							{
+								"say": {
+									"fr": "Une frégate cuirassée contre un narwal. Je plains presque l'animal.",
+									"en": "An armoured frigate against a narwhal. I almost pity the animal."
+								}
+							}
+						]
 					}
 				},
 				{
-					"id": "gangway", "name": {"fr": "Passerelle", "en": "Gangway"}, "rect": [150, 86, 60, 52],
+					"id": "gangway",
+					"name": {
+						"fr": "Passerelle",
+						"en": "Gangway"
+					},
+					"rect": [
+						118,
+						92,
+						94,
+						52
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Gardée par un officier. On ne monte pas sans y être invité.", "en": "Guarded by an officer. Nobody boards without an invitation."}}],
-						"use": [{"say": {"fr": "L'officier me barre le passage. Il me faut une raison d'être à bord.", "en": "The officer bars my way. I need a reason to be aboard."}}],
-						"item:letter": [{"say": {"fr": "Je montre la lettre de M. Hobson. L'officier s'écarte aussitôt.", "en": "I show Mr Hobson's letter. The officer steps aside at once."}, "do": ["take:letter", "end_chapter"]}]
+						"look": [
+							{
+								"say": {
+									"fr": "Gardée par un officier. On ne monte pas sans y être invité.",
+									"en": "Guarded by an officer. Nobody boards without an invitation."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "L'officier me barre le passage. Il me faut une raison d'être à bord.",
+									"en": "The officer bars my way. I need a reason to be aboard."
+								}
+							}
+						],
+						"item:letter": [
+							{
+								"say": {
+									"fr": "Je montre la lettre de M. Hobson. L'officier s'écarte aussitôt.",
+									"en": "I show Mr Hobson's letter. The officer steps aside at once."
+								},
+								"do": [
+									"take:letter",
+									"end_chapter"
+								]
+							}
+						]
 					}
 				},
 				{
-					"id": "officer", "name": {"fr": "Officier", "en": "Officer"}, "rect": [214, 44, 28, 86],
+					"id": "officer",
+					"name": {
+						"fr": "Officier",
+						"en": "Officer"
+					},
+					"rect": [
+						186,
+						80,
+						26,
+						26
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Un officier de bonne mine, impatient d'appareiller.", "en": "A fine-looking officer, impatient to sail."}}],
-						"talk": [{"lines": [
-							{"who": "aronnax", "text": {"fr": "Je suis le professeur Aronnax, du Muséum de Paris.", "en": "I am Professor Aronnax, of the Paris Museum."}},
-							{"who": "officer", "text": {"fr": "Tout le monde est professeur, ce matin. Vous avez une invitation ?", "en": "Everyone's a professor this morning. Got an invitation?"}}
-						]}],
-						"item:letter": [{"say": {"fr": "« Monsieur Pierre Aronnax ? Le commandant vous attend. »", "en": "\"Monsieur Pierre Aronnax? The commander is expecting you.\""}, "do": ["take:letter", "end_chapter"]}]
-					}
+						"look": [
+							{
+								"say": {
+									"fr": "Un officier de bonne mine, impatient d'appareiller.",
+									"en": "A fine-looking officer, impatient to sail."
+								}
+							}
+						],
+						"talk": [
+							{
+								"lines": [
+									{
+										"who": "aronnax",
+										"text": {
+											"fr": "Je suis le professeur Aronnax, du Muséum de Paris.",
+											"en": "I am Professor Aronnax, of the Paris Museum."
+										}
+									},
+									{
+										"who": "officer",
+										"text": {
+											"fr": "Tout le monde est professeur, ce matin. Vous avez une invitation ?",
+											"en": "Everyone's a professor this morning. Got an invitation?"
+										}
+									}
+								]
+							}
+						],
+						"item:letter": [
+							{
+								"say": {
+									"fr": "« Monsieur Pierre Aronnax ? Le commandant vous attend. »",
+									"en": "\"Monsieur Pierre Aronnax? The commander is expecting you.\""
+								},
+								"do": [
+									"take:letter",
+									"end_chapter"
+								]
+							}
+						]
+					},
+					"npc": "officer"
 				},
 				{
-					"id": "crowd", "name": {"fr": "La foule", "en": "The crowd"}, "rect": [246, 30, 74, 70],
+					"id": "crowd",
+					"name": {
+						"fr": "La foule",
+						"en": "The crowd"
+					},
+					"rect": [
+						214,
+						64,
+						106,
+						80
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Tout Brooklyn est venu voir partir la frégate. Les mouchoirs s'agitent.", "en": "All of Brooklyn has come to see the frigate off. Handkerchiefs are waving."}}],
-						"talk": [{"say": {"fr": "« À mort le narwal ! » Je n'en demandais pas tant.", "en": "\"Death to the narwhal!\" I didn't ask for that much."}}]
+						"look": [
+							{
+								"say": {
+									"fr": "Tout Brooklyn est venu voir partir la frégate. Les mouchoirs s'agitent.",
+									"en": "All of Brooklyn has come to see the frigate off. Handkerchiefs are waving."
+								}
+							}
+						],
+						"talk": [
+							{
+								"say": {
+									"fr": "« À mort le narwal ! » Je n'en demandais pas tant.",
+									"en": "\"Death to the narwhal!\" I didn't ask for that much."
+								}
+							}
+						]
 					}
 				}
 			],
@@ -165,64 +610,332 @@
 	},
 	"items": {
 		"letter": {
-			"name": {"fr": "Lettre de Hobson", "en": "Hobson's letter"},
-			"desc": {"fr": "L'invitation du secrétaire de la Marine. « Le commandant Farragut tient une cabine à votre disposition. »", "en": "The Navy Secretary's invitation. \"Commander Farragut holds a cabin at your disposal.\""}
+			"name": {
+				"fr": "Lettre de Hobson",
+				"en": "Hobson's letter"
+			},
+			"desc": {
+				"fr": "L'invitation du secrétaire de la Marine. « Le commandant Farragut tient une cabine à votre disposition. »",
+				"en": "The Navy Secretary's invitation. \"Commander Farragut holds a cabin at your disposal.\""
+			}
 		}
 	},
 	"facts": {
-		"two_theories": {"name": {"fr": "Deux camps", "en": "Two camps"}, "text": {"fr": "La presse hésite : un monstre d'une force colossale, ou un bateau sous-marin d'une puissance extrême.", "en": "The press is torn: a monster of colossal strength, or a submarine boat of extreme power."}},
-		"not_a_submarine": {"name": {"fr": "Pas un sous-marin", "en": "Not a submarine"}, "text": {"fr": "Aucun gouvernement n'aurait pu le construire en secret. (C'est du moins ce que je crois.)", "en": "No government could have built one in secret. (So I believe.)"}},
-		"narwhal_theory": {"name": {"fr": "Un narwal gigantesque", "en": "A gigantic narwhal"}, "text": {"fr": "Mon hypothèse : un narwal géant, à la défense d'acier.", "en": "My theory: a giant narwhal with a tusk of steel."}}
+		"theories": {
+			"name": {
+				"fr": "Les hypothèses",
+				"en": "The theories"
+			},
+			"text": {
+				"fr": "Îlot flottant, épave géante, bateau sous-marin, monstre colossal. Un fait : plus de vingt nœuds.",
+				"en": "Floating islet, giant wreck, submarine boat, colossal monster. One fact: over twenty knots."
+			}
+		},
+		"narwhal": {
+			"name": {
+				"fr": "Le narwal",
+				"en": "The narwhal"
+			},
+			"text": {
+				"fr": "Licorne de mer : une défense d'ivoire dure comme l'acier, capable de percer une coque.",
+				"en": "Sea unicorn: an ivory tusk as hard as steel, able to pierce a hull."
+			}
+		}
 	},
 	"dialogues": {
 		"conseil": {
 			"npc": "conseil",
-			"greeting": [{"who": "conseil", "text": {"fr": "Monsieur m'a appelé ?", "en": "Monsieur called?"}}],
+			"greeting": [
+				{
+					"who": "conseil",
+					"text": {
+						"fr": "Monsieur m'a appelé ?",
+						"en": "Monsieur called?"
+					}
+				}
+			],
 			"topics": [
-				{"id": "monster", "label": {"fr": "Que penses-tu de ce monstre ?", "en": "What do you make of this monster?"}, "once": true, "lines": [
-					{"who": "aronnax", "text": {"fr": "Conseil, que penses-tu de cette affaire ?", "en": "Conseil, what do you make of this business?"}},
-					{"who": "conseil", "text": {"fr": "Monsieur sait que je ne donne jamais de conseils. Mais si c'est un animal, je le classerai volontiers.", "en": "Monsieur knows I never give advice. But if it is an animal, I will gladly classify it."}}
-				]},
-				{"id": "collections", "label": {"fr": "Et nos collections ?", "en": "And our collections?"}, "if": "flag:letter_read", "once": true, "lines": [
-					{"who": "conseil", "text": {"fr": "Les caisses du Nebraska, monsieur. Il faudrait les adresser à Paris avant de partir, si monsieur part.", "en": "The Nebraska crates, Monsieur. They should be addressed to Paris before we leave, if Monsieur is leaving."}}
-				]},
-				{"id": "pack", "label": {"fr": "Conseil, nous partons dans une heure.", "en": "Conseil, we leave in an hour."}, "if": "flag:letter_read", "once": true, "lines": [
-					{"who": "aronnax", "text": {"fr": "Conseil, fais nos malles. Nous partons dans une heure, à la poursuite du monstre. Le voyage sera peut-être long, et dangereux.", "en": "Conseil, pack our trunks. We leave in an hour, in pursuit of the monster. The voyage may be long, and dangerous."}},
-					{"who": "conseil", "text": {"fr": "Comme il plaira à monsieur.", "en": "As Monsieur pleases."}}
-				], "do": ["set:trunks_packed"]}
+				{
+					"id": "monster",
+					"label": {
+						"fr": "Que penses-tu de ce monstre ?",
+						"en": "What do you make of this monster?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Conseil, que penses-tu de cette affaire ?",
+								"en": "Conseil, what do you make of this business?"
+							}
+						},
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "Monsieur sait que je ne donne jamais de conseils. Mais si c'est un animal, je le classerai volontiers.",
+								"en": "Monsieur knows I never give advice. But if it is an animal, I will gladly classify it."
+							}
+						}
+					]
+				},
+				{
+					"id": "collections",
+					"label": {
+						"fr": "Et nos collections ?",
+						"en": "And our collections?"
+					},
+					"if": "flag:letter_read",
+					"once": true,
+					"lines": [
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "Les caisses du Nebraska, monsieur. Il faudrait les adresser à Paris avant de partir, si monsieur part.",
+								"en": "The Nebraska crates, Monsieur. They should be addressed to Paris before we leave, if Monsieur is leaving."
+							}
+						}
+					]
+				},
+				{
+					"id": "pack",
+					"label": {
+						"fr": "Conseil, nous partons dans une heure.",
+						"en": "Conseil, we leave in an hour."
+					},
+					"if": "flag:letter_read",
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Conseil, fais nos malles. Nous partons dans une heure, à la poursuite du monstre. Le voyage sera peut-être long, et dangereux.",
+								"en": "Conseil, pack our trunks. We leave in an hour, in pursuit of the monster. The voyage may be long, and dangerous."
+							}
+						},
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "Comme il plaira à monsieur.",
+								"en": "As Monsieur pleases."
+							}
+						}
+					],
+					"do": [
+						"set:trunks_packed"
+					]
+				}
+			]
+		},
+		"reasoning": {
+			"npc": "aronnax",
+			"greeting": [
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Raisonnons. Qu'est-ce que cette chose, qui file à plus de vingt nœuds et crève des coques de tôle ?",
+						"en": "Let us reason. What is this thing, which runs at over twenty knots and holes iron hulls?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "islet",
+					"label": {
+						"fr": "Un îlot flottant ?",
+						"en": "A floating islet?"
+					},
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Un îlot qui file à vingt nœuds ? À moins qu'il n'ait une machine dans le ventre. Non.",
+								"en": "An islet running at twenty knots? Unless it had an engine in its belly. No."
+							}
+						}
+					]
+				},
+				{
+					"id": "wreck",
+					"label": {
+						"fr": "Une épave géante ?",
+						"en": "A giant wreck?"
+					},
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Une épave dérive ; elle ne remonte pas le courant plus vite qu'un paquebot. Non.",
+								"en": "A wreck drifts; it doesn't sail against the current faster than a liner. No."
+							}
+						}
+					]
+				},
+				{
+					"id": "submarine",
+					"label": {
+						"fr": "Un bateau sous-marin ?",
+						"en": "A submarine boat?"
+					},
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Un engin de cette puissance, construit en secret ? Aucun gouvernement ne le pourrait, et un particulier encore moins.",
+								"en": "A machine of such power, built in secret? No government could do it, still less a private man."
+							}
+						},
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Non. C'est impossible.",
+								"en": "No. It's impossible."
+							}
+						}
+					]
+				},
+				{
+					"id": "animal",
+					"label": {
+						"fr": "Un animal colossal.",
+						"en": "A colossal animal."
+					},
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Reste l'animal. Mais lequel ? Un être des grands fonds, puissant, rapide, armé d'une arme capable de percer une coque…",
+								"en": "That leaves an animal. But which? A creature of the great depths, powerful, fast, armed with something able to pierce a hull…"
+							}
+						}
+					],
+					"do": [
+						"set:animal"
+					]
+				},
+				{
+					"id": "narwhal",
+					"label": {
+						"fr": "Un narwal gigantesque, à la défense d'acier.",
+						"en": "A gigantic narwhal with a tusk of steel."
+					},
+					"if": [
+						"flag:animal",
+						"fact:narwhal"
+					],
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Voilà. Un narwal géant. Je prends la plume.",
+								"en": "There it is. A giant narwhal. I take up my pen."
+							}
+						}
+					],
+					"do": [
+						"set:article_written",
+						"scene:article"
+					]
+				},
+				{
+					"id": "which",
+					"label": {
+						"fr": "Un animal… mais lequel ?",
+						"en": "An animal… but which one?"
+					},
+					"if": [
+						"flag:animal",
+						"!fact:narwhal"
+					],
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Il me faudrait une espèce armée d'une défense. J'ai écrit là-dessus… dans mon propre livre.",
+								"en": "I'd need a species armed with a tusk. I wrote about that… in my own book."
+							}
+						}
+					]
+				}
 			]
 		}
 	},
 	"objectives": [
 		{
-			"id": "article", "text": {"fr": "Donner mon avis aux journaux sur le « monstre ».", "en": "Give the newspapers my opinion on the \"monster\"."},
+			"id": "article",
+			"text": {
+				"fr": "Donner mon avis aux journaux sur le « monstre ».",
+				"en": "Give the newspapers my opinion on the \"monster\"."
+			},
 			"done_if": "flag:article_written",
 			"hints": [
-				{"fr": "Commencer par lire ce que disent les journaux.", "en": "Start by reading what the papers say."},
-				{"fr": "Mon propre livre contient la réponse. Se souvenir, plutôt que relire.", "en": "My own book holds the answer. Recall it rather than reread it."},
-				{"fr": "Regarder les journaux, Se souvenir des journaux, Se souvenir du livre, puis Utiliser l'écritoire.", "en": "Look at the newspapers, Recall the newspapers, Recall the book, then Use the writing desk."}
+				{
+					"fr": "Avant d'avoir un avis, savoir ce qu'on dit. Les journaux sont sur l'écritoire.",
+					"en": "Before having an opinion, know what's being said. The papers are on the desk."
+				},
+				{
+					"fr": "À l'écritoire, écarter les hypothèses qui ne tiennent pas. Pour la dernière, mon propre livre a la réponse.",
+					"en": "At the desk, rule out the theories that don't hold. For the last one, my own book has the answer."
+				},
+				{
+					"fr": "Regarder les journaux, Regarder le livre, Utiliser l'écritoire, choisir « Un animal colossal » puis « Un narwal gigantesque ».",
+					"en": "Look at the papers, Look at the book, Use the desk, choose \"A colossal animal\" then \"A gigantic narwhal\"."
+				}
 			]
 		},
 		{
-			"id": "leave", "text": {"fr": "Préparer le départ.", "en": "Get ready to leave."},
-			"show_if": "flag:letter_arrived", "done_if": ["flag:crates_labelled", "flag:trunks_packed"],
+			"id": "leave",
+			"text": {
+				"fr": "Préparer le départ.",
+				"en": "Get ready to leave."
+			},
+			"show_if": "flag:letter_arrived",
+			"done_if": [
+				"flag:crates_labelled",
+				"flag:trunks_packed"
+			],
 			"hints": [
-				{"fr": "Une lettre vient d'arriver. Elle change tout.", "en": "A letter has just arrived. It changes everything."},
-				{"fr": "On ne part pas sans bagages, ni en abandonnant six mois de collections.", "en": "You don't leave without luggage, or abandon six months of collections."},
-				{"fr": "Prendre la lettre (Utiliser), Utiliser les caisses, puis demander à Conseil de faire les malles.", "en": "Take the letter (Use), Use the crates, then ask Conseil to pack."}
+				{
+					"fr": "Une lettre vient d'arriver. Elle change tout.",
+					"en": "A letter has just arrived. It changes everything."
+				},
+				{
+					"fr": "On ne part pas sans bagages, ni en abandonnant six mois de collections.",
+					"en": "You don't leave without luggage, or abandon six months of collections."
+				},
+				{
+					"fr": "Prendre la lettre (Utiliser), Utiliser les caisses, puis demander à Conseil de faire les malles.",
+					"en": "Take the letter (Use), Use the crates, then ask Conseil to pack."
+				}
 			]
 		},
 		{
-			"id": "board", "text": {"fr": "Monter à bord de l'Abraham-Lincoln.", "en": "Board the Abraham-Lincoln."},
+			"id": "board",
+			"text": {
+				"fr": "Monter à bord de l'Abraham-Lincoln.",
+				"en": "Board the Abraham-Lincoln."
+			},
 			"show_if": "loc:aronnax:ny_quay",
 			"hints": [
-				{"fr": "L'officier ne laisse monter personne sans raison.", "en": "The officer lets nobody aboard without a reason."},
-				{"fr": "J'ai une invitation en poche.", "en": "I have an invitation in my pocket."},
-				{"fr": "Utiliser la lettre de Hobson sur l'officier ou la passerelle.", "en": "Use Hobson's letter on the officer or the gangway."}
+				{
+					"fr": "L'officier ne laisse monter personne sans raison.",
+					"en": "The officer lets nobody aboard without a reason."
+				},
+				{
+					"fr": "J'ai une invitation en poche.",
+					"en": "I have an invitation in my pocket."
+				},
+				{
+					"fr": "Utiliser la lettre de Hobson sur l'officier ou la passerelle.",
+					"en": "Use Hobson's letter on the officer or the gangway."
+				}
 			]
 		}
 	],
-	"on_start_say": {"fr": "Les journaux attendent mon avis. Mon avis, lui, se fait attendre.", "en": "The papers are waiting for my opinion. My opinion is taking its time."},
+	"on_start_say": {
+		"fr": "Les journaux attendent mon avis. Encore faut-il en avoir un.",
+		"en": "The papers are waiting for my opinion. I'd need to have one first."
+	},
 	"complete_if": "flag:__chapter_end__",
 	"next": "ch02"
 }

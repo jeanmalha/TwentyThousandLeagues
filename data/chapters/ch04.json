@@ -2,101 +2,395 @@
 	"id": "ch04",
 	"number": 4,
 	"act": 2,
-	"title": {"fr": "Prisonniers", "en": "Prisoners"},
+	"title": {
+		"fr": "Prisonniers",
+		"en": "Prisoners"
+	},
 	"novel": "I-8 – I-10",
 	"start": {
-		"party": ["aronnax", "conseil", "ned"],
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
 		"current": "aronnax",
 		"switching": true,
-		"locations": {"aronnax": "ch04_cell", "conseil": "ch04_cell", "ned": "ch04_cell"},
+		"locations": {
+			"aronnax": "ch04_cell",
+			"conseil": "ch04_cell",
+			"ned": "ch04_cell"
+		},
 		"inventory": {}
 	},
 	"scenes": {
 		"intro": {
-			"image": "res://art/scenes/ch03_inside.png",
+			"image": "res://art/engravings/hetzel-016.jpg",
 			"lines": [
-				{"who": "narrator", "text": {"fr": "On nous enferma dans une cellule de tôle, sans fenêtre. La nuit était complète. Puis une lumière éclata au plafond.", "en": "They locked us in a steel cell without a window. The darkness was complete. Then a light blazed in the ceiling."}},
-				{"who": "narrator", "text": {"fr": "La porte s'ouvrit. Deux hommes entrèrent : l'un petit et vif, l'autre grand, calme, qui nous examina sans prononcer une parole.", "en": "The door opened. Two men came in: one short and lively, the other tall and calm, who looked us over without a word."}},
-				{"who": "aronnax", "text": {"fr": "(Vous pouvez désormais passer d'un compagnon à l'autre en cliquant sur leurs portraits, ou avec les touches 1, 2 et 3.)", "en": "(You can now switch between the three companions by clicking their portraits, or with the keys 1, 2 and 3.)"}}
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "On nous enferma dans une cellule de tôle, sans fenêtre. La nuit était complète. Puis une lumière éclata au plafond.",
+						"en": "They locked us in a steel cell without a window. The darkness was complete. Then a light blazed in the ceiling."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "La porte s'ouvrit. Deux hommes entrèrent : l'un petit et vif, l'autre grand, calme, qui nous examina sans prononcer une parole.",
+						"en": "The door opened. Two men came in: one short and lively, the other tall and calm, who looked us over without a word."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "(Vous pouvez désormais passer d'un compagnon à l'autre en cliquant sur leurs portraits, ou avec les touches 1, 2 et 3.)",
+						"en": "(You can now switch between the three companions by clicking their portraits, or with the keys 1, 2 and 3.)"
+					}
+				}
 			]
 		},
 		"nemo_appears": {
 			"lines": [
-				{"who": "narrator", "text": {"fr": "Le stewart apporta le repas. Ned Land, à bout, se jeta sur lui et le renversa, la main à la gorge.", "en": "The steward brought the meal. Ned Land, at the end of his tether, threw himself at him and knocked him down, a hand at his throat."}},
-				{"who": "nemo", "text": {"fr": "Calmez-vous, maître Land, et vous, monsieur le professeur, veuillez m'écouter.", "en": "Calm yourself, Master Land, and you, Professor, kindly listen to me."}},
-				{"who": "narrator", "text": {"fr": "C'était le commandant du bord. Et il parlait français.", "en": "It was the commander of the ship. And he spoke French."}}
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le stewart apporta le repas. Ned Land, à bout, se jeta sur lui et le renversa, la main à la gorge.",
+						"en": "The steward brought the meal. Ned Land, at the end of his tether, threw himself at him and knocked him down, a hand at his throat."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Calmez-vous, maître Land, et vous, monsieur le professeur, veuillez m'écouter.",
+						"en": "Calm yourself, Master Land, and you, Professor, kindly listen to me."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "C'était le commandant du bord. Et il parlait français.",
+						"en": "It was the commander of the ship. And he spoke French."
+					}
+				}
 			],
-			"do": ["set:nemo_met"]
+			"do": [
+				"set:nemo_met"
+			],
+			"image": "res://art/engravings/hetzel-018.jpg"
 		},
 		"outro": {
 			"lines": [
-				{"who": "nemo", "text": {"fr": "Vous êtes libres à bord. Vous ne le serez jamais de le quitter.", "en": "You are free aboard. You will never be free to leave."}},
-				{"who": "aronnax", "text": {"fr": "De quel nom dois-je vous appeler ?", "en": "By what name should I call you?"}},
-				{"who": "nemo", "text": {"fr": "Monsieur, je ne suis pour vous que le capitaine Nemo, et vos compagnons et vous, n'êtes pour moi que les passagers du Nautilus.", "en": "Sir, to you I am nothing but Captain Nemo, and you and your companions are, to me, nothing but the passengers of the Nautilus."}}
-			]
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Vous êtes libres à bord. Vous ne le serez jamais de le quitter.",
+						"en": "You are free aboard. You will never be free to leave."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "De quel nom dois-je vous appeler ?",
+						"en": "By what name should I call you?"
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur, je ne suis pour vous que le capitaine Nemo, et vos compagnons et vous, n'êtes pour moi que les passagers du Nautilus.",
+						"en": "Sir, to you I am nothing but Captain Nemo, and you and your companions are, to me, nothing but the passengers of the Nautilus."
+					}
+				}
+			],
+			"image": "res://art/engravings/hetzel-019.jpg"
 		}
 	},
 	"locations": {
 		"ch04_cell": {
-			"name": {"fr": "La cellule", "en": "The cell"},
+			"name": {
+				"fr": "La cellule",
+				"en": "The cell"
+			},
 			"background": "res://art/locations/ch04_cell.png",
 			"color": "#2a2c30",
 			"hotspots": [
 				{
-					"id": "strangers", "name": {"fr": "Les deux inconnus", "en": "The two strangers"}, "rect": [120, 22, 70, 104], "if": "!flag:languages_tried", "dialogue": "strangers",
+					"id": "strangers",
+					"name": {
+						"fr": "Les deux inconnus",
+						"en": "The two strangers"
+					},
+					"rect": [
+						120,
+						22,
+						70,
+						104
+					],
+					"if": "!flag:languages_tried",
+					"dialogue": "strangers",
 					"actions": {
-						"look": [{"say": {"fr": "Le plus grand nous observe avec une froide assurance. Ses yeux noirs, un peu écartés, semblent embrasser toute la cellule à la fois.", "en": "The taller one watches us with cold assurance. His black eyes, set a little wide apart, seem to take in the whole cell at once."}}],
-						"recall": [{"who": "aronnax", "say": {"fr": "Leur langue est sonore, harmonieuse, inconnue. Mais tout savant comprend le latin…", "en": "Their language is sonorous, harmonious, unknown. But every scholar understands Latin…"}, "do": ["fact:latin_idea"]}],
-						"catalogue": [{"who": "conseil", "say": {"fr": "Ni Anglais, ni Français, ni Allemands, si monsieur veut bien. Des méridionaux, je dirais. Genre : marin. Espèce : peu bavarde.", "en": "Neither English, nor French, nor German, if Monsieur pleases. Southerners, I'd say. Genus: sailor. Species: not talkative."}}],
-						"force": [{"who": "ned", "say": {"fr": "Deux contre trois… Non. Pas avant de savoir combien ils sont là-derrière.", "en": "Two against three… No. Not before I know how many more there are behind that door."}}]
-					}
+						"look": [
+							{
+								"say": {
+									"fr": "Le plus grand nous observe avec une froide assurance. Ses yeux noirs, un peu écartés, semblent embrasser toute la cellule à la fois.",
+									"en": "The taller one watches us with cold assurance. His black eyes, set a little wide apart, seem to take in the whole cell at once."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Leur langue est sonore, harmonieuse, inconnue. Mais tout savant comprend le latin…",
+									"en": "Their language is sonorous, harmonious, unknown. But every scholar understands Latin…"
+								},
+								"do": [
+									"fact:latin_idea"
+								]
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Ni Anglais, ni Français, ni Allemands, si monsieur veut bien. Des méridionaux, je dirais. Genre : marin. Espèce : peu bavarde.",
+									"en": "Neither English, nor French, nor German, if Monsieur pleases. Southerners, I'd say. Genus: sailor. Species: not talkative."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Deux contre trois… Non. Pas avant de savoir combien ils sont là-derrière.",
+									"en": "Two against three… No. Not before I know how many more there are behind that door."
+								}
+							}
+						]
+					},
+					"npc": "nemo"
 				},
 				{
-					"id": "steward", "name": {"fr": "Le stewart", "en": "The steward"}, "rect": [140, 40, 40, 88], "if": ["flag:languages_tried", "!flag:nemo_met"],
+					"id": "steward",
+					"name": {
+						"fr": "Le stewart",
+						"en": "The steward"
+					},
+					"rect": [
+						140,
+						40,
+						40,
+						88
+					],
+					"if": [
+						"flag:languages_tried",
+						"!flag:nemo_met"
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Un homme muet, sourd peut-être, qui dresse la table.", "en": "A man, mute, perhaps deaf, laying the table."}}],
-						"talk": [{"say": {"fr": "Il ne répond pas. Il ne lève même pas les yeux.", "en": "He doesn't answer. He doesn't even look up."}}],
+						"look": [
+							{
+								"say": {
+									"fr": "Un homme muet, sourd peut-être, qui dresse la table.",
+									"en": "A man, mute, perhaps deaf, laying the table."
+								}
+							}
+						],
+						"talk": [
+							{
+								"say": {
+									"fr": "Il ne répond pas. Il ne lève même pas les yeux.",
+									"en": "He doesn't answer. He doesn't even look up."
+								}
+							}
+						],
 						"force": [
-							{"who": "ned", "if": "flag:ned_angry", "scene": "nemo_appears"},
-							{"who": "ned", "say": {"fr": "Il nous apporte à manger. Je ne vais pas mordre la main qui me nourrit… pas encore.", "en": "He's bringing us food. I won't bite the hand that feeds me… not yet."}}
+							{
+								"who": "ned",
+								"if": "flag:ned_angry",
+								"scene": "nemo_appears"
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Il nous apporte à manger. Je ne vais pas mordre la main qui me nourrit… pas encore.",
+									"en": "He's bringing us food. I won't bite the hand that feeds me… not yet."
+								}
+							}
 						],
 						"use": [
-							{"who": "ned", "if": "flag:ned_angry", "scene": "nemo_appears"},
-							{"say": {"fr": "Je prends le pain qu'il me tend. Merci, qui que vous soyez.", "en": "I take the bread he holds out. Thank you, whoever you are."}}
+							{
+								"who": "ned",
+								"if": "flag:ned_angry",
+								"scene": "nemo_appears"
+							},
+							{
+								"say": {
+									"fr": "Je prends le pain qu'il me tend. Merci, qui que vous soyez.",
+									"en": "I take the bread he holds out. Thank you, whoever you are."
+								}
+							}
+						]
+					},
+					"npc": "steward"
+				},
+				{
+					"id": "captain",
+					"name": {
+						"fr": "Le commandant",
+						"en": "The commander"
+					},
+					"rect": [
+						130,
+						18,
+						46,
+						108
+					],
+					"if": "flag:nemo_met",
+					"dialogue": "nemo_cell",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le grand inconnu. Trente-cinq ans, ou cinquante ? Impossible à dire. Un regard qui vous perce jusqu'à l'âme.",
+									"en": "The tall stranger. Thirty-five, or fifty? Impossible to say. A gaze that pierces you to the soul."
+								}
+							}
+						]
+					},
+					"npc": "nemo"
+				},
+				{
+					"id": "door",
+					"name": {
+						"fr": "La porte",
+						"en": "The door"
+					},
+					"rect": [
+						250,
+						16,
+						56,
+						112
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une porte de tôle rivée, sans serrure de ce côté.",
+									"en": "A riveted steel door with no lock on this side."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"if": "!flag:ned_angry",
+								"say": {
+									"fr": "Je pèse de tout mon poids… Rien ! Mille diables ! Ils vont m'entendre, ceux-là !",
+									"en": "I throw all my weight at it… Nothing! Hell and damnation! They're going to hear from me!"
+								},
+								"do": [
+									"set:ned_angry"
+								]
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "J'ai déjà essayé. La prochaine personne qui entre, je l'attends.",
+									"en": "I've tried already. The next person through that door, I'll be waiting for."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Fermée. Évidemment.",
+									"en": "Locked. Of course."
+								}
+							}
+						],
+						"talk": [
+							{
+								"say": {
+									"fr": "Ohé ! Ouvrez ! … Le métal ne répond pas.",
+									"en": "Hey! Open up! … The metal doesn't answer."
+								}
+							}
 						]
 					}
 				},
 				{
-					"id": "captain", "name": {"fr": "Le commandant", "en": "The commander"}, "rect": [130, 18, 46, 108], "if": "flag:nemo_met", "dialogue": "nemo_cell",
+					"id": "beret",
+					"name": {
+						"fr": "Béret de fourrure",
+						"en": "Fur beret"
+					},
+					"rect": [
+						40,
+						92,
+						40,
+						16
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Le grand inconnu. Trente-cinq ans, ou cinquante ? Impossible à dire. Un regard qui vous perce jusqu'à l'âme.", "en": "The tall stranger. Thirty-five, or fifty? Impossible to say. A gaze that pierces you to the soul."}}]
-					}
-				},
-				{
-					"id": "door", "name": {"fr": "La porte", "en": "The door"}, "rect": [250, 16, 56, 112],
-					"actions": {
-						"look": [{"say": {"fr": "Une porte de tôle rivée, sans serrure de ce côté.", "en": "A riveted steel door with no lock on this side."}}],
-						"force": [
-							{"who": "ned", "if": "!flag:ned_angry", "say": {"fr": "Je pèse de tout mon poids… Rien ! Mille diables ! Ils vont m'entendre, ceux-là !", "en": "I throw all my weight at it… Nothing! Hell and damnation! They're going to hear from me!"}, "do": ["set:ned_angry"]},
-							{"who": "ned", "say": {"fr": "J'ai déjà essayé. La prochaine personne qui entre, je l'attends.", "en": "I've tried already. The next person through that door, I'll be waiting for."}}
+						"look": [
+							{
+								"say": {
+									"fr": "Un béret oublié sur la table par l'un des deux hommes.",
+									"en": "A beret left on the table by one of the two men."
+								}
+							}
 						],
-						"use": [{"say": {"fr": "Fermée. Évidemment.", "en": "Locked. Of course."}}],
-						"talk": [{"say": {"fr": "Ohé ! Ouvrez ! … Le métal ne répond pas.", "en": "Hey! Open up! … The metal doesn't answer."}}]
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Fourrure de loutre de mer, monsieur. Enhydra. Le seul quadrupède exclusivement marin. Nos hôtes chassent sous la mer.",
+									"en": "Sea-otter fur, Monsieur. Enhydra. The only exclusively marine quadruped. Our hosts hunt under the sea."
+								},
+								"do": [
+									"cat:sea_otter"
+								]
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Ce n'est pas à moi.",
+									"en": "It isn't mine."
+								}
+							}
+						]
 					}
 				},
 				{
-					"id": "beret", "name": {"fr": "Béret de fourrure", "en": "Fur beret"}, "rect": [40, 92, 40, 16],
+					"id": "light",
+					"name": {
+						"fr": "La lumière",
+						"en": "The light"
+					},
+					"rect": [
+						140,
+						0,
+						40,
+						14
+					],
 					"actions": {
-						"look": [{"say": {"fr": "Un béret oublié sur la table par l'un des deux hommes.", "en": "A beret left on the table by one of the two men."}}],
-						"catalogue": [{"who": "conseil", "say": {"fr": "Fourrure de loutre de mer, monsieur. Enhydra. Le seul quadrupède exclusivement marin. Nos hôtes chassent sous la mer.", "en": "Sea-otter fur, Monsieur. Enhydra. The only exclusively marine quadruped. Our hosts hunt under the sea."}, "do": ["cat:sea_otter"]}],
-						"use": [{"say": {"fr": "Ce n'est pas à moi.", "en": "It isn't mine."}}]
-					}
-				},
-				{
-					"id": "light", "name": {"fr": "La lumière", "en": "The light"}, "rect": [140, 0, 40, 14],
-					"actions": {
-						"look": [{"say": {"fr": "Pas une flamme : une lumière blanche, fixe, électrique.", "en": "Not a flame: a steady, white, electric light."}}],
-						"recall": [{"who": "aronnax", "say": {"fr": "De l'électricité, en mer, et en telle quantité ? Ces gens sont en avance d'un siècle.", "en": "Electricity, at sea, and so much of it? These people are a century ahead."}}]
+						"look": [
+							{
+								"say": {
+									"fr": "Pas une flamme : une lumière blanche, fixe, électrique.",
+									"en": "Not a flame: a steady, white, electric light."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "De l'électricité, en mer, et en telle quantité ? Ces gens sont en avance d'un siècle.",
+									"en": "Electricity, at sea, and so much of it? These people are a century ahead."
+								}
+							}
+						]
 					}
 				}
 			],
@@ -104,74 +398,299 @@
 		}
 	},
 	"catalogue": {
-		"sea_otter": {"name": {"fr": "Loutre de mer (Enhydra)", "en": "Sea otter (Enhydra)"}, "text": {"fr": "Seul quadrupède exclusivement marin. Fourrure de grand prix. Nos geôliers en portent.", "en": "The only exclusively marine quadruped. Very valuable fur. Our jailers wear it."}}
+		"sea_otter": {
+			"name": {
+				"fr": "Loutre de mer (Enhydra)",
+				"en": "Sea otter (Enhydra)"
+			},
+			"text": {
+				"fr": "Seul quadrupède exclusivement marin. Fourrure de grand prix. Nos geôliers en portent.",
+				"en": "The only exclusively marine quadruped. Very valuable fur. Our jailers wear it."
+			}
+		}
 	},
 	"facts": {
-		"latin_idea": {"name": {"fr": "Le latin", "en": "Latin"}, "text": {"fr": "Tout savant comprend le latin. Si ce sont des savants…", "en": "Every scholar understands Latin. If they are scholars…"}}
+		"latin_idea": {
+			"name": {
+				"fr": "Le latin",
+				"en": "Latin"
+			},
+			"text": {
+				"fr": "Tout savant comprend le latin. Si ce sont des savants…",
+				"en": "Every scholar understands Latin. If they are scholars…"
+			}
+		}
 	},
 	"dialogues": {
 		"strangers": {
 			"npc": "strangers",
-			"greeting": [{"who": "narrator", "text": {"fr": "Les deux hommes attendent, impassibles.", "en": "The two men wait, impassive."}}],
+			"greeting": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Les deux hommes attendent, impassibles.",
+						"en": "The two men wait, impassive."
+					}
+				}
+			],
 			"topics": [
-				{"id": "french", "who": "aronnax", "label": {"fr": "(En français) Messieurs, nous sommes naufragés…", "en": "(In French) Gentlemen, we are castaways…"}, "once": true, "lines": [
-					{"who": "aronnax", "text": {"fr": "Je raconte notre histoire en articulant chaque syllabe. Pas un geste ne me répond.", "en": "I tell our story, pronouncing every syllable. Not a flicker in reply."}}
-				]},
-				{"id": "english", "who": "ned", "label": {"fr": "(En anglais) Listen here…", "en": "(In English) Listen here…"}, "once": true, "lines": [
-					{"who": "ned", "text": {"fr": "Je leur sors mon meilleur anglais. Rien. Ils ne comprennent pas plus l'anglais que le français.", "en": "I give them my best English. Nothing. They don't understand English any better than French."}}
-				]},
-				{"id": "german", "who": "conseil", "label": {"fr": "(En allemand) Meine Herren…", "en": "(In German) Meine Herren…"}, "once": true, "lines": [
-					{"who": "conseil", "text": {"fr": "Si monsieur m'y autorise, je raconte la chose en allemand. … Les Allemands non plus, apparemment.", "en": "If Monsieur allows, I'll tell it in German. … Not Germans either, apparently."}}
-				]},
-				{"id": "latin", "who": "aronnax", "label": {"fr": "(En latin) Domini…", "en": "(In Latin) Domini…"}, "once": true,
-				 "if": ["fact:latin_idea", "flag:said:strangers:french", "flag:said:strangers:english", "flag:said:strangers:german"],
-				 "lines": [
-					{"who": "aronnax", "text": {"fr": "Je fouille mes souvenirs de collège et narre nos aventures en latin. Le grand inconnu échange quelques mots avec l'autre, dans leur langue… et ils sortent.", "en": "I dig up my school memories and tell our adventures in Latin. The tall stranger exchanges a few words with the other, in their language… and they leave."}},
-					{"who": "ned", "text": {"fr": "Comment ! on leur parle français, anglais, allemand, latin, à ces coquins-là, et il n'en est pas un qui ait la civilité de répondre !", "en": "What! We talk to these rascals in French, English, German and Latin, and not one of them has the decency to answer!"}}
-				 ], "do": ["set:languages_tried", "set:end_dialogue"]}
+				{
+					"id": "french",
+					"who": "aronnax",
+					"label": {
+						"fr": "(En français) Messieurs, nous sommes naufragés…",
+						"en": "(In French) Gentlemen, we are castaways…"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Je raconte notre histoire en articulant chaque syllabe. Pas un geste ne me répond.",
+								"en": "I tell our story, pronouncing every syllable. Not a flicker in reply."
+							}
+						}
+					]
+				},
+				{
+					"id": "english",
+					"who": "ned",
+					"label": {
+						"fr": "(En anglais) Listen here…",
+						"en": "(In English) Listen here…"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Je leur sors mon meilleur anglais. Rien. Ils ne comprennent pas plus l'anglais que le français.",
+								"en": "I give them my best English. Nothing. They don't understand English any better than French."
+							}
+						}
+					]
+				},
+				{
+					"id": "german",
+					"who": "conseil",
+					"label": {
+						"fr": "(En allemand) Meine Herren…",
+						"en": "(In German) Meine Herren…"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "Si monsieur m'y autorise, je raconte la chose en allemand. … Les Allemands non plus, apparemment.",
+								"en": "If Monsieur allows, I'll tell it in German. … Not Germans either, apparently."
+							}
+						}
+					]
+				},
+				{
+					"id": "latin",
+					"who": "aronnax",
+					"label": {
+						"fr": "(En latin) Domini…",
+						"en": "(In Latin) Domini…"
+					},
+					"once": true,
+					"if": [
+						"fact:latin_idea",
+						"flag:said:strangers:french",
+						"flag:said:strangers:english",
+						"flag:said:strangers:german"
+					],
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Je fouille mes souvenirs de collège et narre nos aventures en latin. Le grand inconnu échange quelques mots avec l'autre, dans leur langue… et ils sortent.",
+								"en": "I dig up my school memories and tell our adventures in Latin. The tall stranger exchanges a few words with the other, in their language… and they leave."
+							}
+						},
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Comment ! on leur parle français, anglais, allemand, latin, à ces coquins-là, et il n'en est pas un qui ait la civilité de répondre !",
+								"en": "What! We talk to these rascals in French, English, German and Latin, and not one of them has the decency to answer!"
+							}
+						}
+					],
+					"do": [
+						"set:languages_tried",
+						"set:end_dialogue"
+					]
+				}
 			]
 		},
 		"nemo_cell": {
 			"npc": "nemo",
-			"greeting": [{"who": "nemo", "text": {"fr": "Je vous écoute, monsieur.", "en": "I am listening, sir."}}],
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Je vous écoute, monsieur.",
+						"en": "I am listening, sir."
+					}
+				}
+			],
 			"topics": [
-				{"id": "who", "label": {"fr": "Qui êtes-vous, monsieur ?", "en": "Who are you, sir?"}, "once": true, "lines": [
-					{"who": "nemo", "text": {"fr": "Messieurs, je parle également le français, l'anglais, l'allemand et le latin. Je voulais vous connaître d'abord, réfléchir ensuite.", "en": "I speak French, English, German and Latin. I wished to know you first, and to think afterwards."}},
-					{"who": "aronnax", "text": {"fr": "Nous traiter ainsi, c'était peut-être le droit d'un sauvage, ce n'était pas celui d'un homme civilisé.", "en": "To treat us like this was perhaps the right of a savage; it was not the right of a civilised man."}},
-					{"who": "nemo", "text": {"fr": "Je ne suis pas ce que vous appelez un homme civilisé ! J'ai rompu avec la société tout entière pour des raisons que moi seul j'ai le droit d'apprécier.", "en": "I am not what you call a civilised man! I have broken with the whole of society, for reasons that I alone have the right to judge."}}
-				], "do": ["set:nemo_angry"]},
-				{"id": "sea_men", "who": "aronnax", "label": {"fr": "Vous êtes des gens de mer. Nous aussi, à notre façon.", "en": "You are people of the sea. So are we, in our way."}, "if": ["cat:sea_otter", "flag:nemo_angry"], "once": true, "lines": [
-					{"who": "aronnax", "text": {"fr": "Votre béret est en loutre de mer, vos bottes en peau de phoque. Vous vivez de la mer. Conseil classe ses habitants, Ned les chasse, moi je les étudie.", "en": "Your beret is sea-otter, your boots are sealskin. You live from the sea. Conseil classifies its creatures, Ned hunts them, I study them."}},
-					{"who": "nemo", "text": {"fr": "… Le professeur Aronnax. J'ai lu votre livre. Il va aussi loin que la science terrestre le permet. Pas plus loin.", "en": "… Professor Aronnax. I have read your book. It goes as far as land science allows. No further."}}
-				], "do": ["set:nemo_calmed"]},
-				{"id": "fate", "label": {"fr": "Que comptez-vous faire de nous ?", "en": "What do you intend to do with us?"}, "if": "flag:nemo_calmed", "lines": [
-					{"who": "nemo", "text": {"fr": "Je vous laisse la liberté à bord, à une condition : quand je vous le demanderai, vous rentrerez dans vos cabines quelques heures, sans chercher à voir.", "en": "I leave you free aboard, on one condition: when I ask, you will keep to your cabins for a few hours, without trying to see."}},
-					{"who": "ned", "text": {"fr": "Et la liberté de partir ?", "en": "And the freedom to leave?"}},
-					{"who": "nemo", "text": {"fr": "Celle-là, jamais.", "en": "That one, never."}}
-				], "do": ["set:terms_given", "end_chapter"]}
+				{
+					"id": "who",
+					"label": {
+						"fr": "Qui êtes-vous, monsieur ?",
+						"en": "Who are you, sir?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Messieurs, je parle également le français, l'anglais, l'allemand et le latin. Je voulais vous connaître d'abord, réfléchir ensuite.",
+								"en": "I speak French, English, German and Latin. I wished to know you first, and to think afterwards."
+							}
+						},
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Nous traiter ainsi, c'était peut-être le droit d'un sauvage, ce n'était pas celui d'un homme civilisé.",
+								"en": "To treat us like this was perhaps the right of a savage; it was not the right of a civilised man."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Je ne suis pas ce que vous appelez un homme civilisé ! J'ai rompu avec la société tout entière pour des raisons que moi seul j'ai le droit d'apprécier.",
+								"en": "I am not what you call a civilised man! I have broken with the whole of society, for reasons that I alone have the right to judge."
+							}
+						}
+					],
+					"do": [
+						"set:nemo_angry"
+					]
+				},
+				{
+					"id": "sea_men",
+					"who": "aronnax",
+					"label": {
+						"fr": "Vous êtes des gens de mer. Nous aussi, à notre façon.",
+						"en": "You are people of the sea. So are we, in our way."
+					},
+					"if": [
+						"cat:sea_otter",
+						"flag:nemo_angry"
+					],
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Votre béret est en loutre de mer, vos bottes en peau de phoque. Vous vivez de la mer. Conseil classe ses habitants, Ned les chasse, moi je les étudie.",
+								"en": "Your beret is sea-otter, your boots are sealskin. You live from the sea. Conseil classifies its creatures, Ned hunts them, I study them."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "… Le professeur Aronnax. J'ai lu votre livre. Il va aussi loin que la science terrestre le permet. Pas plus loin.",
+								"en": "… Professor Aronnax. I have read your book. It goes as far as land science allows. No further."
+							}
+						}
+					],
+					"do": [
+						"set:nemo_calmed"
+					]
+				},
+				{
+					"id": "fate",
+					"label": {
+						"fr": "Que comptez-vous faire de nous ?",
+						"en": "What do you intend to do with us?"
+					},
+					"if": "flag:nemo_calmed",
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Je vous laisse la liberté à bord, à une condition : quand je vous le demanderai, vous rentrerez dans vos cabines quelques heures, sans chercher à voir.",
+								"en": "I leave you free aboard, on one condition: when I ask, you will keep to your cabins for a few hours, without trying to see."
+							}
+						},
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Et la liberté de partir ?",
+								"en": "And the freedom to leave?"
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Celle-là, jamais.",
+								"en": "That one, never."
+							}
+						}
+					],
+					"do": [
+						"set:terms_given",
+						"end_chapter"
+					]
+				}
 			]
 		}
 	},
 	"objectives": [
 		{
-			"id": "talk", "text": {"fr": "Se faire comprendre des deux inconnus.", "en": "Make the two strangers understand us."},
+			"id": "talk",
+			"text": {
+				"fr": "Se faire comprendre des deux inconnus.",
+				"en": "Make the two strangers understand us."
+			},
 			"done_if": "flag:languages_tried",
 			"hints": [
-				{"fr": "Nous parlons à nous trois plusieurs langues. Chacun la sienne.", "en": "Between the three of us we speak several languages. Each his own."},
-				{"fr": "Aronnax le français, Ned l'anglais, Conseil l'allemand. Et un savant a toujours une dernière langue en réserve.", "en": "Aronnax French, Ned English, Conseil German. And a scholar always keeps one last language in reserve."},
-				{"fr": "Parler aux inconnus avec chacun des trois (changer de personnage avec les portraits), puis Aronnax : Se souvenir des inconnus, et leur parler en latin.", "en": "Talk to the strangers as each of the three (switch with the portraits), then as Aronnax: Recall the strangers, and speak Latin."}
+				{
+					"fr": "Nous parlons à nous trois plusieurs langues. Chacun la sienne.",
+					"en": "Between the three of us we speak several languages. Each his own."
+				},
+				{
+					"fr": "Aronnax le français, Ned l'anglais, Conseil l'allemand. Et un savant a toujours une dernière langue en réserve.",
+					"en": "Aronnax French, Ned English, Conseil German. And a scholar always keeps one last language in reserve."
+				},
+				{
+					"fr": "Parler aux inconnus avec chacun des trois (changer de personnage avec les portraits), puis Aronnax : Se souvenir des inconnus, et leur parler en latin.",
+					"en": "Talk to the strangers as each of the three (switch with the portraits), then as Aronnax: Recall the strangers, and speak Latin."
+				}
 			]
 		},
 		{
-			"id": "commander", "text": {"fr": "Obtenir une explication.", "en": "Get an explanation."},
-			"show_if": "flag:languages_tried", "done_if": "flag:terms_given",
+			"id": "commander",
+			"text": {
+				"fr": "Obtenir une explication.",
+				"en": "Get an explanation."
+			},
+			"show_if": "flag:languages_tried",
+			"done_if": "flag:terms_given",
 			"hints": [
-				{"fr": "Les gens d'ici ne viennent que quand on les y oblige. Ned a une façon bien à lui d'obliger les gens.", "en": "The people here only come when forced. Ned has his own way of forcing people."},
-				{"fr": "Il faut d'abord que Ned soit à bout. La porte s'en chargera. Et Conseil saura quoi dire de nos geôliers.", "en": "First Ned has to lose his temper. The door will see to that. And Conseil will know what to say about our jailers."},
-				{"fr": "Ned : Forcer la porte, puis Forcer le stewart. Conseil : Classer le béret. Aronnax : parler au commandant (Qui êtes-vous ? puis Vous êtes des gens de mer, puis Que comptez-vous faire de nous ?).", "en": "Ned: Force the door, then Force the steward. Conseil: Catalogue the beret. Aronnax: talk to the commander (Who are you? then You are people of the sea, then What do you intend to do with us?)."}
+				{
+					"fr": "Les gens d'ici ne viennent que quand on les y oblige. Ned a une façon bien à lui d'obliger les gens.",
+					"en": "The people here only come when forced. Ned has his own way of forcing people."
+				},
+				{
+					"fr": "Il faut d'abord que Ned soit à bout. La porte s'en chargera. Et Conseil saura quoi dire de nos geôliers.",
+					"en": "First Ned has to lose his temper. The door will see to that. And Conseil will know what to say about our jailers."
+				},
+				{
+					"fr": "Ned : Forcer la porte, puis Forcer le stewart. Conseil : Classer le béret. Aronnax : parler au commandant (Qui êtes-vous ? puis Vous êtes des gens de mer, puis Que comptez-vous faire de nous ?).",
+					"en": "Ned: Force the door, then Force the steward. Conseil: Catalogue the beret. Aronnax: talk to the commander (Who are you? then You are people of the sea, then What do you intend to do with us?)."
+				}
 			]
 		}
 	],
-	"on_start_say": {"fr": "Trois prisonniers, trois langues. Essayons.", "en": "Three prisoners, three languages. Let's try."},
+	"on_start_say": {
+		"fr": "Trois prisonniers, trois langues. Essayons.",
+		"en": "Three prisoners, three languages. Let's try."
+	},
 	"next": "ch05"
 }

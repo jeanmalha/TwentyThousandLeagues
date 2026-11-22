@@ -92,8 +92,18 @@ static func set_selected(b: Button, selected: bool) -> void:
 	b.add_theme_stylebox_override("normal", sb)
 
 
+static var _portraits: Dictionary = {}
+
+
 ## A portrait texture, or a coloured placeholder bust when the art is missing.
+## Cached: a texture made during a draw call must outlive that frame.
 static func portrait_texture(who: String) -> Texture2D:
+	if not _portraits.has(who):
+		_portraits[who] = _make_portrait(who)
+	return _portraits[who]
+
+
+static func _make_portrait(who: String) -> Texture2D:
 	for path in ["res://art/portraits/%s.png" % who]:
 		if ResourceLoader.exists(path):
 			return load(path)

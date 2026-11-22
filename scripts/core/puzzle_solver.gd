@@ -137,6 +137,13 @@ func _key(s: Dictionary) -> String:
 ## Try `effects` from state `s`: returns [new_state, ends_chapter].
 func _try(s: Dictionary, effects: Array) -> Array:
 	GameState.from_dict(s.duplicate(true))
+	# A "scene:id" effect plays a story page whose own effects then apply.
+	var expanded: Array = []
+	for e in effects:
+		expanded.append(e)
+		if str(e).begins_with("scene:"):
+			expanded += Array(Content.chapter(chapter_id).get("scenes", {}).get(str(e).substr(6), {}).get("do", []))
+	effects = expanded
 	var ends := false
 	for e in effects:
 		if str(e) == "end_chapter":

@@ -24,7 +24,7 @@
 	},
 	"scenes": {
 		"intro": {
-			"image": "res://art/locations/ch05_salon.png",
+			"image": "res://art/engravings/hetzel-022.jpg",
 			"lines": [
 				{
 					"who": "narrator",
@@ -43,7 +43,7 @@
 			]
 		},
 		"panels": {
-			"image": "res://art/locations/ch05_salon.png",
+			"image": "res://art/engravings/hetzel-029.jpg",
 			"lines": [
 				{
 					"who": "narrator",
@@ -158,10 +158,10 @@
 						"en": "Corals"
 					},
 					"rect": [
-						190,
-						64,
+						246,
 						40,
-						34
+						44,
+						44
 					],
 					"actions": {
 						"look": [
@@ -216,26 +216,27 @@
 								}
 							}
 						]
-					}
+					},
+					"npc": "nemo"
 				},
 				{
 					"id": "window",
 					"name": {
-						"fr": "Les panneaux de tôle",
-						"en": "The iron panels"
+						"fr": "La grande baie",
+						"en": "The great window"
 					},
 					"rect": [
-						110,
-						20,
+						112,
+						36,
 						100,
-						76
+						82
 					],
 					"actions": {
 						"look": [
 							{
 								"say": {
-									"fr": "Deux grands panneaux de tôle, fermés. Derrière, il y a la mer.",
-									"en": "Two great iron panels, closed. Behind them is the sea."
+									"fr": "Une immense baie ovale. Les volets de tôle ne sont qu'entrouverts : derrière, la mer, noire et immobile. Le capitaine seul décide de ce qu'on voit à bord.",
+									"en": "An immense oval window. The iron shutters are only ajar: behind them, the sea, black and still. Only the captain decides what may be seen aboard."
 								}
 							}
 						],
@@ -381,7 +382,8 @@
 								}
 							}
 						]
-					}
+					},
+					"npc": "nemo"
 				},
 				{
 					"id": "table",

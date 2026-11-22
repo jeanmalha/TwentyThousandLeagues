@@ -22,7 +22,10 @@
 		"empty_notes": {"fr": "Aucune note pour l'instant.", "en": "No notes yet."},
 		"hint_1": {"fr": "Un indice…", "en": "A hint…"},
 		"hint_2": {"fr": "Un indice plus net…", "en": "A clearer hint…"},
-		"hint_3": {"fr": "La solution", "en": "The answer"}
+		"hint_3": {"fr": "La solution", "en": "The answer"},
+		"running_head": {"fr": "VINGT MILLE LIEUES SOUS LES MERS", "en": "TWENTY THOUSAND LEAGUES UNDER THE SEAS"},
+		"chapter_first": {"fr": "CHAPITRE PREMIER", "en": "CHAPTER ONE"},
+		"chapter": {"fr": "CHAPITRE", "en": "CHAPTER"}
 	},
 	"verbs": {
 		"look": {"fr": "Regarder", "en": "Look"},
