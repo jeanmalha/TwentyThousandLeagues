@@ -1,0 +1,313 @@
+{
+	"id": "ch12",
+	"number": 12,
+	"act": 3,
+	"title": {
+		"fr": "L'archipel grec",
+		"en": "The Greek Archipelago"
+	},
+	"novel": "II-6 – II-7",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch12_salon_window",
+			"conseil": "ch12_salon_window",
+			"ned": "ch12_salon_window"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-068.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Entre les îles de l'archipel grec, de nuit, un homme apparut derrière la vitre du salon : un plongeur, sans scaphandre, qui nageait comme un poisson.",
+						"en": "Among the islands of the Greek archipelago, at night, a man appeared behind the salon window: a diver, without a suit, swimming like a fish."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Ne vous inquiétez pas, monsieur le professeur. C'est Nicolas, du cap Matapan, surnommé le Pesce. Il est bien connu dans toutes les Cyclades.",
+						"en": "Don't be alarmed, Professor. It's Nicolas, from Cape Matapan, known as the Fish. He is well known all over the Cyclades."
+					}
+				}
+			]
+		},
+		"gold": {
+			"image": "res://art/engravings/hetzel-069.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le capitaine ouvrit un coffre bardé de fer. Il était rempli de lingots d'or. Il en fit un chargement, écrivit une adresse en caractères grecs modernes, et l'on hissa le coffre jusqu'au canot.",
+						"en": "The captain opened an iron-bound chest. It was full of gold ingots. He made up a load, wrote an address in modern Greek letters, and the chest was hauled up to the boat."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Puis, en quarante-huit heures, le Nautilus traversa la Méditerranée, sans remonter une seule fois à la surface. Ned Land, qui guettait une côte, n'en vit aucune.",
+						"en": "Then, in forty-eight hours, the Nautilus crossed the Mediterranean without surfacing once. Ned Land, watching for a coast, saw none."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch12_salon_window": {
+			"name": {
+				"fr": "Le salon, dans les Cyclades",
+				"en": "The salon, in the Cyclades"
+			},
+			"background": "res://art/locations/ch12_salon_window.png",
+			"color": "#0f2236",
+			"hotspots": [
+				{
+					"id": "nicolas",
+					"name": {
+						"fr": "Le plongeur",
+						"en": "The diver"
+					},
+					"rect": [
+						90,
+						40,
+						40,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un homme, sans casque, sans air, qui nous regarde à travers la vitre et fait un signe au capitaine.",
+									"en": "A man, no helmet, no air, looking at us through the glass and signalling to the captain."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Homme, monsieur. Mais je le classerais volontiers parmi les poissons, à voir comme il nage.",
+									"en": "Man, Monsieur. But I'd happily class him with the fish, the way he swims."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "chest",
+					"name": {
+						"fr": "Le coffre de lingots",
+						"en": "The chest of ingots"
+					},
+					"rect": [
+						86,
+						84,
+						90,
+						56
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un coffre bardé de fer, plein de lingots d'or. Des millions.",
+									"en": "An iron-bound chest full of gold ingots. Millions."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Or, monsieur, en lingots, d'un titre très pur. Et l'adresse est en grec. Je ne classe pas les intentions, mais celle-ci part vers la terre.",
+									"en": "Gold, Monsieur, in ingots, very pure. And the address is in Greek. I don't classify intentions, but this one is going ashore."
+								},
+								"do": [
+									"fact:gold_to_greece"
+								]
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Avec un seul de ces lingots, on s'achète un navire, monsieur. … Je n'y touche pas. Mais je n'en pense pas moins.",
+									"en": "With just one of those ingots you could buy a ship, sir. … I'm not touching it. But I'm thinking about it."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo12",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						2,
+						20,
+						36,
+						80
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_gold",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine écrit une adresse, sans se cacher de nous.",
+									"en": "The captain is writing an address, without hiding it from us."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"facts": {
+		"gold_to_greece": {
+			"name": {
+				"fr": "L'or",
+				"en": "The gold"
+			},
+			"text": {
+				"fr": "Des millions en lingots, adressés en grec, vers la terre.",
+				"en": "Millions in ingots, addressed in Greek, going ashore."
+			}
+		},
+		"saw_gold_for_crete": {
+			"name": {
+				"fr": "La Crète",
+				"en": "Crete"
+			},
+			"text": {
+				"fr": "La Crète s'est soulevée contre le despotisme turc. Le capitaine finance-t-il les insurgés ?",
+				"en": "Crete has risen against Turkish despotism. Is the captain funding the insurgents?"
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_gold": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur le professeur ?",
+						"en": "Professor?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "where",
+					"label": {
+						"fr": "Où part cet or, capitaine ?",
+						"en": "Where is this gold going, Captain?"
+					},
+					"if": "!fact:gold_to_greece",
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Là où l'on en a besoin.",
+								"en": "Where it is needed."
+							}
+						}
+					]
+				},
+				{
+					"id": "crete",
+					"who": "aronnax",
+					"label": {
+						"fr": "Quand j'ai quitté l'Europe, la Crète venait de se soulever…",
+						"en": "When I left Europe, Crete had just risen up…"
+					},
+					"if": "fact:gold_to_greece",
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Quand je me suis embarqué, l'île de Crète venait de s'insurger tout entière contre le despotisme turc. Cet or, adressé en grec…",
+								"en": "When I sailed, the whole island of Crete had just risen against Turkish despotism. This gold, addressed in Greek…"
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Je ne vous ai rien dit, monsieur le professeur. Et vous n'avez rien vu.",
+								"en": "I have told you nothing, Professor. And you have seen nothing."
+							}
+						}
+					],
+					"do": [
+						"fact:saw_gold_for_crete",
+						"scene:gold"
+					]
+				},
+				{
+					"id": "leave",
+					"label": {
+						"fr": "Laisser le capitaine à ses affaires.",
+						"en": "Leave the captain to his business."
+					},
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Merci.",
+								"en": "Thank you."
+							}
+						}
+					],
+					"do": [
+						"scene:gold"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "gold",
+			"text": {
+				"fr": "Comprendre où va l'or du capitaine.",
+				"en": "Work out where the captain's gold is going."
+			},
+			"hints": [
+				{
+					"fr": "Un coffre, une adresse en grec. Et l'histoire récente de ces îles.",
+					"en": "A chest, an address in Greek. And the recent history of these islands."
+				},
+				{
+					"fr": "Conseil examinera le coffre ; le professeur se souviendra de la Crète.",
+					"en": "Conseil will examine the chest; the professor will remember Crete."
+				},
+				{
+					"fr": "Conseil : Classer le coffre. Puis parler au capitaine de la Crète. (On peut aussi le laisser à ses affaires.)",
+					"en": "Conseil: Catalogue the chest. Then talk to the captain about Crete. (You can also leave him to his business.)"
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Un homme, dehors, sans scaphandre ?",
+		"en": "A man, outside, with no diving suit?"
+	},
+	"next": "ch13"
+}

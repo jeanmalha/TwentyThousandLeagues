@@ -1,0 +1,353 @@
+{
+	"id": "ch20",
+	"number": 20,
+	"act": 4,
+	"title": {
+		"fr": "Une hécatombe",
+		"en": "A Hecatomb"
+	},
+	"novel": "II-21",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch20_salon_dark",
+			"conseil": "ch20_salon_dark",
+			"ned": "ch20_salon_dark"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-109.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Un navire de guerre nous poursuivait. Ses boulets ricochaient sur la coque. Le capitaine Nemo, sur la plate-forme, hissa son pavillon noir.",
+						"en": "A warship was chasing us. Its shells skipped off the hull. Captain Nemo, on the platform, hoisted his black flag."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Je suis le droit, je suis la justice ! Je suis l'opprimé, et voilà l'oppresseur ! C'est par lui que tout ce que j'ai aimé, chéri, vénéré, patrie, femme, enfants, mon père, ma mère, j'ai vu tout périr ! Tout ce que je hais est là ! Taisez-vous !",
+						"en": "I am the law, I am justice! I am the oppressed, and there is the oppressor! Through him, everything I loved, cherished, revered, country, wife, children, my father, my mother, I saw it all perish! Everything I hate is there! Be silent!"
+					}
+				}
+			]
+		},
+		"ram": {
+			"image": "res://art/engravings/hetzel-111.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le Nautilus prit son élan. Je sentis le choc, à peine. Il traversa la coque du navire comme l'aiguille du voilier traverse la toile.",
+						"en": "The Nautilus gathered speed. I barely felt the shock. It went through the ship's hull the way a sailmaker's needle goes through canvas."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Alors le malheureux navire s'enfonça. Ses hunes, chargées de victimes, apparurent, puis le sommet de son grand mât. Puis la masse sombre disparut.",
+						"en": "Then the doomed ship sank. Her tops, crowded with victims, came into view, then the head of her mainmast. Then the dark mass was gone."
+					}
+				}
+			],
+			"do": [
+				"move:aronnax:ch20_nemo_room",
+				"move:conseil:ch20_nemo_room",
+				"move:ned:ch20_nemo_room",
+				"set:ship_sunk"
+			]
+		},
+		"portrait": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Sur le panneau du fond, au-dessous des portraits de ses héros, je vis le portrait d'une femme jeune encore et de deux petits enfants. Le capitaine Nemo les regarda pendant quelques instants, leur tendit les bras, et, s'agenouillant, il fondit en sanglots.",
+						"en": "On the far wall, below the portraits of his heroes, I saw the portrait of a woman, still young, and two small children. Captain Nemo looked at them for a few moments, held out his arms to them, and, kneeling, broke into sobs."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Ce terrible justicier, véritable archange de la haine. Et ce père. Je ne savais plus lequel des deux j'avais sous les yeux.",
+						"en": "That terrible avenger, a very archangel of hatred. And that father. I no longer knew which of the two I was looking at."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch20_salon_dark": {
+			"name": {
+				"fr": "Le salon, panneaux ouverts",
+				"en": "The salon, panels open"
+			},
+			"background": "res://art/locations/ch20_salon_dark.png",
+			"color": "#05080c",
+			"hotspots": [
+				{
+					"id": "warship",
+					"name": {
+						"fr": "Le navire de guerre",
+						"en": "The warship"
+					},
+					"rect": [
+						124,
+						20,
+						170,
+						110
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un vaisseau à deux ponts, sans pavillon. Quel pays ? Le capitaine le sait. Il ne le dira pas.",
+									"en": "A two-decker, flying no colours. Which country? The captain knows. He won't say."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Pas de pavillon, pas de nom lisible. Je ne saurai jamais à quelle nation il appartenait. Et le capitaine non plus ne me dira jamais la sienne.",
+									"en": "No flag, no legible name. I shall never know what nation she belonged to. And the captain will never tell me his either."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo20",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						4,
+						20,
+						40,
+						80
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_hecatomb",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine, impassible, regarde l'ennemi approcher.",
+									"en": "The captain, impassive, watches the enemy approach."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned20",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						266,
+						96,
+						40,
+						48
+					],
+					"npc": "ned",
+					"if": "!char:ned",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned serre les poings. « Il va les couler, monsieur. Tous. »",
+									"en": "Ned clenches his fists. \"He's going to sink them, sir. All of them.\""
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		},
+		"ch20_nemo_room": {
+			"name": {
+				"fr": "La chambre du capitaine",
+				"en": "The captain's room"
+			},
+			"background": "res://art/locations/ch20_nemo_room.png",
+			"color": "#2b1912",
+			"hotspots": [
+				{
+					"id": "portrait",
+					"name": {
+						"fr": "Un portrait",
+						"en": "A portrait"
+					},
+					"rect": [
+						176,
+						30,
+						140,
+						60
+					],
+					"actions": {
+						"look": [
+							{
+								"scene": "portrait"
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Je ne classe pas cela, monsieur.",
+									"en": "I don't classify this, Monsieur."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "bed",
+					"name": {
+						"fr": "Le lit de fer",
+						"en": "The iron bed"
+					},
+					"rect": [
+						50,
+						80,
+						120,
+						64
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une chambre de moine. Un lit de fer, une table, rien d'autre.",
+									"en": "A monk's cell. An iron bed, a table, nothing else."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"dialogues": {
+		"nemo_hecatomb": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Rentrez chez vous, monsieur. Ou restez. Vous verrez.",
+						"en": "Go to your room, sir. Or stay. You will see."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "stay",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Rester devant la vitre)",
+						"en": "(Stay at the window)"
+					},
+					"lines": [
+						{
+							"who": "narrator",
+							"text": {
+								"fr": "Je restai. Je voulais voir. Je l'ai regretté.",
+								"en": "I stayed. I wanted to see. I regretted it."
+							}
+						}
+					],
+					"do": [
+						"set:stayed_at_window",
+						"scene:ram"
+					]
+				},
+				{
+					"id": "leave",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Quitter le salon)",
+						"en": "(Leave the salon)"
+					},
+					"lines": [
+						{
+							"who": "narrator",
+							"text": {
+								"fr": "Je ne pus regarder. Mais dans ma chambre, je sentis le choc, et j'entendis, à travers la coque, ce que je n'oublierai jamais.",
+								"en": "I couldn't watch. But in my room I felt the shock, and heard, through the hull, what I shall never forget."
+							}
+						}
+					],
+					"do": [
+						"scene:ram"
+					]
+				},
+				{
+					"id": "plead",
+					"who": "aronnax",
+					"label": {
+						"fr": "Capitaine, il y a des hommes à bord de ce navire !",
+						"en": "Captain, there are men aboard that ship!"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Taisez-vous !",
+								"en": "Be silent!"
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "witness",
+			"text": {
+				"fr": "Rester, ou ne pas voir.",
+				"en": "Stay, or not watch."
+			},
+			"hints": [
+				{
+					"fr": "Rien de ce que nous ferons ne changera ce qui va arriver.",
+					"en": "Nothing we do will change what is about to happen."
+				},
+				{
+					"fr": "Le capitaine laisse le choix : regarder, ou partir.",
+					"en": "The captain leaves the choice: watch, or leave."
+				},
+				{
+					"fr": "Parler au capitaine et choisir. Puis, dans sa chambre, Regarder le portrait.",
+					"en": "Talk to the captain and choose. Then, in his room, Look at the portrait."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Il va le couler.",
+		"en": "He's going to sink her."
+	},
+	"next": "ch21"
+}

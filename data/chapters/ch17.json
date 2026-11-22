@@ -1,0 +1,444 @@
+{
+	"id": "ch17",
+	"number": 17,
+	"act": 4,
+	"title": {
+		"fr": "Faute d'air",
+		"en": "Short of Air"
+	},
+	"novel": "II-15 – II-16",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch17_trapped",
+			"conseil": "ch17_trapped",
+			"ned": "ch17_trapped"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Au retour, sous la banquise, un choc. Un énorme bloc de glace, une montagne entière, s'était retourné et avait coincé le Nautilus. Devant, derrière, dessus, dessous : la glace.",
+						"en": "On the way back, under the ice pack, a shock. An enormous block of ice, a whole mountain, had overturned and trapped the Nautilus. Ahead, behind, above, below: ice."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Messieurs, nous sommes emprisonnés. L'air de nos réservoirs nous suffira deux jours. Il faut creuser.",
+						"en": "Gentlemen, we are imprisoned. The air in our tanks will last two days. We must dig."
+					}
+				}
+			]
+		},
+		"boiling": {
+			"image": "res://art/engravings/hetzel-096.jpg",
+			"lines": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "L'eau bouillante ! … Est-ce que des jets d'eau bouillante, constamment injectée par les pompes du Nautilus, n'élèveraient pas la température de ce milieu et ne retarderaient pas sa congélation ?",
+						"en": "Boiling water! … Would jets of boiling water, pumped out constantly by the Nautilus, not raise the temperature around us and slow the freezing?"
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Il faut l'essayer.",
+						"en": "We must try it."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Les parois cessèrent de se refermer. On creusa encore, jour et nuit. Mais l'air, lui, s'épuisait.",
+						"en": "The walls stopped closing in. We dug on, day and night. But the air was running out."
+					}
+				}
+			],
+			"do": [
+				"set:walls_held"
+			]
+		},
+		"sacrifice": {
+			"image": "res://art/engravings/hetzel-097.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Je ne pouvais plus respirer. Puis un peu d'air pénétra dans mes poumons. C'étaient Ned et Conseil, mes deux braves amis, qui se sacrifiaient pour me sauver.",
+						"en": "I could no longer breathe. Then a little air entered my lungs. It was Ned and Conseil, my two good friends, sacrificing themselves to save me."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le Nautilus se lança sur la glace comme un bélier. Il la creva, se retira, la frappa encore, et enfin, emporté par un élan suprême, il s'élança sur la surface glacée qu'il écrasa de son poids.",
+						"en": "The Nautilus threw itself at the ice like a battering ram. It broke it, drew back, struck again, and at last, carried by a supreme effort, burst onto the frozen surface and crushed it under its weight."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		},
+		"outro": {
+			"image": "res://art/engravings/hetzel-098.jpg",
+			"lines": [
+				{
+					"who": "conseil",
+					"text": {
+						"fr": "Ah ! que c'est bon, l'oxygène ! Que monsieur ne craigne pas de respirer. Il y en a pour tout le monde.",
+						"en": "Ah! how good oxygen is! Monsieur need not be afraid to breathe. There's enough for everyone."
+					}
+				}
+			]
+		}
+	},
+	"locations": {
+		"ch17_trapped": {
+			"name": {
+				"fr": "Le Nautilus, prisonnier des glaces",
+				"en": "The Nautilus, trapped in the ice"
+			},
+			"background": "res://art/locations/ch17_trapped.png",
+			"color": "#0f2236",
+			"hotspots": [
+				{
+					"id": "gauge",
+					"name": {
+						"fr": "Le manomètre",
+						"en": "The pressure gauge"
+					},
+					"rect": [
+						160,
+						80,
+						60,
+						50
+					],
+					"actions": {
+						"look": [
+							{
+								"if": "flag:walls_held",
+								"say": {
+									"fr": "L'aiguille descend. Les réservoirs se vident. Encore un effort.",
+									"en": "The needle is falling. The tanks are emptying. One more effort."
+								}
+							},
+							{
+								"say": {
+									"fr": "L'air des réservoirs : deux jours. Pas une heure de plus.",
+									"en": "The air in the tanks: two days. Not an hour more."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "frost",
+					"name": {
+						"fr": "Le givre sur les parois",
+						"en": "The frost on the walls"
+					},
+					"rect": [
+						0,
+						20,
+						100,
+						110
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le froid entre par la coque. Le givre gagne les rivets.",
+									"en": "The cold is coming through the hull. Frost is creeping over the rivets."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo17",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						230,
+						30,
+						40,
+						80
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_ice",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine, immobile, calcule.",
+									"en": "The captain, motionless, is calculating."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_tunnel",
+					"name": {
+						"fr": "Vers la tranchée (scaphandre)",
+						"en": "To the trench (diving suit)"
+					},
+					"rect": [
+						280,
+						30,
+						40,
+						100
+					],
+					"to": "ch17_ice_tunnel"
+				}
+			]
+		},
+		"ch17_ice_tunnel": {
+			"name": {
+				"fr": "La tranchée dans la glace",
+				"en": "The trench in the ice"
+			},
+			"background": "res://art/locations/ch17_ice_tunnel.png",
+			"color": "#15304a",
+			"hotspots": [
+				{
+					"id": "ice_wall",
+					"name": {
+						"fr": "La muraille de glace",
+						"en": "The wall of ice"
+					},
+					"rect": [
+						60,
+						20,
+						200,
+						110
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Dix mètres de glace sous nos pieds. Les hommes se relaient, deux heures chacun.",
+									"en": "Ten metres of ice beneath our feet. The men take turns, two hours each."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je creuse pour deux. Le pic mord la glace, morceau par morceau.",
+									"en": "I dig for two. The pick bites into the ice, chunk by chunk."
+								},
+								"do": [
+									"set:dug_ned"
+								]
+							}
+						],
+						"use": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Je prends mon tour. Le pic est lourd, mes bras tremblent, mais la tranchée avance.",
+									"en": "I take my turn. The pick is heavy, my arms shake, but the trench moves forward."
+								},
+								"do": [
+									"set:dug_aronnax"
+								]
+							},
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Si monsieur creuse, je creuse.",
+									"en": "If Monsieur digs, I dig."
+								},
+								"do": [
+									"set:dug_conseil"
+								]
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je creuse pour deux.",
+									"en": "I dig for two."
+								},
+								"do": [
+									"set:dug_ned"
+								]
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"if": [
+									"flag:dug_ned",
+									"flag:dug_aronnax",
+									"flag:dug_conseil"
+								],
+								"say": {
+									"fr": "Monsieur, la glace se reforme. Les parois de la tranchée, et celles autour du Nautilus, se rapprochent. L'eau de mer gèle vers moins deux degrés, et ici, elle gèle plus vite que nous ne creusons.",
+									"en": "Monsieur, the ice is re-forming. The walls of the trench, and those around the Nautilus, are closing in. Sea water freezes at about minus two degrees, and here it's freezing faster than we can dig."
+								},
+								"do": [
+									"fact:walls_closing"
+								]
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "back_in",
+					"name": {
+						"fr": "Rentrer à bord",
+						"en": "Back aboard"
+					},
+					"rect": [
+						0,
+						100,
+						50,
+						44
+					],
+					"to": "ch17_trapped"
+				}
+			]
+		}
+	},
+	"facts": {
+		"walls_closing": {
+			"name": {
+				"fr": "La glace se reforme",
+				"en": "The ice is re-forming"
+			},
+			"text": {
+				"fr": "Les parois se rapprochent plus vite que nous ne creusons.",
+				"en": "The walls are closing faster than we can dig."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_ice": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur ?",
+						"en": "Sir?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "closing",
+					"label": {
+						"fr": "Capitaine, la glace se referme sur nous.",
+						"en": "Captain, the ice is closing in on us."
+					},
+					"if": "fact:walls_closing",
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Après-demain, les réservoirs seront vides.",
+								"en": "The day after tomorrow, the tanks will be empty."
+							}
+						}
+					],
+					"do": [
+						"scene:boiling"
+					]
+				},
+				{
+					"id": "breakout",
+					"label": {
+						"fr": "Reste-t-il assez de glace ?",
+						"en": "Is there much ice left?"
+					},
+					"if": "flag:walls_held",
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Un mètre. Le Nautilus fera le reste, de tout son poids. Messieurs, à vos places.",
+								"en": "One metre. The Nautilus will do the rest, with all its weight. Gentlemen, to your places."
+							}
+						}
+					],
+					"do": [
+						"scene:sacrifice"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "dig",
+			"text": {
+				"fr": "Creuser, chacun son tour.",
+				"en": "Dig, each in turn."
+			},
+			"done_if": "fact:walls_closing",
+			"hints": [
+				{
+					"fr": "Tout le monde creuse, même le professeur. Conseil regarde la glace.",
+					"en": "Everyone digs, even the professor. Conseil watches the ice."
+				},
+				{
+					"fr": "Une fois que les trois ont creusé, Conseil remarquera ce que fait la glace.",
+					"en": "Once all three have dug, Conseil will notice what the ice is doing."
+				},
+				{
+					"fr": "Dans la tranchée : chacun Utiliser la muraille (Ned peut aussi Forcer). Puis Conseil : Classer la muraille, et prévenir le capitaine.",
+					"en": "In the trench: each of them Use the wall (Ned can also Force). Then Conseil: Catalogue the wall, and tell the captain."
+				}
+			]
+		},
+		{
+			"id": "breathe",
+			"text": {
+				"fr": "Tenir jusqu'à la percée.",
+				"en": "Hold on until the breakthrough."
+			},
+			"show_if": "flag:walls_held",
+			"hints": [
+				{
+					"fr": "Le capitaine sait quand frapper.",
+					"en": "The captain knows when to strike."
+				},
+				{
+					"fr": "Lui demander s'il reste beaucoup de glace.",
+					"en": "Ask him how much ice is left."
+				},
+				{
+					"fr": "Parler au capitaine : « Reste-t-il assez de glace ? »",
+					"en": "Talk to the captain: \"Is there much ice left?\""
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Deux jours d'air. Pas une heure de plus.",
+		"en": "Two days of air. Not an hour more."
+	},
+	"next": "ch18"
+}

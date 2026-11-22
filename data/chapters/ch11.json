@@ -1,0 +1,122 @@
+{
+	"id": "ch11",
+	"number": 11,
+	"act": 3,
+	"title": {"fr": "L'Arabian-Tunnel", "en": "The Arabian Tunnel"},
+	"novel": "II-4 – II-5",
+	"start": {
+		"party": ["aronnax", "conseil", "ned"],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {"aronnax": "ch11_salon", "conseil": "ch11_salon", "ned": "ch11_platform"},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-065.jpg",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Le Nautilus remonta la mer Rouge jusqu'au fond du golfe de Suez. Une impasse : l'isthme de Suez n'est pas encore percé.", "en": "The Nautilus sailed up the Red Sea to the very end of the Gulf of Suez. A dead end: the isthmus of Suez has not yet been cut through."}},
+				{"who": "nemo", "text": {"fr": "Après-demain, monsieur le professeur, nous serons dans la Méditerranée.", "en": "The day after tomorrow, Professor, we shall be in the Mediterranean."}},
+				{"who": "aronnax", "text": {"fr": "Dans la Méditerranée ? Sans faire le tour de l'Afrique ? C'est impossible.", "en": "In the Mediterranean? Without going round Africa? That's impossible."}}
+			]
+		},
+		"tunnel": {
+			"image": "res://art/engravings/hetzel-067.jpg",
+			"lines": [
+				{"who": "nemo", "text": {"fr": "Hasard et raisonnement, monsieur le professeur, et même, raisonnement plus que hasard. C'est un simple raisonnement de naturaliste qui m'a conduit à découvrir ce passage que je suis seul à connaître.", "en": "Chance and reasoning, Professor, and reasoning rather more than chance. It was a naturalist's simple reasoning that led me to discover this passage, which I alone know."}},
+				{"who": "narrator", "text": {"fr": "Le capitaine me conduisit dans la cage du timonier. Le Nautilus s'engagea dans une galerie sombre, emporté par le courant, plus vite qu'une flèche.", "en": "The captain took me into the pilot house. The Nautilus entered a dark gallery and was swept along by the current, faster than an arrow."}},
+				{"who": "nemo", "text": {"fr": "La Méditerranée.", "en": "The Mediterranean."}}
+			],
+			"do": ["end_chapter"]
+		}
+	},
+	"locations": {
+		"ch11_salon": {
+			"name": {"fr": "Le salon, dans la mer Rouge", "en": "The salon, in the Red Sea"},
+			"background": "res://art/locations/ch05_salon.png",
+			"color": "#3e251a",
+			"hotspots": [
+				{
+					"id": "fish11", "name": {"fr": "Les poissons de la mer Rouge", "en": "The fish of the Red Sea"}, "rect": [112, 36, 100, 82],
+					"actions": {
+						"look": [{"say": {"fr": "Des girelles, des exocets, des joels… La vitre fourmille de poissons.", "en": "Wrasses, flying fish, silversides… The window teems with fish."}}],
+						"catalogue": [{"who": "conseil", "say": {"fr": "Ophidies, fiatoles, girelles, persègues, joels, exocets. Monsieur remarquera : ce sont absolument les mêmes espèces que dans la Méditerranée. De l'autre côté de l'isthme.", "en": "Ophidia, fiatoles, wrasses, perch, silversides, flying fish. Monsieur will notice: exactly the same species as in the Mediterranean. On the other side of the isthmus."}, "do": ["fact:same_species"]}],
+						"recall": [
+							{"who": "aronnax", "if": ["fact:same_species", "fact:ringed_fish"], "say": {"fr": "Les mêmes espèces des deux côtés. Un poisson bagué à Suez et repris en Syrie. Et la mer Rouge est plus haute que la Méditerranée : un courant souterrain irait de l'une à l'autre. Il existe un passage sous l'isthme.", "en": "The same species on both sides. A fish ringed at Suez and caught again in Syria. And the Red Sea is higher than the Mediterranean: an underground current would flow from one to the other. There is a passage under the isthmus."}, "do": ["fact:passage"]},
+							{"who": "aronnax", "if": "fact:same_species", "say": {"fr": "Les mêmes espèces… Elles auraient pu venir par l'Afrique. Il me faudrait la preuve qu'un poisson a passé d'une mer à l'autre.", "en": "The same species… They could have come round Africa. I'd need proof that a fish has passed from one sea to the other."}},
+							{"who": "aronnax", "say": {"fr": "La mer Rouge… fermée au nord par l'isthme. Il faudrait regarder ces poissons de plus près.", "en": "The Red Sea… closed to the north by the isthmus. These fish deserve a closer look."}}
+						]
+					}
+				},
+				{
+					"id": "nemo11", "name": {"fr": "Le capitaine Nemo", "en": "Captain Nemo"}, "rect": [10, 20, 60, 72], "npc": "nemo", "dialogue": "nemo_suez",
+					"actions": {"look": [{"say": {"fr": "Le capitaine sourit, comme s'il attendait que je trouve seul.", "en": "The captain smiles, as if waiting for me to work it out alone."}}]}
+				}
+			],
+			"exits": [
+				{"id": "to_platform", "name": {"fr": "Vers la plate-forme", "en": "To the platform"}, "rect": [290, 20, 30, 100], "to": "ch11_platform"}
+			]
+		},
+		"ch11_platform": {
+			"name": {"fr": "La plate-forme, devant Suez", "en": "The platform, off Suez"},
+			"background": "res://art/locations/ch08_platform.png",
+			"color": "#15304a",
+			"hotspots": [
+				{
+					"id": "net", "name": {"fr": "Le filet du bord", "en": "The ship's net"}, "rect": [70, 86, 56, 58],
+					"actions": {
+						"look": [{"say": {"fr": "Le filet que l'équipage traîne chaque jour pour la cuisine.", "en": "The net the crew drags every day for the galley."}}],
+						"use": [
+							{"who": "ned", "say": {"fr": "Je remonte le filet. Tiens, celui-là a un anneau de cuivre à la queue ! Quelqu'un l'a bagué, et pas ici : regardez, le cuivre est piqué par des mois de mer.", "en": "I haul in the net. Look, this one's got a copper ring on its tail! Someone ringed it, and not here: see, the copper's pitted by months at sea."}, "do": ["fact:ringed_fish"]},
+							{"say": {"fr": "Trop lourd pour moi. C'est un travail pour Ned.", "en": "Too heavy for me. That's a job for Ned."}}
+						],
+						"force": [{"who": "ned", "say": {"fr": "Je remonte le filet. Tiens, celui-là a un anneau de cuivre à la queue ! Quelqu'un l'a bagué, et pas ici : regardez, le cuivre est piqué par des mois de mer.", "en": "I haul in the net. Look, this one's got a copper ring on its tail! Someone ringed it, and not here: see, the copper's pitted by months at sea."}, "do": ["fact:ringed_fish"]}]
+					}
+				},
+				{
+					"id": "isthmus", "name": {"fr": "L'isthme de Suez", "en": "The isthmus of Suez"}, "rect": [90, 38, 160, 30],
+					"actions": {
+						"look": [{"say": {"fr": "Une langue de sable entre deux mers. Sur la rive, on creuse un canal : M. de Lesseps n'aura pas fini avant un an.", "en": "A tongue of sand between two seas. On the shore they're digging a canal: Monsieur de Lesseps won't be done for another year."}}]
+					}
+				}
+			],
+			"exits": [
+				{"id": "to_salon", "name": {"fr": "Vers le salon", "en": "To the salon"}, "rect": [134, 90, 57, 34], "to": "ch11_salon"}
+			]
+		}
+	},
+	"catalogue": {
+		"twin_fish": {"name": {"fr": "Poissons jumeaux", "en": "Twin fish"}, "text": {"fr": "Mêmes espèces en mer Rouge et en Méditerranée.", "en": "Same species in the Red Sea and the Mediterranean."}}
+	},
+	"facts": {
+		"same_species": {"name": {"fr": "Mêmes espèces", "en": "Same species"}, "text": {"fr": "La mer Rouge et la Méditerranée ont des poissons absolument identiques.", "en": "The Red Sea and the Mediterranean have exactly the same fish."}},
+		"ringed_fish": {"name": {"fr": "Le poisson bagué", "en": "The ringed fish"}, "text": {"fr": "Un anneau de cuivre à la queue, posé il y a des mois.", "en": "A copper ring on its tail, fitted months ago."}},
+		"passage": {"name": {"fr": "Un passage", "en": "A passage"}, "text": {"fr": "Un courant souterrain relie les deux mers sous l'isthme.", "en": "An underground current links the two seas beneath the isthmus."}}
+	},
+	"dialogues": {
+		"nemo_suez": {
+			"npc": "nemo",
+			"greeting": [{"who": "nemo", "text": {"fr": "Eh bien, monsieur le professeur ?", "en": "Well, Professor?"}}],
+			"topics": [
+				{"id": "how", "label": {"fr": "Comment passer, capitaine ?", "en": "How do we get through, Captain?"}, "if": "!fact:passage", "lines": [
+					{"who": "nemo", "text": {"fr": "Aures habent et non audient. Vous êtes naturaliste, monsieur. Regardez donc mes poissons.", "en": "Aures habent et non audient. You are a naturalist, sir. Look at my fish."}}
+				]},
+				{"id": "tunnel", "who": "aronnax", "label": {"fr": "Il existe un passage sous l'isthme. Et c'est vous qui avez bagué ce poisson.", "en": "There's a passage under the isthmus. And you're the one who ringed that fish."}, "if": "fact:passage", "lines": [
+					{"who": "nemo", "text": {"fr": "Oui, un passage souterrain que j'ai nommé Arabian-Tunnel. Il prend au-dessous de Suez et aboutit au golfe de Péluse.", "en": "Yes, an underground passage I have named the Arabian Tunnel. It starts below Suez and comes out in the Gulf of Pelusium."}}
+				], "do": ["scene:tunnel"]}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "how", "text": {"fr": "Comprendre comment le capitaine compte passer dans la Méditerranée.", "en": "Work out how the captain means to reach the Mediterranean."},
+			"hints": [
+				{"fr": "Le capitaine dit : regardez mes poissons. Un naturaliste comparerait les deux mers.", "en": "The captain says: look at my fish. A naturalist would compare the two seas."},
+				{"fr": "Conseil saura dire d'où viennent ces espèces. Ned, sur la plate-forme, remontera peut-être une preuve dans le filet.", "en": "Conseil can say where these species come from. Ned, on the platform, may haul up proof in the net."},
+				{"fr": "Conseil : Classer les poissons. Ned : Utiliser le filet. Aronnax : Se souvenir des poissons, puis parler au capitaine.", "en": "Conseil: Catalogue the fish. Ned: Use the net. Aronnax: Recall the fish, then talk to the captain."}
+			]
+		}
+	],
+	"on_start_say": {"fr": "Dans la Méditerranée, après-demain ? Raisonnons.", "en": "In the Mediterranean, the day after tomorrow? Let us reason."},
+	"next": "ch12"
+}

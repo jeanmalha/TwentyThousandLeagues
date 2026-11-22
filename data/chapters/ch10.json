@@ -1,0 +1,533 @@
+{
+	"id": "ch10",
+	"number": 10,
+	"act": 3,
+	"title": {
+		"fr": "Une perle de dix millions",
+		"en": "A Ten-Million Pearl"
+	},
+	"novel": "II-1 – II-3",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch10_pearl_bank",
+			"conseil": "ch10_pearl_bank",
+			"ned": "ch10_pearl_bank"
+		},
+		"inventory": {
+			"ned": [
+				"harpoon"
+			]
+		}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-059.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "DEUXIÈME PARTIE. Le Nautilus traversa l'océan Indien. Devant Ceylan, le capitaine Nemo nous proposa de visiter les pêcheries de perles du banc de Manaar.",
+						"en": "PART TWO. The Nautilus crossed the Indian Ocean. Off Ceylon, Captain Nemo invited us to visit the pearl fisheries of the Manaar bank."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "À propos, monsieur Aronnax, vous n'avez pas peur des requins ?",
+						"en": "By the way, Monsieur Aronnax, you're not afraid of sharks?"
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Ned Land, lui, emporta son grand harpon. Au petit jour, nous marchions sur le banc, parmi des millions d'huîtres perlières.",
+						"en": "Ned Land took his great harpoon. At daybreak we were walking on the bank, among millions of pearl oysters."
+					}
+				}
+			]
+		},
+		"oyster": {
+			"image": "res://art/engravings/hetzel-060.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Au fond de la grotte, une huître de dimensions extraordinaires, une tridacne géante. Le capitaine glissa son poignard entre les valves.",
+						"en": "At the back of the grotto, an oyster of extraordinary size, a giant clam. The captain slipped his dagger between the shells."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Une perle, grosse comme une noix de coco, d'un orient parfait. Le capitaine la laissa là, à grandir. Il ne la prenait pas : il la cultivait.",
+						"en": "A pearl as big as a coconut, of perfect lustre. The captain left it where it was, to grow. He wasn't taking it: he was cultivating it."
+					}
+				}
+			],
+			"do": [
+				"set:grotto_seen",
+				"move:aronnax:ch10_pearl_bank",
+				"move:conseil:ch10_pearl_bank",
+				"move:ned:ch10_pearl_bank"
+			]
+		},
+		"attack": {
+			"image": "res://art/engravings/hetzel-061.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Au-dessus de nous, un homme plongeait, une pierre entre les pieds : un pêcheur, seul, venu glaner avant la récolte.",
+						"en": "Above us, a man was diving, a stone between his feet: a fisherman, alone, come to glean before the harvest."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Une ombre gigantesque. Un requin de grande taille fondit sur le pêcheur, qui se jeta de côté. Le capitaine Nemo, son poignard à la main, marcha droit au monstre.",
+						"en": "A gigantic shadow. A great shark fell upon the fisherman, who threw himself aside. Captain Nemo, dagger in hand, walked straight at the monster."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Il le frappa au ventre, encore et encore, sans pouvoir l'atteindre en plein cœur. Le capitaine tomba, renversé par la masse énorme.",
+						"en": "He struck it in the belly, again and again, without reaching the heart. The captain fell, knocked down by the enormous mass."
+					}
+				}
+			],
+			"do": [
+				"set:attack"
+			]
+		},
+		"rescue": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le capitaine Nemo remonta le pêcheur, le ranima, puis tira de sa poche un sachet de perles et le lui mit dans la main.",
+						"en": "Captain Nemo brought the fisherman up, revived him, then took a bag of pearls from his pocket and put it in his hand."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Merci, maître Land.",
+						"en": "Thank you, Master Land."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "C'est une revanche, capitaine. Je vous devais cela.",
+						"en": "That's a revenge, captain. I owed you that."
+					}
+				}
+			],
+			"do": [
+				"set:shark_dead",
+				"set:pearl_diver_saved_together"
+			]
+		},
+		"end": {
+			"lines": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Cet Indien, monsieur le professeur, c'est un habitant du pays des opprimés, et je suis encore, et, jusqu'à mon dernier souffle, je serai de ce pays-là !",
+						"en": "That man, Professor, is a native of the land of the oppressed, and I am still, and until my last breath I shall remain, of that land!"
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch10_pearl_bank": {
+			"name": {
+				"fr": "Le banc de Manaar",
+				"en": "The Manaar bank"
+			},
+			"background": "res://art/locations/ch10_pearl_bank.png",
+			"color": "#12393f",
+			"hotspots": [
+				{
+					"id": "oysters",
+					"name": {
+						"fr": "Les huîtres perlières",
+						"en": "The pearl oysters"
+					},
+					"rect": [
+						40,
+						100,
+						200,
+						44
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des millions d'huîtres, accrochées au fond par leurs filaments bruns.",
+									"en": "Millions of oysters, anchored to the bottom by their brown threads."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Pintadines, monsieur. Méléagrines margaritifères. La perle n'est qu'une maladie de l'huître, mais quelle maladie !",
+									"en": "Pearl oysters, Monsieur. Meleagrina margaritifera. A pearl is only a disease of the oyster, but what a disease!"
+								},
+								"do": [
+									"cat:pearl_oyster"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo10",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						4,
+						30,
+						40,
+						70
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_bank",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine nous fait signe de le suivre vers une grotte.",
+									"en": "The captain signals us to follow him towards a grotto."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "diver",
+					"name": {
+						"fr": "Un pêcheur, au-dessus",
+						"en": "A fisherman, above"
+					},
+					"rect": [
+						100,
+						0,
+						30,
+						46
+					],
+					"if": [
+						"flag:grotto_seen",
+						"!flag:attack"
+					],
+					"actions": {
+						"look": [
+							{
+								"scene": "attack"
+							}
+						]
+					}
+				},
+				{
+					"id": "shark",
+					"name": {
+						"fr": "Le requin",
+						"en": "The shark"
+					},
+					"rect": [
+						70,
+						10,
+						160,
+						80
+					],
+					"if": [
+						"flag:attack",
+						"!flag:shark_dead"
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le requin pèse sur le capitaine de toute sa masse. Ses mâchoires s'ouvrent comme une cisaille.",
+									"en": "The shark bears down on the captain with all its weight. Its jaws open like shears."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Squale, monsieur, de la grande espèce. Le cœur est en avant, sous les nageoires pectorales. Le capitaine frappe trop bas !",
+									"en": "Shark, Monsieur, of the large kind. The heart lies forward, under the pectoral fins. The captain is striking too low!"
+								},
+								"do": [
+									"fact:shark_heart"
+								]
+							}
+						],
+						"item:harpoon": [
+							{
+								"who": "ned",
+								"if": "fact:shark_heart",
+								"say": {
+									"fr": "Sous les nageoires, hein ? Tiens !",
+									"en": "Under the fins, eh? Take that!"
+								},
+								"scene": "rescue"
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Où frapper ? Sa peau est une cuirasse, et le capitaine est dessous !",
+									"en": "Where to strike? Its hide is armour, and the captain's underneath!"
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Pas à mains nues. Mon harpon !",
+									"en": "Not bare-handed. My harpoon!"
+								}
+							}
+						],
+						"use": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Je voudrais courir au secours du capitaine. Mais, cloué par l'horreur, je ne puis remuer.",
+									"en": "I want to run to the captain's aid. But, rooted by horror, I cannot move."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_grotto",
+					"name": {
+						"fr": "Vers la grotte",
+						"en": "To the grotto"
+					},
+					"rect": [
+						280,
+						30,
+						40,
+						90
+					],
+					"to": "ch10_grotto",
+					"if": "!flag:grotto_seen",
+					"locked": {
+						"fr": "Le capitaine n'a pas encore fait signe.",
+						"en": "The captain hasn't signalled yet."
+					}
+				}
+			]
+		},
+		"ch10_grotto": {
+			"name": {
+				"fr": "La grotte",
+				"en": "The grotto"
+			},
+			"background": "res://art/locations/ch10_grotto.png",
+			"color": "#0f2236",
+			"hotspots": [
+				{
+					"id": "giant_oyster",
+					"name": {
+						"fr": "Une huître géante",
+						"en": "A giant oyster"
+					},
+					"rect": [
+						140,
+						6,
+						140,
+						100
+					],
+					"actions": {
+						"look": [
+							{
+								"scene": "oyster"
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Tridacne. Deux mètres, trois cents kilogrammes au bas mot. Et dedans, monsieur, une perle de dix millions.",
+									"en": "Giant clam. Two metres, three hundred kilograms at the least. And inside, Monsieur, a ten-million pearl."
+								},
+								"do": [
+									"cat:tridacna"
+								]
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je pourrais la prendre… Le capitaine m'arrête d'un geste. Bon.",
+									"en": "I could take it… The captain stops me with a gesture. All right."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"items": {
+		"harpoon": {
+			"name": {
+				"fr": "Le harpon de Ned",
+				"en": "Ned's harpoon"
+			},
+			"desc": {
+				"fr": "Il n'a jamais manqué une baleine.",
+				"en": "It has never missed a whale."
+			}
+		}
+	},
+	"catalogue": {
+		"pearl_oyster": {
+			"name": {
+				"fr": "Pintadine",
+				"en": "Pearl oyster"
+			},
+			"text": {
+				"fr": "Méléagrine margaritifère. La perle est une maladie de l'huître.",
+				"en": "Meleagrina margaritifera. A pearl is a disease of the oyster."
+			}
+		},
+		"tridacna": {
+			"name": {
+				"fr": "Tridacne géante",
+				"en": "Giant clam"
+			},
+			"text": {
+				"fr": "Deux mètres de large. Le capitaine y cultive une perle.",
+				"en": "Two metres across. The captain is growing a pearl in it."
+			}
+		}
+	},
+	"facts": {
+		"shark_heart": {
+			"name": {
+				"fr": "Le cœur du squale",
+				"en": "The shark's heart"
+			},
+			"text": {
+				"fr": "En avant, sous les nageoires pectorales.",
+				"en": "Forward, under the pectoral fins."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_bank": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Sous le casque, le capitaine répond par gestes.",
+						"en": "Under the helmet, the captain answers by gestures."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "pearls",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Par gestes) Pourquoi lui avoir donné ces perles ?",
+						"en": "(By gestures) Why give him those pearls?"
+					},
+					"if": "flag:shark_dead",
+					"lines": [
+						{
+							"who": "narrator",
+							"text": {
+								"fr": "De retour à bord, je lui posai la question.",
+								"en": "Back aboard, I asked him."
+							}
+						}
+					],
+					"do": [
+						"scene:end"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "visit",
+			"text": {
+				"fr": "Suivre le capitaine sur le banc de Manaar.",
+				"en": "Follow the captain across the Manaar bank."
+			},
+			"done_if": "flag:grotto_seen",
+			"hints": [
+				{
+					"fr": "Le capitaine veut nous montrer quelque chose.",
+					"en": "The captain wants to show us something."
+				},
+				{
+					"fr": "La grotte, à droite.",
+					"en": "The grotto, on the right."
+				},
+				{
+					"fr": "Sortie « Vers la grotte », puis Regarder l'huître géante.",
+					"en": "The \"To the grotto\" exit, then Look at the giant oyster."
+				}
+			]
+		},
+		{
+			"id": "shark",
+			"text": {
+				"fr": "Sauver le pêcheur… et le capitaine.",
+				"en": "Save the fisherman… and the captain."
+			},
+			"show_if": "flag:attack",
+			"done_if": "flag:shark_dead",
+			"hints": [
+				{
+					"fr": "Le capitaine frappe, mais ne trouve pas le cœur. Ned a un harpon, Conseil connaît l'anatomie des squales.",
+					"en": "The captain strikes but can't find the heart. Ned has a harpoon; Conseil knows shark anatomy."
+				},
+				{
+					"fr": "Conseil saura dire où frapper. Ned frappera.",
+					"en": "Conseil can say where to strike. Ned will strike."
+				},
+				{
+					"fr": "Conseil : Classer le requin. Ned : Utiliser le harpon sur le requin. Puis parler au capitaine.",
+					"en": "Conseil: Catalogue the shark. Ned: Use the harpoon on the shark. Then talk to the captain."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Des huîtres à perte de vue. Et le capitaine nous fait signe.",
+		"en": "Oysters as far as the eye can see. And the captain is signalling us."
+	},
+	"next": "ch11"
+}

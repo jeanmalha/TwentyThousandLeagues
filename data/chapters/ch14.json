@@ -1,0 +1,258 @@
+{
+	"id": "ch14",
+	"number": 14,
+	"act": 3,
+	"title": {
+		"fr": "L'Atlantide",
+		"en": "Atlantis"
+	},
+	"novel": "II-9 – II-10",
+	"start": {
+		"party": [
+			"aronnax"
+		],
+		"current": "aronnax",
+		"switching": false,
+		"locations": {
+			"aronnax": "ch14_atlantis"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-073.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Une nuit, le capitaine Nemo m'emmena seul. Nous marchâmes longtemps sur le fond, vers une lueur rougeâtre qui grandissait à l'horizon. Pas de lampe : la mer elle-même s'éclairait.",
+						"en": "One night Captain Nemo took me out alone. We walked for a long time across the sea floor, towards a reddish glow growing on the horizon. No lamp: the sea itself was lit."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Nous gravîmes une montagne. Et au sommet, sous mes yeux, s'étendait une ville détruite.",
+						"en": "We climbed a mountain. And at the top, beneath my eyes, lay a ruined city."
+					}
+				}
+			]
+		},
+		"atlantis": {
+			"image": "res://art/engravings/hetzel-073.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le capitaine Nemo, ramassant un morceau de pierre crayeuse, s'avança vers un roc de basalte noir, et traça ce seul mot :",
+						"en": "Captain Nemo picked up a piece of chalky stone, went up to a rock of black basalt, and traced this one word:"
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "ATLANTIDE.",
+						"en": "ATLANTIS."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Quel éclair traversa mon esprit ! L'Atlantide de Platon, ce continent nié par Origène… Je l'avais là, sous les yeux, et il l'avait partagée avec moi seul.",
+						"en": "What a flash crossed my mind! Plato's Atlantis, the continent denied by Origen… It was there before my eyes, and he had shared it with me alone."
+					}
+				}
+			],
+			"do": [
+				"set:atlantis_shared",
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch14_atlantis": {
+			"name": {
+				"fr": "Une ville sous la mer",
+				"en": "A city under the sea"
+			},
+			"background": "res://art/locations/ch14_atlantis.png",
+			"color": "#2a0b0e",
+			"hotspots": [
+				{
+					"id": "ruins",
+					"name": {
+						"fr": "Les ruines",
+						"en": "The ruins"
+					},
+					"rect": [
+						0,
+						20,
+						120,
+						110
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des temples écroulés, des colonnes, des escaliers. Une architecture plus ancienne que la Grèce. Une cité, engloutie d'un seul coup.",
+									"en": "Collapsed temples, columns, stairways. An architecture older than Greece. A city, swallowed all at once."
+								},
+								"do": [
+									"fact:drowned_city"
+								]
+							}
+						],
+						"recall": [
+							{
+								"if": [
+									"fact:drowned_city",
+									"fact:volcano"
+								],
+								"say": {
+									"fr": "Au-delà des colonnes d'Hercule, disait Platon dans le Timée et le Critias, vivait un peuple puissant, et son pays disparut en un jour et une nuit, dans les tremblements de terre. Nous sommes à l'ouest de Gibraltar. Une ville engloutie, un volcan… Serait-ce… ?",
+									"en": "Beyond the Pillars of Hercules, said Plato in the Timaeus and the Critias, lived a mighty people, and their land vanished in a single day and night, in earthquakes. We are west of Gibraltar. A drowned city, a volcano… Could it be…?"
+								},
+								"do": [
+									"fact:atlantis_guess"
+								]
+							},
+							{
+								"say": {
+									"fr": "Je connais toutes les ruines de la Méditerranée. Celles-ci ne ressemblent à aucune. Il me faudrait comprendre comment elles ont sombré.",
+									"en": "I know every ruin in the Mediterranean. These are like none of them. I'd need to understand how they sank."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "volcano",
+					"name": {
+						"fr": "Le volcan",
+						"en": "The volcano"
+					},
+					"rect": [
+						150,
+						20,
+						70,
+						70
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un volcan sous-marin, encore actif. La lave coule à flots, sans que l'eau parvienne à l'éteindre. C'est lui qui éclaire la plaine.",
+									"en": "An underwater volcano, still active. Lava pours out, and the water can't put it out. That's what lights the plain."
+								},
+								"do": [
+									"fact:volcano"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo14",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						228,
+						64,
+						30,
+						70
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine, immobile sur un roc, regarde la ville comme on regarde une tombe aimée.",
+									"en": "The captain, motionless on a rock, gazes at the city the way one gazes at a beloved grave."
+								}
+							}
+						],
+						"talk": [
+							{
+								"if": "fact:atlantis_guess",
+								"say": {
+									"fr": "(Par gestes, je lui montre la ville, puis l'ouest, puis je trace un A dans le sable.)",
+									"en": "(By gestures I point to the city, then to the west, then I trace an A in the sand.)"
+								},
+								"scene": "atlantis"
+							},
+							{
+								"say": {
+									"fr": "Sous le casque, il ne m'entend pas. Il attend, je crois, que je comprenne seul.",
+									"en": "Under the helmet he can't hear me. He is waiting, I think, for me to understand on my own."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"facts": {
+		"drowned_city": {
+			"name": {
+				"fr": "La ville engloutie",
+				"en": "The drowned city"
+			},
+			"text": {
+				"fr": "Une cité plus ancienne que la Grèce, engloutie d'un seul coup.",
+				"en": "A city older than Greece, swallowed all at once."
+			}
+		},
+		"volcano": {
+			"name": {
+				"fr": "Le volcan",
+				"en": "The volcano"
+			},
+			"text": {
+				"fr": "Toujours actif : c'est lui qui a englouti la ville.",
+				"en": "Still active: it swallowed the city."
+			}
+		},
+		"atlantis_guess": {
+			"name": {
+				"fr": "L'Atlantide ?",
+				"en": "Atlantis?"
+			},
+			"text": {
+				"fr": "Au-delà des colonnes d'Hercule, un pays englouti en un jour et une nuit.",
+				"en": "Beyond the Pillars of Hercules, a land swallowed in a day and a night."
+			}
+		}
+	},
+	"objectives": [
+		{
+			"id": "where",
+			"text": {
+				"fr": "Comprendre où le capitaine m'a conduit.",
+				"en": "Understand where the captain has brought me."
+			},
+			"done_if": "flag:atlantis_shared",
+			"hints": [
+				{
+					"fr": "Une ville, et ce qui l'a détruite.",
+					"en": "A city, and what destroyed it."
+				},
+				{
+					"fr": "Regarder les ruines et le volcan, puis chercher dans mes lectures une ville engloutie à l'ouest de Gibraltar.",
+					"en": "Look at the ruins and the volcano, then search my reading for a city swallowed west of Gibraltar."
+				},
+				{
+					"fr": "Regarder les ruines, Regarder le volcan, Se souvenir des ruines, puis Parler au capitaine.",
+					"en": "Look at the ruins, Look at the volcano, Recall the ruins, then Talk to the captain."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Une ville… ici ?",
+		"en": "A city… here?"
+	},
+	"next": "ch15"
+}

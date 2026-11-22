@@ -1,0 +1,1004 @@
+{
+	"id": "ch05",
+	"number": 5,
+	"act": 2,
+	"title": {
+		"fr": "Le Nautilus",
+		"en": "The Nautilus"
+	},
+	"novel": "I-11 – I-14",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "conseil",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch05_salon",
+			"conseil": "ch05_salon",
+			"ned": "ch05_corridor"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-022.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le capitaine Nemo nous laissa libres d'aller et venir à bord. Le salon était un musée : tableaux de maîtres, vitrines de coquillages, de perles et de coraux, et contre un panneau, un grand piano-orgue.",
+						"en": "Captain Nemo left us free to come and go aboard. The salon was a museum: old masters, cases of shells, pearls and corals, and against one wall a great piano-organ."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Un musée. Une prison avec des tableaux, voilà ce que c'est. Je vais voir comment ce bateau est fait.",
+						"en": "A museum. A prison with paintings, that's what it is. I'm going to find out how this boat is put together."
+					}
+				}
+			]
+		},
+		"panels": {
+			"image": "res://art/engravings/hetzel-029.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Soudain, un bruit de glissement. Les panneaux de tôle s'écartèrent. De chaque côté du salon, à travers deux vitres immenses, la mer apparut, éclairée par le fanal du Nautilus.",
+						"en": "Suddenly, a sliding sound. The iron panels drew apart. On either side of the salon, through two immense windows, the sea appeared, lit by the Nautilus's lamp."
+					}
+				},
+				{
+					"who": "conseil",
+					"text": {
+						"fr": "Si monsieur permet : poissons, classe des osseux, ordre des acanthoptérygiens… Monsieur, je n'aurai jamais fini.",
+						"en": "If Monsieur permits: fish, class of bony fishes, order of spiny-finned… Monsieur, I shall never be done."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Vous vouliez voir la mer, monsieur le professeur. La voici telle que personne ne l'a vue.",
+						"en": "You wished to see the sea, Professor. Here it is, as no one has ever seen it."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch05_salon": {
+			"name": {
+				"fr": "Le grand salon",
+				"en": "The grand salon"
+			},
+			"background": "res://art/locations/ch05_salon.png",
+			"color": "#3e251a",
+			"hotspots": [
+				{
+					"id": "pearls",
+					"name": {
+						"fr": "Vitrine des perles",
+						"en": "Case of pearls"
+					},
+					"rect": [
+						8,
+						96,
+						70,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des perles roses, vertes, noires. Certaines plus grosses qu'un œuf de pigeon.",
+									"en": "Pink, green, black pearls. Some bigger than a pigeon's egg."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Perles de la pintadine, mollusque acéphale. Celle-ci, monsieur, vaut une fortune. Et elle est classée.",
+									"en": "Pearls of the pearl oyster, headless mollusc. This one, Monsieur, is worth a fortune. And now it is classified."
+								},
+								"do": [
+									"cat:pearl"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "shells",
+					"name": {
+						"fr": "Vitrine des coquillages",
+						"en": "Case of shells"
+					},
+					"rect": [
+						242,
+						96,
+						70,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des milliers de coquilles, rangées avec un soin que Conseil admire en silence.",
+									"en": "Thousands of shells, arranged with a care Conseil admires in silence."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Un nautile, monsieur. Céphalopode à coquille cloisonnée. Le bateau porte son nom. Je l'ai classé par respect.",
+									"en": "A nautilus, Monsieur. Cephalopod with a chambered shell. The ship bears its name. I classified it out of respect."
+								},
+								"do": [
+									"cat:nautilus_shell"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "corals",
+					"name": {
+						"fr": "Coraux",
+						"en": "Corals"
+					},
+					"rect": [
+						246,
+						40,
+						44,
+						44
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un buisson de corail rouge, monté sur un socle de cuivre.",
+									"en": "A bush of red coral, mounted on a copper stand."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Corail rouge. Monsieur me pardonnera : c'est un animal, pas une plante. On s'y trompe souvent.",
+									"en": "Red coral. Monsieur will forgive me: it is an animal, not a plant. People are often mistaken."
+								},
+								"do": [
+									"cat:red_coral"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "organ",
+					"name": {
+						"fr": "Le piano-orgue",
+						"en": "The piano-organ"
+					},
+					"rect": [
+						10,
+						20,
+						60,
+						72
+					],
+					"dialogue": "nemo_salon",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un piano-orgue de grand modèle. Sur le pupitre, des partitions de Weber, Rossini, Mozart… et le capitaine, assis, qui ne joue pas encore.",
+									"en": "A large piano-organ. On the stand, scores by Weber, Rossini, Mozart… and the captain, seated, not yet playing."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Je ne joue pas. Et je n'oserais pas toucher à celui-ci.",
+									"en": "I don't play. And I wouldn't dare touch this one."
+								}
+							}
+						]
+					},
+					"npc": "nemo"
+				},
+				{
+					"id": "window",
+					"name": {
+						"fr": "La grande baie",
+						"en": "The great window"
+					},
+					"rect": [
+						112,
+						36,
+						100,
+						82
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une immense baie ovale. Les volets de tôle ne sont qu'entrouverts : derrière, la mer, noire et immobile. Le capitaine seul décide de ce qu'on voit à bord.",
+									"en": "An immense oval window. The iron shutters are only ajar: behind them, the sea, black and still. Only the captain decides what may be seen aboard."
+								}
+							}
+						],
+						"use": [
+							{
+								"if": [
+									"flag:nemo_opened",
+									"fact:air_rifles",
+									"flag:skiff_located"
+								],
+								"scene": "panels"
+							},
+							{
+								"say": {
+									"fr": "Il n'y a ni poignée ni serrure. Seul le capitaine décide de ce qu'on voit à bord.",
+									"en": "There is neither handle nor lock. Only the captain decides what may be seen aboard."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "De la tôle de cette épaisseur, même moi, non.",
+									"en": "Plating that thick, not even me."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_library",
+					"name": {
+						"fr": "Vers la bibliothèque",
+						"en": "To the library"
+					},
+					"rect": [
+						290,
+						20,
+						30,
+						70
+					],
+					"to": "ch05_library",
+					"if": "flag:library_open",
+					"locked": {
+						"fr": "La double porte est close. Le capitaine ne nous y a pas encore invités.",
+						"en": "The double door is shut. The captain hasn't invited us in yet."
+					}
+				},
+				{
+					"id": "to_corridor",
+					"name": {
+						"fr": "Vers la coursive",
+						"en": "To the corridor"
+					},
+					"rect": [
+						72,
+						20,
+						30,
+						70
+					],
+					"to": "ch05_corridor"
+				}
+			]
+		},
+		"ch05_library": {
+			"name": {
+				"fr": "La bibliothèque",
+				"en": "The library"
+			},
+			"background": "res://art/locations/ch05_library.png",
+			"color": "#3e251a",
+			"hotspots": [
+				{
+					"id": "books",
+					"name": {
+						"fr": "Les rayons",
+						"en": "The shelves"
+					},
+					"rect": [
+						0,
+						0,
+						100,
+						130
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Douze mille volumes, en toutes langues, rangés pêle-mêle. Science, morale, littérature… mais pas un seul ouvrage d'économie politique.",
+									"en": "Twelve thousand volumes in every language, shelved without order. Science, morals, literature… but not a single book on political economy."
+								},
+								"do": [
+									"fact:no_economy"
+								]
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Les Fondateurs de l'Astronomie, de Joseph Bertrand : paru en 1865. Rien de plus récent. Le Nautilus navigue depuis trois ans, au plus.",
+									"en": "Joseph Bertrand's The Founders of Astronomy: published in 1865. Nothing more recent. The Nautilus has been at sea for three years at most."
+								},
+								"do": [
+									"fact:no_economy",
+									"fact:since_1865"
+								]
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Rangés sans aucun ordre, monsieur. Cela me fait mal.",
+									"en": "Shelved in no order at all, Monsieur. It pains me."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo_lib",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						232,
+						40,
+						40,
+						80
+					],
+					"dialogue": "nemo_library",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine, étendu sur un divan, nous observe.",
+									"en": "The captain, stretched out on a divan, is watching us."
+								}
+							}
+						]
+					},
+					"npc": "nemo"
+				},
+				{
+					"id": "table",
+					"name": {
+						"fr": "La table",
+						"en": "The table"
+					},
+					"rect": [
+						100,
+						96,
+						110,
+						44
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des brochures, et quelques journaux déjà vieux.",
+									"en": "Pamphlets, and a few newspapers, already old."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_salon",
+					"name": {
+						"fr": "Vers le salon",
+						"en": "To the salon"
+					},
+					"rect": [
+						0,
+						118,
+						40,
+						26
+					],
+					"to": "ch05_salon"
+				}
+			]
+		},
+		"ch05_corridor": {
+			"name": {
+				"fr": "La coursive",
+				"en": "The corridor"
+			},
+			"background": "res://art/locations/ch05_corridor.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "ladder",
+					"name": {
+						"fr": "Échelle",
+						"en": "Ladder"
+					},
+					"rect": [
+						146,
+						46,
+						30,
+						66
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une échelle de fer qui monte vers un panneau rond.",
+									"en": "An iron ladder rising to a round hatch."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Le panneau, là-haut, est fermé.",
+									"en": "The hatch up there is shut."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "hatch",
+					"name": {
+						"fr": "Panneau du haut",
+						"en": "Upper hatch"
+					},
+					"rect": [
+						144,
+						30,
+						36,
+						16
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un panneau rond, verrouillé de l'intérieur… de l'intérieur de quoi ?",
+									"en": "A round hatch, bolted from the inside… the inside of what?"
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je pousse : ça cède d'un doigt. Il y a un espace, là-haut, et un bordé de bois. Un canot ! Le canot du bord est logé dans la coque.",
+									"en": "I push: it gives a finger's width. There's a space up there, and wooden planking. A boat! The ship's skiff is housed in the hull."
+								},
+								"do": [
+									"set:skiff_located"
+								]
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Il faudrait plus de force que je n'en ai.",
+									"en": "It would take more strength than I have."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "globes",
+					"name": {
+						"fr": "Globes électriques",
+						"en": "Electric globes"
+					},
+					"rect": [
+						18,
+						60,
+						40,
+						32
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Partout la même lumière blanche, sans flamme.",
+									"en": "The same white, flameless light everywhere."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_salon_c",
+					"name": {
+						"fr": "Vers le salon",
+						"en": "To the salon"
+					},
+					"rect": [
+						0,
+						100,
+						40,
+						44
+					],
+					"to": "ch05_salon"
+				},
+				{
+					"id": "to_armory",
+					"name": {
+						"fr": "Vers la salle d'armes",
+						"en": "To the arms room"
+					},
+					"rect": [
+						290,
+						36,
+						30,
+						100
+					],
+					"to": "ch05_armory"
+				}
+			]
+		},
+		"ch05_armory": {
+			"name": {
+				"fr": "La salle d'armes",
+				"en": "The arms room"
+			},
+			"background": "res://art/locations/ch05_armory.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "rifles",
+					"name": {
+						"fr": "Râtelier de fusils",
+						"en": "Rack of rifles"
+					},
+					"rect": [
+						0,
+						0,
+						125,
+						144
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des fusils étranges, sans platine, avec un réservoir de cuivre à la crosse.",
+									"en": "Strange rifles, with no lock, and a copper reservoir in the stock."
+								}
+							}
+						],
+						"use": [
+							{
+								"who": "ned",
+								"if": "!item:air_rifle",
+								"say": {
+									"fr": "Je prends le premier. Pas de poudre, pas de chien… Comment ça tire, ce machin-là ?",
+									"en": "I take the first one. No powder, no hammer… How does this thing fire?"
+								},
+								"do": [
+									"give:air_rifle"
+								]
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "J'en ai déjà un. Et je ne sais même pas m'en servir.",
+									"en": "I've already got one. And I don't even know how to use it."
+								}
+							},
+							{
+								"say": {
+									"fr": "Je laisse les armes à Ned.",
+									"en": "I'll leave the weapons to Ned."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"if": "item:air_rifle",
+								"say": {
+									"fr": "J'ai lu là-dessus : de l'air comprimé à très haute pression, et des balles qui sont de petites bouteilles électriques. La moindre touche foudroie l'animal.",
+									"en": "I've read about this: air compressed to very high pressure, and bullets that are little electric flasks. The slightest hit strikes the animal down."
+								},
+								"do": [
+									"fact:air_rifles"
+								]
+							},
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Il faudrait en tenir un en main pour comprendre le mécanisme. Ned saurait s'en saisir.",
+									"en": "I'd need one in hand to understand the mechanism. Ned would know how to pick one up."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Pas besoin de forcer, rien n'est fermé. Ils ne nous craignent pas. Ça, ça m'inquiète.",
+									"en": "No need to force anything, nothing's locked. They're not afraid of us. That worries me."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "suits",
+					"name": {
+						"fr": "Scaphandres",
+						"en": "Diving suits"
+					},
+					"rect": [
+						192,
+						46,
+						120,
+						96
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des scaphandres de cuivre et de caoutchouc, avec des casques ronds. Pour marcher… sous la mer ?",
+									"en": "Diving suits of copper and rubber, with round helmets. For walking… under the sea?"
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Homme, en tenue de pêche sous-marine. Je ne savais pas que cela existait, monsieur.",
+									"en": "Man, in underwater fishing dress. I didn't know such a thing existed, Monsieur."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_corridor_a",
+					"name": {
+						"fr": "Vers la coursive",
+						"en": "To the corridor"
+					},
+					"rect": [
+						145,
+						50,
+						34,
+						62
+					],
+					"to": "ch05_corridor"
+				}
+			]
+		}
+	},
+	"items": {
+		"air_rifle": {
+			"name": {
+				"fr": "Fusil à air",
+				"en": "Air rifle"
+			},
+			"desc": {
+				"fr": "Un fusil sans poudre, avec un réservoir de cuivre.",
+				"en": "A rifle with no powder, and a copper reservoir."
+			}
+		}
+	},
+	"catalogue": {
+		"pearl": {
+			"name": {
+				"fr": "Perle (pintadine)",
+				"en": "Pearl (pearl oyster)"
+			},
+			"text": {
+				"fr": "Produite par un mollusque acéphale. Celles du salon valent des millions.",
+				"en": "Made by a headless mollusc. The ones in the salon are worth millions."
+			}
+		},
+		"nautilus_shell": {
+			"name": {
+				"fr": "Nautile",
+				"en": "Nautilus"
+			},
+			"text": {
+				"fr": "Céphalopode à coquille cloisonnée. A donné son nom au navire.",
+				"en": "Cephalopod with a chambered shell. Gave the ship its name."
+			}
+		},
+		"red_coral": {
+			"name": {
+				"fr": "Corail rouge",
+				"en": "Red coral"
+			},
+			"text": {
+				"fr": "Un animal, et non une plante.",
+				"en": "An animal, not a plant."
+			}
+		}
+	},
+	"facts": {
+		"no_economy": {
+			"name": {
+				"fr": "La bibliothèque",
+				"en": "The library"
+			},
+			"text": {
+				"fr": "Pas un seul ouvrage d'économie politique à bord.",
+				"en": "Not a single book on political economy aboard."
+			}
+		},
+		"air_rifles": {
+			"name": {
+				"fr": "Les fusils à air",
+				"en": "The air rifles"
+			},
+			"text": {
+				"fr": "Air comprimé et balles électriques : de quoi chasser sous la mer.",
+				"en": "Compressed air and electric bullets: enough to hunt under the sea."
+			}
+		},
+		"since_1865": {
+			"name": {
+				"fr": "Depuis 1865",
+				"en": "Since 1865"
+			},
+			"text": {
+				"fr": "Aucun livre de la bibliothèque n'est postérieur à 1865 : le Nautilus navigue depuis trois ans au plus.",
+				"en": "No book in the library is later than 1865: the Nautilus has been at sea for three years at most."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_salon": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur ?",
+						"en": "Sir?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "collection",
+					"who": "conseil",
+					"label": {
+						"fr": "Votre collection, capitaine… je l'ai classée.",
+						"en": "Your collection, Captain… I have classified it."
+					},
+					"if": [
+						"cat:pearl",
+						"cat:nautilus_shell",
+						"cat:red_coral"
+					],
+					"once": true,
+					"lines": [
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "La perle, le nautile, le corail. Le capitaine me pardonnera : il manquait des étiquettes.",
+								"en": "The pearl, the nautilus, the coral. The captain will forgive me: some labels were missing."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Votre domestique sait classer, monsieur le professeur. Venez, je vous ouvre la bibliothèque.",
+								"en": "Your servant knows how to classify, Professor. Come, I shall open the library to you."
+							}
+						}
+					],
+					"do": [
+						"set:library_open",
+						"move:nemo:ch05_library"
+					]
+				},
+				{
+					"id": "organ_q",
+					"label": {
+						"fr": "Vous jouez, capitaine ?",
+						"en": "Do you play, Captain?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Pour moi seul. La nuit, souvent. Vous l'entendrez.",
+								"en": "For myself alone. At night, often. You will hear it."
+							}
+						}
+					]
+				},
+				{
+					"id": "salon_q",
+					"who": "aronnax",
+					"label": {
+						"fr": "Ce salon ferait honneur à un palais.",
+						"en": "This salon would do credit to a palace."
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Ce sont mes derniers souvenirs de cette terre qui est morte pour moi.",
+								"en": "They are my last memories of that land which is dead to me."
+							}
+						}
+					]
+				}
+			]
+		},
+		"nemo_library": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Où trouverait-on plus de solitude, plus de silence, monsieur le professeur ?",
+						"en": "Where could one find more solitude, more silence, Professor?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "economy",
+					"who": "aronnax",
+					"label": {
+						"fr": "Je ne vois aucun livre d'économie politique.",
+						"en": "I see no books on political economy."
+					},
+					"if": "fact:no_economy",
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Pas un seul ouvrage d'économie politique, capitaine. Et rien, je crois, qui soit postérieur à 1865.",
+								"en": "Not a single book on political economy, Captain. And nothing, I believe, later than 1865."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Ce sont les seuls liens qui me rattachent à la terre. Mais le monde a fini pour moi le jour où mon Nautilus s'est plongé pour la première fois sous les eaux. Ce jour-là, j'ai acheté mes derniers volumes, mes dernières brochures, mes derniers journaux, et depuis lors, je veux croire que l'humanité n'a plus ni pensé, ni écrit.",
+								"en": "They are the only ties that bind me to the earth. But the world ended for me the day my Nautilus first went down beneath the waves. That day I bought my last books, my last pamphlets, my last newspapers, and since then I prefer to believe that mankind has neither thought nor written anything more."
+							}
+						}
+					],
+					"do": [
+						"set:nemo_opened"
+					]
+				},
+				{
+					"id": "library_q",
+					"label": {
+						"fr": "Comment tout cela fonctionne-t-il ?",
+						"en": "How does all this work?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Il est un agent puissant, obéissant, rapide, facile, qui se plie à tous les usages et qui règne en maître à mon bord. Tout se fait par lui. Il m'éclaire, il m'échauffe, il est l'âme de mes appareils mécaniques. Cet agent, c'est l'électricité.",
+								"en": "There is a powerful agent, obedient, swift and easy, which lends itself to every use and reigns supreme aboard my ship. Everything is done by it. It lights me, it warms me, it is the soul of my machinery. That agent is electricity."
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "invitation",
+			"text": {
+				"fr": "Gagner la confiance du capitaine.",
+				"en": "Win the captain's trust."
+			},
+			"done_if": "flag:nemo_opened",
+			"hints": [
+				{
+					"fr": "Le capitaine aime sa collection. Quelqu'un parmi nous aime classer.",
+					"en": "The captain loves his collection. One of us loves to classify."
+				},
+				{
+					"fr": "Conseil devrait classer les perles, le nautile et le corail, puis en parler au capitaine. Dans la bibliothèque, il manque quelque chose sur les rayons.",
+					"en": "Conseil should classify the pearls, the nautilus and the coral, then talk to the captain about it. In the library, something is missing from the shelves."
+				},
+				{
+					"fr": "Conseil : Classer les perles, les coquillages, les coraux, puis Parler à l'orgue (« Votre collection »). Aronnax : Regarder les rayons, puis Parler au capitaine (« aucun livre d'économie politique »).",
+					"en": "Conseil: Catalogue the pearls, the shells and the corals, then Talk at the organ (\"Your collection\"). Aronnax: Look at the shelves, then Talk to the captain (\"no books on political economy\")."
+				}
+			]
+		},
+		{
+			"id": "learn_ship",
+			"text": {
+				"fr": "Comprendre ce navire (Ned).",
+				"en": "Figure out this ship (Ned)."
+			},
+			"done_if": [
+				"flag:skiff_located",
+				"fact:air_rifles"
+			],
+			"hints": [
+				{
+					"fr": "Ned est parti fouiller la coursive. Il a des yeux et des bras pour ça.",
+					"en": "Ned has gone to poke around the corridor. He has the eyes and the arms for it."
+				},
+				{
+					"fr": "Un panneau en haut de l'échelle, et dans la salle d'armes, des fusils sans poudre qu'un savant saurait expliquer.",
+					"en": "A hatch at the top of the ladder, and in the arms room, rifles without powder that a scholar could explain."
+				},
+				{
+					"fr": "Ned : Forcer le panneau du haut, puis Utiliser le râtelier. Aronnax (dans la salle d'armes) : Se souvenir du râtelier.",
+					"en": "Ned: Force the upper hatch, then Use the rack. Aronnax (in the arms room): Recall the rack."
+				}
+			]
+		},
+		{
+			"id": "see_sea",
+			"text": {
+				"fr": "Voir la mer.",
+				"en": "See the sea."
+			},
+			"show_if": [
+				"flag:nemo_opened",
+				"flag:skiff_located",
+				"fact:air_rifles"
+			],
+			"hints": [
+				{
+					"fr": "Le capitaine a promis de nous montrer la mer.",
+					"en": "The captain promised to show us the sea."
+				},
+				{
+					"fr": "Les panneaux du salon.",
+					"en": "The salon's iron panels."
+				},
+				{
+					"fr": "Utiliser les panneaux de tôle, dans le salon.",
+					"en": "Use the iron panels, in the salon."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Si monsieur permet, je commencerais par les vitrines.",
+		"en": "If Monsieur permits, I would start with the cases."
+	},
+	"next": "ch06"
+}

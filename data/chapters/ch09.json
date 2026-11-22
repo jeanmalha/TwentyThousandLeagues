@@ -1,0 +1,644 @@
+{
+	"id": "ch09",
+	"number": 9,
+	"act": 2,
+	"title": {
+		"fr": "Le royaume du corail",
+		"en": "The Coral Kingdom"
+	},
+	"novel": "I-23 – I-24",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch09_cabin",
+			"conseil": "ch09_cabin",
+			"ned": "ch09_cabin"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-050.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Un matin, sur la plate-forme, le capitaine Nemo braqua sa lunette sur un point de l'horizon. Son visage changea. Ses sourcils se contractèrent ; ses yeux brillèrent d'un feu sombre.",
+						"en": "One morning, on the platform, Captain Nemo trained his glass on a point of the horizon. His face changed. His brows drew together; his eyes burned with a dark fire."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur Aronnax, je réclame de vous l'observation de l'un des engagements qui vous lient à moi.",
+						"en": "Monsieur Aronnax, I must ask you to honour one of the undertakings that bind you to me."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "On nous enferma dans notre ancienne cellule. Le stewart y avait laissé de quoi déjeuner, et une carafe d'eau.",
+						"en": "We were shut in our old cell. The steward had left breakfast there, and a carafe of water."
+					}
+				}
+			]
+		},
+		"sleep": {
+			"image": "res://art/engravings/hetzel-051.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Mes paupières devinrent lourdes. Évidemment, des substances soporifiques avaient été mêlées à notre eau. La prison ne suffisait donc pas pour nous dérober les projets du capitaine Nemo : il fallait encore le sommeil.",
+						"en": "My eyelids grew heavy. Clearly, sleeping draughts had been mixed into our water. So prison was not enough to hide Captain Nemo's plans from us: sleep was needed as well."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Quand je m'éveillai, j'étais dans ma chambre. Le capitaine se tenait devant moi, pâle, les yeux rougis.",
+						"en": "When I woke I was in my own room. The captain stood before me, pale, his eyes red."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Êtes-vous médecin, monsieur Aronnax ? Consentiriez-vous à donner vos soins à l'un de mes hommes ?",
+						"en": "Are you a doctor, Monsieur Aronnax? Would you consent to attend to one of my men?"
+					}
+				}
+			],
+			"do": [
+				"move:aronnax:ch09_sickbay",
+				"move:conseil:ch09_sickbay",
+				"move:ned:ch09_sickbay",
+				"set:slept"
+			]
+		},
+		"funeral": {
+			"image": "res://art/engravings/hetzel-053.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le lendemain, en scaphandre, nous suivîmes une procession à travers les forêts de corail, jusqu'à une clairière où s'élevait une croix de corail rouge.",
+						"en": "The next day, in diving suits, we followed a procession through the coral forests to a clearing where a cross of red coral stood."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Je compris tout ! Cette clairière c'était un cimetière, ce trou, une tombe. On y déposa le corps de leur compagnon, roulé dans un tissu de byssus.",
+						"en": "I understood everything! This clearing was a cemetery, this hole a grave. They laid in it the body of their companion, wrapped in a cloth of byssus."
+					}
+				}
+			],
+			"do": [
+				"move:aronnax:ch09_coral_cemetery",
+				"move:conseil:ch09_coral_cemetery",
+				"move:ned:ch09_coral_cemetery"
+			]
+		},
+		"end_part_one": {
+			"lines": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "C'est là notre paisible cimetière, à quelques centaines de pieds au-dessous de la surface des flots !",
+						"en": "This is our peaceful cemetery, a few hundred feet below the surface of the waves!"
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Vos morts y dorment, du moins, tranquilles, capitaine, hors de l'atteinte des requins !",
+						"en": "Here at least your dead sleep in peace, Captain, out of the sharks' reach!"
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Oui, monsieur, des requins et des hommes !",
+						"en": "Yes, sir: from sharks and from men!"
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "FIN DE LA PREMIÈRE PARTIE.",
+						"en": "END OF PART ONE."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch09_cabin": {
+			"name": {
+				"fr": "La cellule, enfermés",
+				"en": "The cell, locked in"
+			},
+			"background": "res://art/locations/ch09_cabin.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "carafe",
+					"name": {
+						"fr": "La carafe d'eau",
+						"en": "The carafe of water"
+					},
+					"rect": [
+						146,
+						92,
+						34,
+						28
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une carafe, un verre. L'eau est un peu trouble.",
+									"en": "A carafe, a glass. The water is slightly cloudy."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Un dépôt au fond du verre, monsieur. Je ne le classerai pas : je ne le connais pas. Mais l'eau de mer filtrée n'en laisse pas.",
+									"en": "A deposit at the bottom of the glass, Monsieur. I won't classify it: I don't know it. But filtered sea water leaves none."
+								},
+								"do": [
+									"fact:water_drugged"
+								]
+							}
+						],
+						"use": [
+							{
+								"who": "aronnax",
+								"if": "fact:water_drugged",
+								"say": {
+									"fr": "Je sais ce qu'il y a dedans. Mais nous ne tiendrons pas sans boire, et le capitaine ne veut pas nous tuer, seulement nous faire dormir. Je bois.",
+									"en": "I know what's in it. But we can't hold out without drinking, and the captain doesn't want to kill us, only to make us sleep. I drink."
+								},
+								"scene": "sleep"
+							},
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "J'ai soif… Avant de boire, Conseil, regarde donc cette eau.",
+									"en": "I'm thirsty… Before I drink, Conseil, take a look at this water."
+								}
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je ne bois pas l'eau de quelqu'un qui m'enferme. Pas avant le professeur.",
+									"en": "I don't drink the water of a man who locks me up. Not before the professor does."
+								}
+							},
+							{
+								"say": {
+									"fr": "Monsieur boira le premier. C'est l'usage.",
+									"en": "Monsieur will drink first. It is the custom."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "door9",
+					"name": {
+						"fr": "La porte",
+						"en": "The door"
+					},
+					"rect": [
+						148,
+						30,
+						32,
+						66
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Verrouillée de l'extérieur.",
+									"en": "Bolted from outside."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Même porte, même résultat. Je commence à la connaître.",
+									"en": "Same door, same result. I'm starting to know it well."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "porthole9",
+					"name": {
+						"fr": "Le hublot",
+						"en": "The porthole"
+					},
+					"rect": [
+						270,
+						56,
+						28,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le hublot est obturé. On ne doit rien voir.",
+									"en": "The porthole is shuttered. We're not meant to see anything."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Ce que le capitaine a vu dans sa lunette… Un navire, sans doute. Et sur son visage, de la haine. Je ne l'oublierai pas.",
+									"en": "What the captain saw in his glass… A ship, no doubt. And on his face, hatred. I shall not forget it."
+								},
+								"do": [
+									"fact:saw_what_nemo_saw"
+								]
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		},
+		"ch09_sickbay": {
+			"name": {
+				"fr": "L'infirmerie",
+				"en": "The sickbay"
+			},
+			"background": "res://art/locations/ch09_sickbay.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "wounded",
+					"name": {
+						"fr": "Le blessé",
+						"en": "The wounded man"
+					},
+					"rect": [
+						128,
+						90,
+						110,
+						54
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un homme de quarante ans, la tête emmaillotée de linges sanglants.",
+									"en": "A man of forty, his head swathed in bloody bandages."
+								}
+							}
+						],
+						"use": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Je défais les linges. La blessure est horrible : le crâne, fracassé par un instrument contondant. Le pouls est intermittent, les extrémités se refroidissent.",
+									"en": "I undo the bandages. The wound is horrible: the skull, shattered by a blunt instrument. The pulse is intermittent, the extremities are growing cold."
+								},
+								"do": [
+									"fact:wound_seen"
+								]
+							},
+							{
+								"say": {
+									"fr": "Le professeur est le seul d'entre nous à savoir soigner.",
+									"en": "The professor is the only one of us who knows medicine."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Je ne classe pas les hommes, monsieur. Pas ceux-là.",
+									"en": "I don't classify men, Monsieur. Not these."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo9",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						250,
+						20,
+						40,
+						80
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_sickbay",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine ne quitte pas le blessé des yeux.",
+									"en": "The captain does not take his eyes off the wounded man."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		},
+		"ch09_coral_cemetery": {
+			"name": {
+				"fr": "Le cimetière de corail",
+				"en": "The coral cemetery"
+			},
+			"background": "res://art/locations/ch09_coral_cemetery.png",
+			"color": "#1a4b51",
+			"hotspots": [
+				{
+					"id": "cross",
+					"name": {
+						"fr": "La croix de corail",
+						"en": "The coral cross"
+					},
+					"rect": [
+						144,
+						24,
+						34,
+						96
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une croix de corail rouge, plantée dans le sable. Autour, d'autres tertres, plus anciens.",
+									"en": "A cross of red coral planted in the sand. Around it, other mounds, older."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Corail rouge. Il continuera de pousser sur la tombe, monsieur. Le corail scellera les morts pour toujours.",
+									"en": "Red coral. It will keep growing over the grave, Monsieur. The coral will seal the dead in for ever."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "crew9",
+					"name": {
+						"fr": "L'équipage",
+						"en": "The crew"
+					},
+					"rect": [
+						248,
+						70,
+						72,
+						50
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Les hommes du Nautilus, à genoux, les mains tendues en signe d'adieu.",
+									"en": "The men of the Nautilus, kneeling, hands held out in farewell."
+								}
+							}
+						],
+						"talk": [
+							{
+								"say": {
+									"fr": "Sous le casque, pas un mot. Seulement le silence, et nos lampes.",
+									"en": "Under the helmet, not a word. Only silence, and our lamps."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo9b",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						60,
+						30,
+						40,
+						80
+					],
+					"npc": "nemo",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine essaie vainement de comprimer un sanglot.",
+									"en": "The captain tries in vain to hold back a sob."
+								}
+							}
+						],
+						"talk": [
+							{
+								"scene": "end_part_one"
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"facts": {
+		"water_drugged": {
+			"name": {
+				"fr": "L'eau",
+				"en": "The water"
+			},
+			"text": {
+				"fr": "Un dépôt inconnu au fond du verre.",
+				"en": "An unknown deposit at the bottom of the glass."
+			}
+		},
+		"saw_what_nemo_saw": {
+			"name": {
+				"fr": "Ce qu'a vu le capitaine",
+				"en": "What the captain saw"
+			},
+			"text": {
+				"fr": "Un point à l'horizon, sans doute un navire. Sur son visage, de la haine.",
+				"en": "A point on the horizon, surely a ship. On his face, hatred."
+			}
+		},
+		"wound_seen": {
+			"name": {
+				"fr": "Le blessé",
+				"en": "The wounded man"
+			},
+			"text": {
+				"fr": "Crâne fracassé. Il n'y a plus rien à faire.",
+				"en": "Skull shattered. Nothing more can be done."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_sickbay": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Votre avis, monsieur ?",
+						"en": "Your opinion, sir?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "how",
+					"label": {
+						"fr": "D'où vient cette blessure ?",
+						"en": "How did he get this wound?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Qu'importe ! Un choc du Nautilus a brisé un des leviers de la machine, qui a frappé cet homme. Mais votre avis sur son état ?",
+								"en": "What does it matter! A shock to the Nautilus broke one of the engine levers, which struck this man. But your opinion of his state?"
+							}
+						}
+					]
+				},
+				{
+					"id": "verdict",
+					"who": "aronnax",
+					"label": {
+						"fr": "Lui dire la vérité.",
+						"en": "Tell him the truth."
+					},
+					"if": "fact:wound_seen",
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Vous pouvez parler. Cet homme n'entend pas le français.",
+								"en": "You may speak. This man does not understand French."
+							}
+						},
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Cet homme sera mort dans deux heures.",
+								"en": "This man will be dead within two hours."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Rien ne peut le sauver ?",
+								"en": "Can nothing save him?"
+							}
+						},
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Rien.",
+								"en": "Nothing."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Demain matin, je vous proposerai une excursion sous-marine. Venez.",
+								"en": "Tomorrow morning I shall propose an underwater excursion to you. Come."
+							}
+						}
+					],
+					"do": [
+						"scene:funeral"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "cell",
+			"text": {
+				"fr": "Comprendre ce qui se passe.",
+				"en": "Understand what is going on."
+			},
+			"done_if": "flag:slept",
+			"hints": [
+				{
+					"fr": "On nous enferme, on nous laisse à boire. Pourquoi ?",
+					"en": "They lock us up and leave us something to drink. Why?"
+				},
+				{
+					"fr": "Conseil remarque tout ce qui ne devrait pas être là, même au fond d'un verre.",
+					"en": "Conseil notices everything that shouldn't be there, even at the bottom of a glass."
+				},
+				{
+					"fr": "Conseil : Classer la carafe. Puis Aronnax : Utiliser la carafe (boire).",
+					"en": "Conseil: Catalogue the carafe. Then Aronnax: Use the carafe (drink)."
+				}
+			]
+		},
+		{
+			"id": "doctor",
+			"text": {
+				"fr": "Soigner l'homme du capitaine.",
+				"en": "Tend to the captain's man."
+			},
+			"show_if": "flag:slept",
+			"hints": [
+				{
+					"fr": "Le capitaine attend un avis de médecin.",
+					"en": "The captain is waiting for a doctor's opinion."
+				},
+				{
+					"fr": "Examiner le blessé d'abord, puis lui dire la vérité.",
+					"en": "Examine the wounded man first, then tell him the truth."
+				},
+				{
+					"fr": "Aronnax : Utiliser le blessé, puis parler au capitaine (« Lui dire la vérité »). Au cimetière, parler au capitaine.",
+					"en": "Aronnax: Use the wounded man, then talk to the captain (\"Tell him the truth\"). At the cemetery, talk to the captain."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Enfermés de nouveau. Qu'a-t-il donc vu, là-haut ?",
+		"en": "Locked up again. What did he see up there?"
+	},
+	"next": "ch10"
+}

@@ -1,0 +1,236 @@
+{
+	"_about": "Image prompts per location, scene card and portrait, from docs/design/puzzles.md and the character sheets. Descriptions only: no film, studio, game or artist names. Queue with: python3 tools/art-pipeline/queue.py [ids...]",
+	"style": "STYLE_PAINT",
+	"sizes": {
+		"location": [
+			1024,
+			464
+		],
+		"scene": [
+			1024,
+			464
+		],
+		"portrait": [
+			576,
+			720
+		]
+	},
+	"items": {
+		"ch01_ny_room": {
+			"kind": "location",
+			"prompt": "first-person view of a hotel room in New York in 1867, on the left a writing desk covered with newspapers and a thick leather-bound book, in the middle a tall window onto an avenue with horse-drawn carriages and gas lamps, no cars, no automobiles, no modern buildings, on the right wooden crates of fossils and specimens, a door on the far right, warm oil-lamp light, no people"
+		},
+		"ch01_ny_quay": {
+			"kind": "location",
+			"prompt": "first-person view of the Brooklyn pier in 1867, on the left a large black steam frigate with two smoking funnels and tall masts moored at the quay, a wooden gangway in the middle, a crowd waving handkerchiefs on the right, grey morning sky, river water"
+		},
+		"ch02_deck": {
+			"kind": "location",
+			"prompt": "first-person view on the wooden deck of a 19th-century steam frigate at sea, a mast with rigging in the middle rising out of frame, the bow and bowsprit on the left with a coiled harpoon line, the bridge and a door on the right, the empty Pacific ocean under a hazy sky"
+		},
+		"ch02_wardroom": {
+			"kind": "location",
+			"prompt": "first-person view of a small ship's wardroom in 1867, a chart table in the middle with a large sea chart of the Pacific weighed down by instruments, an open logbook on the right, a swinging oil lamp above, wooden panelling, a doorway on the left"
+		},
+		"ch02_crow": {
+			"kind": "location",
+			"prompt": "view from the crow's nest of a sailing frigate at dusk, a wooden rim in the foreground, the endless ocean below with the warm last light on the horizon, the ship's deck tiny far below"
+		},
+		"ch03_night_sea": {
+			"kind": "location",
+			"prompt": "view from inside the water at night in the open ocean, dark heavy waves at eye level, the small lights of a distant ship on the horizon, a faint moonless sky, a swimmer's head in the waves on the left"
+		},
+		"ch03_hull": {
+			"kind": "location",
+			"prompt": "dawn on a calm sea, standing on the long dark back of a riveted steel hull just above the water, rows of bolted iron plates, a tall man in a wet sailor's jersey sitting on the hull on the right, a neat man in a dark suit on the left, pale sky"
+		},
+		"ch04_cell": {
+			"kind": "location",
+			"prompt": "first-person view of a bare steel cell inside a submarine, riveted iron walls, a single frosted electric light in the ceiling, a plain table with a beret of brown fur left on it, a heavy riveted door on the right, cold light, no people"
+		},
+		"ch05_salon": {
+			"kind": "location",
+			"prompt": "first-person view standing inside a grand 19th-century submarine salon, dark wood panelling and brass, a very large pipe organ against the left wall, glass cases of shells and corals, paintings in gilt frames, a huge oval window in the centre with iron shutters slid open onto deep blue sea full of fish, amber lamps, no people"
+		},
+		"ch05_library": {
+			"kind": "location",
+			"prompt": "first-person view of a library inside a 19th-century submarine, no windows at all, tall black rosewood bookcases inlaid with brass full of uniformly bound leather books, wide brown leather divans along the walls, a large central table covered with pamphlets and old newspapers, four frosted electric globes in the ceiling, no people"
+		},
+		"ch05_corridor": {
+			"kind": "location",
+			"prompt": "first-person view down a narrow riveted iron corridor inside a 19th-century submarine, electric globe lamps, closed oval doors on each side, at the end an iron ladder going up to a closed round hatch, no people"
+		},
+		"ch05_armory": {
+			"kind": "location",
+			"prompt": "first-person view of a small arms room in a 19th-century submarine, racks of slender air rifles with copper reservoirs on the left, heavy copper diving suits and round brass helmets on stands on the right, riveted walls, electric light, no people"
+		},
+		"ch01_intro": {
+			"kind": "scene",
+			"prompt": "a 19th-century ocean liner at night on a dark sea, a long glowing shape beneath the water near its hull, spray, dramatic moonless sky"
+		},
+		"ch01_outro": {
+			"kind": "scene",
+			"prompt": "a black steam frigate with two funnels and full rigging leaving a crowded harbour in 1867, smoke trailing, crowds and small boats waving, morning light"
+		},
+		"ch02_intro": {
+			"kind": "scene",
+			"prompt": "a steam frigate alone on the empty Pacific ocean, seen from afar, months at sea, calm water, tiny sailors on the yards watching the horizon"
+		},
+		"ch02_sighting": {
+			"kind": "scene",
+			"prompt": "night at sea, from the deck of a frigate, an intense oval glow of electric light under the dark water two cable-lengths away, sailors pointing, a harpooner at the bow"
+		},
+		"ch03_intro": {
+			"kind": "scene",
+			"prompt": "night, the bow of a frigate, a tall harpooner hurling a harpoon at a long dark glowing shape in the water, two great columns of water exploding over the deck"
+		},
+		"ch03_inside": {
+			"kind": "scene",
+			"prompt": "a round steel hatch opening on the back of a submarine at dawn, masked sailors in dark clothes pulling three wet men inside, the sea all around"
+		},
+		"portrait_aronnax": {
+			"kind": "portrait",
+			"prompt": "head and shoulders portrait of a French naturalist of forty in 1867, trimmed dark brown beard, small round spectacles, intelligent curious eyes, frock coat and waistcoat, holding a notebook, plain dark blue background, soft amber light"
+		},
+		"portrait_conseil": {
+			"kind": "portrait",
+			"prompt": "head and shoulders portrait of a calm Flemish manservant of thirty in 1867, clean-shaven, neatly combed fair hair, composed deadpan expression, buttoned dark servant's suit with a white collar, plain dark blue background, soft amber light"
+		},
+		"portrait_ned": {
+			"kind": "portrait",
+			"prompt": "head and shoulders portrait of a tall powerful French-Canadian harpooner of about forty in 1867, weathered face, short rough dark beard, heavy brows, intense piercing gaze, thick wool sailor's jersey, plain dark blue background, soft amber light"
+		},
+		"portrait_farragut": {
+			"kind": "portrait",
+			"prompt": "head and shoulders portrait of a resolute American naval commander in 1867, grey side whiskers, dark navy uniform with brass buttons and a peaked cap, determined expression, plain dark blue background, soft amber light"
+		},
+		"portrait_nemo": {
+			"kind": "portrait",
+			"prompt": "head and shoulders portrait of a tall pale man of uncertain age between thirty-five and fifty, thick dark brown almost black hair, a short dark well-kept beard and moustache, broad forehead, straight nose, dark eyes set slightly wide apart with a cold calm gaze, noble upright posture, a dark brown beret, a plain collarless dark grey-green tunic, no insignia, plain dark blue background, soft amber light"
+		},
+		"title": {
+			"kind": "scene",
+			"prompt": "a long cigar-shaped 19th-century submarine gliding through deep blue water lit by shafts of light from the surface, a glowing lantern at its prow, fish around it, no text"
+		},
+		"ch06_seafloor_plain": {
+			"kind": "location",
+			"prompt": "first-person view through a round brass diving helmet porthole, walking on a wide sandy sea floor about ten metres deep, sunlight filtering from the surface in pale blue shafts, scattered shells and rocks, two divers in heavy copper suits ahead, 1860s diving equipment"
+		},
+		"ch06_forest": {
+			"kind": "location",
+			"prompt": "first-person view of an underwater forest of tall straight seaweed trunks rising like trees, dim green-blue light, a sea otter swimming between the trunks on the left, a diver in a copper suit with a glowing lamp on the right, far behind through the trunks the long dark hull of a submarine"
+		},
+		"ch07_vanikoro": {
+			"kind": "location",
+			"prompt": "view from inside a dark submarine salon through a huge oval window with brass frame, outside clear tropical water lit by a searchlight, an old shipwreck on a coral reef: coral-encrusted bronze cannons, rusted anchors, a broken wooden ship's bow, all covered with living corals and sea anemones, many small bright fish, 18th-century wreck"
+		},
+		"ch08_reef": {
+			"kind": "location",
+			"prompt": "view from the deck platform of a long cigar-shaped 19th-century submarine stranded on a coral reef at low tide, the iron hull plates wet in the sun, a rowing dinghy beside it, green tropical islands with palm trees on the horizon, turquoise lagoon, no people"
+		},
+		"ch08_island_forest": {
+			"kind": "location",
+			"prompt": "first-person view inside a dense tropical island forest in 1868, breadfruit trees and banana plants, tall ferns, sunlight through leaves, a small beach visible through the trees on the right with a rowing dinghy pulled up on the sand, a wild pig in the undergrowth, no people"
+		},
+		"ch08_platform": {
+			"kind": "location",
+			"prompt": "first-person view on the narrow iron platform on top of a 19th-century submarine at dusk, a brass handrail along the edge, an open round hatch in the middle, a calm lagoon and dark island shore in the distance with a few canoes, no people close"
+		},
+		"ch09_cabin": {
+			"kind": "location",
+			"prompt": "first-person view of a small cabin inside a 19th-century submarine at night, a narrow bunk, a small table with a glass of water and an oil lamp turned low, riveted walls, a locked oval door, drowsy dim light, no people"
+		},
+		"ch09_sickbay": {
+			"kind": "location",
+			"prompt": "first-person view of a narrow sickbay in a 19th-century submarine, a wounded sailor lying on a cot with a bloodstained bandage around his head, a lamp, medicine bottles on a shelf, riveted walls, sombre light"
+		},
+		"ch09_coral_cemetery": {
+			"kind": "location",
+			"prompt": "underwater, a clearing in a forest of red and white coral, a tall cross of red coral planted in the sand, a group of divers in copper helmets standing in a semicircle holding lamps, deep blue water, solemn atmosphere"
+		},
+		"ch10_pearl_bank": {
+			"kind": "location",
+			"prompt": "first-person view through a brass diving helmet porthole on the Manaar pearl bank off Ceylon in 1868, a shallow sunlit sea floor covered with clusters of pearl oysters, above near the surface the dark hull of a small fishing boat and a lone pearl diver descending on a rope with a stone, blue-green water"
+		},
+		"ch10_grotto": {
+			"kind": "location",
+			"prompt": "underwater grotto lit by diving lamps, an enormous giant clam oyster more than two metres wide slightly open with a huge glowing pearl inside, rock walls covered with sponges, divers in copper helmets watching"
+		},
+		"ch11_pilot_house": {
+			"kind": "location",
+			"prompt": "first-person view inside the small wheelhouse of a 19th-century submarine, a large lens-shaped glass window in front, outside a narrow rocky underwater tunnel lit by a powerful searchlight beam, a brass steering wheel, dim instruments"
+		},
+		"ch12_salon_window": {
+			"kind": "location",
+			"prompt": "view from inside a dark 19th-century submarine salon through a large oval window at night, outside in the dark water a swimming man's face close to the glass, below an open iron chest full of gold ingots on the sea floor, searchlight glow"
+		},
+		"ch13_cabins": {
+			"kind": "location",
+			"prompt": "first-person view of a narrow cabin inside a 19th-century submarine at night, a lamp turned low, a packed canvas bag and a coil of rope on the bunk, a closed oval door, tense quiet atmosphere, no people"
+		},
+		"ch13_vigo": {
+			"kind": "location",
+			"prompt": "underwater night scene in a bay, the wrecks of old Spanish galleons half buried in sand, open chests spilling gold coins and silver bars, divers in copper helmets carrying lamps and gathering the gold, searchlight beams"
+		},
+		"ch14_atlantis": {
+			"kind": "location",
+			"prompt": "underwater at night, the ruins of a drowned ancient city on a mountainside, fallen columns, temple walls and staircases, lit by the red glow of an underwater volcano in the distance, a diver in a copper helmet standing on a rock"
+		},
+		"ch14_volcano_harbour": {
+			"kind": "location",
+			"prompt": "a hidden lagoon inside an extinct volcano crater, black basalt walls rising to a small circle of sky, a long cigar-shaped 19th-century submarine moored at a rocky shore, coal seams in the rock, lamps"
+		},
+		"ch15_whales": {
+			"kind": "location",
+			"prompt": "first-person view from the iron platform of a 19th-century submarine on the open sea, a herd of large black southern right whales surfacing nearby, broad bodies without dorsal fins, V-shaped spouts, pale callosities on their heads, not orcas, in the distance dark sperm whales with huge square heads approaching, grey sky"
+		},
+		"ch16_ice_pack": {
+			"kind": "location",
+			"prompt": "view from the platform of a long cigar-shaped 19th-century submarine surfacing among antarctic ice floes and icebergs, grey cold sky, dark water, snow on the iron plates, no people"
+		},
+		"ch16_pole": {
+			"kind": "location",
+			"prompt": "a rocky antarctic shore at the South Pole in 1868, black basalt rocks with snow, a tall bare rock in the middle, seals and penguins, the low sun on the horizon, cold pale light, no flag, no people"
+		},
+		"ch17_trapped": {
+			"kind": "location",
+			"prompt": "first-person view inside a 19th-century submarine trapped under ice, frost and ice crystals on the riveted walls and brass instruments, dim blue emergency light, a pressure gauge, breath visible in the cold air, no people"
+		},
+		"ch17_ice_tunnel": {
+			"kind": "location",
+			"prompt": "underwater, men in heavy copper diving suits digging a trench into a wall of blue glacier ice with picks, lamps glowing, ice fragments floating, claustrophobic blue light"
+		},
+		"ch18_platform_squid": {
+			"kind": "location",
+			"prompt": "the platform of a 19th-century submarine at sea in daylight, enormous giant squid tentacles coming over the iron handrail, sailors with axes fighting, spray, dramatic sky, painterly"
+		},
+		"ch19_storm": {
+			"kind": "location",
+			"prompt": "first-person view from the platform of a 19th-century submarine in a violent storm at sea, enormous waves, lightning, dark clouds, rain, the iron handrail in the foreground"
+		},
+		"ch19_vengeur": {
+			"kind": "location",
+			"prompt": "view through a large oval submarine window of the wreck of an old 18th-century French ship of the line lying on the sea floor, its masts broken, cannons covered with shells and weed, searchlight beam, solemn"
+		},
+		"ch20_salon_dark": {
+			"kind": "location",
+			"prompt": "view from inside a dark 19th-century submarine salon, the great oval window filled by the wooden hull of a sinking 1860s two-decker sailing warship with rows of gunports and broken masts, going down past the window, bubbles and debris, dim red light, no steamship, no people"
+		},
+		"ch20_nemo_room": {
+			"kind": "location",
+			"prompt": "an austere small cabin inside a 19th-century submarine, an iron bed, a desk with charts and instruments, on the back wall portraits of great men and a portrait of a young woman with two small children, a single lamp, no people"
+		},
+		"ch21_cabins_night": {
+			"kind": "location",
+			"prompt": "first-person view of a narrow riveted corridor inside a 19th-century submarine at night, a lamp turned very low, an iron ladder leading up to an open round hatch in the ceiling, moonlight above, no people"
+		},
+		"ch21_skiff": {
+			"kind": "location",
+			"prompt": "inside a small wooden rowing boat at night in a gigantic whirlpool at sea, walls of black water spinning around, moonlight, spray, terror"
+		},
+		"ch21_lofoten": {
+			"kind": "location",
+			"prompt": "first-person view of a poor fisherman's wooden hut on a northern island in the 1860s, a fire in a stone hearth, fishing nets hung on the walls, a small window onto a grey northern sea, warm firelight"
+		}
+	}
+}

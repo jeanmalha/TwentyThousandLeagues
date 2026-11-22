@@ -1,0 +1,888 @@
+{
+	"id": "ch06",
+	"number": 6,
+	"act": 2,
+	"title": {
+		"fr": "La forêt de Crespo",
+		"en": "The Crespo Forest"
+	},
+	"novel": "I-15 – I-17",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch06_salon",
+			"conseil": "ch06_salon",
+			"ned": "ch06_salon"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-032.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le 16 novembre 1867, en rentrant dans ma chambre, je trouvai sur ma table une lettre.",
+						"en": "On 16 November 1867, coming back to my room, I found a letter on my table."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "« Le capitaine Nemo invite monsieur le professeur Aronnax à une partie de chasse qui aura lieu demain matin dans ses forêts de l'île Crespo. Il espère que rien n'empêchera monsieur le professeur d'y assister, et il verra avec plaisir que ses compagnons se joignent à lui. »",
+						"en": "\"Captain Nemo invites Professor Aronnax to a hunting party to be held tomorrow morning in his forests on Crespo Island. He hopes nothing will prevent the Professor from attending, and will be pleased if his companions join him.\""
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Une chasse ! Mais il va donc à terre, ce particulier-là ? Une fois sur la terre ferme, nous aviserons à prendre un parti.",
+						"en": "A hunt! So this fellow does go ashore? Once we're on solid ground, we'll see about making our move."
+					}
+				}
+			]
+		},
+		"sharks": {
+			"image": "res://art/engravings/hetzel-037.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le capitaine Nemo se jeta à terre et nous fit signe d'en faire autant. Deux ombres énormes passèrent au-dessus de nous : des requins, les yeux phosphorescents, la gueule armée de dents formidables.",
+						"en": "Captain Nemo threw himself to the ground and signalled us to do the same. Two enormous shadows passed over us: sharks, their eyes glowing, their jaws armed with formidable teeth."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Ils ne nous virent pas. Ces voraces ont la vue basse. Le capitaine se releva sans un geste de plus.",
+						"en": "They didn't see us. These gluttons are short-sighted. The captain got up without another gesture."
+					}
+				}
+			],
+			"do": [
+				"set:sharks_passed"
+			]
+		},
+		"return": {
+			"image": "res://art/engravings/hetzel-036.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Nous rentrâmes à bord à la nuit tombante. J'avais vu ce que nul homme n'avait vu : une forêt sous la mer.",
+						"en": "We came back aboard at nightfall. I had seen what no man had ever seen: a forest under the sea."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Une forêt sans gibier qu'on puisse manger, et une île qui n'est qu'un caillou. Mais je sais maintenant où est le canot. Ça, monsieur, c'est une bonne chasse.",
+						"en": "A forest with no game you can eat, and an island that's just a rock. But now I know where the boat is. That, sir, was a good hunt."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch06_salon": {
+			"name": {
+				"fr": "Le salon, la veille",
+				"en": "The salon, the evening before"
+			},
+			"background": "res://art/locations/ch05_salon.png",
+			"color": "#3e251a",
+			"hotspots": [
+				{
+					"id": "planisphere",
+					"name": {
+						"fr": "Le planisphère",
+						"en": "The planisphere"
+					},
+					"rect": [
+						246,
+						40,
+						44,
+						44
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un grand planisphère, où la route du Nautilus est piquée d'épingles.",
+									"en": "A large world map, with the Nautilus's route marked in pins."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Par 32°40' de latitude nord et 167°50' de longitude ouest : un îlot reconnu en 1801 par le capitaine Crespo. Rocca de la Plata, la « Roche d'Argent ». Un roc perdu au milieu du Pacifique. Pas un arbre.",
+									"en": "At 32°40' north, 167°50' west: an islet sighted in 1801 by Captain Crespo. Rocca de la Plata, the \"Silver Rock\". A rock lost in the middle of the Pacific. Not a single tree."
+								},
+								"do": [
+									"fact:crespo_rock"
+								]
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Crespo… Ce nom ne me dit rien. Il faudrait le chercher sur la carte.",
+									"en": "Crespo… The name means nothing to me. I'd have to look it up on the map."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned_salon",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						40,
+						40,
+						40,
+						80
+					],
+					"npc": "ned",
+					"dialogue": "ned_salon",
+					"if": "!char:ned",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned arpente le salon comme une cage. Il sent déjà la terre ferme.",
+									"en": "Ned paces the salon like a cage. He can already smell dry land."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "window6",
+					"name": {
+						"fr": "La grande baie",
+						"en": "The great window"
+					},
+					"rect": [
+						112,
+						36,
+						100,
+						82
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Derrière la vitre, la mer, à perte de vue. Pas la moindre côte.",
+									"en": "Behind the glass, the sea as far as the eye can see. Not the faintest coastline."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Le capitaine a horreur des continents et des îles. Et il nous invite à chasser en forêt ? Quelque chose ne va pas.",
+									"en": "The captain loathes continents and islands. And he invites us to hunt in a forest? Something doesn't add up."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_armory6",
+					"name": {
+						"fr": "Vers la salle d'armes",
+						"en": "To the arms room"
+					},
+					"rect": [
+						290,
+						20,
+						30,
+						100
+					],
+					"to": "ch06_armory",
+					"if": "flag:ned_understands",
+					"locked": {
+						"fr": "Le départ est pour demain matin. Et Ned s'imagine encore une forêt sur une île…",
+						"en": "We leave tomorrow morning. And Ned still imagines a forest on an island…"
+					}
+				}
+			]
+		},
+		"ch06_armory": {
+			"name": {
+				"fr": "La salle d'armes, à l'aube",
+				"en": "The arms room, at dawn"
+			},
+			"background": "res://art/locations/ch05_armory.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "suits6",
+					"name": {
+						"fr": "Scaphandres",
+						"en": "Diving suits"
+					},
+					"rect": [
+						192,
+						46,
+						120,
+						96
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des scaphandres de caoutchouc, des casques de cuivre, et dans le dos, un réservoir d'air : l'appareil Rouquayrol, perfectionné par le capitaine.",
+									"en": "Rubber suits, copper helmets, and on the back a tank of air: the Rouquayrol apparatus, improved by the captain."
+								}
+							}
+						],
+						"use": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "J'enfile le scaphandre. On me visse le casque. Le monde se réduit à trois hublots.",
+									"en": "I pull on the suit. They screw the helmet on. The world shrinks to three portholes."
+								},
+								"do": [
+									"set:suited_aronnax"
+								]
+							},
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Si monsieur y va, j'y vais. Je m'habille.",
+									"en": "If Monsieur goes, I go. I'm getting dressed."
+								},
+								"do": [
+									"set:suited_conseil"
+								]
+							},
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Me mettre dans cette boîte de conserve ? … Pour un coup de fusil, soit.",
+									"en": "Get into that tin can? … For a shot at some game, all right."
+								},
+								"do": [
+									"set:suited_ned"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "lamp6",
+					"name": {
+						"fr": "Lampe Ruhmkorff",
+						"en": "Ruhmkorff lamp"
+					},
+					"rect": [
+						124,
+						96,
+						22,
+						20
+					],
+					"if": "!item:lamp",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une lampe électrique de poche, à bobine Ruhmkorff. Elle éclaire sans air.",
+									"en": "A pocket electric lamp with a Ruhmkorff coil. It shines without air."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Je la prends. Là où nous allons, il fera nuit à midi.",
+									"en": "I'll take it. Where we're going, it will be night at noon."
+								},
+								"do": [
+									"give:lamp"
+								]
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Appareil, électrique, portatif. Je le prends : il est plus facile à porter qu'à classer.",
+									"en": "Apparatus, electric, portable. I'll take it: it's easier to carry than to classify."
+								},
+								"do": [
+									"give:lamp"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "rifles6",
+					"name": {
+						"fr": "Fusils à air",
+						"en": "Air rifles"
+					},
+					"rect": [
+						0,
+						0,
+						125,
+						144
+					],
+					"if": "!item:air_rifle",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Les fusils à air comprimé et leurs balles électriques.",
+									"en": "The compressed-air rifles and their electric bullets."
+								}
+							}
+						],
+						"use": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Celui-là est à moi. Il est temps d'apprendre à s'en servir.",
+									"en": "That one's mine. Time I learned to use it."
+								},
+								"do": [
+									"give:air_rifle"
+								]
+							},
+							{
+								"say": {
+									"fr": "Les armes, je les laisse à Ned.",
+									"en": "I'll leave the guns to Ned."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_sea",
+					"name": {
+						"fr": "La chambre de plongée",
+						"en": "The diving chamber"
+					},
+					"rect": [
+						145,
+						50,
+						34,
+						62
+					],
+					"to": "ch06_seafloor_plain",
+					"if": [
+						"flag:suited_aronnax",
+						"flag:suited_conseil",
+						"flag:suited_ned"
+					],
+					"do": [],
+					"locked": {
+						"fr": "Nous partons tous les trois, ou personne. Chacun doit enfiler son scaphandre.",
+						"en": "All three of us go, or nobody does. Each of us has to put on a suit."
+					}
+				}
+			]
+		},
+		"ch06_seafloor_plain": {
+			"name": {
+				"fr": "La plaine sous-marine",
+				"en": "The plain under the sea"
+			},
+			"background": "res://art/locations/ch06_seafloor_plain.png",
+			"color": "#1a4b51",
+			"hotspots": [
+				{
+					"id": "shells",
+					"name": {
+						"fr": "Coquillages",
+						"en": "Shells"
+					},
+					"rect": [
+						40,
+						100,
+						200,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le sable est semé de coquilles. Certaines en longues traînées, comme des chemins.",
+									"en": "The sand is strewn with shells. Some in long trails, like paths."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Monsieur remarquera : les coquilles mortes sont rangées par le courant, du plus lourd au plus léger. Il suffit de les suivre à rebours pour retrouver le bord. Classées, elles sont un chemin.",
+									"en": "Monsieur will notice: the current lays the dead shells out from heaviest to lightest. Follow them backwards and you'll find the ship. Classified, they make a path."
+								},
+								"do": [
+									"set:path_marked"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo6",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						140,
+						46,
+						40,
+						74
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine marche devant, sans se retourner. Il connaît le chemin.",
+									"en": "The captain walks ahead without looking back. He knows the way."
+								}
+							}
+						],
+						"talk": [
+							{
+								"say": {
+									"fr": "Sous le casque de cuivre, les mots ne passent pas. Il faut s'entendre par gestes.",
+									"en": "Under the copper helmet, words don't carry. We have to make ourselves understood by gestures."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "light6",
+					"name": {
+						"fr": "La lumière du jour",
+						"en": "Daylight from above"
+					},
+					"rect": [
+						90,
+						4,
+						140,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "À dix mètres de fond, le soleil arrive encore, pâle et bleu. Plus loin, il fera nuit.",
+									"en": "Ten metres down, the sun still reaches us, pale and blue. Farther on, it will be night."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_forest",
+					"name": {
+						"fr": "Vers la forêt",
+						"en": "To the forest"
+					},
+					"rect": [
+						280,
+						30,
+						40,
+						100
+					],
+					"to": "ch06_forest",
+					"if": [
+						"item:lamp",
+						"flag:path_marked"
+					],
+					"locked": {
+						"fr": "Plus loin, le fond plonge dans le noir. Sans lumière, et sans moyen de retrouver le chemin du retour, ce serait folie.",
+						"en": "Farther on, the sea floor drops into darkness. Without light, and without a way to find the path back, it would be madness."
+					}
+				},
+				{
+					"id": "back_aboard",
+					"name": {
+						"fr": "Remonter à bord",
+						"en": "Back aboard"
+					},
+					"rect": [
+						0,
+						30,
+						30,
+						100
+					],
+					"to": "ch06_armory"
+				}
+			]
+		},
+		"ch06_forest": {
+			"name": {
+				"fr": "La forêt de l'île Crespo",
+				"en": "The forest of Crespo Island"
+			},
+			"background": "res://art/locations/ch06_forest.png",
+			"color": "#0f2236",
+			"hotspots": [
+				{
+					"id": "otter",
+					"name": {
+						"fr": "Une loutre de mer",
+						"en": "A sea otter"
+					},
+					"rect": [
+						25,
+						68,
+						74,
+						56
+					],
+					"if": "!flag:otter_hunted",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une loutre de mer, la plus précieuse des fourrures. Elle file entre les troncs.",
+									"en": "A sea otter, the most precious of furs. It darts between the trunks."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Enhydra lutris. Le béret du capitaine, de son vivant.",
+									"en": "Enhydra lutris. The captain's beret, while still alive."
+								}
+							}
+						],
+						"item:air_rifle": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Un seul coup. L'animal se raidit, foudroyé. Ce fusil-là, je l'aime bien.",
+									"en": "One shot. The animal goes rigid, struck down. I like this rifle."
+								},
+								"do": [
+									"set:otter_hunted",
+									"scene:sharks"
+								]
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "À mains nues ? Elle est dix fois plus rapide que moi.",
+									"en": "Bare-handed? It's ten times faster than me."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "trunks",
+					"name": {
+						"fr": "Les troncs",
+						"en": "The trunks"
+					},
+					"rect": [
+						256,
+						0,
+						64,
+						144
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des tiges droites comme des troncs, qui montent vers la surface sans jamais se courber. Pas une feuille ne bouge.",
+									"en": "Stems as straight as trunks, rising to the surface without ever bending. Not a leaf stirs."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Ni arbres, ni plantes, monsieur : des algues, et des zoophytes. Une forêt où le règne animal se confond avec le végétal.",
+									"en": "Neither trees nor plants, Monsieur: seaweed, and zoophytes. A forest where the animal kingdom blurs into the vegetable."
+								},
+								"do": [
+									"cat:sea_forest"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "hull",
+					"name": {
+						"fr": "La coque du Nautilus, au loin",
+						"en": "The Nautilus's hull, in the distance"
+					},
+					"rect": [
+						156,
+						14,
+						92,
+						68
+					],
+					"actions": {
+						"look": [
+							{
+								"if": "flag:sharks_passed",
+								"say": {
+									"fr": "Le Nautilus, vu du dehors. Je compte les tôles depuis l'éperon : le panneau que Ned a trouvé ouvre sur cette bosse, derrière la plate-forme. Le canot est là.",
+									"en": "The Nautilus, seen from outside. I count the plates from the spur: the hatch Ned found opens onto that hump, behind the platform. The skiff is there."
+								},
+								"do": [
+									"set:hull_mapped",
+									"scene:return"
+								],
+								"who": "aronnax"
+							},
+							{
+								"say": {
+									"fr": "La longue silhouette du Nautilus, posée sur le fond. Nous y reviendrons.",
+									"en": "The long shape of the Nautilus, resting on the sea floor. We'll be back there."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "D'ici, je vois la bosse du canot, sur le dos. Le professeur saurait dire exactement où.",
+									"en": "From here I can see the skiff's hump on its back. The professor could say exactly where."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_plain",
+					"name": {
+						"fr": "Vers la plaine",
+						"en": "To the plain"
+					},
+					"rect": [
+						0,
+						126,
+						70,
+						18
+					],
+					"to": "ch06_seafloor_plain"
+				}
+			]
+		}
+	},
+	"items": {
+		"lamp": {
+			"name": {
+				"fr": "Lampe Ruhmkorff",
+				"en": "Ruhmkorff lamp"
+			},
+			"desc": {
+				"fr": "Une lampe électrique qui brille sans air.",
+				"en": "An electric lamp that shines without air."
+			}
+		},
+		"air_rifle": {
+			"name": {
+				"fr": "Fusil à air",
+				"en": "Air rifle"
+			},
+			"desc": {
+				"fr": "Air comprimé, balles électriques.",
+				"en": "Compressed air, electric bullets."
+			}
+		}
+	},
+	"catalogue": {
+		"sea_forest": {
+			"name": {
+				"fr": "Forêt sous-marine",
+				"en": "Underwater forest"
+			},
+			"text": {
+				"fr": "Algues et zoophytes en futaie : animal et végétal confondus.",
+				"en": "Seaweed and zoophytes standing like timber: animal and vegetable blurred."
+			}
+		}
+	},
+	"facts": {
+		"crespo_rock": {
+			"name": {
+				"fr": "L'île Crespo",
+				"en": "Crespo Island"
+			},
+			"text": {
+				"fr": "Rocca de la Plata : un roc nu au milieu du Pacifique. Ses « forêts » ne peuvent être que sous la mer.",
+				"en": "Rocca de la Plata: a bare rock in the middle of the Pacific. Its \"forests\" can only be under the sea."
+			}
+		}
+	},
+	"dialogues": {
+		"ned_salon": {
+			"npc": "ned",
+			"greeting": [
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Demain, monsieur, la terre ferme !",
+						"en": "Tomorrow, sir, dry land!"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "land",
+					"label": {
+						"fr": "Ned, vous comptez fuir ?",
+						"en": "Ned, you mean to escape?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Une île, des arbres, du gibier. On se cache dans la forêt, le bateau repart sans nous. Simple.",
+								"en": "An island, trees, game. We hide in the forest, the boat leaves without us. Simple."
+							}
+						}
+					]
+				},
+				{
+					"id": "rock",
+					"who": "aronnax",
+					"label": {
+						"fr": "L'île Crespo n'est qu'un rocher, Ned.",
+						"en": "Crespo Island is only a rock, Ned."
+					},
+					"if": "fact:crespo_rock",
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Regardez la carte. Un roc nu, perdu au milieu du Pacifique. Ses forêts sont sous la mer.",
+								"en": "Look at the map. A bare rock, lost in the middle of the Pacific. Its forests are under the sea."
+							}
+						},
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Sous la mer ! … Alors je n'y vais pas. — Mais j'y vais quand même. On voit mieux un bateau du dehors que du dedans.",
+								"en": "Under the sea! … Then I'm not going. — But I'll go anyway. You see a boat better from outside than from in."
+							}
+						}
+					],
+					"do": [
+						"set:ned_understands"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "crespo",
+			"text": {
+				"fr": "Comprendre où se trouvent les « forêts de l'île Crespo ».",
+				"en": "Work out where the \"forests of Crespo Island\" are."
+			},
+			"done_if": "flag:ned_understands",
+			"hints": [
+				{
+					"fr": "Le capitaine a horreur de la terre. Et pourtant, une forêt sur une île ?",
+					"en": "The captain loathes the land. And yet, a forest on an island?"
+				},
+				{
+					"fr": "Le planisphère du salon dira ce qu'est l'île Crespo. Ned doit le savoir avant de rêver d'évasion.",
+					"en": "The salon's world map will say what Crespo Island is. Ned should know before he dreams of escape."
+				},
+				{
+					"fr": "Utiliser le planisphère, puis parler à Ned (« L'île Crespo n'est qu'un rocher »).",
+					"en": "Use the planisphere, then talk to Ned (\"Crespo Island is only a rock\")."
+				}
+			]
+		},
+		{
+			"id": "dive",
+			"text": {
+				"fr": "Se préparer, et partir.",
+				"en": "Get ready, and go."
+			},
+			"show_if": "flag:ned_understands",
+			"done_if": "loc:aronnax:ch06_forest",
+			"hints": [
+				{
+					"fr": "Trois scaphandres, une lampe, un fusil. Et sous l'eau, il faut savoir revenir.",
+					"en": "Three suits, a lamp, a rifle. And under water, you have to know how to get back."
+				},
+				{
+					"fr": "Chacun s'habille lui-même. Sur la plaine, Conseil saura lire un chemin dans le sable.",
+					"en": "Each of us dresses himself. On the plain, Conseil will read a path in the sand."
+				},
+				{
+					"fr": "Chacun : Utiliser les scaphandres. Prendre la lampe et le fusil (Ned). Sur la plaine, Conseil : Classer les coquillages.",
+					"en": "Each one: Use the diving suits. Take the lamp, and the rifle (Ned). On the plain, Conseil: Catalogue the shells."
+				}
+			]
+		},
+		{
+			"id": "hunt",
+			"text": {
+				"fr": "La chasse, et le retour.",
+				"en": "The hunt, and the way back."
+			},
+			"show_if": "loc:aronnax:ch06_forest",
+			"hints": [
+				{
+					"fr": "Ned est venu pour chasser. Et le professeur, pour regarder le Nautilus du dehors.",
+					"en": "Ned came to hunt. And the professor, to look at the Nautilus from outside."
+				},
+				{
+					"fr": "Une loutre file entre les troncs. Au loin, la coque.",
+					"en": "An otter darts between the trunks. In the distance, the hull."
+				},
+				{
+					"fr": "Ned : Utiliser le fusil sur la loutre. Puis Aronnax : Regarder la coque du Nautilus.",
+					"en": "Ned: Use the rifle on the otter. Then Aronnax: Look at the Nautilus's hull."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Des forêts… sur l'île Crespo ? Voyons d'abord ce que c'est que l'île Crespo.",
+		"en": "Forests… on Crespo Island? Let's first see what Crespo Island is."
+	},
+	"next": "ch07"
+}

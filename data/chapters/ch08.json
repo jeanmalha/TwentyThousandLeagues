@@ -1,0 +1,900 @@
+{
+	"id": "ch08",
+	"number": 8,
+	"act": 2,
+	"title": {
+		"fr": "Le détroit de Torrès",
+		"en": "The Torres Strait"
+	},
+	"novel": "I-20 – I-22",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch08_reef",
+			"conseil": "ch08_reef",
+			"ned": "ch08_reef"
+		},
+		"inventory": {
+			"ned": [
+				"air_rifle"
+			]
+		}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-042.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le 4 janvier, dans le détroit de Torrès, le plus dangereux du monde, le Nautilus toucha un récif et s'arrêta net. La marée descendait. Nous étions échoués.",
+						"en": "On 4 January, in the Torres Strait, the most dangerous in the world, the Nautilus struck a reef and stopped dead. The tide was falling. We were aground."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le capitaine Nemo, calme et froid, monta sur la plate-forme, regarda la mer, puis la côte de l'île Gueboroar, à deux milles.",
+						"en": "Captain Nemo, calm and cold, came up onto the platform, looked at the sea, then at the shore of Gueboroar Island, two miles off."
+					}
+				}
+			]
+		},
+		"shore": {
+			"image": "res://art/engravings/hetzel-046.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Ned fit rôtir le cochon sur un feu de bois vert, et Conseil prépara le fruit de l'arbre à pain. Ce fut le meilleur repas depuis des mois.",
+						"en": "Ned roasted the pig over a fire of green wood, and Conseil prepared the breadfruit. It was the best meal in months."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Puis une pierre tomba à nos pieds. Une autre. Sur la lisière de la forêt, des hommes de l'île nous regardaient : nous étions chez eux, et nous n'y étions pas invités.",
+						"en": "Then a stone fell at our feet. Another. At the edge of the forest, men of the island were watching us: we were on their land, and we had not been invited."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Nous regagnâmes le canot en hâte, sans tirer un coup de fusil.",
+						"en": "We hurried back to the boat without firing a shot."
+					}
+				}
+			],
+			"do": [
+				"move:aronnax:ch08_platform",
+				"move:conseil:ch08_platform",
+				"move:ned:ch08_platform",
+				"set:back_aboard"
+			]
+		},
+		"tide": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le 9 janvier, comme l'avait annoncé le capitaine, la mer monta avec la pleine lune. À deux heures quarante, le Nautilus se souleva doucement de son lit de corail.",
+						"en": "On 9 January, as the captain had foretold, the sea rose with the full moon. At two forty, the Nautilus lifted gently from its bed of coral."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Il ne me rend un service que je ne veux devoir qu'à lui seul, ce complaisant satellite.",
+						"en": "That obliging satellite renders me a service I wish to owe to no one but it."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Les pirogues regagnèrent la côte. Personne n'avait été tué. Le capitaine Nemo y avait veillé.",
+						"en": "The canoes made back for the shore. No one had been killed. Captain Nemo had seen to that."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch08_reef": {
+			"name": {
+				"fr": "Échoués sur le récif",
+				"en": "Aground on the reef"
+			},
+			"background": "res://art/locations/ch08_reef.png",
+			"color": "#2e7476",
+			"hotspots": [
+				{
+					"id": "reef",
+					"name": {
+						"fr": "Le récif",
+						"en": "The reef"
+					},
+					"rect": [
+						0,
+						100,
+						200,
+						44
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le Nautilus repose sur le corail. Pas une avarie : il est simplement posé, comme un navire au sec.",
+									"en": "The Nautilus rests on the coral. No damage: it is simply sitting there, like a ship in dry dock."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Madrépores, méandrines, astrées. Un récif est un animal immense, monsieur. Nous sommes échoués sur une bête.",
+									"en": "Madrepores, brain corals, star corals. A reef is one immense animal, Monsieur. We have run aground on a beast."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "island",
+					"name": {
+						"fr": "L'île Gueboroar",
+						"en": "Gueboroar Island"
+					},
+					"rect": [
+						118,
+						22,
+						124,
+						34
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une île boisée, à deux milles. Des fumées montent derrière les arbres.",
+									"en": "A wooded island, two miles off. Smoke rises behind the trees."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Deux milles à la nage ? Avec les requins de ces eaux ? Il nous faut le canot.",
+									"en": "Swim two miles? With the sharks in these waters? We need the boat."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo8",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						86,
+						22,
+						44,
+						70
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_reef",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine ne paraît pas le moins du monde inquiet.",
+									"en": "The captain does not seem the least bit worried."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "dinghy",
+					"name": {
+						"fr": "Le canot, vers l'île",
+						"en": "The boat, to the island"
+					},
+					"rect": [
+						212,
+						84,
+						40,
+						40
+					],
+					"to": "ch08_island_forest",
+					"if": "flag:shore_leave",
+					"locked": {
+						"fr": "Le canot ne nous appartient pas. Il faudrait la permission du capitaine.",
+						"en": "The boat isn't ours. We'd need the captain's permission."
+					}
+				}
+			]
+		},
+		"ch08_island_forest": {
+			"name": {
+				"fr": "La forêt de Gueboroar",
+				"en": "The forest of Gueboroar"
+			},
+			"background": "res://art/locations/ch08_island_forest.png",
+			"color": "#274424",
+			"hotspots": [
+				{
+					"id": "breadfruit",
+					"name": {
+						"fr": "Un arbre à fruits ronds",
+						"en": "A tree with round fruit"
+					},
+					"rect": [
+						4,
+						6,
+						100,
+						94
+					],
+					"if": "!item:breadfruit",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "De gros fruits verts et rugueux, à portée de main.",
+									"en": "Big green rough fruit, within reach."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Artocarpus. L'arbre à pain, monsieur. Cuit, il a le goût de la mie de pain. J'en cueille quelques-uns.",
+									"en": "Artocarpus. The breadfruit tree, Monsieur. Cooked, it tastes like the soft part of bread. I'll pick a few."
+								},
+								"do": [
+									"give:breadfruit",
+									"cat:breadfruit"
+								]
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Est-ce que cela se mange ? Il faudrait savoir ce que c'est.",
+									"en": "Is it edible? We'd have to know what it is."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "pig",
+					"name": {
+						"fr": "Un sanglier dans les fourrés",
+						"en": "A wild pig in the undergrowth"
+					},
+					"rect": [
+						140,
+						116,
+						46,
+						26
+					],
+					"if": "!flag:pig_shot",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un cochon sauvage fouille la terre.",
+									"en": "A wild pig is rooting in the earth."
+								}
+							}
+						],
+						"item:air_rifle": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Touché par la balle électrique, il tombe raide. De la viande, monsieur ! De la vraie viande !",
+									"en": "Hit by the electric bullet, it drops stiff. Meat, sir! Real meat!"
+								},
+								"do": [
+									"set:pig_shot"
+								]
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "À mains nues ? Ned a un fusil pour cela.",
+									"en": "Bare-handed? Ned has a rifle for that."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "tracks",
+					"name": {
+						"fr": "Des traces",
+						"en": "Tracks"
+					},
+					"rect": [
+						168,
+						130,
+						60,
+						14
+					],
+					"actions": {
+						"look": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Des traces de pieds nus, fraîches. Beaucoup. L'île est habitée, monsieur, et pas par des gens qui nous attendent.",
+									"en": "Bare footprints, fresh. Lots of them. The island is lived on, sir, and not by people expecting us."
+								},
+								"do": [
+									"fact:inhabited"
+								]
+							},
+							{
+								"say": {
+									"fr": "Des marques dans la terre. Ned, qui a l'œil d'un chasseur, saurait les lire.",
+									"en": "Marks in the earth. Ned, with a hunter's eye, could read them."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned_island",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						252,
+						10,
+						40,
+						60
+					],
+					"npc": "ned",
+					"dialogue": "ned_island",
+					"if": "!char:ned",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned respire la terre comme un homme qui sort de prison.",
+									"en": "Ned breathes in the land like a man just out of prison."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": [
+				{
+					"id": "to_beach",
+					"name": {
+						"fr": "Retour au canot",
+						"en": "Back to the boat"
+					},
+					"rect": [
+						228,
+						94,
+						92,
+						36
+					],
+					"to": "ch08_reef"
+				}
+			]
+		},
+		"ch08_platform": {
+			"name": {
+				"fr": "La plate-forme, au crépuscule",
+				"en": "The platform, at dusk"
+			},
+			"background": "res://art/locations/ch08_platform.png",
+			"color": "#15304a",
+			"hotspots": [
+				{
+					"id": "canoes",
+					"name": {
+						"fr": "Les pirogues",
+						"en": "The canoes"
+					},
+					"rect": [
+						90,
+						38,
+						160,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des pirogues approchent avec la marée basse. Les gens de l'île veulent chasser l'intrus échoué devant leur côte. Nous sommes l'intrus.",
+									"en": "Canoes are coming in on the low tide. The island's people want to drive off the intruder stranded off their shore. We are the intruder."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Dumont d'Urville a décrit ces eaux et ces îles. Les marins d'Europe n'y ont pas toujours été des hôtes polis.",
+									"en": "Dumont d'Urville described these waters and these islands. European sailors have not always been polite guests here."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "rail",
+					"name": {
+						"fr": "La rampe de l'escalier",
+						"en": "The stair rail"
+					},
+					"rect": [
+						70,
+						86,
+						56,
+						58
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une rampe de métal le long de l'escalier du panneau. Un câble court dessous jusqu'à l'intérieur.",
+									"en": "A metal rail along the hatch stairs. A cable runs beneath it down into the ship."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je vais leur montrer, moi… Mille diables ! Je suis foudroyé !",
+									"en": "I'll show them… Hell and damnation! I've been struck by lightning!"
+								},
+								"do": [
+									"fact:rail_charged"
+								]
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Elle vibre légèrement sous la main. Mieux vaut ne pas insister.",
+									"en": "It hums faintly under the hand. Better not to insist."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"if": "fact:rail_charged",
+								"say": {
+									"fr": "Ce n'est plus une rampe : c'est un câble chargé de l'électricité du bord. Et la secousse aurait été mortelle si le capitaine y avait lancé tout le courant. Il ne l'a pas fait.",
+									"en": "It's no longer a rail: it's a cable charged with the ship's electricity. And the shock would have been fatal if the captain had sent the full current through it. He didn't."
+								},
+								"do": [
+									"fact:nemo_spares"
+								]
+							},
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Un câble, sous une rampe de cuivre… À quoi bon ?",
+									"en": "A cable, under a copper rail… What for?"
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo_platform",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						256,
+						22,
+						40,
+						60
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_platform",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine regarde les pirogues approcher sans un geste.",
+									"en": "The captain watches the canoes approach without a gesture."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"items": {
+		"air_rifle": {
+			"name": {
+				"fr": "Fusil à air",
+				"en": "Air rifle"
+			},
+			"desc": {
+				"fr": "Air comprimé, balles électriques.",
+				"en": "Compressed air, electric bullets."
+			}
+		},
+		"breadfruit": {
+			"name": {
+				"fr": "Fruits de l'arbre à pain",
+				"en": "Breadfruit"
+			},
+			"desc": {
+				"fr": "Cuit, il a le goût du pain.",
+				"en": "Cooked, it tastes like bread."
+			}
+		}
+	},
+	"catalogue": {
+		"breadfruit": {
+			"name": {
+				"fr": "Arbre à pain (Artocarpus)",
+				"en": "Breadfruit tree (Artocarpus)"
+			},
+			"text": {
+				"fr": "Son fruit, cuit, a le goût de la mie de pain.",
+				"en": "Its fruit, cooked, tastes like the soft part of bread."
+			}
+		}
+	},
+	"facts": {
+		"tide": {
+			"name": {
+				"fr": "La marée du 9",
+				"en": "The tide of the 9th"
+			},
+			"text": {
+				"fr": "Le capitaine attend la pleine lune du 9 janvier pour se dégager.",
+				"en": "The captain is waiting for the full moon of 9 January to float off."
+			}
+		},
+		"inhabited": {
+			"name": {
+				"fr": "L'île est habitée",
+				"en": "The island is inhabited"
+			},
+			"text": {
+				"fr": "Des traces fraîches, nombreuses : nous sommes chez quelqu'un.",
+				"en": "Fresh tracks, many of them: we're on someone's land."
+			}
+		},
+		"rail_charged": {
+			"name": {
+				"fr": "La rampe",
+				"en": "The rail"
+			},
+			"text": {
+				"fr": "Elle est électrique. Ned s'en souviendra.",
+				"en": "It's electric. Ned will remember it."
+			}
+		},
+		"nemo_spares": {
+			"name": {
+				"fr": "Le courant retenu",
+				"en": "The current held back"
+			},
+			"text": {
+				"fr": "Le capitaine aurait pu tuer. Il ne l'a pas fait.",
+				"en": "The captain could have killed. He did not."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_reef": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Un accident, monsieur le professeur. Rien de plus.",
+						"en": "An accident, Professor. Nothing more."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "afloat",
+					"label": {
+						"fr": "Le Nautilus pourra-t-il se dégager ?",
+						"en": "Will the Nautilus get off?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Les marées ne sont pas fortes dans le Pacifique…",
+								"en": "Tides aren't strong in the Pacific…"
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Au détroit de Torrès, on trouve encore une différence d'un mètre et demi entre le niveau des hautes et basses mers. C'est aujourd'hui le 4 janvier, et dans cinq jours la pleine lune.",
+								"en": "In the Torres Strait there is still a difference of a metre and a half between high and low water. Today is 4 January, and in five days the moon will be full."
+							}
+						}
+					],
+					"do": [
+						"fact:tide"
+					]
+				},
+				{
+					"id": "ashore",
+					"who": "aronnax",
+					"label": {
+						"fr": "Nous permettrez-vous d'aller à terre, en attendant ?",
+						"en": "Will you let us go ashore, meanwhile?"
+					},
+					"if": "fact:tide",
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Prenez le canot. Je n'y vois pas d'inconvénient. Revenez avant la marée.",
+								"en": "Take the boat. I see no objection. Be back before the tide."
+							}
+						}
+					],
+					"do": [
+						"set:shore_leave"
+					]
+				}
+			]
+		},
+		"ned_island": {
+			"npc": "ned",
+			"greeting": [
+				{
+					"who": "ned",
+					"text": {
+						"fr": "De la terre, monsieur. De la vraie terre.",
+						"en": "Land, sir. Real land."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "stay",
+					"label": {
+						"fr": "Vous voulez rester ici ?",
+						"en": "You want to stay here?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Le bateau repart le 9. Nous, on reste. On se cache dans les bois. Simple.",
+								"en": "The boat leaves on the 9th. We stay. We hide in the woods. Simple."
+							}
+						}
+					]
+				},
+				{
+					"id": "go_back",
+					"label": {
+						"fr": "Ned, nous ne pouvons pas rester.",
+						"en": "Ned, we can't stay."
+					},
+					"if": [
+						"fact:inhabited",
+						"flag:pig_shot",
+						"item:breadfruit"
+					],
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "L'île est habitée, et ses habitants ne nous ont pas invités. Sans bateau, nous serions des intrus pour des années. Rapportons nos vivres à bord.",
+								"en": "The island is inhabited, and its people did not invite us. Without a boat, we'd be intruders here for years. Let's bring our food back aboard."
+							}
+						},
+						{
+							"who": "ned",
+							"text": {
+								"fr": "… Vous avez raison, et ça me fait mal de le dire. Un dernier repas sur la terre ferme, alors.",
+								"en": "… You're right, and it hurts me to say it. One last meal on solid ground, then."
+							}
+						}
+					],
+					"do": [
+						"scene:shore"
+					],
+					"who": "aronnax"
+				},
+				{
+					"id": "not_yet",
+					"label": {
+						"fr": "Ned, il faut rentrer.",
+						"en": "Ned, we must go back."
+					},
+					"if": [
+						"!fact:inhabited"
+					],
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Rentrer ? Donnez-moi une seule bonne raison.",
+								"en": "Go back? Give me one good reason."
+							}
+						}
+					],
+					"who": "aronnax"
+				}
+			]
+		},
+		"nemo_platform": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Vous vous inquiétez, monsieur ?",
+						"en": "You are worried, sir?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "worry",
+					"label": {
+						"fr": "Ils vont monter à bord !",
+						"en": "They're going to come aboard!"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Qu'ils montent. Le Nautilus n'a rien à craindre d'eux. Je vais jouer un peu, si vous le permettez.",
+								"en": "Let them come. The Nautilus has nothing to fear from them. I shall play a little, if you'll allow me."
+							}
+						}
+					]
+				},
+				{
+					"id": "spared",
+					"who": "aronnax",
+					"label": {
+						"fr": "Vous auriez pu les tuer. Vous ne l'avez pas fait.",
+						"en": "You could have killed them. You didn't."
+					},
+					"if": "fact:nemo_spares",
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Ils défendent leur rivage, monsieur. Ce ne sont pas mes ennemis.",
+								"en": "They are defending their shore, sir. They are not my enemies."
+							}
+						},
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Et qui sont vos ennemis, capitaine ?",
+								"en": "And who are your enemies, Captain?"
+							}
+						},
+						{
+							"who": "narrator",
+							"text": {
+								"fr": "Le capitaine Nemo ne répondit pas. Il redescendit, et bientôt l'orgue se fit entendre.",
+								"en": "Captain Nemo didn't answer. He went below, and soon the organ could be heard."
+							}
+						}
+					],
+					"do": [
+						"scene:tide"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "ashore",
+			"text": {
+				"fr": "Aller à terre, puisque nous sommes échoués.",
+				"en": "Go ashore, since we're aground."
+			},
+			"done_if": "flag:shore_leave",
+			"hints": [
+				{
+					"fr": "Le capitaine sait quand le Nautilus repartira.",
+					"en": "The captain knows when the Nautilus will float again."
+				},
+				{
+					"fr": "Lui demander s'il pourra se dégager, puis la permission de prendre le canot.",
+					"en": "Ask him whether it will get off, then permission to take the boat."
+				},
+				{
+					"fr": "Parler au capitaine : « Le Nautilus pourra-t-il se dégager ? », puis « Nous permettrez-vous d'aller à terre ? ».",
+					"en": "Talk to the captain: \"Will the Nautilus get off?\", then \"Will you let us go ashore?\"."
+				}
+			]
+		},
+		{
+			"id": "provisions",
+			"text": {
+				"fr": "Rapporter des vivres frais, et ramener Ned.",
+				"en": "Bring back fresh food, and bring Ned back."
+			},
+			"show_if": "flag:shore_leave",
+			"done_if": "flag:back_aboard",
+			"hints": [
+				{
+					"fr": "Ned veut de la viande, Conseil connaît les plantes. Et l'île a peut-être déjà des habitants.",
+					"en": "Ned wants meat, Conseil knows the plants. And the island may already have people living on it."
+				},
+				{
+					"fr": "Ned chasse avec son fusil, Conseil identifie l'arbre à pain, Ned lit les traces. Alors seulement il écoutera.",
+					"en": "Ned hunts with his rifle, Conseil identifies the breadfruit, Ned reads the tracks. Only then will he listen."
+				},
+				{
+					"fr": "Ned : fusil sur le sanglier, Regarder les traces. Conseil : Classer l'arbre. Puis parler à Ned : « nous ne pouvons pas rester ».",
+					"en": "Ned: rifle on the pig, Look at the tracks. Conseil: Catalogue the tree. Then talk to Ned: \"we can't stay\"."
+				}
+			]
+		},
+		{
+			"id": "night",
+			"text": {
+				"fr": "Comprendre ce que prépare le capitaine.",
+				"en": "Understand what the captain is preparing."
+			},
+			"show_if": "flag:back_aboard",
+			"hints": [
+				{
+					"fr": "La rampe de l'escalier cache quelque chose.",
+					"en": "The stair rail hides something."
+				},
+				{
+					"fr": "Ned n'écoute personne : il touchera la rampe. Le professeur comprendra ensuite.",
+					"en": "Ned listens to no one: he'll touch the rail. The professor will understand afterwards."
+				},
+				{
+					"fr": "Ned : Forcer la rampe. Aronnax : Se souvenir de la rampe, puis parler au capitaine.",
+					"en": "Ned: Force the rail. Aronnax: Recall the rail, then talk to the captain."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Échoués. Et le capitaine n'a pas l'air de s'en soucier.",
+		"en": "Aground. And the captain doesn't seem to care."
+	},
+	"next": "ch09"
+}

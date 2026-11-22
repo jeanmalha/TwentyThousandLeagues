@@ -1,0 +1,615 @@
+{
+	"id": "ch03",
+	"number": 3,
+	"act": 1,
+	"title": {
+		"fr": "Par-dessus bord",
+		"en": "Overboard"
+	},
+	"novel": "I-7",
+	"start": {
+		"party": [
+			"aronnax"
+		],
+		"current": "aronnax",
+		"switching": false,
+		"locations": {
+			"aronnax": "ch03_night_sea"
+		},
+		"inventory": {
+			"aronnax": []
+		}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-013.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Minuit. La frégate s'approcha sans bruit. Ned Land, à l'avant, brandissait son harpon.",
+						"en": "Midnight. The frigate crept closer. Ned Land, in the bow, raised his harpoon."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le harpon partit. Il frappa la bête avec un bruit sonore, comme s'il avait heurté un corps dur.",
+						"en": "The harpoon flew. It struck the creature with a ringing sound, as if it had hit something hard."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Deux trombes d'eau s'abattirent sur le pont. Le choc me jeta par-dessus la lisse, et je tombai à la mer.",
+						"en": "Two great columns of water crashed onto the deck. The shock threw me over the rail, and I fell into the sea."
+					}
+				}
+			]
+		},
+		"found_conseil": {
+			"lines": [
+				{
+					"who": "conseil",
+					"text": {
+						"fr": "Que monsieur s'appuie sur mon épaule. Monsieur nagera plus à son aise.",
+						"en": "If Monsieur would lean on my shoulder, Monsieur will swim more easily."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Conseil ! Tu t'es jeté à la mer pour moi ?",
+						"en": "Conseil! You jumped into the sea for me?"
+					}
+				},
+				{
+					"who": "conseil",
+					"text": {
+						"fr": "Étant au service de monsieur, j'ai suivi monsieur.",
+						"en": "Being in Monsieur's service, I followed Monsieur."
+					}
+				}
+			],
+			"do": [
+				"set:with_conseil",
+				"join:conseil",
+				"move:conseil:ch03_night_sea"
+			],
+			"image": "res://art/engravings/hetzel-014.jpg"
+		},
+		"dawn": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Nous nagions à tour de rôle. Les forces m'abandonnaient. Puis une voix, toute proche : « Ohé ! »",
+						"en": "We swam in turns. My strength was failing. Then a voice, close by: \"Ahoy!\""
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Une main me saisit. On me hissa sur quelque chose de dur. Quand l'aube vint, je vis Ned Land assis à côté de moi.",
+						"en": "A hand gripped me. I was hauled onto something hard. When dawn came I saw Ned Land sitting beside me."
+					}
+				}
+			],
+			"do": [
+				"goto:ch03_hull",
+				"move:conseil:ch03_hull"
+			],
+			"image": "res://art/engravings/hetzel-014.jpg"
+		},
+		"inside": {
+			"image": "res://art/engravings/hetzel-015.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Une plaque de tôle se souleva. Huit gaillards robustes, le visage voilé, surgirent et nous entraînèrent silencieusement dans leur formidable machine.",
+						"en": "A steel plate lifted. Eight sturdy men, their faces masked, burst out and silently dragged us down into their formidable machine."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch03_night_sea": {
+			"name": {
+				"fr": "En pleine mer, la nuit",
+				"en": "Open sea, at night"
+			},
+			"background": "res://art/locations/ch03_night_sea.png",
+			"color": "#05080c",
+			"hotspots": [
+				{
+					"id": "frigate_lights",
+					"name": {
+						"fr": "Les feux de la frégate",
+						"en": "The frigate's lights"
+					},
+					"rect": [
+						170,
+						20,
+						30,
+						22
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Les feux de l'Abraham-Lincoln s'éloignent. On ne m'a pas vu tomber.",
+									"en": "The Abraham-Lincoln's lights are moving away. No one saw me fall."
+								}
+							}
+						],
+						"talk": [
+							{
+								"if": "!flag:shouted",
+								"say": {
+									"fr": "« À moi ! à moi ! » Personne. Mais… une voix répond, là, dans le noir.",
+									"en": "\"Help! Help me!\" No one. But… a voice answers, there, in the dark."
+								},
+								"do": [
+									"set:shouted"
+								]
+							},
+							{
+								"say": {
+									"fr": "La frégate est trop loin.",
+									"en": "The frigate is too far."
+								}
+							}
+						],
+						"use": [
+							{
+								"say": {
+									"fr": "Nager jusque-là ? Je coulerais avant.",
+									"en": "Swim that far? I'd sink first."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "voice",
+					"name": {
+						"fr": "Une voix dans le noir",
+						"en": "A voice in the dark"
+					},
+					"rect": [
+						12,
+						68,
+						46,
+						38
+					],
+					"if": [
+						"flag:shouted",
+						"!flag:with_conseil"
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une tête qui nage vers moi. Je connais cette nage méthodique.",
+									"en": "A head swimming towards me. I know that methodical stroke."
+								}
+							}
+						],
+						"talk": [
+							{
+								"scene": "found_conseil"
+							}
+						],
+						"use": [
+							{
+								"scene": "found_conseil"
+							}
+						]
+					}
+				},
+				{
+					"id": "conseil_water",
+					"name": {
+						"fr": "Conseil",
+						"en": "Conseil"
+					},
+					"rect": [
+						12,
+						68,
+						46,
+						38
+					],
+					"if": "flag:with_conseil",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Conseil, calme comme au salon.",
+									"en": "Conseil, as calm as in a drawing room."
+								}
+							}
+						],
+						"talk": [
+							{
+								"lines": [
+									{
+										"who": "aronnax",
+										"text": {
+											"fr": "Et la frégate ?",
+											"en": "And the frigate?"
+										}
+									},
+									{
+										"who": "conseil",
+										"text": {
+											"fr": "Son gouvernail est brisé, monsieur. Elle ne reviendra pas. Il faudrait nager vers l'endroit où la bête a disparu.",
+											"en": "Her rudder is broken, Monsieur. She won't come back. We should swim towards where the creature went down."
+										}
+									}
+								],
+								"do": [
+									"set:conseil_plan"
+								]
+							}
+						],
+						"use": [
+							{
+								"if": "flag:conseil_plan",
+								"scene": "dawn"
+							},
+							{
+								"say": {
+									"fr": "Avant de m'épuiser, savoir où nager.",
+									"en": "Before I exhaust myself, I should know where to swim."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "waves",
+					"name": {
+						"fr": "Les vagues",
+						"en": "The waves"
+					},
+					"rect": [
+						0,
+						100,
+						320,
+						44
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Noires, lourdes. Mes vêtements m'entraînent vers le fond.",
+									"en": "Black and heavy. My clothes are dragging me down."
+								}
+							}
+						],
+						"recall": [
+							{
+								"say": {
+									"fr": "Rester calme. Respirer. Un naturaliste sait qu'on flotte mieux en ne luttant pas.",
+									"en": "Stay calm. Breathe. A naturalist knows you float better when you don't struggle."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		},
+		"ch03_hull": {
+			"name": {
+				"fr": "Sur le dos du « monstre »",
+				"en": "On the back of the \"monster\""
+			},
+			"background": "res://art/locations/ch03_hull.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "plates",
+					"name": {
+						"fr": "Le dos de la bête",
+						"en": "The creature's back"
+					},
+					"rect": [
+						50,
+						44,
+						240,
+						100
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ce n'est pas de la peau. Ce sont des plaques de tôle, boulonnées. Le monstre est… une machine.",
+									"en": "That isn't skin. These are steel plates, bolted together. The monster is… a machine."
+								},
+								"do": [
+									"fact:its_a_machine"
+								]
+							}
+						],
+						"recall": [
+							{
+								"say": {
+									"fr": "Le bruit du harpon, cette nuit. Un bruit de métal. J'aurais dû comprendre.",
+									"en": "The sound of the harpoon last night. A metal sound. I should have understood."
+								},
+								"do": [
+									"fact:its_a_machine"
+								]
+							}
+						],
+						"use": [
+							{
+								"if": [
+									"fact:its_a_machine",
+									"flag:found_ned"
+								],
+								"lines": [
+									{
+										"who": "aronnax",
+										"text": {
+											"fr": "Je frappe la tôle du talon. Si c'est une machine, il y a des hommes dedans.",
+											"en": "I strike the plating with my heel. If it's a machine, there are men inside."
+										}
+									},
+									{
+										"who": "ned",
+										"text": {
+											"fr": "Ouvrez donc, navigateurs peu hospitaliers !",
+											"en": "Open up, you inhospitable sailors!"
+										}
+									}
+								],
+								"scene": "inside"
+							},
+							{
+								"say": {
+									"fr": "Frapper sur… quoi, au juste ? Regardons d'abord sur quoi nous sommes.",
+									"en": "Knock on… what, exactly? Let's first see what we're standing on."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "conseil_hull",
+					"name": {
+						"fr": "Conseil",
+						"en": "Conseil"
+					},
+					"rect": [
+						50,
+						4,
+						40,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Conseil, qui essore méthodiquement sa manche.",
+									"en": "Conseil, methodically wringing out his sleeve."
+								}
+							}
+						],
+						"talk": [
+							{
+								"lines": [
+									{
+										"who": "conseil",
+										"text": {
+											"fr": "Si monsieur veut mon avis, l'animal est un poisson à coque. Genre inconnu. Je le classerais dans les machines.",
+											"en": "If Monsieur wants my opinion, the animal is a fish with a hull. Genus unknown. I would file it under machines."
+										}
+									}
+								]
+							}
+						]
+					},
+					"npc": "conseil"
+				},
+				{
+					"id": "dawn_sea",
+					"name": {
+						"fr": "La mer au lever du jour",
+						"en": "The sea at dawn"
+					},
+					"rect": [
+						0,
+						36,
+						46,
+						64
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Pas une voile. La frégate a disparu.",
+									"en": "Not a sail. The frigate is gone."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned_hull",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						198,
+						10,
+						38,
+						64
+					],
+					"dialogue": "ned_hull",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned Land, trempé, assis sur la bête comme sur un rocher.",
+									"en": "Ned Land, soaked, sitting on the creature as on a rock."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"dialogues": {
+		"ned_hull": {
+			"npc": "ned",
+			"first": [
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Eh bien, monsieur le professeur, on prend un bain ?",
+						"en": "Well, Professor, out for a swim?"
+					}
+				}
+			],
+			"greeting": [
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Monsieur ?",
+						"en": "Sir?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "how",
+					"label": {
+						"fr": "Ned ! Comment êtes-vous arrivé ici ?",
+						"en": "Ned! How did you get here?"
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Le choc m'a jeté à l'eau, comme vous. Je me suis accroché à la bête. Et votre narwal, monsieur, il sonne creux.",
+								"en": "The shock threw me into the water, like you. I hung on to the creature. And your narwhal, sir, sounds hollow."
+							}
+						}
+					],
+					"do": [
+						"set:found_ned"
+					]
+				},
+				{
+					"id": "machine",
+					"label": {
+						"fr": "Ce n'est pas un animal.",
+						"en": "It isn't an animal."
+					},
+					"if": "fact:its_a_machine",
+					"once": true,
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Ce n'est pas un animal, Ned. C'est un bateau. Un bateau sous-marin.",
+								"en": "It isn't an animal, Ned. It's a boat. A submarine boat."
+							}
+						},
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Un bateau, avec des hommes dedans. Et pas pressés de nous ouvrir.",
+								"en": "A boat, with men inside. And in no hurry to let us in."
+							}
+						}
+					],
+					"do": [
+						"set:found_ned"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "survive",
+			"text": {
+				"fr": "Ne pas rester seul dans la nuit.",
+				"en": "Don't stay alone in the dark."
+			},
+			"done_if": "flag:with_conseil",
+			"hints": [
+				{
+					"fr": "Crier n'a jamais noyé personne.",
+					"en": "Shouting never drowned anyone."
+				},
+				{
+					"fr": "Quelqu'un a répondu. Quelqu'un qui ne quitte jamais son maître.",
+					"en": "Someone answered. Someone who never leaves his master."
+				},
+				{
+					"fr": "Parler aux feux de la frégate, puis Parler à la voix dans le noir.",
+					"en": "Talk to the frigate's lights, then Talk to the voice in the dark."
+				}
+			]
+		},
+		{
+			"id": "drift",
+			"text": {
+				"fr": "Tenir jusqu'au matin.",
+				"en": "Hold on until morning."
+			},
+			"show_if": "flag:with_conseil",
+			"done_if": "loc:aronnax:ch03_hull",
+			"hints": [
+				{
+					"fr": "Conseil a sans doute une idée. Il en a toujours une, sans jamais la donner.",
+					"en": "Conseil probably has an idea. He always does, without ever offering it."
+				},
+				{
+					"fr": "Lui demander où nager, puis s'appuyer sur lui.",
+					"en": "Ask him where to swim, then lean on him."
+				},
+				{
+					"fr": "Parler à Conseil, puis Utiliser Conseil.",
+					"en": "Talk to Conseil, then Use Conseil."
+				}
+			]
+		},
+		{
+			"id": "get_in",
+			"text": {
+				"fr": "Comprendre sur quoi nous sommes, et se faire ouvrir.",
+				"en": "Find out what we're on, and get them to open up."
+			},
+			"show_if": "loc:aronnax:ch03_hull",
+			"hints": [
+				{
+					"fr": "Ned a dit que la bête sonnait creux.",
+					"en": "Ned said the creature sounds hollow."
+				},
+				{
+					"fr": "Regarder de près le dos de la bête. Si c'est une machine, quelqu'un la conduit.",
+					"en": "Look closely at the creature's back. If it's a machine, someone is driving it."
+				},
+				{
+					"fr": "Parler à Ned, Regarder le dos de la bête, puis Utiliser le dos de la bête (frapper).",
+					"en": "Talk to Ned, Look at the creature's back, then Use the creature's back (knock)."
+				}
+			]
+		}
+	],
+	"next": "ch04"
+}

@@ -1,0 +1,393 @@
+{
+	"id": "ch15",
+	"number": 15,
+	"act": 3,
+	"title": {
+		"fr": "Cachalots et baleines",
+		"en": "Sperm Whales and Baleen Whales"
+	},
+	"novel": "II-11 – II-12",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch15_whales",
+			"conseil": "ch15_whales",
+			"ned": "ch15_whales"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Après la mer de Sargasses, le Nautilus descendit vers le sud. Un matin, sur la plate-forme, Ned Land poussa un cri : « Des baleines ! » Un troupeau de baleines australes jouait à quelques milles.",
+						"en": "After the Sargasso Sea, the Nautilus headed south. One morning on the platform Ned Land gave a shout: \"Whales!\" A herd of southern right whales was playing a few miles off."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Ah ! si j'étais à bord d'un baleinier, voilà une rencontre qui me ferait plaisir !",
+						"en": "Ah! If I were aboard a whaler, now there's an encounter I'd enjoy!"
+					}
+				}
+			]
+		},
+		"massacre": {
+			"lines": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Attendez, monsieur Aronnax. Nous vous montrerons une chasse que vous ne connaissez pas encore. Pas de pitié pour ces féroces cétacés. Ils ne sont que bouche et dents !",
+						"en": "Wait, Monsieur Aronnax. We'll show you a hunt you don't know yet. No pity for these ferocious cetaceans. They're nothing but mouth and teeth!"
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le Nautilus se jeta sur les cachalots, éperon en avant. Pendant une heure se prolongea cet homérique massacre. La mer, rougie, porta au loin les cadavres.",
+						"en": "The Nautilus threw itself at the sperm whales, spur first. For an hour this Homeric massacre went on. The reddened sea carried the carcasses far off."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Il appelle ça une chasse ? C'est une boucherie.",
+						"en": "He calls that a hunt? It's a slaughter."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Je ne savais plus que penser du capitaine Nemo. Il épargnait les uns, massacrait les autres, au nom de la même pitié.",
+						"en": "I no longer knew what to think of Captain Nemo. He spared some, slaughtered others, in the name of the same pity."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch15_whales": {
+			"name": {
+				"fr": "La plate-forme, en pleine mer",
+				"en": "The platform, on the open sea"
+			},
+			"background": "res://art/locations/ch15_whales.png",
+			"color": "#2f6070",
+			"hotspots": [
+				{
+					"id": "whales",
+					"name": {
+						"fr": "Le troupeau de baleines",
+						"en": "The herd of whales"
+					},
+					"rect": [
+						10,
+						52,
+						290,
+						66
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des baleines australes, paisibles, qui soufflent et jouent.",
+									"en": "Southern right whales, peaceful, blowing and playing."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Baleines australes, monsieur : mâchoire garnie de fanons, pas une dent. Elles mangent de petits animaux en filtrant l'eau. Inoffensives.",
+									"en": "Southern right whales, Monsieur: jaws fitted with baleen, not a single tooth. They eat tiny creatures by filtering the water. Harmless."
+								},
+								"do": [
+									"cat:right_whale"
+								]
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Laissez-moi un canot et un harpon, et je vous en ramène une avant midi.",
+									"en": "Give me a boat and a harpoon, and I'll bring you one before noon."
+								},
+								"do": [
+									"set:ned_wants_hunt"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "cachalots",
+					"name": {
+						"fr": "Des points noirs, sous le vent",
+						"en": "Black dots, to leeward"
+					},
+					"rect": [
+						200,
+						30,
+						60,
+						18
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "D'autres cétacés approchent, plus sombres, en grand nombre.",
+									"en": "Other whales are approaching, darker, in great numbers."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Cachalots macrocéphales, monsieur : vingt-cinq grosses dents à la mâchoire. Des carnassiers. Ils attaquent les baleines.",
+									"en": "Great sperm whales, Monsieur: twenty-five big teeth in the jaw. Predators. They attack the right whales."
+								},
+								"do": [
+									"cat:sperm_whale"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo15",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						4,
+						6,
+						40,
+						80
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_whales",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine observe les cachalots, les yeux brillants.",
+									"en": "The captain watches the sperm whales, his eyes shining."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned15",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						272,
+						100,
+						40,
+						44
+					],
+					"npc": "ned",
+					"if": "!char:ned",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned tremble d'envie, les mains vides.",
+									"en": "Ned is trembling with longing, empty-handed."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"catalogue": {
+		"right_whale": {
+			"name": {
+				"fr": "Baleine australe",
+				"en": "Southern right whale"
+			},
+			"text": {
+				"fr": "Fanons, pas de dents. Inoffensive.",
+				"en": "Baleen, no teeth. Harmless."
+			}
+		},
+		"sperm_whale": {
+			"name": {
+				"fr": "Cachalot macrocéphale",
+				"en": "Great sperm whale"
+			},
+			"text": {
+				"fr": "Vingt-cinq grosses dents. Carnassier.",
+				"en": "Twenty-five big teeth. A predator."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_whales": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur ?",
+						"en": "Sir?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "hunt",
+					"label": {
+						"fr": "Ned voudrait chasser ces baleines.",
+						"en": "Ned would like to hunt those whales."
+					},
+					"if": "flag:ned_wants_hunt",
+					"once": true,
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Ici, ce serait tuer pour tuer. Je sais bien que c'est un privilège réservé à l'homme, mais je n'admets pas ces passe-temps meurtriers. Laissez donc tranquilles ces malheureux cétacés.",
+								"en": "Here it would be killing for the sake of killing. I know that is a privilege reserved for man, but I do not allow these murderous pastimes. Leave these poor whales in peace."
+							}
+						}
+					],
+					"do": [
+						"set:nemo_refused"
+					]
+				},
+				{
+					"id": "side_ned",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Prendre le parti de Ned) Un baleinier vit de sa chasse, capitaine.",
+						"en": "(Side with Ned) A whaler lives by his hunting, Captain."
+					},
+					"if": [
+						"flag:nemo_refused",
+						"cat:sperm_whale"
+					],
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Et les baleines, monsieur, de quoi vivent-elles ? Regardez plutôt sous le vent.",
+								"en": "And the whales, sir, what do they live by? Look to leeward instead."
+							}
+						}
+					],
+					"do": [
+						"set:took_side_ned",
+						"scene:massacre"
+					]
+				},
+				{
+					"id": "side_nemo",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Prendre le parti du capitaine) Ces baleines sont inoffensives, Ned.",
+						"en": "(Side with the captain) Those whales are harmless, Ned."
+					},
+					"if": [
+						"flag:nemo_refused",
+						"cat:sperm_whale"
+					],
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "Vous aussi, monsieur ? … Bon.",
+								"en": "You too, sir? … Fine."
+							}
+						},
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Ce sont des cachalots, animaux terribles. Quant à ceux-là, bêtes cruelles et malfaisantes, on a raison de les exterminer.",
+								"en": "Those are sperm whales, terrible animals. As for those, cruel and harmful beasts, one is right to exterminate them."
+							}
+						}
+					],
+					"do": [
+						"set:took_side_nemo",
+						"scene:massacre"
+					]
+				},
+				{
+					"id": "side_none",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Se taire)",
+						"en": "(Say nothing)"
+					},
+					"if": [
+						"flag:nemo_refused",
+						"cat:sperm_whale"
+					],
+					"lines": [
+						{
+							"who": "narrator",
+							"text": {
+								"fr": "Je ne dis rien. Le capitaine montra les points noirs sous le vent.",
+								"en": "I said nothing. The captain pointed at the black dots to leeward."
+							}
+						}
+					],
+					"do": [
+						"scene:massacre"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "whales",
+			"text": {
+				"fr": "Ned veut chasser, le capitaine refuse. Et que sont ces points noirs ?",
+				"en": "Ned wants to hunt, the captain refuses. And what are those black dots?"
+			},
+			"hints": [
+				{
+					"fr": "Il y a deux sortes de cétacés en vue. Conseil saura les distinguer.",
+					"en": "There are two kinds of whale in sight. Conseil can tell them apart."
+				},
+				{
+					"fr": "Ned demande à chasser ; le capitaine répond. Ensuite, chacun choisira son camp, ou se taira.",
+					"en": "Ned asks to hunt; the captain answers. Then everyone picks a side, or keeps quiet."
+				},
+				{
+					"fr": "Ned : Forcer les baleines. Conseil : Classer les points noirs. Puis parler au capitaine (« Ned voudrait chasser », puis un des trois partis).",
+					"en": "Ned: Force the whales. Conseil: Catalogue the black dots. Then talk to the captain (\"Ned would like to hunt\", then one of the three sides)."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Des baleines. Ned ne tient plus en place.",
+		"en": "Whales. Ned can't keep still."
+	},
+	"next": "ch16"
+}
