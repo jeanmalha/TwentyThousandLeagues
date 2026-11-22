@@ -41,6 +41,7 @@ func _ready() -> void:
 	_view = TextureRect.new()
 	_view.position = VIEW.position
 	_view.size = VIEW.size
+	_view.expand_mode = TextureRect.EXPAND_IGNORE_SIZE   # art is 2× the layout units
 	_view.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_view)
@@ -48,6 +49,7 @@ func _ready() -> void:
 	_overlay.size = VIEW.size
 	_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_overlay.draw.connect(_draw_overlay)
+	_overlay.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR   # medallions are scaled-down portraits
 	add_child(_overlay)
 
 	_action_bg = UiKit.rect(Color(0.02, 0.03, 0.05, 0.75), Vector2(0, 0), Vector2(320, 11))
@@ -99,6 +101,7 @@ func _build_panel() -> void:
 		p.ignore_texture_size = true
 		p.stretch_mode = TextureButton.STRETCH_KEEP_ASPECT_COVERED
 		p.focus_mode = Control.FOCUS_NONE
+		p.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 		p.pressed.connect(_on_portrait.bind(who))
 		p.mouse_entered.connect(func() -> void: _set_hover(Content.character_name(who)))
 		p.mouse_exited.connect(func() -> void: _set_hover(""))

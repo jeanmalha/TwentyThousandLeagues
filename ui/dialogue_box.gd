@@ -26,6 +26,7 @@ func _ready() -> void:
 	_portrait = TextureRect.new()
 	_portrait.position = Vector2(6, 6)
 	_portrait.size = Vector2(94, 116)
+	_portrait.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	_portrait.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	_portrait.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_portrait)

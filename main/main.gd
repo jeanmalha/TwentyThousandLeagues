@@ -6,6 +6,8 @@ extends Node2D
 ##   --chapter ch01      start straight into a chapter
 ##   --skip-intro        don't play the chapter's opening story cards
 
+const UI_SCALE := 2
+
 var title: TitleScreen
 var screen: GameScreen
 var narration: Narration
@@ -15,8 +17,11 @@ var _after_scene: Callable = Callable()
 
 
 func _ready() -> void:
+	# The interface is laid out in 320×180 units and drawn ×2 on the 640×360
+	# canvas; art is made at 640×360 so it shows its full detail.
 	var root := Control.new()
 	root.size = Vector2(320, 180)
+	root.scale = Vector2(UI_SCALE, UI_SCALE)
 	add_child(root)
 	screen = GameScreen.new()
 	root.add_child(screen)
