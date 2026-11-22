@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art Review</title>
+<style>
+  :root {
+    --bg: #0b141b; --panel: #111f29; --panel-2: #162836; --line: #24404f;
+    --text: #e6dfcf; --muted: #97a8ad; --brass: #c9a24a; --teal: #3b8a96;
+    --good: #6fae7c; --maybe: #d6b35a; --bad: #d36d5f;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --serif: "Iowan Old Style", Palatino, Georgia, serif;
+    --mono: ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.5 var(--sans); }
+  header { position: sticky; top: 0; z-index: 5; background: rgba(11,20,27,.96); border-bottom: 1px solid var(--line); padding: 12px 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+  h1 { font: 600 20px var(--serif); margin: 0 12px 0 0; }
+  h1 small { font: 12px var(--sans); color: var(--muted); margin-left: 6px; }
+  select, input, textarea, button { font: inherit; color: var(--text); background: var(--panel-2); border: 1px solid var(--line); border-radius: 5px; }
+  select, input { padding: 5px 8px; }
+  textarea { width: 100%; padding: 8px; resize: vertical; font-size: 13px; }
+  button { padding: 6px 12px; cursor: pointer; }
+  button:hover { border-color: var(--brass); }
+  button.primary { background: var(--brass); color: #1b1408; border-color: var(--brass); font-weight: 600; }
+  .filters { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .filters label { color: var(--muted); font-size: 12px; }
+  .spacer { flex: 1; }
+  .stats { color: var(--muted); font-size: 12px; }
+
+  .queue { margin: 16px 24px 0; display: none; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; }
+  .queue.show { display: block; }
+  .queue h2 { font: 600 11px var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 6px; }
+  .job { display: flex; gap: 12px; align-items: center; font-size: 13px; padding: 3px 0; }
+  .job .st { font: 11px var(--mono); padding: 1px 6px; border-radius: 3px; background: var(--panel-2); min-width: 70px; text-align: center; }
+  .st.running { background: var(--teal); color: #fff; } .st.done { color: var(--good); } .st.failed { color: var(--bad); }
+  .job pre { margin: 0; font-size: 11px; color: var(--bad); white-space: pre-wrap; }
+
+  main { padding: 20px 24px 60px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .card.v-keep { border-color: var(--good); } .card.v-reject { opacity: .55; }
+  .imgwrap { position: relative; background: #000; cursor: zoom-in; }
+  .imgwrap img { width: 100%; display: block; max-height: 460px; object-fit: contain; image-rendering: auto; }
+  .imgwrap img.px { image-rendering: pixelated; }
+  .viewtoggle { position: absolute; top: 8px; right: 8px; display: flex; gap: 4px; }
+  .viewtoggle button { padding: 2px 8px; font-size: 11px; background: rgba(11,20,27,.8); }
+  .viewtoggle button.on { border-color: var(--brass); color: var(--brass); }
+  .cmp { position: absolute; top: 8px; left: 8px; background: rgba(11,20,27,.8); padding: 2px 8px; border-radius: 5px; font-size: 11px; display: flex; gap: 5px; align-items: center; }
+  .body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 6px; font: 11px var(--mono); color: var(--muted); }
+  .badge { padding: 1px 7px; border-radius: 3px; border: 1px solid var(--line); }
+  .badge.model { color: var(--brass); border-color: var(--brass); }
+  .name { font: 12px var(--mono); color: var(--muted); word-break: break-all; }
+  .prompt { font-size: 12px; color: var(--muted); max-height: 3.2em; overflow: hidden; cursor: pointer; }
+  .prompt.open { max-height: none; }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .stars button { background: none; border: none; font-size: 22px; padding: 0 1px; color: #3a5360; line-height: 1; }
+  .stars button.on { color: var(--brass); }
+  .verdicts button { font-size: 12px; padding: 3px 10px; }
+  .verdicts button.on[data-v=keep] { background: var(--good); color: #0b1a10; border-color: var(--good); }
+  .verdicts button.on[data-v=maybe] { background: var(--maybe); color: #201804; border-color: var(--maybe); }
+  .verdicts button.on[data-v=reject] { background: var(--bad); color: #200a06; border-color: var(--bad); }
+  .checks { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; font-size: 12px; color: var(--muted); }
+  .checks label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+  .saved { font-size: 11px; color: var(--good); opacity: 0; transition: opacity .3s; }
+  .saved.show { opacity: 1; }
+
+  dialog { background: var(--panel); color: var(--text); border: 1px solid var(--line); border-radius: 10px; padding: 0; width: min(720px, 94vw); }
+  dialog::backdrop { background: rgba(0,0,0,.6); }
+  .dlg { padding: 18px 20px; display: grid; gap: 12px; }
+  .dlg h2 { font: 600 18px var(--serif); margin: 0; }
+  .grid2 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .grid2 label, .dlg > label { display: grid; gap: 4px; font-size: 12px; color: var(--muted); }
+  .dlg .actions { display: flex; justify-content: flex-end; gap: 8px; }
+  .hint { font-size: 12px; color: var(--muted); }
+
+  .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.92); z-index: 20; display: none; padding: 20px; gap: 16px; align-items: center; justify-content: center; }
+  .lightbox.show { display: flex; }
+  .lightbox figure { margin: 0; flex: 1; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 0; }
+  .lightbox img { max-width: 100%; max-height: calc(100vh - 80px); object-fit: contain; }
+  .lightbox img.px { image-rendering: pixelated; }
+  .lightbox figcaption { font: 12px var(--mono); color: var(--muted); margin-top: 8px; text-align: center; }
+  .empty { grid-column: 1/-1; color: var(--muted); text-align: center; padding: 60px 0; }
+  @media (max-width: 700px) { header, main { padding-left: 16px; padding-right: 16px; } .grid2 { grid-template-columns: 1fr 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Art Review <small>tools/art-pipeline</small></h1>
+  <div class="filters">
+    <label>Subject <select id="fSubject"><option value="">All</option></select></label>
+    <label>Model <select id="fModel"><option value="">All</option></select></label>
+    <label>Verdict <select id="fVerdict"><option value="">All</option><option value="none">Ungraded</option><option value="keep">Keep</option><option value="maybe">Maybe</option><option value="reject">Reject</option></select></label>
+    <label>Sort <select id="fSort"><option value="new">Newest</option><option value="grade">Grade</option><option value="time">Fastest</option></select></label>
+  </div>
+  <span class="spacer"></span>
+  <span class="stats" id="stats"></span>
+  <button id="compareBtn" disabled>Compare (0)</button>
+  <button class="primary" id="newBtn">New run</button>
+</header>
+
+<section class="queue" id="queue"><h2>Queue</h2><div id="jobs"></div></section>
+<main id="grid"></main>
+
+<dialog id="rerunDlg">
+  <form method="dialog" class="dlg" id="rerunForm">
+    <h2 id="rerunTitle">Rerun</h2>
+    <div class="grid2">
+      <label>Model <select name="model" id="rModel"></select></label>
+      <label>Subject <select name="subject" id="rSubject"></select></label>
+      <label>Seed <input name="seed" id="rSeed" type="number" min="0" placeholder="random"></label>
+      <label>Images <select name="count"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+      <label>Width <input name="width" id="rW" type="number" step="16" min="256" max="1536"></label>
+      <label>Height <input name="height" id="rH" type="number" step="16" min="256" max="1536"></label>
+      <label>Preset <select id="rPreset"><option value="">—</option><option value="576x768">Portrait 576×768</option><option value="768x1024">Portrait 768×1024</option><option value="640x360">View 640×360</option><option value="960x540">View 960×540</option><option value="1280x720">View 1280×720</option></select></label>
+      <label>&nbsp;<button type="button" id="rRandom">Random seed</button></label>
+    </div>
+    <label>Prompt <textarea name="prompt" id="rPrompt" rows="6"></textarea></label>
+    <label>Style suffix <textarea name="style" id="rStyle" rows="3"></textarea></label>
+    <p class="hint">Several images use consecutive seeds. Jobs run one at a time; Z-Image takes several minutes per image, FLUX 4-bit about two. Describe things in words only: no film, studio, game or artist names.</p>
+    <div class="actions"><button value="cancel" formnovalidate>Cancel</button><button class="primary" id="rGo" value="go">Queue</button></div>
+  </form>
+</dialog>
+
+<div class="lightbox" id="lightbox" title="Click to close"></div>
+
+<script>
+const CHECKS = ["Matches the sheet", "Costume right", "No film or studio look", "Reads at game size", "Good composition", "Usable as base"];
+let S = { images: [], reviews: {}, jobs: [], models: {}, subjects: {}, style: "" };
+const view = {};          // image name -> "orig" | "px"
+const selected = new Set();
+let rerunParent = null;
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+async function load() {
+  const r = await fetch("/api/state");
+  S = await r.json();
+  fillSelects();
+  renderJobs();
+  render();
+}
+
+function fillSelects() {
+  const subj = [...new Set(S.images.map(i => i.subject))].sort();
+  const keep = (sel, opts) => { const v = sel.value; sel.innerHTML = '<option value="">All</option>' + opts.map(([k, l]) => `<option value="${esc(k)}">${esc(l)}</option>`).join(""); sel.value = v; };
+  keep($("#fSubject"), subj.map(s => [s, s]));
+  keep($("#fModel"), Object.entries(S.models));
+  $("#rModel").innerHTML = Object.entries(S.models).map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join("");
+  $("#rSubject").innerHTML = Object.keys(S.subjects).map(k => `<option>${esc(k)}</option>`).join("") + '<option value="CUSTOM">CUSTOM</option>';
+}
+
+function filtered() {
+  const fs = $("#fSubject").value, fm = $("#fModel").value, fv = $("#fVerdict").value, sort = $("#fSort").value;
+  let list = S.images.filter(i => (!fs || i.subject === fs) && (!fm || i.model === fm));
+  if (fv) list = list.filter(i => fv === "none" ? !(S.reviews[i.name] || {}).verdict : (S.reviews[i.name] || {}).verdict === fv);
+  if (sort === "grade") list.sort((a, b) => ((S.reviews[b.name] || {}).grade || 0) - ((S.reviews[a.name] || {}).grade || 0));
+  if (sort === "time") list.sort((a, b) => (a.seconds ?? 1e9) - (b.seconds ?? 1e9));
+  return list;
+}
+
+function src(img) {
+  const px = img.pixel && img.pixel[0];
+  return (view[img.name] || "orig") === "px" && px ? { url: "/out/" + px, px: true } : { url: "/out/" + img.name, px: false };
+}
+
+function fmtTime(s) { if (s == null) return "time ?"; return s >= 90 ? `${Math.round(s / 60)} min` : `${s}s`; }
+
+function render() {
+  const list = filtered();
+  const graded = S.images.filter(i => (S.reviews[i.name] || {}).verdict).length;
+  $("#stats").textContent = `${S.images.length} images · ${graded} graded · ${S.images.filter(i => (S.reviews[i.name] || {}).verdict === "keep").length} keep`;
+  $("#grid").innerHTML = list.length ? list.map(card).join("") : '<div class="empty">No images match. Start one with “New run”.</div>';
+  $("#compareBtn").textContent = `Compare (${selected.size})`;
+  $("#compareBtn").disabled = selected.size < 2;
+}
+
+function card(img) {
+  const r = S.reviews[img.name] || {};
+  const s = src(img);
+  const hasPx = img.pixel && img.pixel.length;
+  return `<article class="card ${r.verdict ? "v-" + r.verdict : ""}" data-name="${esc(img.name)}">
+    <div class="imgwrap" data-act="zoom">
+      <img class="${s.px ? "px" : ""}" src="${esc(s.url)}" alt="${esc(img.name)}" loading="lazy">
+      <label class="cmp" data-act="none"><input type="checkbox" data-act="select" ${selected.has(img.name) ? "checked" : ""}> compare</label>
+      ${hasPx ? `<div class="viewtoggle"><button data-act="view" data-v="orig" class="${s.px ? "" : "on"}">Original</button><button data-act="view" data-v="px" class="${s.px ? "on" : ""}">Game size</button></div>` : ""}
+    </div>
+    <div class="body">
+      <div class="meta"><span class="badge model">${esc(img.model)}</span><span class="badge">${esc(img.subject)}</span><span class="badge">seed ${esc(img.seed)}</span><span class="badge">${img.width}×${img.height}</span><span class="badge">${fmtTime(img.seconds)}</span></div>
+      <div class="name">${esc(img.name)}${img.note ? " · " + esc(img.note) : ""}</div>
+      <div class="prompt" data-act="prompt" title="Click to expand">${esc(img.prompt)}</div>
+      <div class="row">
+        <span class="stars">${[1, 2, 3, 4, 5].map(n => `<button data-act="grade" data-v="${n}" class="${(r.grade || 0) >= n ? "on" : ""}" aria-label="${n} stars">★</button>`).join("")}</span>
+        <span class="verdicts">${["keep", "maybe", "reject"].map(v => `<button data-act="verdict" data-v="${v}" class="${r.verdict === v ? "on" : ""}">${v[0].toUpperCase() + v.slice(1)}</button>`).join(" ")}</span>
+      </div>
+      <div class="checks">${CHECKS.map(c => `<label><input type="checkbox" data-act="check" data-v="${esc(c)}" ${(r.checks || []).includes(c) ? "checked" : ""}> ${esc(c)}</label>`).join("")}</div>
+      <textarea rows="2" placeholder="Notes: what to change next time…" data-act="notes">${esc(r.notes || "")}</textarea>
+      <div class="row"><button data-act="rerun">Rerun…</button><button data-act="rerun-other">Same on other model</button><span class="saved">saved</span></div>
+    </div>
+  </article>`;
+}
+
+async function saveReview(name, patch, el) {
+  S.reviews[name] = { ...(S.reviews[name] || {}), ...patch };
+  await fetch("/api/review", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, ...patch }) });
+  const saved = el && el.closest(".card") && el.closest(".card").querySelector(".saved");
+  if (saved) { saved.classList.add("show"); setTimeout(() => saved.classList.remove("show"), 900); }
+}
+
+$("#grid").addEventListener("click", e => {
+  const t = e.target.closest("[data-act]");
+  if (!t) return;
+  const cardEl = t.closest(".card"); const name = cardEl.dataset.name;
+  const img = S.images.find(i => i.name === name);
+  const act = t.dataset.act;
+  if (act === "none" || act === "select" || act === "check" || act === "notes") { e.stopPropagation(); return; }
+  if (act === "view") { e.stopPropagation(); view[name] = t.dataset.v; render(); return; }
+  if (act === "zoom") return openLightbox([img]);
+  if (act === "prompt") return t.classList.toggle("open");
+  if (act === "grade") { const g = +t.dataset.v; saveReview(name, { grade: (S.reviews[name] || {}).grade === g ? 0 : g }, t).then(render); return; }
+  if (act === "verdict") { const v = t.dataset.v; saveReview(name, { verdict: (S.reviews[name] || {}).verdict === v ? null : v }, t).then(render); return; }
+  if (act === "rerun") return openRerun(img, img.model);
+  if (act === "rerun-other") return openRerun(img, img.model === "flux" ? "zimage" : "flux", true);
+});
+$("#grid").addEventListener("change", e => {
+  const t = e.target; const cardEl = t.closest(".card"); if (!cardEl) return;
+  const name = cardEl.dataset.name;
+  if (t.dataset.act === "select") { t.checked ? selected.add(name) : selected.delete(name); render(); }
+  if (t.dataset.act === "check") {
+    const checks = [...cardEl.querySelectorAll('[data-act=check]:checked')].map(c => c.dataset.v);
+    saveReview(name, { checks }, t);
+  }
+  if (t.dataset.act === "notes") saveReview(name, { notes: t.value }, t);
+});
+
+function openLightbox(imgs) {
+  const lb = $("#lightbox");
+  lb.innerHTML = imgs.map(img => { const s = src(img); return `<figure><img class="${s.px ? "px" : ""}" src="${esc(s.url)}" alt=""><figcaption>${esc(img.model)} · ${esc(img.subject)} · seed ${img.seed} · ${fmtTime(img.seconds)}</figcaption></figure>`; }).join("");
+  lb.classList.add("show");
+}
+$("#lightbox").addEventListener("click", () => $("#lightbox").classList.remove("show"));
+document.addEventListener("keydown", e => { if (e.key === "Escape") $("#lightbox").classList.remove("show"); });
+$("#compareBtn").addEventListener("click", () => openLightbox(S.images.filter(i => selected.has(i.name))));
+
+function openRerun(img, model, sameSeed) {
+  rerunParent = img ? img.name : null;
+  $("#rerunTitle").textContent = img ? `Rerun ${img.name}` : "New run";
+  $("#rModel").value = model || "flux";
+  $("#rSubject").value = img ? (S.subjects[img.subject] !== undefined ? img.subject : "CUSTOM") : Object.keys(S.subjects)[0];
+  $("#rPrompt").value = img ? img.prompt : S.subjects[$("#rSubject").value] || "";
+  $("#rStyle").value = img ? (img.style || S.style) : S.style;
+  $("#rSeed").value = img && sameSeed ? img.seed : "";
+  $("#rW").value = img ? img.width : 576; $("#rH").value = img ? img.height : 768;
+  $("#rPreset").value = "";
+  $("#rerunDlg").showModal();
+}
+$("#newBtn").addEventListener("click", () => openRerun(null, "flux"));
+$("#rSubject").addEventListener("change", e => { if (S.subjects[e.target.value] !== undefined) $("#rPrompt").value = S.subjects[e.target.value]; });
+$("#rPreset").addEventListener("change", e => { if (!e.target.value) return; const [w, h] = e.target.value.split("x"); $("#rW").value = w; $("#rH").value = h; });
+$("#rRandom").addEventListener("click", () => { $("#rSeed").value = Math.floor(Math.random() * 65535); });
+$("#rerunDlg").addEventListener("close", async () => {
+  if ($("#rerunDlg").returnValue !== "go") return;
+  const f = new FormData($("#rerunForm"));
+  const body = Object.fromEntries(f.entries()); body.parent = rerunParent;
+  const r = await fetch("/api/rerun", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+  const res = await r.json();
+  if (res.error) alert(res.error);
+  load();
+});
+
+function renderJobs() {
+  const active = S.jobs.filter(j => ["queued", "waiting", "running"].includes(j.status));
+  const recent = S.jobs.slice(-8).reverse();
+  $("#queue").classList.toggle("show", recent.length > 0);
+  $("#jobs").innerHTML = recent.map(j => `<div class="job"><span class="st ${j.status}">${j.status}</span>
+    <span>${esc(j.params.model)} · ${esc(j.params.subject)} · seed ${j.params.seed} · ${j.params.width}×${j.params.height}</span>
+    <span class="hint">${esc(j.progress || (j.seconds ? fmtTime(j.seconds) : j.status === "waiting" ? "waiting for another generation to finish" : ""))}</span>
+    ${j.status === "queued" ? `<button data-cancel="${j.id}">Cancel</button>` : ""}
+    ${j.error ? `<pre>${esc(j.error.slice(-300))}</pre>` : ""}</div>`).join("");
+  clearTimeout(window._poll);
+  window._poll = setTimeout(load, active.length ? 3000 : 15000);
+}
+$("#jobs").addEventListener("click", async e => {
+  const id = e.target.dataset.cancel; if (!id) return;
+  await fetch("/api/cancel", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id }) });
+  load();
+});
+["#fSubject", "#fModel", "#fVerdict", "#fSort"].forEach(s => $(s).addEventListener("change", render));
+load();
+</script>
+</body>
+</html>
