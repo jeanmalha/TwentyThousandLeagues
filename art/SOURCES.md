@@ -38,3 +38,6 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch13_vigo.png | ch13vigo-flux-1868-8ad4.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch14_atlantis.png | ch14atlantis-flux-1868-4fb0.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch15_whales.png | ch15whales-flux-1868-9c98.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch16_pole.png | ch16pole-flux-1868-3bcc.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch17_trapped.png | ch17trapped-flux-1868-db52.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch17_ice_tunnel.png | ch17icetunnel-flux-1868-3720.png | flux | 1868 | 2026-11-22 |

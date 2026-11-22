@@ -40,6 +40,29 @@ func test_every_exit_leads_somewhere() -> void:
 				assert_true(ch["locations"].has(e["to"]), "%s/%s: exit to unknown %s" % [id, loc_id, e["to"]])
 
 
+func test_no_effect_list_both_opens_a_page_and_ends_the_chapter() -> void:
+	# Ending the chapter starts the outro at once, so a story page opened by
+	# the same effects would be cut off. Put "end_chapter" in the page itself.
+	var bad: Array = []
+	for id in Content.order:
+		_find_page_and_end(Content.chapter(id), id, bad)
+	assert_eq(bad.size(), 0, "Move end_chapter into the scene: %s" % str(bad))
+
+
+func _find_page_and_end(node: Variant, path: String, bad: Array) -> void:
+	if node is Dictionary:
+		var effects: Variant = node.get("do")
+		if effects is Array and "end_chapter" in effects:
+			for e in effects:
+				if str(e).begins_with("scene:"):
+					bad.append(path)
+		for k in node:
+			_find_page_and_end(node[k], path + "/" + str(k), bad)
+	elif node is Array:
+		for i in node.size():
+			_find_page_and_end(node[i], path + "/" + str(i), bad)
+
+
 func _scan(node: Variant, path: String, missing: Array) -> void:
 	if node is Dictionary:
 		if node.has("fr") or node.has("en"):
