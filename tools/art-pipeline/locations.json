@@ -54,7 +54,7 @@
 		},
 		"ch05_library": {
 			"kind": "location",
-			"prompt": "first-person view of a library inside a 19th-century submarine, tall rosewood bookcases full of leather books, a long leather divan, a central table with albums and maps, brass lamps, no windows, no people"
+			"prompt": "first-person view of a library inside a 19th-century submarine, no windows at all, tall black rosewood bookcases inlaid with brass full of uniformly bound leather books, wide brown leather divans along the walls, a large central table covered with pamphlets and old newspapers, four frosted electric globes in the ceiling, no people"
 		},
 		"ch05_corridor": {
 			"kind": "location",
@@ -182,7 +182,7 @@
 		},
 		"ch15_whales": {
 			"kind": "location",
-			"prompt": "first-person view from the platform of a 19th-century submarine on the open sea, a pod of baleen whales surfacing nearby, in the distance dark sperm whales approaching, spouts of water, grey sky"
+			"prompt": "first-person view from the iron platform of a 19th-century submarine on the open sea, a herd of large black southern right whales surfacing nearby, broad bodies without dorsal fins, V-shaped spouts, pale callosities on their heads, not orcas, in the distance dark sperm whales with huge square heads approaching, grey sky"
 		},
 		"ch16_ice_pack": {
 			"kind": "location",
@@ -190,7 +190,7 @@
 		},
 		"ch16_pole": {
 			"kind": "location",
-			"prompt": "a rocky antarctic shore at the South Pole in 1868, black basalt rocks with snow, seals and penguins, the low sun half hidden by the horizon, a black flag with a large gold letter N planted on a rock, cold pale light"
+			"prompt": "a rocky antarctic shore at the South Pole in 1868, black basalt rocks with snow, a tall bare rock in the middle, seals and penguins, the low sun on the horizon, cold pale light, no flag, no people"
 		},
 		"ch17_trapped": {
 			"kind": "location",
@@ -214,7 +214,7 @@
 		},
 		"ch20_salon_dark": {
 			"kind": "location",
-			"prompt": "view from inside a dark 19th-century submarine salon, the great oval window filled by the dark hull of a sinking warship going down past it, bubbles and debris, red light, no people"
+			"prompt": "view from inside a dark 19th-century submarine salon, the great oval window filled by the wooden hull of a sinking 1860s two-decker sailing warship with rows of gunports and broken masts, going down past the window, bubbles and debris, dim red light, no steamship, no people"
 		},
 		"ch20_nemo_room": {
 			"kind": "location",
