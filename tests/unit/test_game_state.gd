@@ -26,6 +26,13 @@ func test_flags_and_conditions() -> void:
 	assert_false(GameState.check("flag:door_open"))
 
 
+func test_flag_names_can_contain_colons() -> void:
+	GameState.apply("set:said:strangers:french")
+	assert_true(GameState.check("flag:said:strangers:french"))
+	assert_false(GameState.check("flag:said:strangers:english"))
+	assert_false(GameState.check("flag:said"))
+
+
 func test_give_take_and_item_conditions() -> void:
 	GameState.apply("give:ned:harpoon")
 	assert_true(GameState.check("item:harpoon"))
