@@ -44,3 +44,8 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch18_platform_squid.png | ch18platformsqui-flux-1868-dfb8.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch19_storm.png | ch19storm-flux-1868-a5b5.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch19_vengeur.png | ch19vengeur-flux-1868-4078.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch20_salon_dark.png | ch20salondark-flux-1868-89d2.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch20_nemo_room.png | ch20nemoroom-flux-1868-c862.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch21_cabins_night.png | ch21cabinsnight-flux-1868-79b6.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch21_skiff.png | ch21skiff-flux-1868-6ec6.png | flux | 1868 | 2026-11-22 |
+| art/locations/ch21_lofoten.png | ch21lofoten-flux-1868-55c2.png | flux | 1868 | 2026-11-22 |

@@ -1,101 +1,357 @@
 {
 	"ui": {
-		"game_title": {"fr": "Vingt mille lieues", "en": "Twenty Thousand Leagues"},
-		"game_subtitle": {"fr": "d'après Jules Verne", "en": "after Jules Verne"},
-		"new_game": {"fr": "Nouvelle partie", "en": "New game"},
-		"continue": {"fr": "Continuer", "en": "Continue"},
-		"chapters": {"fr": "Chapitres", "en": "Chapters"},
-		"language": {"fr": "English", "en": "Français"},
-		"quit": {"fr": "Quitter", "en": "Quit"},
-		"back": {"fr": "Retour", "en": "Back"},
-		"on": {"fr": "sur", "en": "on"},
-		"goodbye": {"fr": "Prendre congé.", "en": "Take my leave."},
-		"saved": {"fr": "Partie sauvegardée (F9 pour la reprendre).", "en": "Game saved (F9 to load it)."},
-		"thanks": {"fr": "Merci.", "en": "Thank you."},
-		"not_here": {"fr": "Il faudrait d'abord être au même endroit.", "en": "We'd need to be in the same place first."},
-		"no_switch": {"fr": "Pas maintenant.", "en": "Not now."},
-		"tab_objectives": {"fr": "Objectifs", "en": "Objectives"},
-		"tab_catalogue": {"fr": "Catalogue", "en": "Catalogue"},
-		"tab_notes": {"fr": "Notes", "en": "Notes"},
-		"no_objectives": {"fr": "Rien de pressant.", "en": "Nothing pressing."},
-		"empty_catalogue": {"fr": "Conseil n'a encore rien classé.", "en": "Conseil hasn't classified anything yet."},
-		"empty_notes": {"fr": "Aucune note pour l'instant.", "en": "No notes yet."},
-		"hint_1": {"fr": "Un indice…", "en": "A hint…"},
-		"hint_2": {"fr": "Un indice plus net…", "en": "A clearer hint…"},
-		"hint_3": {"fr": "La solution", "en": "The answer"},
-		"running_head": {"fr": "VINGT MILLE LIEUES SOUS LES MERS", "en": "TWENTY THOUSAND LEAGUES UNDER THE SEAS"},
-		"chapter_first": {"fr": "CHAPITRE PREMIER", "en": "CHAPTER ONE"},
-		"chapter": {"fr": "CHAPITRE", "en": "CHAPTER"}
+		"game_title": {
+			"fr": "Vingt mille lieues",
+			"en": "Twenty Thousand Leagues"
+		},
+		"game_subtitle": {
+			"fr": "d'après Jules Verne",
+			"en": "after Jules Verne"
+		},
+		"new_game": {
+			"fr": "Nouvelle partie",
+			"en": "New game"
+		},
+		"continue": {
+			"fr": "Continuer",
+			"en": "Continue"
+		},
+		"chapters": {
+			"fr": "Chapitres",
+			"en": "Chapters"
+		},
+		"language": {
+			"fr": "English",
+			"en": "Français"
+		},
+		"quit": {
+			"fr": "Quitter",
+			"en": "Quit"
+		},
+		"back": {
+			"fr": "Retour",
+			"en": "Back"
+		},
+		"on": {
+			"fr": "sur",
+			"en": "on"
+		},
+		"goodbye": {
+			"fr": "Prendre congé.",
+			"en": "Take my leave."
+		},
+		"saved": {
+			"fr": "Partie sauvegardée (F9 pour la reprendre).",
+			"en": "Game saved (F9 to load it)."
+		},
+		"thanks": {
+			"fr": "Merci.",
+			"en": "Thank you."
+		},
+		"not_here": {
+			"fr": "Il faudrait d'abord être au même endroit.",
+			"en": "We'd need to be in the same place first."
+		},
+		"no_switch": {
+			"fr": "Pas maintenant.",
+			"en": "Not now."
+		},
+		"tab_objectives": {
+			"fr": "Objectifs",
+			"en": "Objectives"
+		},
+		"tab_catalogue": {
+			"fr": "Catalogue",
+			"en": "Catalogue"
+		},
+		"tab_notes": {
+			"fr": "Notes",
+			"en": "Notes"
+		},
+		"no_objectives": {
+			"fr": "Rien de pressant.",
+			"en": "Nothing pressing."
+		},
+		"empty_catalogue": {
+			"fr": "Conseil n'a encore rien classé.",
+			"en": "Conseil hasn't classified anything yet."
+		},
+		"empty_notes": {
+			"fr": "Aucune note pour l'instant.",
+			"en": "No notes yet."
+		},
+		"hint_1": {
+			"fr": "Un indice…",
+			"en": "A hint…"
+		},
+		"hint_2": {
+			"fr": "Un indice plus net…",
+			"en": "A clearer hint…"
+		},
+		"hint_3": {
+			"fr": "La solution",
+			"en": "The answer"
+		},
+		"running_head": {
+			"fr": "VINGT MILLE LIEUES SOUS LES MERS",
+			"en": "TWENTY THOUSAND LEAGUES UNDER THE SEAS"
+		},
+		"chapter_first": {
+			"fr": "CHAPITRE PREMIER",
+			"en": "CHAPTER ONE"
+		},
+		"chapter": {
+			"fr": "CHAPITRE",
+			"en": "CHAPTER"
+		}
 	},
 	"verbs": {
-		"look": {"fr": "Regarder", "en": "Look"},
-		"use": {"fr": "Utiliser", "en": "Use"},
-		"talk": {"fr": "Parler", "en": "Talk"},
-		"recall": {"fr": "Se souvenir", "en": "Recall"},
-		"catalogue": {"fr": "Classer", "en": "Catalogue"},
-		"force": {"fr": "Forcer", "en": "Force"}
+		"look": {
+			"fr": "Regarder",
+			"en": "Look"
+		},
+		"use": {
+			"fr": "Utiliser",
+			"en": "Use"
+		},
+		"talk": {
+			"fr": "Parler",
+			"en": "Talk"
+		},
+		"recall": {
+			"fr": "Se souvenir",
+			"en": "Recall"
+		},
+		"catalogue": {
+			"fr": "Classer",
+			"en": "Catalogue"
+		},
+		"force": {
+			"fr": "Forcer",
+			"en": "Force"
+		}
 	},
 	"characters": {
-		"aronnax": {"name": {"fr": "Aronnax", "en": "Aronnax"}},
-		"conseil": {"name": {"fr": "Conseil", "en": "Conseil"}},
-		"ned": {"name": {"fr": "Ned Land", "en": "Ned Land"}},
-		"nemo": {"name": {"fr": "Le capitaine", "en": "The Captain"}},
-		"second": {"name": {"fr": "Le second", "en": "The First Officer"}},
-		"farragut": {"name": {"fr": "Le commandant Farragut", "en": "Commander Farragut"}},
-		"narrator": {"name": {"fr": "", "en": ""}},
-		"porter": {"name": {"fr": "Le portier", "en": "The Porter"}},
-		"sailor": {"name": {"fr": "Le matelot", "en": "The Sailor"}},
-		"officer": {"name": {"fr": "L'officier", "en": "The Officer"}},
-		"strangers": {"name": {"fr": "Les deux inconnus", "en": "The two strangers"}},
-		"steward": {"name": {"fr": "Le stewart", "en": "The Steward"}}
+		"aronnax": {
+			"name": {
+				"fr": "Aronnax",
+				"en": "Aronnax"
+			}
+		},
+		"conseil": {
+			"name": {
+				"fr": "Conseil",
+				"en": "Conseil"
+			}
+		},
+		"ned": {
+			"name": {
+				"fr": "Ned Land",
+				"en": "Ned Land"
+			}
+		},
+		"nemo": {
+			"name": {
+				"fr": "Le capitaine",
+				"en": "The Captain"
+			}
+		},
+		"second": {
+			"name": {
+				"fr": "Le second",
+				"en": "The First Officer"
+			}
+		},
+		"farragut": {
+			"name": {
+				"fr": "Le commandant Farragut",
+				"en": "Commander Farragut"
+			}
+		},
+		"narrator": {
+			"name": {
+				"fr": "",
+				"en": ""
+			}
+		},
+		"porter": {
+			"name": {
+				"fr": "Le portier",
+				"en": "The Porter"
+			}
+		},
+		"sailor": {
+			"name": {
+				"fr": "Le matelot",
+				"en": "The Sailor"
+			}
+		},
+		"officer": {
+			"name": {
+				"fr": "L'officier",
+				"en": "The Officer"
+			}
+		},
+		"strangers": {
+			"name": {
+				"fr": "Les deux inconnus",
+				"en": "The two strangers"
+			}
+		},
+		"steward": {
+			"name": {
+				"fr": "Le stewart",
+				"en": "The Steward"
+			}
+		}
 	},
 	"fallbacks": {
 		"aronnax": {
 			"look": [
-				{"fr": "Rien qui mérite une note dans mon journal.", "en": "Nothing that deserves a line in my journal."},
-				{"fr": "J'observe, mais sans rien apprendre.", "en": "I look, but learn nothing."}
+				{
+					"fr": "Rien qui mérite une note dans mon journal.",
+					"en": "Nothing that deserves a line in my journal."
+				},
+				{
+					"fr": "J'observe, mais sans rien apprendre.",
+					"en": "I look, but learn nothing."
+				}
 			],
 			"use": [
-				{"fr": "Je ne vois pas à quoi cela servirait.", "en": "I can't see what good that would do."},
-				{"fr": "La science n'a rien à gagner à cela.", "en": "Science has nothing to gain from that."}
+				{
+					"fr": "Je ne vois pas à quoi cela servirait.",
+					"en": "I can't see what good that would do."
+				},
+				{
+					"fr": "La science n'a rien à gagner à cela.",
+					"en": "Science has nothing to gain from that."
+				}
 			],
-			"talk": [{"fr": "Il serait vain de lui adresser la parole.", "en": "There's no point in addressing it."}],
+			"talk": [
+				{
+					"fr": "Il serait vain de lui adresser la parole.",
+					"en": "There's no point in addressing it."
+				}
+			],
 			"recall": [
-				{"fr": "Ma mémoire reste muette sur ce point.", "en": "My memory is silent on that point."},
-				{"fr": "Aucun de mes livres n'en parle.", "en": "None of my books mentions it."}
+				{
+					"fr": "Ma mémoire reste muette sur ce point.",
+					"en": "My memory is silent on that point."
+				},
+				{
+					"fr": "Aucun de mes livres n'en parle.",
+					"en": "None of my books mentions it."
+				}
 			]
 		},
 		"conseil": {
 			"look": [
-				{"fr": "Monsieur me permettra de ne rien y voir de remarquable.", "en": "Monsieur will allow me to see nothing remarkable in it."},
-				{"fr": "Rien à signaler, si monsieur veut bien.", "en": "Nothing to report, if Monsieur pleases."}
+				{
+					"fr": "Monsieur me permettra de ne rien y voir de remarquable.",
+					"en": "Monsieur will allow me to see nothing remarkable in it."
+				},
+				{
+					"fr": "Rien à signaler, si monsieur veut bien.",
+					"en": "Nothing to report, if Monsieur pleases."
+				}
 			],
-			"use": [{"fr": "Monsieur n'y songe pas.", "en": "Monsieur cannot be serious."}],
-			"talk": [{"fr": "Je doute que cela réponde à monsieur.", "en": "I doubt it would answer Monsieur."}],
+			"use": [
+				{
+					"fr": "Monsieur n'y songe pas.",
+					"en": "Monsieur cannot be serious."
+				}
+			],
+			"talk": [
+				{
+					"fr": "Je doute que cela réponde à monsieur.",
+					"en": "I doubt it would answer Monsieur."
+				}
+			],
 			"catalogue": [
-				{"fr": "Cela n'appartient à aucune classe connue. Ni à une inconnue, d'ailleurs.", "en": "That belongs to no known class. Nor to an unknown one, for that matter."},
-				{"fr": "Inclassable, monsieur. Je le regrette.", "en": "Unclassifiable, Monsieur. I regret it."}
+				{
+					"fr": "Cela n'appartient à aucune classe connue. Ni à une inconnue, d'ailleurs.",
+					"en": "That belongs to no known class. Nor to an unknown one, for that matter."
+				},
+				{
+					"fr": "Inclassable, monsieur. Je le regrette.",
+					"en": "Unclassifiable, Monsieur. I regret it."
+				}
 			]
 		},
 		"ned": {
 			"look": [
-				{"fr": "Ça ne se mange pas, ça ne flotte pas. Aucun intérêt.", "en": "Can't eat it, can't float on it. No use to me."},
-				{"fr": "Rien à harponner là-dedans.", "en": "Nothing to harpoon there."}
+				{
+					"fr": "Ça ne se mange pas, ça ne flotte pas. Aucun intérêt.",
+					"en": "Can't eat it, can't float on it. No use to me."
+				},
+				{
+					"fr": "Rien à harponner là-dedans.",
+					"en": "Nothing to harpoon there."
+				}
 			],
-			"use": [{"fr": "Pour quoi faire ?", "en": "What for?"}],
-			"talk": [{"fr": "Je ne cause pas aux meubles.", "en": "I don't talk to the furniture."}],
+			"use": [
+				{
+					"fr": "Pour quoi faire ?",
+					"en": "What for?"
+				}
+			],
+			"talk": [
+				{
+					"fr": "Je ne cause pas aux meubles.",
+					"en": "I don't talk to the furniture."
+				}
+			],
 			"force": [
-				{"fr": "Si je force là-dessus, je le casse. Et ça n'avancerait à rien.", "en": "If I force that, it breaks. And we'd be no further on."},
-				{"fr": "Ça ne bougera pas, et ça ne servirait à rien.", "en": "It won't budge, and it wouldn't help."}
+				{
+					"fr": "Si je force là-dessus, je le casse. Et ça n'avancerait à rien.",
+					"en": "If I force that, it breaks. And we'd be no further on."
+				},
+				{
+					"fr": "Ça ne bougera pas, et ça ne servirait à rien.",
+					"en": "It won't budge, and it wouldn't help."
+				}
 			]
 		},
 		"*": {
-			"look": [{"fr": "Rien de particulier.", "en": "Nothing in particular."}],
-			"use": [{"fr": "Cela ne mène à rien.", "en": "That leads nowhere."}],
-			"talk": [{"fr": "Pas de réponse.", "en": "No answer."}]
+			"look": [
+				{
+					"fr": "Rien de particulier.",
+					"en": "Nothing in particular."
+				}
+			],
+			"use": [
+				{
+					"fr": "Cela ne mène à rien.",
+					"en": "That leads nowhere."
+				}
+			],
+			"talk": [
+				{
+					"fr": "Pas de réponse.",
+					"en": "No answer."
+				}
+			]
 		}
 	},
 	"items": {},
 	"facts": {},
-	"catalogue": {}
+	"catalogue": {},
+	"story_flags": [
+		"ned_trusts_aronnax",
+		"skiff_located",
+		"hull_mapped",
+		"saw_what_nemo_saw",
+		"nemo_spares",
+		"pearl_diver_saved_together",
+		"saw_gold_for_crete",
+		"skiff_provisioned",
+		"vigo_truth",
+		"atlantis_shared",
+		"took_side_ned",
+		"took_side_nemo",
+		"heard_french_cry",
+		"vengeur_understood",
+		"stayed_at_window"
+	],
+	"_story_flags_note": "Flags and facts in story_flags carry over from one chapter to the next (TTLUTS-3 consequence model); everything else resets."
 }
