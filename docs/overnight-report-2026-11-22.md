@@ -52,11 +52,7 @@ git switch dev && git pull
 - **Text font:** Godot's default font (crisp, but not a pixel font) until TTLUTS-8.
 - **No music or sound yet:** TTLUTS-39 and TTLUTS-25.
 - **Medallions are a stopgap** for showing characters in a scene (TTLUTS-32).
-- **Art to redo:**
-  - The whales read as orcas (ch15).
-  - The warship in ch20 looks too modern.
-  - The library has windows (Verne's doesn't).
-  - The Pole picture already shows the N flag before it is planted (ch16).
+- **Art fixed late in the night** (PRs #32, #33): the ch15 whales are now baleen whales rather than orcas (redone with Z-Image), the ch20 warship is an 1860s sailing two-decker, the library is closer to Verne's, and the Pole no longer shows the flag before it is planted. Small windows remain at the back of the library.
 - **Chapter select starts without the earlier story flags.** Endings are richest when played in order.
 - **The solver proves each chapter from a fresh start,** not every combination of carried-over flags, but those flags only add lines.
 - **Some cut-candidate chapters are short** (11, 12, 15), as planned.
@@ -74,4 +70,4 @@ git switch dev && git pull
 
 ## Overnight PRs (all merged into `dev`)
 
-#6 engine + ch1 · #7 puzzle design · #8 ch2–3 · #9 ch4 (+ flag-name fix) · #10 ch5 (+ leaner solver) · #11 book pages + engravings + ch1 deduction · #12 ch6 · #13–#14, #17–#19 art · #15 ch7 · #16 and #29 resolution (2× art, crisp text) · #20 ch8 · #21 ch9 · #22 ch10 · #23 ch11–12 · #24 ch13 · #25 ch14–15 · #26 ch16–17 · #27 ch18–19 · #28 ch20–21 + ending + story flags.
+#6 engine + ch1 · #7 puzzle design · #8 ch2–3 · #9 ch4 (+ flag-name fix) · #10 ch5 (+ leaner solver) · #11 book pages + engravings + ch1 deduction · #12 ch6 · #13–#14, #17–#19 art · #15 ch7 · #16 and #29 resolution (2× art, crisp text) · #32–#33 art fixes · #20 ch8 · #21 ch9 · #22 ch10 · #23 ch11–12 · #24 ch13 · #25 ch14–15 · #26 ch16–17 · #27 ch18–19 · #28 ch20–21 + ending + story flags.
