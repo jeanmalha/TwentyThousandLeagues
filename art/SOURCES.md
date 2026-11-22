@@ -12,3 +12,4 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch02_crow.png | ch02crow-flux-1868-cf25.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch03_night_sea.png | ch03nightsea-flux-1868-e13d.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch03_hull.png | ch03hull-flux-1868-3220.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch04_cell.png | ch04cell-flux-1868-9142.png | flux | 1868 | 2026-11-21 |
