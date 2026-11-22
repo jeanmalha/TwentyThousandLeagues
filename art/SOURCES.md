@@ -9,3 +9,4 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch02_deck.png | ch02deck-flux-1868-b0fd.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch02_wardroom.png | ch02wardroom-flux-1868-c891.png | flux | 1868 | 2026-11-21 |
 | art/portraits/nemo.png | nemo3-flux-1868-64d5.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch02_crow.png | ch02crow-flux-1868-cf25.png | flux | 1868 | 2026-11-21 |
