@@ -18,21 +18,21 @@ The game is a 16-bit-style, first-person adventure adapted from Jules Verne's *V
 
 ### Checking pixel crispness
 
-The game renders at 320×180 and scales up by whole numbers only. To check that a change hasn't introduced blur or uneven pixels, capture a real window and check it:
+The game renders at 640×360 (the interface is laid out in 320×180 units and drawn ×2) and scales up by whole numbers only: ×2 at 720p, ×3 at 1080p, ×4 at 1440p. To check that a change hasn't introduced blur or uneven pixels, capture a real window and check it:
 
 ```sh
-godot --path . --resolution 1280x720 -s res://tests/visual/capture.gd -- /tmp/x4.png
-godot --path . -s res://tests/visual/capture.gd -- /tmp/x6.png 1920x1080   # borderless, for ×6 on a 1080p screen
-uv run --no-project --with pillow python tests/visual/check_pixels.py /tmp/x4.png /tmp/x6.png
+godot --path . --resolution 1280x720 -s res://tests/visual/capture.gd -- /tmp/x2.png
+godot --path . -s res://tests/visual/capture.gd -- /tmp/x3.png 1920x1080   # borderless, for ×3 on a 1080p screen
+uv run --no-project --with pillow python tests/visual/check_pixels.py /tmp/x2.png /tmp/x3.png
 ```
 
-`check_pixels.py` reports `mixed pixels: 0` when every 320×180 pixel became a uniform N×N block. These checks open a window, so they're not part of `scripts/test.sh`.
+`check_pixels.py` reports `mixed pixels: 0` when every 640×360 pixel became a uniform N×N block. These checks open a window, so they're not part of `scripts/test.sh`.
 
 ## Where things live
 
 | Path | What |
 |---|---|
-| `project.godot` | Engine settings. Display rules: 320×180 viewport, `canvas_items` stretch, `integer` scale mode, nearest-neighbour filtering, 2D pixel snapping. `tests/unit/test_display_settings.gd` guards them |
+| `project.godot` | Engine settings. Display rules: 640×360 viewport, `canvas_items` stretch, `integer` scale mode, nearest-neighbour filtering, 2D pixel snapping. `tests/unit/test_display_settings.gd` guards them |
 | `main/` | Start scene. It's a placeholder test card for now |
 | `rooms/` | First-person location views, hotspots and exits |
 | `characters/` | Character portraits and per-character data |
@@ -49,7 +49,7 @@ uv run --no-project --with pillow python tests/visual/check_pixels.py /tmp/x4.pn
 ## Conventions
 
 - **GDScript:** static typing everywhere (`var x: int`, `func f() -> void`), tabs for indentation, `snake_case` files and functions, `PascalCase` classes and nodes. Commit the `.uid` files Godot creates next to scripts.
-- **Pixels:** draw and place everything on whole pixels in the 320×180 space. Import textures with filtering off. Don't add smooth scaling, rotation or sub-pixel motion to pixel art.
+- **Pixels:** lay the interface out on whole pixels in its 320×180 units; art is made at 640×360 (views 640×288). Import textures with filtering off. Don't add smooth scaling, rotation or sub-pixel motion to pixel art.
 - **Tests:** files are `tests/unit/test_<thing>.gd`, extending `GutTest`, with functions named `test_<behaviour>`. A card that adds behaviour adds a test for it.
 - **Text:** write the French lines from Verne's original, and write the English lines ourselves. Never paste sentences from a copyrighted translation (for example F. P. Walter's). Base Nautilus and creature designs on Verne's descriptions, not on Disney's 1954 film.
 

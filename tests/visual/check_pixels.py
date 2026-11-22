@@ -1,13 +1,13 @@
 """Check that a screenshot from capture.gd is made only of uniform N×N blocks.
 
 Usage: uv run --no-project --with pillow python tests/visual/check_pixels.py shot.png [...]
-Exits 1 if any block of the 320×180 frame has mixed colours (blur, uneven scaling).
+Exits 1 if any block of the 640×360 frame has mixed colours (blur, uneven scaling).
 """
 import sys
 
 from PIL import Image
 
-BASE_W, BASE_H = 320, 180
+BASE_W, BASE_H = 640, 360
 failed = False
 for path in sys.argv[1:]:
     im = Image.open(path).convert("RGB")

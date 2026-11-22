@@ -17,6 +17,7 @@ func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_STOP
 	var bg := TextureRect.new()
 	bg.size = size
+	bg.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	bg.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	if ResourceLoader.exists("res://art/title/title.png"):
 		bg.texture = load("res://art/title/title.png")
