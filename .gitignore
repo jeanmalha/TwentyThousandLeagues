@@ -1,0 +1,15 @@
+# Godot 4
+.godot/
+/android/
+*.translation
+export_presets.cfg.local
+build/
+
+# OS and editors
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Generated art from the local image pipeline: keep outputs out of git
+tools/art-pipeline/out/
