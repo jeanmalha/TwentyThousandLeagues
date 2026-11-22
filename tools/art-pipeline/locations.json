@@ -183,6 +183,54 @@
 		"ch15_whales": {
 			"kind": "location",
 			"prompt": "first-person view from the platform of a 19th-century submarine on the open sea, a pod of baleen whales surfacing nearby, in the distance dark sperm whales approaching, spouts of water, grey sky"
+		},
+		"ch16_ice_pack": {
+			"kind": "location",
+			"prompt": "view from the platform of a long cigar-shaped 19th-century submarine surfacing among antarctic ice floes and icebergs, grey cold sky, dark water, snow on the iron plates, no people"
+		},
+		"ch16_pole": {
+			"kind": "location",
+			"prompt": "a rocky antarctic shore at the South Pole in 1868, black basalt rocks with snow, seals and penguins, the low sun half hidden by the horizon, a black flag with a large gold letter N planted on a rock, cold pale light"
+		},
+		"ch17_trapped": {
+			"kind": "location",
+			"prompt": "first-person view inside a 19th-century submarine trapped under ice, frost and ice crystals on the riveted walls and brass instruments, dim blue emergency light, a pressure gauge, breath visible in the cold air, no people"
+		},
+		"ch17_ice_tunnel": {
+			"kind": "location",
+			"prompt": "underwater, men in heavy copper diving suits digging a trench into a wall of blue glacier ice with picks, lamps glowing, ice fragments floating, claustrophobic blue light"
+		},
+		"ch18_platform_squid": {
+			"kind": "location",
+			"prompt": "the platform of a 19th-century submarine at sea in daylight, enormous giant squid tentacles coming over the iron handrail, sailors with axes fighting, spray, dramatic sky, painterly"
+		},
+		"ch19_storm": {
+			"kind": "location",
+			"prompt": "first-person view from the platform of a 19th-century submarine in a violent storm at sea, enormous waves, lightning, dark clouds, rain, the iron handrail in the foreground"
+		},
+		"ch19_vengeur": {
+			"kind": "location",
+			"prompt": "view through a large oval submarine window of the wreck of an old 18th-century French ship of the line lying on the sea floor, its masts broken, cannons covered with shells and weed, searchlight beam, solemn"
+		},
+		"ch20_salon_dark": {
+			"kind": "location",
+			"prompt": "view from inside a dark 19th-century submarine salon, the great oval window filled by the dark hull of a sinking warship going down past it, bubbles and debris, red light, no people"
+		},
+		"ch20_nemo_room": {
+			"kind": "location",
+			"prompt": "an austere small cabin inside a 19th-century submarine, an iron bed, a desk with charts and instruments, on the back wall portraits of great men and a portrait of a young woman with two small children, a single lamp, no people"
+		},
+		"ch21_cabins_night": {
+			"kind": "location",
+			"prompt": "first-person view of a narrow riveted corridor inside a 19th-century submarine at night, a lamp turned very low, an iron ladder leading up to an open round hatch in the ceiling, moonlight above, no people"
+		},
+		"ch21_skiff": {
+			"kind": "location",
+			"prompt": "inside a small wooden rowing boat at night in a gigantic whirlpool at sea, walls of black water spinning around, moonlight, spray, terror"
+		},
+		"ch21_lofoten": {
+			"kind": "location",
+			"prompt": "first-person view of a poor fisherman's wooden hut on a northern island in the 1860s, a fire in a stone hearth, fishing nets hung on the walls, a small window onto a grey northern sea, warm firelight"
 		}
 	}
 }
