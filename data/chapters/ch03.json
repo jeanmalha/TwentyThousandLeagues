@@ -133,10 +133,10 @@
 						"en": "The frigate's lights"
 					},
 					"rect": [
-						200,
+						170,
+						20,
 						30,
-						60,
-						20
+						22
 					],
 					"actions": {
 						"look": [
@@ -182,10 +182,10 @@
 						"en": "A voice in the dark"
 					},
 					"rect": [
-						60,
-						60,
-						60,
-						40
+						12,
+						68,
+						46,
+						38
 					],
 					"if": [
 						"flag:shouted",
@@ -219,10 +219,10 @@
 						"en": "Conseil"
 					},
 					"rect": [
-						60,
-						60,
-						60,
-						40
+						12,
+						68,
+						46,
+						38
 					],
 					"if": "flag:with_conseil",
 					"actions": {
@@ -314,41 +314,16 @@
 			"color": "#2a2c30",
 			"hotspots": [
 				{
-					"id": "ned_hull",
-					"name": {
-						"fr": "Ned Land",
-						"en": "Ned Land"
-					},
-					"rect": [
-						200,
-						40,
-						40,
-						70
-					],
-					"dialogue": "ned_hull",
-					"actions": {
-						"look": [
-							{
-								"say": {
-									"fr": "Ned Land, trempé, assis sur la bête comme sur un rocher.",
-									"en": "Ned Land, soaked, sitting on the creature as on a rock."
-								}
-							}
-						]
-					},
-					"npc": "ned"
-				},
-				{
 					"id": "plates",
 					"name": {
 						"fr": "Le dos de la bête",
 						"en": "The creature's back"
 					},
 					"rect": [
-						0,
-						96,
-						320,
-						48
+						50,
+						44,
+						240,
+						100
 					],
 					"actions": {
 						"look": [
@@ -413,10 +388,10 @@
 						"en": "Conseil"
 					},
 					"rect": [
-						70,
 						50,
-						34,
-						60
+						4,
+						40,
+						40
 					],
 					"actions": {
 						"look": [
@@ -451,9 +426,9 @@
 					},
 					"rect": [
 						0,
-						12,
-						320,
-						30
+						36,
+						46,
+						64
 					],
 					"actions": {
 						"look": [
@@ -461,6 +436,30 @@
 								"say": {
 									"fr": "Pas une voile. La frégate a disparu.",
 									"en": "Not a sail. The frigate is gone."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned_hull",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						198,
+						10,
+						38,
+						64
+					],
+					"dialogue": "ned_hull",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned Land, trempé, assis sur la bête comme sur un rocher.",
+									"en": "Ned Land, soaked, sitting on the creature as on a rock."
 								}
 							}
 						]
