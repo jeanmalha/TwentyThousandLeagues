@@ -16,3 +16,9 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch05_library.png | ch05library-flux-1868-d5da.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch05_corridor.png | ch05corridor-flux-1868-5b88.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch05_armory.png | ch05armory-flux-1868-f5ff.png | flux | 1868 | 2026-11-21 |
+| art/portraits/aronnax.png | portraitaronnax-flux-1868-117b.png | flux | 1868 | 2026-11-21 |
+| art/portraits/conseil.png | portraitconseil-flux-1868-3b13.png | flux | 1868 | 2026-11-21 |
+| art/portraits/ned.png | portraitned-flux-1868-a20d.png | flux | 1868 | 2026-11-21 |
+| art/portraits/farragut.png | portraitfarragut-flux-1868-7bf1.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch01_ny_room.png | ch01nyroom-flux-7-ba4e.png | flux | 7 | 2026-11-21 |
+| art/locations/ch06_seafloor_plain.png | ch06seafloorplai-flux-1868-dfe4.png | flux | 1868 | 2026-11-21 |
