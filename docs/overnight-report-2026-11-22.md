@@ -23,7 +23,7 @@ git switch dev && git pull
 
 ## What changed after your playtest
 
-- **Art first.** Every location in all 21 chapters has art: 35 views at 640×288, about 30 colours each from the 64-colour master palette. The five characters have portraits, and people present in a scene appear as framed medallions.
+- **Art first.** Every location in all 21 chapters has art: 40 views at 640×288, about 30 colours each from the 64-colour master palette. The five characters have portraits, and people present in a scene appear as framed medallions.
 - **The book.** Story moments are pages of the book: a running head, « CHAPITRE … » headings as in the 1871 Hetzel edition, text set in IM Fell, and the **original engravings by de Neuville and Riou** (public domain, BnF scans via Wikimedia Commons). 49 are used, plus the frontispiece on the title screen.
 - **Puzzles are deductions, not busywork.** No more "look, then recall the same thing". Many chapters now replay a deduction Verne gives Aronnax or Nemo, for example:
   - Chapter 1: rule out the theories of the monster at the desk.
