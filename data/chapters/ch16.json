@@ -1,0 +1,379 @@
+{
+	"id": "ch16",
+	"number": 16,
+	"act": 4,
+	"title": {
+		"fr": "Le pôle Sud",
+		"en": "The South Pole"
+	},
+	"novel": "II-13 – II-14",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch16_pole",
+			"conseil": "ch16_pole",
+			"ned": "ch16_pole"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-089.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le Nautilus piqua vers le sud. La banquise arrêta les navigateurs avant nous ; lui passa dessous. Le 19 mars, il remonta dans une mer libre, et devant nous se dressait une terre.",
+						"en": "The Nautilus headed south. The ice pack had stopped every navigator before us; it went underneath. On 19 March it surfaced in open water, and before us rose a land."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Demain, 21 mars, à midi, si le soleil se montre, je saurai si nous sommes au pôle.",
+						"en": "Tomorrow, 21 March, at noon, if the sun shows itself, I shall know whether we are at the Pole."
+					}
+				}
+			]
+		},
+		"pole": {
+			"image": "res://art/engravings/hetzel-095.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "À midi précis, le disque du soleil fut coupé en deux parties égales par l'horizon. Nous étions au pôle.",
+						"en": "At exactly noon, the sun's disc was cut into two equal halves by the horizon. We were at the Pole."
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Moi, capitaine Nemo, ce 21 mars 1868, j'ai atteint le pôle sud sur le quatre-vingt-dixième degré, et je prends possession de cette partie du globe égale au sixième des continents reconnus.",
+						"en": "I, Captain Nemo, on this 21 March 1868, have reached the South Pole at the ninetieth degree, and I take possession of this part of the globe, equal to a sixth of the known continents."
+					}
+				},
+				{
+					"who": "aronnax",
+					"text": {
+						"fr": "Au nom de qui, capitaine ?",
+						"en": "In whose name, Captain?"
+					}
+				},
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Au mien, monsieur !",
+						"en": "In mine, sir!"
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Il déploya un pavillon noir, portant un N d'or écartelé sur son étamine.",
+						"en": "He unfurled a black flag, bearing a gold N quartered on its bunting."
+					}
+				}
+			],
+			"do": [
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch16_pole": {
+			"name": {
+				"fr": "Une terre, au bout du monde",
+				"en": "A land at the end of the world"
+			},
+			"background": "res://art/locations/ch16_pole.png",
+			"color": "#62666b",
+			"hotspots": [
+				{
+					"id": "sun",
+					"name": {
+						"fr": "Le soleil, à l'horizon",
+						"en": "The sun, on the horizon"
+					},
+					"rect": [
+						20,
+						24,
+						40,
+						34
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le soleil rase l'horizon. Il ne monte pas, il ne descend pas : il tourne.",
+									"en": "The sun skims the horizon. It doesn't rise or set: it circles."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Le 21 mars, jour de l'équinoxe, le soleil est sur l'équateur céleste. Au pôle, à midi, l'horizon doit le couper exactement en deux. Il faut savoir l'heure précise, et tenir la lunette immobile.",
+									"en": "On 21 March, the equinox, the sun is on the celestial equator. At the Pole, at noon, the horizon must cut it exactly in two. We need the exact time, and the glass held perfectly still."
+								},
+								"do": [
+									"fact:method"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "chronometer",
+					"name": {
+						"fr": "Le chronomètre",
+						"en": "The chronometer"
+					},
+					"rect": [
+						150,
+						110,
+						40,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le chronomètre du capitaine, réglé sur le méridien de Paris.",
+									"en": "The captain's chronometer, set to the Paris meridian."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Je lis, monsieur : onze heures cinquante-neuf… trente… quarante… Je dirai « midi » à la seconde. Lire précisément, c'est presque classer.",
+									"en": "I read, Monsieur: eleven fifty-nine… thirty… forty… I'll call \"noon\" to the second. Reading precisely is almost classifying."
+								},
+								"do": [
+									"set:time_read"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "rock",
+					"name": {
+						"fr": "Le rocher, face au vent",
+						"en": "The rock, facing the wind"
+					},
+					"rect": [
+						160,
+						56,
+						80,
+						60
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Un rocher de basalte. Le vent du sud y souffle par rafales : impossible de garder une lunette immobile.",
+									"en": "A basalt rock. The south wind gusts against it: impossible to hold a glass still."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je cale la lunette contre le roc et je tiens. Le vent peut souffler : elle ne bougera pas d'un cheveu.",
+									"en": "I brace the glass against the rock and hold on. Let the wind blow: it won't move a hair."
+								},
+								"do": [
+									"set:glass_steady"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "penguins",
+					"name": {
+						"fr": "Les manchots",
+						"en": "The penguins"
+					},
+					"rect": [
+						230,
+						80,
+						90,
+						50
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des manchots par milliers, qui ne nous craignent pas.",
+									"en": "Penguins by the thousand, not afraid of us."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Manchots, monsieur. Oiseaux qui ne volent pas, mais nagent. Je les classe avec plaisir : ce sont les seuls ici qui se tiennent bien.",
+									"en": "Penguins, Monsieur. Birds that don't fly, but swim. I classify them with pleasure: they're the only ones here who know how to behave."
+								},
+								"do": [
+									"cat:penguin"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo16",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						96,
+						20,
+						40,
+						70
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_pole",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine attend midi, le sextant à la main.",
+									"en": "The captain waits for noon, sextant in hand."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"catalogue": {
+		"penguin": {
+			"name": {
+				"fr": "Manchot",
+				"en": "Penguin"
+			},
+			"text": {
+				"fr": "Oiseau qui ne vole pas, mais nage.",
+				"en": "A bird that doesn't fly, but swims."
+			}
+		}
+	},
+	"facts": {
+		"method": {
+			"name": {
+				"fr": "La méthode",
+				"en": "The method"
+			},
+			"text": {
+				"fr": "À l'équinoxe, au pôle, à midi, l'horizon coupe le soleil en deux.",
+				"en": "At the equinox, at the Pole, at noon, the horizon cuts the sun in two."
+			}
+		}
+	},
+	"dialogues": {
+		"nemo_pole": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Il est bientôt midi, monsieur le professeur.",
+						"en": "It will soon be noon, Professor."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "ready",
+					"who": "aronnax",
+					"label": {
+						"fr": "Nous sommes prêts, capitaine.",
+						"en": "We're ready, Captain."
+					},
+					"if": [
+						"fact:method",
+						"flag:time_read",
+						"flag:glass_steady"
+					],
+					"lines": [
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "Midi !",
+								"en": "Noon!"
+							}
+						}
+					],
+					"do": [
+						"scene:pole"
+					]
+				},
+				{
+					"id": "not_ready",
+					"label": {
+						"fr": "Faites l'observation, capitaine.",
+						"en": "Take the reading, Captain."
+					},
+					"if": [
+						"!flag:glass_steady"
+					],
+					"lines": [
+						{
+							"who": "nemo",
+							"text": {
+								"fr": "Avec ce vent ? La lunette tremble. Et il me faut l'heure à la seconde.",
+								"en": "In this wind? The glass is shaking. And I need the time to the second."
+							}
+						}
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "noon",
+			"text": {
+				"fr": "Faire le point à midi, le 21 mars.",
+				"en": "Take the noon reading on 21 March."
+			},
+			"hints": [
+				{
+					"fr": "Trois choses : savoir quoi regarder, savoir l'heure exacte, et tenir la lunette.",
+					"en": "Three things: know what to look for, know the exact time, and hold the glass still."
+				},
+				{
+					"fr": "Le professeur connaît la méthode, Conseil lit les instruments, Ned a les bras pour tenir.",
+					"en": "The professor knows the method, Conseil reads instruments, Ned has the arms to hold."
+				},
+				{
+					"fr": "Aronnax : Se souvenir du soleil. Conseil : Classer le chronomètre. Ned : Forcer le rocher. Puis parler au capitaine.",
+					"en": "Aronnax: Recall the sun. Conseil: Catalogue the chronometer. Ned: Force the rock. Then talk to the captain."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Le pôle Sud, si le soleil veut bien se montrer.",
+		"en": "The South Pole, if the sun will only show itself."
+	},
+	"next": "ch17"
+}
