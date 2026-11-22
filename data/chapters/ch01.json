@@ -76,10 +76,33 @@
 						"fr": "Quelques jours plus tard, l'Amérique armait une frégate. Et l'on frappa à la porte de la chambre.",
 						"en": "A few days later America was fitting out a frigate. And someone knocked at the door."
 					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "C'était une lettre, apportée par le garçon d'étage. Cachet du ministère de la Marine.",
+						"en": "It was a letter, brought up by the bellboy. Navy Department seal."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "« Monsieur, si vous voulez vous joindre à l'expédition de l'*Abraham-Lincoln*, le gouvernement de l'Union verra avec plaisir que la France soit représentée par vous dans cette entreprise. Le commandant Farragut tient une cabine à votre disposition. Très cordialement, votre J.-B. Hobson, secrétaire de la marine. »",
+						"en": "\"Sir, should you wish to join the *Abraham-Lincoln*'s expedition, the Union government would be glad to see France represented by you in this undertaking. Commander Farragut holds a cabin at your disposal. Most cordially yours, J.-B. Hobson, Secretary of the Navy.\""
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Trois secondes avant l'arrivée de la lettre, je ne songeais pas plus à poursuivre la Licorne qu'à tenter le passage du nord-ouest. Trois secondes après, je ne songeais plus qu'à cela.",
+						"en": "Three seconds before the letter came, I had no more thought of chasing the Unicorn than of attempting the North-West Passage. Three seconds after, I thought of nothing else."
+					}
 				}
 			],
 			"do": [
-				"set:letter_arrived"
+				"set:letter_arrived",
+				"set:letter_read",
+				"give:letter"
 			],
 			"image": "res://art/engravings/hetzel-006.jpg"
 		},
@@ -302,45 +325,6 @@
 									"fr": "Mon départ pour la France est prévu début mai. Rien ne presse encore.",
 									"en": "I sail for France in early May. No hurry yet."
 								}
-							}
-						]
-					}
-				},
-				{
-					"id": "letter_tray",
-					"name": {
-						"fr": "Lettre",
-						"en": "Letter"
-					},
-					"rect": [
-						246,
-						90,
-						40,
-						14
-					],
-					"if": [
-						"flag:letter_arrived",
-						"!flag:letter_read"
-					],
-					"actions": {
-						"look": [
-							{
-								"say": {
-									"fr": "Une lettre, apportée par le garçon d'étage. Cachet du ministère de la Marine.",
-									"en": "A letter, brought up by the bellboy. Navy Department seal."
-								}
-							}
-						],
-						"use": [
-							{
-								"say": {
-									"fr": "« Si vous voulez vous joindre à l'expédition de l'*Abraham-Lincoln*, le gouvernement de l'Union verra avec plaisir que la France soit représentée par vous. » Signé J.-B. Hobson, secrétaire de la Marine.",
-									"en": "\"Should you wish to join the *Abraham-Lincoln*'s expedition, the Union government would be glad to see France represented by you.\" Signed J.-B. Hobson, Secretary of the Navy."
-								},
-								"do": [
-									"give:letter",
-									"set:letter_read"
-								]
 							}
 						]
 					}
@@ -896,16 +880,16 @@
 			],
 			"hints": [
 				{
-					"fr": "Une lettre vient d'arriver. Elle change tout.",
-					"en": "A letter has just arrived. It changes everything."
+					"fr": "La lettre de Hobson change tout : nous partons.",
+					"en": "Hobson's letter changes everything: we're leaving."
 				},
 				{
 					"fr": "On ne part pas sans bagages, ni en abandonnant six mois de collections.",
 					"en": "You don't leave without luggage, or abandon six months of collections."
 				},
 				{
-					"fr": "Prendre la lettre (Utiliser), Utiliser les caisses, puis demander à Conseil de faire les malles.",
-					"en": "Take the letter (Use), Use the crates, then ask Conseil to pack."
+					"fr": "Utiliser les caisses, puis demander à Conseil de faire les malles.",
+					"en": "Use the crates, then ask Conseil to pack."
 				}
 			]
 		},
