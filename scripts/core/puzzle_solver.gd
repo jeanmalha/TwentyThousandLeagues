@@ -17,8 +17,30 @@ var wins: Dictionary = {}       # keys from which one action ends the chapter
 var truncated := false
 
 
+var relevant: Dictionary = {}   # "flag:x" / "fact:x" / "cat:x" that some condition tests
+
+
 func _init(id: String) -> void:
 	chapter_id = id
+	_collect_relevant(Content.chapter(id))
+
+
+## Only flags, facts and catalogue entries that some condition reads can
+## change what the player can do; the rest (flavour, "already said") are left
+## out of the state key so the search stays small.
+func _collect_relevant(node: Variant) -> void:
+	if node is Dictionary:
+		for k in node:
+			if k in ["if", "visible_if"]:
+				var conds: Variant = node[k]
+				for c in (conds if conds is Array else [conds]):
+					var s := str(c).trim_prefix("!")
+					relevant[s] = true
+			else:
+				_collect_relevant(node[k])
+	elif node is Array:
+		for v in node:
+			_collect_relevant(v)
 
 
 ## Returns {"solvable": bool, "dead_ends": Array of labels, "states": int,
@@ -92,8 +114,12 @@ func _start_state() -> Dictionary:
 
 func _key(s: Dictionary) -> String:
 	var parts: Array = []
+	var prefix := {"flags": "flag:", "facts": "fact:", "catalogue": "cat:"}
 	for field in ["flags", "facts", "catalogue"]:
-		var keys: Array = s[field].keys()
+		var keys: Array = []
+		for k in s[field]:
+			if relevant.has(prefix[field] + str(k)):
+				keys.append(k)
 		keys.sort()
 		parts.append(",".join(keys))
 	for who in GameState.CHARACTERS:
@@ -102,7 +128,9 @@ func _key(s: Dictionary) -> String:
 		parts.append(who + "=" + ",".join(inv) + "@" + str(s["location"].get(who, "")))
 	var party: Array = s["party"].duplicate()
 	party.sort()
-	parts.append(",".join(party) + "|" + s["current"] + "|" + str(s["switching"]))
+	# With free switching, who is active doesn't change what can be done.
+	var current: String = "*" if s["switching"] else s["current"]
+	parts.append(",".join(party) + "|" + current + "|" + str(s["switching"]))
 	return ";".join(parts)
 
 
