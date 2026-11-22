@@ -1,0 +1,122 @@
+{
+	"id": "ch19",
+	"number": 19,
+	"act": 4,
+	"title": {"fr": "Le Gulf-Stream", "en": "The Gulf Stream"},
+	"novel": "II-19 – II-20",
+	"start": {
+		"party": ["aronnax", "conseil", "ned"],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {"aronnax": "ch19_storm", "conseil": "ch19_vengeur", "ned": "ch19_storm"},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-106.jpg",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Le Nautilus remonta le Gulf-Stream vers le nord. Le capitaine ne paraissait plus. Il nous évitait. Ned, si près du Saint-Laurent, devenait sombre.", "en": "The Nautilus followed the Gulf Stream north. The captain no longer appeared. He was avoiding us. Ned, so close to the Saint Lawrence, grew gloomy."}},
+				{"who": "ned", "text": {"fr": "Le Saint-Laurent, c'est mon fleuve à moi, le fleuve de Québec, ma ville natale. Quand je pense à cela, monsieur, la colère me monte au visage.", "en": "The Saint Lawrence is my river, the river of Québec, my home town. When I think of it, sir, the anger rises to my face."}}
+			]
+		},
+		"vengeur": {
+			"image": "res://art/engravings/hetzel-108.jpg",
+			"lines": [
+				{"who": "nemo", "text": {"fr": "Monsieur, c'est aujourd'hui le 13 prairial, le 1er juin 1868. Il y a soixante-quatorze ans, jour pour jour, à cette place même, ce navire, après un combat héroïque, démâté de ses trois mâts, aima mieux s'engloutir avec ses trois cent cinquante-six marins que de se rendre, et clouant son pavillon à sa poupe, il disparut sous les flots au cri de : Vive la République !", "en": "Sir, today is the 13th of Prairial, the 1st of June 1868. Seventy-four years ago to the day, at this very spot, this ship, after a heroic fight, her three masts shot away, chose to sink with her three hundred and fifty-six sailors rather than surrender, and nailing her flag to her stern, she went down beneath the waves to the cry of \"Long live the Republic!\""}},
+				{"who": "aronnax", "text": {"fr": "Le Vengeur !", "en": "The Vengeur!"}},
+				{"who": "nemo", "text": {"fr": "Oui ! monsieur. Le Vengeur ! Un beau nom !", "en": "Yes! sir. The Vengeur! A fine name!"}},
+				{"who": "narrator", "text": {"fr": "Il croisa les bras. Un beau nom : le Vengeur. Je ne pus m'empêcher de penser à ce que ce mot voulait dire pour lui.", "en": "He folded his arms. A fine name: the Avenger. I couldn't help thinking of what that word meant to him."}}
+			],
+			"do": ["set:vengeur_understood", "end_chapter"]
+		}
+	},
+	"locations": {
+		"ch19_storm": {
+			"name": {"fr": "La plate-forme, dans la tempête", "en": "The platform, in the storm"},
+			"background": "res://art/locations/ch19_storm.png",
+			"color": "#15304a",
+			"hotspots": [
+				{
+					"id": "waves", "name": {"fr": "La tempête", "en": "The storm"}, "rect": [0, 0, 320, 100],
+					"actions": {
+						"look": [{"say": {"fr": "Des lames de quinze mètres. Le capitaine, attaché sur la plate-forme, a voulu voir l'ouragan en face.", "en": "Waves fifteen metres high. The captain, lashed to the platform, wanted to face the hurricane."}}],
+						"force": [{"who": "ned", "say": {"fr": "Dans un canot, par ce temps ? Même moi, non.", "en": "In a boat, in this weather? Not even me."}}]
+					}
+				},
+				{
+					"id": "ned19", "name": {"fr": "Ned Land", "en": "Ned Land"}, "rect": [240, 70, 40, 70], "npc": "ned", "dialogue": "ned_gulf", "if": "!char:ned",
+					"actions": {"look": [{"say": {"fr": "Ned regarde vers le nord-ouest, vers Québec.", "en": "Ned is looking north-west, towards Québec."}}]}
+				}
+			],
+			"exits": [
+				{"id": "below", "name": {"fr": "Redescendre au salon", "en": "Down to the salon"}, "rect": [130, 110, 60, 34], "to": "ch19_vengeur"}
+			]
+		},
+		"ch19_vengeur": {
+			"name": {"fr": "Le salon, au-dessus d'une épave", "en": "The salon, above a wreck"},
+			"background": "res://art/locations/ch19_vengeur.png",
+			"color": "#0f2236",
+			"hotspots": [
+				{
+					"id": "wreck", "name": {"fr": "L'épave", "en": "The wreck"}, "rect": [70, 30, 180, 90],
+					"actions": {
+						"look": [{"say": {"fr": "Un vieux vaisseau de guerre, couché sur le fond, couvert de coquillages. Le Nautilus s'est arrêté exprès au-dessus de lui.", "en": "An old warship lying on the sea floor, covered in shells. The Nautilus has stopped deliberately above it."}}],
+						"force": [{"who": "ned", "say": {"fr": "Trois ponts de sabords. Un vaisseau de ligne, monsieur, de soixante-quatorze canons au moins. Et regardez : pas un mât debout. Il s'est battu.", "en": "Three tiers of gunports. A ship of the line, sir, seventy-four guns at least. And look: not one mast standing. She fought."}, "do": ["fact:ship_of_line"]}],
+						"catalogue": [{"who": "conseil", "say": {"fr": "Les coquillages qui le couvrent ont l'âge d'un vieillard, monsieur. Soixante-dix ans, peut-être davantage. Il a coulé au siècle dernier.", "en": "The shells covering it are as old as an old man, Monsieur. Seventy years, perhaps more. It sank in the last century."}, "do": ["fact:wreck_age"]}],
+						"recall": [
+							{"who": "aronnax", "if": ["fact:ship_of_line", "fact:wreck_age"], "say": {"fr": "Un vaisseau de soixante-quatorze, coulé au combat il y a soixante-dix ans, par 47°24' de latitude… Nous sommes le 1er juin : le 13 prairial. Le combat du 13 prairial, an II !", "en": "A seventy-four, sunk in battle seventy years ago, at latitude 47°24'… Today is 1 June: the 13th of Prairial. The battle of 13 Prairial, Year II!"}, "do": ["fact:prairial"]},
+							{"who": "aronnax", "say": {"fr": "Un vieux navire de guerre… Mais lequel ? Il en a tant coulé dans ces eaux.", "en": "An old warship… But which? So many sank in these waters."}}
+						]
+					}
+				},
+				{
+					"id": "nemo19", "name": {"fr": "Le capitaine Nemo", "en": "Captain Nemo"}, "rect": [4, 20, 40, 80], "npc": "nemo", "dialogue": "nemo_vengeur",
+					"actions": {"look": [{"say": {"fr": "Le capitaine regarde l'épave, les bras croisés, comme on se recueille.", "en": "The captain looks at the wreck, arms folded, as if at a memorial."}}]}
+				}
+			],
+			"exits": [
+				{"id": "up", "name": {"fr": "Remonter sur la plate-forme", "en": "Up to the platform"}, "rect": [290, 20, 30, 100], "to": "ch19_storm"}
+			]
+		}
+	},
+	"facts": {
+		"ship_of_line": {"name": {"fr": "Un vaisseau de ligne", "en": "A ship of the line"}, "text": {"fr": "Soixante-quatorze canons, démâté au combat.", "en": "Seventy-four guns, dismasted in battle."}},
+		"wreck_age": {"name": {"fr": "L'âge de l'épave", "en": "The wreck's age"}, "text": {"fr": "Environ soixante-dix ans.", "en": "About seventy years."}},
+		"prairial": {"name": {"fr": "Le 13 prairial", "en": "The 13th of Prairial"}, "text": {"fr": "Le combat de l'an II, le 1er juin 1794.", "en": "The battle of Year II, 1 June 1794."}}
+	},
+	"dialogues": {
+		"ned_gulf": {
+			"npc": "ned",
+			"greeting": [{"who": "ned", "text": {"fr": "Monsieur.", "en": "Sir."}}],
+			"topics": [
+				{"id": "home", "label": {"fr": "Ned, nous partirons. Je vous le promets.", "en": "Ned, we will leave. I promise you."}, "once": true, "lines": [
+					{"who": "ned", "text": {"fr": "Vous me l'avez déjà dit. Mais cette fois, monsieur, si le capitaine ne veut pas, je partirai seul.", "en": "You've told me before. But this time, sir, if the captain won't let us, I'll go alone."}}
+				]}
+			]
+		},
+		"nemo_vengeur": {
+			"npc": "nemo",
+			"greeting": [{"who": "nemo", "text": {"fr": "…", "en": "…"}}],
+			"topics": [
+				{"id": "name", "who": "aronnax", "label": {"fr": "C'est le Vengeur, n'est-ce pas ?", "en": "It's the Vengeur, isn't it?"}, "if": "fact:prairial", "lines": [
+					{"who": "nemo", "text": {"fr": "Vous l'avez reconnu, monsieur. Écoutez.", "en": "You have recognised her, sir. Listen."}}
+				], "do": ["scene:vengeur"]},
+				{"id": "which", "label": {"fr": "Quel est ce navire, capitaine ?", "en": "What ship is this, Captain?"}, "if": "!fact:prairial", "lines": [
+					{"who": "nemo", "text": {"fr": "Regardez-le, monsieur. Et regardez la date.", "en": "Look at her, sir. And look at the date."}}
+				]}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "wreck", "text": {"fr": "Comprendre pourquoi le capitaine s'est arrêté ici.", "en": "Understand why the captain has stopped here."},
+			"hints": [
+				{"fr": "Une épave, une date, une position. Le capitaine attend qu'on la reconnaisse.", "en": "A wreck, a date, a position. The captain is waiting for us to recognise it."},
+				{"fr": "Ned saura dire quel genre de navire c'était, Conseil depuis quand il est là. Le professeur fera le reste.", "en": "Ned can tell what kind of ship she was, Conseil how long she's been there. The professor will do the rest."},
+				{"fr": "Ned : Forcer (examiner) l'épave. Conseil : Classer l'épave. Aronnax : Se souvenir de l'épave, puis parler au capitaine.", "en": "Ned: Force (examine) the wreck. Conseil: Catalogue the wreck. Aronnax: Recall the wreck, then talk to the captain."}
+			]
+		}
+	],
+	"on_start_say": {"fr": "La tempête, et Ned qui regarde vers Québec.", "en": "The storm, and Ned gazing towards Québec."},
+	"next": "ch20"
+}
