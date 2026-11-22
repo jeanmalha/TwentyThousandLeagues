@@ -36,7 +36,6 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch13_cabins.png | ch13cabins-flux-1868-6157.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch13_vigo.png | ch13vigo-flux-1868-8ad4.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch14_atlantis.png | ch14atlantis-flux-1868-4fb0.png | flux | 1868 | 2026-11-22 |
-| art/locations/ch15_whales.png | ch15whales-flux-1868-9c98.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch17_trapped.png | ch17trapped-flux-1868-db52.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch17_ice_tunnel.png | ch17icetunnel-flux-1868-3720.png | flux | 1868 | 2026-11-22 |
 | art/locations/ch18_platform_squid.png | ch18platformsqui-flux-1868-dfb8.png | flux | 1868 | 2026-11-22 |
@@ -49,3 +48,4 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch05_library.png | ch05library-flux-7-e7a0.png | flux | 7 | 2026-11-22 |
 | art/locations/ch16_pole.png | ch16pole-flux-7-53c6.png | flux | 7 | 2026-11-22 |
 | art/locations/ch20_salon_dark.png | ch20salondark-flux-7-7d89.png | flux | 7 | 2026-11-22 |
+| art/locations/ch15_whales.png | ch15whales-zimage-3-87e5.png | zimage | 3 | 2026-11-22 |
