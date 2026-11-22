@@ -92,7 +92,8 @@ func location(loc_id: String = "") -> Dictionary:
 func next_chapter(id: String) -> String:
 	var ch: Dictionary = chapter(id)
 	if ch.has("next"):
-		return ch["next"]
+		# A chapter not written yet sends the player back to the title screen.
+		return ch["next"] if chapters.has(ch["next"]) else ""
 	var i := order.find(id)
 	return order[i + 1] if i >= 0 and i + 1 < order.size() else ""
 
