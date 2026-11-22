@@ -2,9 +2,10 @@ extends GutTest
 ## Guards the pixel-art display rules from TTLUTS-1.
 
 
-func test_base_resolution_is_640_by_360() -> void:
-	assert_eq(ProjectSettings.get_setting("display/window/size/viewport_width"), 640)
-	assert_eq(ProjectSettings.get_setting("display/window/size/viewport_height"), 360)
+func test_base_resolution_is_320_by_180() -> void:
+	# Art is made at 2× (640×288 views); canvas_items stretch shows its full detail.
+	assert_eq(ProjectSettings.get_setting("display/window/size/viewport_width"), 320)
+	assert_eq(ProjectSettings.get_setting("display/window/size/viewport_height"), 180)
 
 
 func test_stretch_is_canvas_items_with_integer_scaling() -> void:

@@ -1,8 +1,7 @@
 ; Engine configuration file.
-; Pixel-art rules (TTLUTS-1): 640×360 base resolution (doubled from 320×180 on
-; 2026-11-21 for more definition), canvas_items stretch with integer scaling,
-; nearest-neighbour filtering, snapping to pixels. The interface is laid out in
-; 320×180 units and scaled ×2 (main/main.gd).
+; Pixel-art rules (TTLUTS-1): 320×180 layout, canvas_items stretch with integer
+; scaling, nearest-neighbour filtering. canvas_items draws at window resolution,
+; so art made at 2× (640×288 views) shows its full detail and text stays crisp.
 
 config_version=5
 
@@ -19,8 +18,8 @@ Content="*res://scripts/core/content.gd"
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_width=320
+window/size/viewport_height=180
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="canvas_items"

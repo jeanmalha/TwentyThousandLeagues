@@ -7,7 +7,7 @@ import sys
 
 from PIL import Image
 
-BASE_W, BASE_H = 640, 360
+BASE_W, BASE_H = 640, 360  # art detail is 2× the 320×180 layout
 failed = False
 for path in sys.argv[1:]:
     im = Image.open(path).convert("RGB")

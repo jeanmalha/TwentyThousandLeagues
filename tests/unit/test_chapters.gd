@@ -40,6 +40,16 @@ func test_every_exit_leads_somewhere() -> void:
 				assert_true(ch["locations"].has(e["to"]), "%s/%s: exit to unknown %s" % [id, loc_id, e["to"]])
 
 
+func test_chapters_chain_from_the_first_to_the_last() -> void:
+	# Following "next" from chapter 1 must visit every chapter once, in order.
+	var seen: Array = []
+	var id: String = Content.order[0]
+	while id != "" and not id in seen:
+		seen.append(id)
+		id = Content.next_chapter(id)
+	assert_eq(seen, Content.order, "Chapter chain: %s" % str(seen))
+
+
 func test_no_effect_list_both_opens_a_page_and_ends_the_chapter() -> void:
 	# Ending the chapter starts the outro at once, so a story page opened by
 	# the same effects would be cut off. Put "end_chapter" in the page itself.
