@@ -13,3 +13,6 @@ build/
 
 # Generated art from the local image pipeline: keep outputs out of git
 tools/art-pipeline/out/
+
+# Copyrighted English translation (F. P. Walter, 1999): local reference only, never committed
+docs/source/verne/en-*
