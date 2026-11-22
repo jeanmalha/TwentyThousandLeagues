@@ -1,0 +1,106 @@
+{
+	"id": "ch18",
+	"number": 18,
+	"act": 4,
+	"title": {"fr": "Les poulpes", "en": "The Squid"},
+	"novel": "II-17 – II-18",
+	"start": {
+		"party": ["aronnax", "conseil", "ned"],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {"aronnax": "ch18_platform_squid", "conseil": "ch18_platform_squid", "ned": "ch18_platform_squid"},
+		"inventory": {"ned": ["harpoon"]}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-102.jpg",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Au large des Antilles, des calmars gigantesques entourèrent le Nautilus. L'un d'eux avait engagé ses mandibules dans l'hélice. Nous étions arrêtés.", "en": "Off the Antilles, gigantic squid surrounded the Nautilus. One of them had caught its jaws in the propeller. We were stopped."}},
+				{"who": "nemo", "text": {"fr": "Les balles électriques sont impuissantes contre ces chairs molles. Mais nous les attaquerons à la hache.", "en": "Electric bullets are useless against such soft flesh. But we shall attack them with axes."}},
+				{"who": "ned", "text": {"fr": "Et au harpon, monsieur, si vous ne refusez pas mon aide.", "en": "And with the harpoon, sir, if you don't refuse my help."}},
+				{"who": "narrator", "text": {"fr": "Le panneau s'ouvrit. Un bras long et mince glissa par l'ouverture, saisit le matelot le plus proche, et l'enleva.", "en": "The hatch opened. A long, thin arm slid through the opening, seized the nearest sailor, and carried him off."}}
+			]
+		},
+		"fight": {
+			"image": "res://art/engravings/hetzel-104.jpg",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Ned plongeait son harpon dans les yeux glauques des calmars et les crevait. Mais il fut soudain renversé par les tentacules d'un monstre qu'il n'avait pu éviter. Le bec s'était ouvert sur lui.", "en": "Ned was plunging his harpoon into the squid's sea-green eyes and bursting them. But suddenly he was knocked down by the tentacles of a monster he hadn't seen. The beak had opened over him."}},
+				{"who": "narrator", "text": {"fr": "Le capitaine Nemo m'avait devancé. Sa hache disparut entre les deux énormes mandibules, et miraculeusement sauvé, le Canadien, se relevant, plongea son harpon tout entier jusqu'au triple cœur du poulpe.", "en": "Captain Nemo had got there before me. His axe vanished between the two enormous jaws, and the Canadian, miraculously saved, got up and drove his harpoon right into the squid's triple heart."}},
+				{"who": "nemo", "text": {"fr": "Je me devais cette revanche !", "en": "I owed myself that revenge!"}},
+				{"who": "narrator", "text": {"fr": "Ned s'inclina sans lui répondre.", "en": "Ned bowed without answering."}}
+			],
+			"do": ["set:squid_beaten"]
+		},
+		"tears": {
+			"image": "res://art/engravings/hetzel-103.jpg",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Le capitaine Nemo, couvert de sang, immobile près du fanal, regardait la mer qui avait englouti l'un de ses compagnons, et de grosses larmes coulaient de ses yeux.", "en": "Captain Nemo, covered in blood, motionless by the lamp, gazed at the sea that had swallowed one of his companions, and great tears ran from his eyes."}}
+			],
+			"do": ["end_chapter"]
+		}
+	},
+	"locations": {
+		"ch18_platform_squid": {
+			"name": {"fr": "La plate-forme, sous l'attaque", "en": "The platform, under attack"},
+			"background": "res://art/locations/ch18_platform_squid.png",
+			"color": "#1d4060",
+			"hotspots": [
+				{
+					"id": "squid", "name": {"fr": "Le calmar géant", "en": "The giant squid"}, "rect": [20, 10, 220, 90], "if": "!flag:squid_beaten",
+					"actions": {
+						"look": [{"say": {"fr": "Huit bras, longs comme le Nautilus, qui se tordent sur la plate-forme. Un bec de perroquet, mais formidable.", "en": "Eight arms, as long as the Nautilus, writhing over the platform. A parrot's beak, but a fearsome one."}}],
+						"catalogue": [{"who": "conseil", "say": {"fr": "Calmar, monsieur, de taille fabuleuse. Céphalopode décapode. Tête molle, peau épaisse… mais l'œil, monsieur, l'œil est sans défense.", "en": "Squid, Monsieur, of fabulous size. Ten-armed cephalopod. Soft head, thick skin… but the eye, Monsieur, the eye is defenceless."}, "do": ["fact:squid_eye"]}],
+						"item:harpoon": [
+							{"who": "ned", "if": "fact:squid_eye", "say": {"fr": "Aux yeux, alors !", "en": "For the eyes, then!"}, "scene": "fight"},
+							{"who": "ned", "say": {"fr": "Le harpon glisse sur cette peau comme sur du caoutchouc. Où frapper ?", "en": "The harpoon slides off that skin like rubber. Where to strike?"}}
+						],
+						"force": [{"who": "ned", "say": {"fr": "Pas à mains nues. Mon harpon !", "en": "Not bare-handed. My harpoon!"}}]
+					}
+				},
+				{
+					"id": "sailor", "name": {"fr": "Le matelot saisi", "en": "The seized sailor"}, "rect": [230, 20, 60, 70], "if": "!flag:squid_beaten",
+					"actions": {
+						"look": [{"say": {"fr": "Le malheureux, enlevé par le bras du calmar, crie : « À moi ! à moi ! »", "en": "The poor man, carried off by the squid's arm, cries out: \"À moi ! à moi !\""}}],
+						"recall": [{"who": "aronnax", "say": {"fr": "Ces mots, ce cri déchirant… prononcés en français ! J'avais donc à bord un compatriote, plusieurs peut-être.", "en": "Those words, that heart-rending cry… spoken in French! So there was a fellow countryman aboard, several perhaps."}, "do": ["fact:heard_french_cry"]}]
+					}
+				},
+				{
+					"id": "nemo18", "name": {"fr": "Le capitaine Nemo", "en": "Captain Nemo"}, "rect": [130, 90, 40, 54], "npc": "nemo", "dialogue": "nemo_squid",
+					"actions": {"look": [{"say": {"fr": "Le capitaine frappe à la hache, sans un mot.", "en": "The captain strikes with his axe, without a word."}}]}
+				}
+			],
+			"exits": []
+		}
+	},
+	"facts": {
+		"squid_eye": {"name": {"fr": "L'œil du calmar", "en": "The squid's eye"}, "text": {"fr": "Le seul point faible du monstre.", "en": "The monster's only weak point."}},
+		"heard_french_cry": {"name": {"fr": "Un cri en français", "en": "A cry in French"}, "text": {"fr": "Le matelot a crié « À moi ! » en français.", "en": "The sailor cried \"À moi !\" in French."}}
+	},
+	"dialogues": {
+		"nemo_squid": {
+			"npc": "nemo",
+			"greeting": [{"who": "nemo", "text": {"fr": "…", "en": "…"}}],
+			"topics": [
+				{"id": "after", "label": {"fr": "Capitaine…", "en": "Captain…"}, "if": "flag:squid_beaten", "lines": [
+					{"who": "nemo", "text": {"fr": "Un de mes compagnons, monsieur. Un de mes compagnons.", "en": "One of my companions, sir. One of my companions."}}
+				], "do": ["scene:tears"]},
+				{"id": "during", "label": {"fr": "Que faire ?", "en": "What should we do?"}, "if": "!flag:squid_beaten", "lines": [
+					{"who": "nemo", "text": {"fr": "Frapper, monsieur. Et frapper juste.", "en": "Strike, sir. And strike true."}}
+				]}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "fight", "text": {"fr": "Repousser les calmars.", "en": "Drive off the squid."},
+			"done_if": "flag:squid_beaten",
+			"hints": [
+				{"fr": "Le harpon de Ned glisse sur leur peau. Il faut un point faible.", "en": "Ned's harpoon slides off their skin. We need a weak point."},
+				{"fr": "Conseil connaît l'anatomie des céphalopodes.", "en": "Conseil knows the anatomy of cephalopods."},
+				{"fr": "Conseil : Classer le calmar. Ned : Utiliser le harpon sur le calmar. Puis parler au capitaine.", "en": "Conseil: Catalogue the squid. Ned: Use the harpoon on the squid. Then talk to the captain."}
+			]
+		}
+	],
+	"on_start_say": {"fr": "Un homme enlevé ! Et ce cri…", "en": "A man carried off! And that cry…"},
+	"next": "ch19"
+}
