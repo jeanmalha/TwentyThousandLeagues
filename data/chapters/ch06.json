@@ -242,10 +242,10 @@
 						"en": "Diving suits"
 					},
 					"rect": [
-						190,
-						20,
+						192,
+						46,
 						120,
-						110
+						96
 					],
 					"actions": {
 						"look": [
@@ -297,10 +297,10 @@
 						"en": "Ruhmkorff lamp"
 					},
 					"rect": [
-						140,
-						60,
-						40,
-						40
+						124,
+						96,
+						22,
+						20
 					],
 					"if": "!item:lamp",
 					"actions": {
@@ -344,10 +344,10 @@
 						"en": "Air rifles"
 					},
 					"rect": [
-						10,
-						20,
-						120,
-						100
+						0,
+						0,
+						125,
+						144
 					],
 					"if": "!item:air_rifle",
 					"actions": {
@@ -388,10 +388,10 @@
 						"en": "The diving chamber"
 					},
 					"rect": [
-						140,
-						116,
+						145,
 						50,
-						28
+						34,
+						62
 					],
 					"to": "ch06_seafloor_plain",
 					"if": [
