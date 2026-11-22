@@ -43,6 +43,7 @@
 		"porter": {"name": {"fr": "Le portier", "en": "The Porter"}},
 		"sailor": {"name": {"fr": "Le matelot", "en": "The Sailor"}},
 		"officer": {"name": {"fr": "L'officier", "en": "The Officer"}},
+		"strangers": {"name": {"fr": "Les deux inconnus", "en": "The two strangers"}},
 		"steward": {"name": {"fr": "Le stewart", "en": "The Steward"}}
 	},
 	"fallbacks": {

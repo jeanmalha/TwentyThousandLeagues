@@ -70,13 +70,15 @@ func _check_one(c: String) -> bool:
 	if c.begins_with("!"):
 		return not _check_one(c.substr(1))
 	var p := c.split(":")
+	# Flag, fact and catalogue names may contain colons ("said:npc:topic").
+	var rest := c.substr(c.find(":") + 1)
 	match p[0]:
 		"flag":
-			return flags.has(p[1])
+			return flags.has(rest)
 		"fact":
-			return facts.has(p[1])
+			return facts.has(rest)
 		"cat":
-			return catalogue.has(p[1])
+			return catalogue.has(rest)
 		"item":
 			for who in inventory:
 				if p[1] in inventory[who]:
@@ -113,15 +115,16 @@ func apply(effects: Variant) -> void:
 ## Returns true when the effect ends the chapter.
 func _apply_one(e: String) -> bool:
 	var p := e.split(":")
+	var rest := e.substr(e.find(":") + 1)
 	match p[0]:
 		"set":
-			flags[p[1]] = true
+			flags[rest] = true
 		"clear":
-			flags.erase(p[1])
+			flags.erase(rest)
 		"fact":
-			facts[p[1]] = true
+			facts[rest] = true
 		"cat":
-			catalogue[p[1]] = true
+			catalogue[rest] = true
 		"give":
 			var who: String = p[1] if p.size() > 2 else current
 			var item: String = p[2] if p.size() > 2 else p[1]
