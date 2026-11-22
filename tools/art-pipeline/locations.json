@@ -119,6 +119,10 @@
 		"ch06_forest": {
 			"kind": "location",
 			"prompt": "first-person view of an underwater forest of tall straight seaweed trunks rising like trees, dim green-blue light, a sea otter swimming between the trunks on the left, a diver in a copper suit with a glowing lamp on the right, far behind through the trunks the long dark hull of a submarine"
+		},
+		"ch07_vanikoro": {
+			"kind": "location",
+			"prompt": "view from inside a dark submarine salon through a huge oval window with brass frame, outside clear tropical water lit by a searchlight, an old shipwreck on a coral reef: coral-encrusted bronze cannons, rusted anchors, a broken wooden ship's bow, all covered with living corals and sea anemones, many small bright fish, 18th-century wreck"
 		}
 	}
 }

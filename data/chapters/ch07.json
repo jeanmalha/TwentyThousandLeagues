@@ -1,0 +1,111 @@
+{
+	"id": "ch07",
+	"number": 7,
+	"act": 2,
+	"title": {"fr": "Vanikoro", "en": "Vanikoro"},
+	"novel": "I-18 – I-19",
+	"start": {
+		"party": ["aronnax", "conseil", "ned"],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {"aronnax": "ch07_vanikoro", "conseil": "ch07_vanikoro", "ned": "ch07_vanikoro"},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-039.jpg",
+			"lines": [
+				{"who": "narrator", "text": {"fr": "Le Nautilus traversa le Pacifique. Un jour, par les vitres du salon, nous vîmes un navire englouti, ses mâts brisés, et sur le pont, des corps encore attachés.", "en": "The Nautilus crossed the Pacific. One day, through the salon windows, we saw a sunken ship, her masts broken, and on her deck, bodies still lashed in place."}},
+				{"who": "narrator", "text": {"fr": "Une femme était là, jeune, tenant un enfant dans ses bras. Je ne pus en détacher les yeux. Le capitaine Nemo regardait sans rien dire.", "en": "A woman was there, young, holding a child in her arms. I could not look away. Captain Nemo watched without a word."}},
+				{"who": "narrator", "text": {"fr": "Quelques jours plus tard, le capitaine prononça un seul mot : « Vanikoro. » Ce nom fut magique. C'était le nom des îlots sur lesquels vinrent se perdre les vaisseaux de La Pérouse.", "en": "A few days later the captain spoke a single word: \"Vanikoro.\" The name was magic. It was the name of the islets where La Pérouse's ships were lost."}}
+			]
+		},
+		"box": {
+			"image": "res://art/engravings/hetzel-041.jpg",
+			"lines": [
+				{"who": "nemo", "text": {"fr": "Le commandant La Pérouse partit le 7 décembre 1785 avec ses navires la Boussole et l'Astrolabe. Ses navires arrivèrent sur les récifs inconnus de Vanikoro. Les naufragés construisirent un bâtiment plus petit avec les débris des deux grands.", "en": "Commander La Pérouse sailed on 7 December 1785 with his ships, the Boussole and the Astrolabe. His ships ran onto the unknown reefs of Vanikoro. The castaways built a smaller vessel from the wreckage of the two."}},
+				{"who": "nemo", "text": {"fr": "Ils se dirigèrent vers les îles Salomon, et ils périrent, corps et biens, sur la côte occidentale de l'île principale du groupe.", "en": "They made for the Solomon Islands, and they were lost with all hands on the western coast of the main island of the group."}},
+				{"who": "aronnax", "text": {"fr": "Et comment le savez-vous ?", "en": "And how do you know?"}},
+				{"who": "nemo", "text": {"fr": "Voici ce que j'ai trouvé sur le lieu même de ce dernier naufrage !", "en": "Here is what I found at the very place of that last wreck!"}},
+				{"who": "narrator", "text": {"fr": "Une boîte de fer-blanc, estampillée aux armes de France. Dedans, les instructions même du ministre de la Marine au commandant La Pérouse, annotées en marge de la main de Louis XVI.", "en": "A tin box, stamped with the arms of France. Inside, the very instructions of the Minister of the Navy to Commander La Pérouse, annotated in the margin in Louis XVI's own hand."}},
+				{"who": "nemo", "text": {"fr": "Ah ! c'est une belle mort pour un marin ! C'est une tranquille tombe que cette tombe de corail, et fasse le ciel que, mes compagnons et moi, nous n'en ayons jamais d'autre !", "en": "Ah! That is a fine death for a sailor! A quiet grave, this grave of coral, and heaven grant that my companions and I never have any other!"}}
+			],
+			"do": ["end_chapter"]
+		}
+	},
+	"locations": {
+		"ch07_vanikoro": {
+			"name": {"fr": "Le salon, devant Vanikoro", "en": "The salon, off Vanikoro"},
+			"background": "res://art/locations/ch07_vanikoro.png",
+			"color": "#12393f",
+			"hotspots": [
+				{
+					"id": "cannons", "name": {"fr": "Canons couverts de corail", "en": "Coral-covered cannons"}, "rect": [70, 80, 90, 40],
+					"actions": {
+						"look": [{"say": {"fr": "Des canons, des boulets, des ancres, tout tapissé de fleurs vivantes. Un naufrage ancien.", "en": "Cannons, cannonballs, anchors, all carpeted with living flowers. An old wreck."}}],
+						"catalogue": [{"who": "conseil", "say": {"fr": "Fongies, syphonules, alcyons, cariophyllées. Si monsieur me permet : une croûte de cette épaisseur ne se forme pas en dix ans. Ces canons sont au fond depuis bien plus d'un demi-siècle.", "en": "Fungia, syphonula, alcyonaria, caryophyllia. If Monsieur permits: a crust this thick doesn't form in ten years. These cannons have lain here for well over half a century."}, "do": ["fact:old_wreck"]}],
+						"force": [{"who": "ned", "say": {"fr": "Des canons de bronze, à l'ancienne mode, et en nombre. Ce n'était pas un baleinier, monsieur : c'était un navire de guerre. Et cette étrave, là… c'est une coupe française. J'en ai vu dans le port de Québec, sur de vieilles gravures.", "en": "Bronze cannons, old-fashioned, and plenty of them. That was no whaler, sir: it was a warship. And that bow, there… that's a French cut. I've seen them in old pictures in Québec harbour."}, "do": ["fact:french_warship"]}]
+					}
+				},
+				{
+					"id": "bow", "name": {"fr": "Une étrave brisée", "en": "A broken bow"}, "rect": [180, 54, 80, 50],
+					"actions": {
+						"look": [
+							{"who": "ned", "say": {"fr": "Une étrave française, ça ne fait pas de doute. Un navire de guerre.", "en": "A French bow, no doubt about it. A warship."}, "do": ["fact:french_warship"]},
+							{"say": {"fr": "Une étrave de bois, brisée, rongée. Un marin saurait en dire plus.", "en": "A wooden bow, broken and eaten away. A sailor could say more."}}
+						]
+					}
+				},
+				{
+					"id": "nemo7", "name": {"fr": "Le capitaine Nemo", "en": "Captain Nemo"}, "rect": [10, 30, 50, 90], "npc": "nemo", "dialogue": "nemo_vanikoro",
+					"actions": {"look": [{"say": {"fr": "Le capitaine regarde l'épave comme on regarde une tombe.", "en": "The captain looks at the wreck the way one looks at a grave."}}]}
+				},
+				{
+					"id": "fish7", "name": {"fr": "Les poissons", "en": "The fish"}, "rect": [230, 16, 80, 34],
+					"actions": {
+						"look": [{"say": {"fr": "Des myriades de poissons charmants, qui se jouent dans les débris.", "en": "Myriads of charming fish, playing among the wreckage."}}],
+						"catalogue": [{"who": "conseil", "say": {"fr": "Girelles, glyphisidons, pomphérides, diacopes, holocentres. Monsieur, il y en a trop pour un seul homme.", "en": "Wrasses, damselfish, pompherids, diacopes, squirrelfish. Monsieur, there are too many for one man."}, "do": ["cat:reef_fish"]}]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"catalogue": {
+		"reef_fish": {"name": {"fr": "Poissons du récif de Vanikoro", "en": "Reef fish of Vanikoro"}, "text": {"fr": "Girelles, glyphisidons, pomphérides, diacopes, holocentres.", "en": "Wrasses, damselfish, pompherids, diacopes, squirrelfish."}}
+	},
+	"facts": {
+		"old_wreck": {"name": {"fr": "Un naufrage ancien", "en": "An old wreck"}, "text": {"fr": "D'après le corail, l'épave est au fond depuis plus d'un demi-siècle.", "en": "Judging by the coral, the wreck has lain here more than half a century."}},
+		"french_warship": {"name": {"fr": "Un navire de guerre français", "en": "A French warship"}, "text": {"fr": "Canons de bronze et étrave française : selon Ned, un navire de guerre français.", "en": "Bronze cannons and a French bow: according to Ned, a French warship."}}
+	},
+	"dialogues": {
+		"nemo_vanikoro": {
+			"npc": "nemo",
+			"greeting": [{"who": "nemo", "text": {"fr": "Regardez, monsieur le professeur. Peu d'hommes ont vu cela.", "en": "Look, Professor. Few men have seen this."}}],
+			"topics": [
+				{"id": "woman", "label": {"fr": "Ce navire englouti, l'autre jour…", "en": "That sunken ship, the other day…"}, "once": true, "lines": [
+					{"who": "nemo", "text": {"fr": "La mer prend, monsieur. Elle ne rend pas.", "en": "The sea takes, sir. It does not give back."}}
+				]},
+				{"id": "perouse", "who": "aronnax", "label": {"fr": "Un navire de guerre français, coulé il y a plus d'un demi-siècle… Ce sont les vaisseaux de La Pérouse.", "en": "A French warship, sunk more than half a century ago… These are La Pérouse's ships."}, "if": ["fact:old_wreck", "fact:french_warship"], "lines": [
+					{"who": "aronnax", "text": {"fr": "La Boussole et l'Astrolabe. Dumont d'Urville a retrouvé ces débris en 1828. Mais on ne sait encore où est allé périr le troisième navire, celui que les naufragés avaient construit.", "en": "The Boussole and the Astrolabe. Dumont d'Urville found this wreckage in 1828. But no one knows yet where the third vessel, the one the castaways built, was lost."}},
+					{"who": "nemo", "text": {"fr": "On ne sait… Suivez-moi.", "en": "No one knows… Follow me."}}
+				], "do": ["scene:box"]},
+				{"id": "guess", "who": "aronnax", "label": {"fr": "Quel est ce navire ?", "en": "What ship is this?"}, "if": ["!fact:old_wreck"], "lines": [
+					{"who": "nemo", "text": {"fr": "Regardez-le, monsieur. Il vous le dira lui-même.", "en": "Look at it, sir. It will tell you itself."}}
+				]}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "which_ship", "text": {"fr": "Identifier l'épave de Vanikoro.", "en": "Identify the wreck at Vanikoro."},
+			"hints": [
+				{"fr": "Une épave se lit comme un livre : son âge, sa nation, son usage.", "en": "A wreck can be read like a book: its age, its nation, its purpose."},
+				{"fr": "Conseil saura dater le corail ; Ned, reconnaître un navire de guerre.", "en": "Conseil can date the coral; Ned can recognise a warship."},
+				{"fr": "Conseil : Classer les canons. Ned : Forcer (examiner) les canons, ou Regarder l'étrave. Puis Aronnax : parler au capitaine de La Pérouse.", "en": "Conseil: Catalogue the cannons. Ned: Force (examine) the cannons, or Look at the bow. Then Aronnax: talk to the captain about La Pérouse."}
+			]
+		}
+	],
+	"on_start_say": {"fr": "Les vaisseaux de La Pérouse… si c'est bien eux.", "en": "La Pérouse's ships… if it really is them."},
+	"next": "ch08"
+}
