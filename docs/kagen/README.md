@@ -58,5 +58,5 @@ uv run --no-project --with pillow python tests/visual/check_pixels.py /tmp/x4.pn
 - `main` is the release branch and `dev` is the integration branch.
 - Branch from `dev` as `<card-id>-<slug>` (e.g. `TTLUTS-12-save-load`). Put the card id at the start of each commit message and in the PR title, and open the PR into `dev`.
 - Post the PR link on the card and move it to Review.
-- Agents don't merge. The PO reviews and merges.
+- While there is no production environment, agents may merge their own PRs into `dev` once `./scripts/test.sh` passes and the game starts without script errors (owner's decision, 2026-11-21). Nobody but the PO touches `main`.
 - No CI or deployment yet: run `./scripts/test.sh` locally and paste the result in the PR.

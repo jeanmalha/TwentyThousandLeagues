@@ -98,6 +98,8 @@ def main() -> None:
     src = ap.add_mutually_exclusive_group()
     src.add_argument("--palette", type=Path, help=".gpl or .hex palette file (the master palette)")
     src.add_argument("--colors", type=int, default=32, help="adaptive palette size when no --palette (default 32)")
+    ap.add_argument("--max-colors", type=int, default=0,
+                    help="with --palette: keep only the N palette colours the image uses most (e.g. 32)")
     ap.add_argument("--dither", choices=["none", "bayer", "fs"], default="bayer")
     ap.add_argument("--strength", type=float, default=0.6, help="dither strength 0..1 (default 0.6)")
     ap.add_argument("--preview-scale", type=int, default=6, help="nearest-neighbour scale of the preview (default 6)")
@@ -108,6 +110,10 @@ def main() -> None:
     img = Image.open(args.input).convert("RGB")
     img = crop_to_aspect(img, tw, th).resize((tw, th), Image.Resampling.LANCZOS)
     pal = load_palette(args.palette) if args.palette else adaptive_palette(img, args.colors)
+    if args.max_colors and len(pal) > args.max_colors:
+        # Keep the palette entries this image uses most (TTLUTS-21: at most 32 per scene).
+        counts = np.bincount(nearest(np.asarray(img, dtype=np.float32), pal).ravel(), minlength=len(pal))
+        pal = pal[np.sort(np.argsort(counts)[::-1][: args.max_colors])]
     px = reduce(img, pal, args.dither, args.strength)
 
     out = args.out or args.input.with_name(args.input.stem + f"-px{tw}x{th}.png")

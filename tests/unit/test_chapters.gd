@@ -1,0 +1,55 @@
+extends GutTest
+## Every chapter in data/chapters/ must be finishable, with no dead end
+## anywhere (TTLUTS-14), and every line must exist in French and English.
+
+
+func test_there_are_chapters() -> void:
+	assert_gt(Content.order.size(), 0, "data/chapters/ should hold at least one chapter")
+
+
+func test_every_chapter_is_solvable_without_dead_ends() -> void:
+	for id in Content.order:
+		var result: Dictionary = PuzzleSolver.new(id).run()
+		assert_false(result["truncated"], "%s: state space too big to check" % id)
+		assert_true(result["solvable"], "%s: the end can't be reached" % id)
+		assert_eq(result["dead_ends"].size(), 0, "%s: dead ends: %s" % [id, str(result["dead_ends"].slice(0, 3))])
+		gut.p("%s: %d states, solution: %s" % [id, result["states"], " → ".join(result["path"])])
+
+
+func test_every_text_has_french_and_english() -> void:
+	var missing: Array = []
+	_scan(Content.game, "game", missing)
+	for id in Content.order:
+		_scan(Content.chapter(id), id, missing)
+	assert_eq(missing.size(), 0, "Missing translations: %s" % str(missing.slice(0, 5)))
+
+
+func test_every_chapter_starts_in_a_known_location() -> void:
+	for id in Content.order:
+		var ch: Dictionary = Content.chapter(id)
+		for who in ch.get("start", {}).get("locations", {}):
+			var loc: String = ch["start"]["locations"][who]
+			assert_true(ch.get("locations", {}).has(loc), "%s: %s starts in unknown place %s" % [id, who, loc])
+
+
+func test_every_exit_leads_somewhere() -> void:
+	for id in Content.order:
+		var ch: Dictionary = Content.chapter(id)
+		for loc_id in ch.get("locations", {}):
+			for e in ch["locations"][loc_id].get("exits", []):
+				assert_true(ch["locations"].has(e["to"]), "%s/%s: exit to unknown %s" % [id, loc_id, e["to"]])
+
+
+func _scan(node: Variant, path: String, missing: Array) -> void:
+	if node is Dictionary:
+		if node.has("fr") or node.has("en"):
+			if str(node.get("fr", "")) == "" and str(node.get("en", "")) == "":
+				return
+			if str(node.get("fr", "")) == "" or str(node.get("en", "")) == "":
+				missing.append(path)
+			return
+		for k in node:
+			_scan(node[k], path + "/" + str(k), missing)
+	elif node is Array:
+		for i in node.size():
+			_scan(node[i], path + "/" + str(i), missing)
