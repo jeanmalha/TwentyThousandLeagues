@@ -121,10 +121,10 @@
 						"en": "The two strangers"
 					},
 					"rect": [
-						120,
-						22,
-						70,
-						104
+						104,
+						34,
+						80,
+						70
 					],
 					"if": "!flag:languages_tried",
 					"dialogue": "strangers",
@@ -177,10 +177,10 @@
 						"en": "The steward"
 					},
 					"rect": [
-						140,
-						40,
-						40,
-						88
+						104,
+						34,
+						80,
+						70
 					],
 					"if": [
 						"flag:languages_tried",
@@ -240,10 +240,10 @@
 						"en": "The commander"
 					},
 					"rect": [
-						130,
-						18,
-						46,
-						108
+						104,
+						34,
+						80,
+						70
 					],
 					"if": "flag:nemo_met",
 					"dialogue": "nemo_cell",
@@ -266,10 +266,10 @@
 						"en": "The door"
 					},
 					"rect": [
-						250,
-						16,
-						56,
-						112
+						260,
+						38,
+						44,
+						106
 					],
 					"actions": {
 						"look": [
@@ -325,10 +325,10 @@
 						"en": "Fur beret"
 					},
 					"rect": [
-						40,
-						92,
-						40,
-						16
+						130,
+						112,
+						50,
+						26
 					],
 					"actions": {
 						"look": [
@@ -369,9 +369,9 @@
 					},
 					"rect": [
 						140,
-						0,
-						40,
-						14
+						10,
+						42,
+						22
 					],
 					"actions": {
 						"look": [
