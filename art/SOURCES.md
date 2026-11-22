@@ -34,3 +34,5 @@ Every game image, the generated image it came from, its model and seed. Prompts 
 | art/locations/ch10_grotto.png | ch10grotto-flux-1868-a066.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch11_pilot_house.png | ch11pilothouse-flux-1868-f7bf.png | flux | 1868 | 2026-11-21 |
 | art/locations/ch12_salon_window.png | ch12salonwindow-flux-1868-5234.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch13_cabins.png | ch13cabins-flux-1868-6157.png | flux | 1868 | 2026-11-21 |
+| art/locations/ch13_vigo.png | ch13vigo-flux-1868-8ad4.png | flux | 1868 | 2026-11-21 |

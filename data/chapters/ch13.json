@@ -1,0 +1,496 @@
+{
+	"id": "ch13",
+	"number": 13,
+	"act": 3,
+	"title": {
+		"fr": "La baie de Vigo",
+		"en": "Vigo Bay"
+	},
+	"novel": "II-8",
+	"start": {
+		"party": [
+			"aronnax",
+			"conseil",
+			"ned"
+		],
+		"current": "aronnax",
+		"switching": true,
+		"locations": {
+			"aronnax": "ch13_cabins",
+			"conseil": "ch13_cabins",
+			"ned": "ch13_cabins"
+		},
+		"inventory": {}
+	},
+	"scenes": {
+		"intro": {
+			"image": "res://art/engravings/hetzel-072.jpg",
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Le Nautilus avait franchi le détroit de Gibraltar. Il longeait les côtes du Portugal. Ned Land vint me trouver.",
+						"en": "The Nautilus had passed the Strait of Gibraltar. It was running along the coast of Portugal. Ned Land came to find me."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Ce soir, à neuf heures. J'ai prévenu Conseil. À ce moment-là, le capitaine Nemo sera enfermé dans sa chambre et probablement couché. Les avirons, le mât et la voile sont dans le canot. Ainsi tout est prêt.",
+						"en": "Tonight, at nine. I've told Conseil. By then Captain Nemo will be shut in his room and probably asleep. The oars, the mast and the sail are in the boat. So everything is ready."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Et à neuf heures moins quelques minutes, on frappa à ma porte. C'était le capitaine Nemo.",
+						"en": "And at a few minutes to nine, there was a knock at my door. It was Captain Nemo."
+					}
+				}
+			]
+		},
+		"escape": {
+			"lines": [
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Nous gagnâmes l'escalier central. Ned dévissait déjà les écrous du canot quand le Nautilus plongea brusquement et prit le large, cap au sud-ouest.",
+						"en": "We reached the central stairway. Ned was already unscrewing the boat's nuts when the Nautilus dived abruptly and headed out to sea, south-west."
+					}
+				},
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Raté. Mais le canot reste prêt, monsieur. Les vivres, les avirons, la clef : tout est en place. La prochaine fois, il n'y aura qu'à partir.",
+						"en": "Missed. But the boat stays ready, sir. Food, oars, the wrench: all in place. Next time we just go."
+					}
+				}
+			],
+			"do": [
+				"set:skiff_provisioned",
+				"end_chapter"
+			]
+		},
+		"truth": {
+			"image": "res://art/engravings/hetzel-076.jpg",
+			"lines": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Croyez-vous donc, monsieur, que ces richesses soient perdues, alors que c'est moi qui les ramasse ? Qui vous dit que je n'en fais pas un bon usage ? Croyez-vous que j'ignore qu'il existe des êtres souffrants, des races opprimées sur cette terre ?",
+						"en": "Do you think, sir, that these riches are lost, when it is I who gather them? Who told you I don't put them to good use? Do you think I don't know there are suffering beings, oppressed peoples on this earth?"
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Je compris alors à qui étaient destinés ces millions expédiés par le capitaine Nemo, lorsque le Nautilus naviguait dans les eaux de la Crète insurgée.",
+						"en": "Then I understood for whom those millions were meant that Captain Nemo had sent off when the Nautilus was in the waters of insurgent Crete."
+					}
+				},
+				{
+					"who": "narrator",
+					"text": {
+						"fr": "Quand je retrouvai Ned, il était trop tard : le Nautilus avait gagné le large.",
+						"en": "When I got back to Ned it was too late: the Nautilus had headed out to sea."
+					}
+				}
+			],
+			"do": [
+				"set:vigo_truth",
+				"end_chapter"
+			]
+		}
+	},
+	"locations": {
+		"ch13_cabins": {
+			"name": {
+				"fr": "Ma chambre, avant neuf heures",
+				"en": "My room, before nine"
+			},
+			"background": "res://art/locations/ch13_cabins.png",
+			"color": "#2a2c30",
+			"hotspots": [
+				{
+					"id": "bag",
+					"name": {
+						"fr": "Le sac de Ned",
+						"en": "Ned's bag"
+					},
+					"rect": [
+						110,
+						88,
+						70,
+						40
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des biscuits, de la viande séchée, une gourde. Ned a tout préparé.",
+									"en": "Biscuits, dried meat, a water flask. Ned has prepared everything."
+								}
+							}
+						],
+						"catalogue": [
+							{
+								"who": "conseil",
+								"say": {
+									"fr": "Trois jours de vivres pour trois. Si monsieur part, monsieur mangera.",
+									"en": "Three days' food for three. If Monsieur goes, Monsieur will eat."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "rope13",
+					"name": {
+						"fr": "Le rouleau de cordage",
+						"en": "The coil of rope"
+					},
+					"rect": [
+						176,
+						90,
+						30,
+						30
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Une clef anglaise est glissée dans le rouleau : de quoi dévisser les écrous du canot.",
+									"en": "A wrench is tucked into the coil: enough to unscrew the boat's nuts."
+								}
+							}
+						],
+						"force": [
+							{
+								"who": "ned",
+								"say": {
+									"fr": "Je connais chaque écrou par cœur. Quatre tours, et le canot est libre.",
+									"en": "I know every nut by heart. Four turns and the boat is free."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "ned13",
+					"name": {
+						"fr": "Ned Land",
+						"en": "Ned Land"
+					},
+					"rect": [
+						250,
+						20,
+						40,
+						80
+					],
+					"npc": "ned",
+					"dialogue": "ned_vigo",
+					"if": "!char:ned",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Ned guette la pendule, les poings serrés.",
+									"en": "Ned watches the clock, fists clenched."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo13",
+					"name": {
+						"fr": "Le capitaine Nemo, à la porte",
+						"en": "Captain Nemo, at the door"
+					},
+					"rect": [
+						148,
+						30,
+						40,
+						80
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_vigo",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine attend sur le seuil. « Vous êtes géologue, monsieur ? Venez. J'ai quelque chose à vous montrer. »",
+									"en": "The captain waits on the threshold. \"Are you a geologist, sir? Come. I have something to show you.\""
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		},
+		"ch13_vigo": {
+			"name": {
+				"fr": "La baie de Vigo, par la vitre du salon",
+				"en": "Vigo Bay, through the salon window"
+			},
+			"background": "res://art/locations/ch13_vigo.png",
+			"color": "#0f2236",
+			"hotspots": [
+				{
+					"id": "galleons",
+					"name": {
+						"fr": "Les galions engloutis",
+						"en": "The sunken galleons"
+					},
+					"rect": [
+						0,
+						40,
+						170,
+						90
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Des carcasses de navires, à demi enfouies, et des coffres ouverts d'où coulent l'or et l'argent.",
+									"en": "Ships' carcasses, half buried, and open chests spilling gold and silver."
+								}
+							}
+						],
+						"recall": [
+							{
+								"who": "aronnax",
+								"say": {
+									"fr": "Vigo, 22 octobre 1702 : pour ne pas les livrer aux Anglais, l'amiral fit incendier et saborder les galions chargés de l'or des Amériques. On ne les a jamais retrouvés.",
+									"en": "Vigo, 22 October 1702: rather than surrender them to the English, the admiral had the galleons, laden with American gold, burned and scuttled. They were never found."
+								},
+								"do": [
+									"fact:vigo_1702"
+								]
+							}
+						]
+					}
+				},
+				{
+					"id": "divers13",
+					"name": {
+						"fr": "Les plongeurs",
+						"en": "The divers"
+					},
+					"rect": [
+						200,
+						40,
+						120,
+						80
+					],
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Les hommes du Nautilus ramassent les lingots et les remontent à bord.",
+									"en": "The Nautilus's men gather the ingots and bring them aboard."
+								}
+							}
+						]
+					}
+				},
+				{
+					"id": "nemo13b",
+					"name": {
+						"fr": "Le capitaine Nemo",
+						"en": "Captain Nemo"
+					},
+					"rect": [
+						150,
+						4,
+						40,
+						70
+					],
+					"npc": "nemo",
+					"dialogue": "nemo_vigo2",
+					"actions": {
+						"look": [
+							{
+								"say": {
+									"fr": "Le capitaine sourit. Il sait l'effet que fait ce spectacle.",
+									"en": "The captain smiles. He knows the effect of this sight."
+								}
+							}
+						]
+					}
+				}
+			],
+			"exits": []
+		}
+	},
+	"facts": {
+		"vigo_1702": {
+			"name": {
+				"fr": "Vigo, 1702",
+				"en": "Vigo, 1702"
+			},
+			"text": {
+				"fr": "Les galions sabordés pleins de l'or des Amériques.",
+				"en": "The scuttled galleons full of American gold."
+			}
+		}
+	},
+	"dialogues": {
+		"ned_vigo": {
+			"npc": "ned",
+			"greeting": [
+				{
+					"who": "ned",
+					"text": {
+						"fr": "Neuf heures, monsieur. C'est maintenant.",
+						"en": "Nine o'clock, sir. It's now."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "go",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Partir avec Ned) Allons-y.",
+						"en": "(Leave with Ned) Let's go."
+					},
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Allons-y, Ned. Conseil, viens.",
+								"en": "Let's go, Ned. Conseil, come."
+							}
+						},
+						{
+							"who": "conseil",
+							"text": {
+								"fr": "Comme il plaira à monsieur.",
+								"en": "As Monsieur pleases."
+							}
+						}
+					],
+					"do": [
+						"scene:escape"
+					]
+				},
+				{
+					"id": "sea",
+					"label": {
+						"fr": "La mer est mauvaise.",
+						"en": "The sea is rough."
+					},
+					"once": true,
+					"lines": [
+						{
+							"who": "ned",
+							"text": {
+								"fr": "J'en conviens, mais il faut risquer cela. La liberté vaut qu'on la paye.",
+								"en": "I grant you that, but we have to risk it. Freedom is worth paying for."
+							}
+						}
+					]
+				}
+			]
+		},
+		"nemo_vigo": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Monsieur le professeur, je voudrais vous montrer quelque chose que peu d'hommes ont vu.",
+						"en": "Professor, I'd like to show you something few men have seen."
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "follow",
+					"who": "aronnax",
+					"label": {
+						"fr": "(Suivre le capitaine) Je vous suis.",
+						"en": "(Follow the captain) I'll follow you."
+					},
+					"lines": [
+						{
+							"who": "narrator",
+							"text": {
+								"fr": "Je suivis le capitaine au salon. Les panneaux s'ouvrirent.",
+								"en": "I followed the captain to the salon. The panels opened."
+							}
+						}
+					],
+					"do": [
+						"move:aronnax:ch13_vigo",
+						"set:end_dialogue"
+					]
+				}
+			]
+		},
+		"nemo_vigo2": {
+			"npc": "nemo",
+			"greeting": [
+				{
+					"who": "nemo",
+					"text": {
+						"fr": "Saviez-vous, monsieur le professeur, que la mer contînt tant de richesse ?",
+						"en": "Did you know, Professor, that the sea held so much wealth?"
+					}
+				}
+			],
+			"topics": [
+				{
+					"id": "sterile",
+					"who": "aronnax",
+					"label": {
+						"fr": "Tant de richesses, perdues pour les malheureux…",
+						"en": "So much wealth, lost to the poor…"
+					},
+					"lines": [
+						{
+							"who": "aronnax",
+							"text": {
+								"fr": "Je plains ces milliers de malheureux auxquels tant de richesses bien réparties eussent pu profiter, tandis qu'elles seront à jamais stériles pour eux !",
+								"en": "I pity the thousands of poor souls whom so much wealth, well shared, could have helped, while it will forever be barren for them!"
+							}
+						}
+					],
+					"do": [
+						"scene:truth"
+					]
+				}
+			]
+		}
+	},
+	"objectives": [
+		{
+			"id": "choice",
+			"text": {
+				"fr": "Ce soir : l'évasion de Ned, ou l'invitation du capitaine. Pas les deux.",
+				"en": "Tonight: Ned's escape, or the captain's invitation. Not both."
+			},
+			"hints": [
+				{
+					"fr": "Ce choix compte pour la suite. Il n'y a pas de mauvaise réponse.",
+					"en": "This choice matters later. There is no wrong answer."
+				},
+				{
+					"fr": "Partir avec Ned prépare le canot pour une prochaine fois. Suivre le capitaine, c'est comprendre qui il est.",
+					"en": "Leaving with Ned readies the boat for another time. Following the captain means understanding who he is."
+				},
+				{
+					"fr": "Parler à Ned (« Allons-y »), ou parler au capitaine (« Je vous suis »), puis au salon lui parler des richesses perdues.",
+					"en": "Talk to Ned (\"Let's go\"), or talk to the captain (\"I'll follow you\"), then in the salon talk to him about lost wealth."
+				}
+			]
+		}
+	],
+	"on_start_say": {
+		"fr": "Neuf heures. Ned d'un côté, le capitaine de l'autre.",
+		"en": "Nine o'clock. Ned on one side, the captain on the other."
+	},
+	"next": "ch14"
+}
