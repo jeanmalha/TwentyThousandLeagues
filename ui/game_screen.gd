@@ -390,6 +390,16 @@ func is_speaking() -> bool:
 # --- Drawing ----------------------------------------------------------------
 
 func _draw_overlay() -> void:
+	# People in the scene (hotspots with "npc") appear as framed portrait
+	# medallions where they stand, until full in-scene figures exist (TTLUTS-32).
+	for h in Content.hotspots():
+		if h.has("npc"):
+			var r := _rect(h)
+			var frame := Rect2(r.position.x + r.size.x / 2 - 15, r.position.y + 2, 30, 37)
+			_overlay.draw_rect(frame.grow(1), UiKit.PANEL_DARK)
+			_overlay.draw_rect(frame, UiKit.BRASS_DARK)
+			_overlay.draw_texture_rect(UiKit.portrait_texture(h["npc"]), frame.grow(-1), false)
+			_overlay.draw_rect(frame, UiKit.BRASS, false, 1.0)
 	if _view.texture == null:
 		# No art yet: draw the hotspots as labelled boxes so the scene stays playable.
 		for h in Content.hotspots():

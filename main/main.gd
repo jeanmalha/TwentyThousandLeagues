@@ -37,6 +37,9 @@ func _ready() -> void:
 	screen.play_scene.connect(play_scene)
 	narration.finished.connect(_on_scene_finished)
 	GameState.chapter_ended.connect(_on_chapter_ended)
+	GameState.scene_requested.connect(func(id: String) -> void:
+		dialogue.close()
+		play_scene(id))
 
 	var args := OS.get_cmdline_user_args()
 	var i := args.find("--chapter")
