@@ -111,6 +111,14 @@
 		"title": {
 			"kind": "scene",
 			"prompt": "a long cigar-shaped 19th-century submarine gliding through deep blue water lit by shafts of light from the surface, a glowing lantern at its prow, fish around it, no text"
+		},
+		"ch06_seafloor_plain": {
+			"kind": "location",
+			"prompt": "first-person view through a round brass diving helmet porthole, walking on a wide sandy sea floor about ten metres deep, sunlight filtering from the surface in pale blue shafts, scattered shells and rocks, two divers in heavy copper suits ahead, 1860s diving equipment"
+		},
+		"ch06_forest": {
+			"kind": "location",
+			"prompt": "first-person view of an underwater forest of tall straight seaweed trunks rising like trees, dim green-blue light, a sea otter swimming between the trunks on the left, a diver in a copper suit with a glowing lamp on the right, far behind through the trunks the long dark hull of a submarine"
 		}
 	}
 }
