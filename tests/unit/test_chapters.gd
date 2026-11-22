@@ -50,6 +50,16 @@ func test_chapters_chain_from_the_first_to_the_last() -> void:
 	assert_eq(seen, Content.order, "Chapter chain: %s" % str(seen))
 
 
+func test_every_figure_has_its_image() -> void:
+	# Hotspots with "figure" need art/figures/<npc>-<2h>.png
+	# (uv run tools/art-pipeline/figures.py makes them).
+	for id in Content.order:
+		for loc_id in Content.chapter(id).get("locations", {}):
+			for h in Content.chapter(id)["locations"][loc_id].get("hotspots", []):
+				if h.has("figure"):
+					assert_not_null(GameScreen.figure_texture(h), "%s/%s: no figure image for %s" % [id, loc_id, h.get("npc")])
+
+
 func test_no_effect_list_both_opens_a_page_and_ends_the_chapter() -> void:
 	# Ending the chapter starts the outro at once, so a story page opened by
 	# the same effects would be cut off. Put "end_chapter" in the page itself.

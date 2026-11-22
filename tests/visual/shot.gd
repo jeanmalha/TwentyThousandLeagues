@@ -1,6 +1,6 @@
 extends SceneTree
 ## Screenshot of the game in a given state, for checking layout by eye.
-##   godot --path . --resolution 960x540 -s res://tests/visual/shot.gd -- out.png [--chapter ch01 --skip-intro] [--hover x,y] [--journal] [--dialogue id] [--highlight] [--lang en]
+##   godot --path . --resolution 960x540 -s res://tests/visual/shot.gd -- out.png [--chapter ch01 --skip-intro] [--hover x,y] [--journal] [--dialogue id] [--highlight] [--lang en] [--goto location]
 ## Not part of the unit tests: it opens a window.
 
 
@@ -16,6 +16,10 @@ func _initialize() -> void:
 	root.add_child(main)
 	for f in 20:
 		await process_frame
+	i = args.find("--goto")
+	if i >= 0:
+		state.apply(["goto:" + args[i + 1]])
+		main.screen.refresh()
 	if args.has("--highlight"):
 		main.screen.highlight = true
 		main.screen.refresh()

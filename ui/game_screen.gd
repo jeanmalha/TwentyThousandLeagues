@@ -20,6 +20,7 @@ var highlight := false
 var _view: TextureRect
 var _view_fill: ColorRect
 var _overlay: Control
+var _figures: Control
 var _action: Label
 var _action_bg: ColorRect
 var _speech_bg: ColorRect
@@ -45,6 +46,13 @@ func _ready() -> void:
 	_view.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(_view)
+	# People standing in the scene (TTLUTS-32), drawn crisp like the art.
+	_figures = Control.new()
+	_figures.size = VIEW.size
+	_figures.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_figures.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
+	_figures.draw.connect(_draw_figures)
+	add_child(_figures)
 	_overlay = Control.new()
 	_overlay.size = VIEW.size
 	_overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -140,6 +148,7 @@ func refresh() -> void:
 		p.disabled = false
 	_update_action_line()
 	_overlay.queue_redraw()
+	_figures.queue_redraw()
 
 
 func _update_action_line() -> void:
@@ -392,11 +401,46 @@ func is_speaking() -> bool:
 
 # --- Drawing ----------------------------------------------------------------
 
-func _draw_overlay() -> void:
-	# People in the scene (hotspots with "npc") appear as framed portrait
-	# medallions where they stand, until full in-scene figures exist (TTLUTS-32).
+## The figure image for a hotspot, or null when it has none yet.
+## Hotspot: "figure": {"feet": [x, y], "height": h} in layout units; the art
+## is art/figures/<npc>-<2h>.png, made by tools/art-pipeline/figures.py.
+## Textures are cached: a texture loaded inside a draw call and then dropped
+## is freed before the frame renders, and shows as a white box.
+static var _figure_cache: Dictionary = {}
+
+
+static func figure_texture(h: Dictionary) -> Texture2D:
+	if not h.has("npc") or not h.has("figure"):
+		return null
+	var path := "res://art/figures/%s-%d.png" % [h["npc"], int(h["figure"]["height"]) * 2]
+	if not _figure_cache.has(path):
+		_figure_cache[path] = load(path) if ResourceLoader.exists(path) else null
+	return _figure_cache[path]
+
+
+func _draw_figures() -> void:
+	# Each figure stands with its feet on the given spot, toned to the room's
+	# light, over a soft contact shadow.
+	var light := Color(Content.location().get("light", "#ffffff"))
 	for h in Content.hotspots():
-		if h.has("npc"):
+		var tex := figure_texture(h)
+		if tex == null:
+			continue
+		var feet := Vector2(h["figure"]["feet"][0], h["figure"]["feet"][1])
+		var fig_size := tex.get_size() / 2.0
+		var shadow := PackedVector2Array()
+		for k in 16:
+			var a := TAU * k / 16.0
+			shadow.append(feet + Vector2(cos(a) * fig_size.x * 0.75, sin(a) * fig_size.x * 0.17))
+		_figures.draw_colored_polygon(shadow, Color(0, 0, 0, 0.35))
+		_figures.draw_texture_rect(tex, Rect2(feet - Vector2(fig_size.x / 2.0, fig_size.y), fig_size), false, light)
+
+
+func _draw_overlay() -> void:
+	# People without a figure yet appear as framed portrait medallions where
+	# they stand (TTLUTS-32).
+	for h in Content.hotspots():
+		if h.has("npc") and figure_texture(h) == null:
 			var r := _rect(h)
 			var frame := Rect2(r.position.x + r.size.x / 2 - 15, r.position.y + 2, 30, 37)
 			_overlay.draw_rect(frame.grow(1), UiKit.PANEL_DARK)
